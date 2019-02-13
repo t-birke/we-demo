@@ -1,0 +1,7 @@
+{
+    "orgName": "we demo org",
+    "edition": "Professional",
+    "orgPreferences" : {
+        "enabled": ["S1DesktopEnabled"]
+    }
+}
