@@ -1,0 +1,122 @@
+.THIS.slds-wizard {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.THIS.main-container {
+    margin-bottom: 5rem;
+}
+
+.THIS .slds-is-active.slds-wizard__marker {
+    background:  token(colorBackgroundButtonBrand);
+     
+}
+
+.THIS .slds-wizard__progress {
+    z-index: 0;
+    background: token(colorBackgroundShade);
+}
+
+.THIS .slds-wizard__progress-bar {
+    background: token(colorBackgroundButtonBrand);
+}
+
+.THIS .slds-wizard__marker {
+    background: token(colorBackgroundShade);
+}
+
+.THIS .slds-wizard__marker:hover {
+    background: token(colorBackgroundShade);
+}
+
+.THIS .slds-is-active .slds-wizard__marker {
+    background: token(colorBackgroundButtonBrand);
+}
+
+.THIS .survey-background {
+    text-align: center;
+}
+
+.THIS .image-upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS .image-upload {
+    width: 400px;
+}
+
+.THIS .customer-picture {
+    width: 100%;
+    height: 400px;
+    background-image: url('/sfsites/c/resource/surveyCustomerImage');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.THIS .after-image img {
+    height: 450px;
+    box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.16);
+}
+
+.THIS .recommendation-image img {
+    height: 450px;
+    box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.16);
+}
+
+/*----------*/
+
+.THIS.step-navigation {
+    text-align: right;
+    margin-bottom: 5rem;
+}
+
+.THIS .prod-thumb {
+    max-width: 60px; 
+}
+
+.THIS .slds-text-heading--small {
+    font-size: 1.1rem;
+}
+
+.THIS .booking-table-header {
+    padding: .5rem 1rem;
+    background: #f4f6f9;
+}
+
+.THIS .booking-table .slds-table th, .THIS .booking-table .slds-table td {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.THIS .booking-table .slds-badge {
+    text-transform: none;
+    margin-right: 0.75rem;
+}
+
+.THIS .booking-table .slds-table--bordered {
+    border-bottom: 0;
+}
+
+.THIS .move-address {
+    text-transform: capitalize;
+}
+
+.THIS .thank-you {
+    font-size: 1.5rem;
+}
+
+.THIS .selected-time {
+    background-color: rgba(10, 137, 166, 0.175);
+}
+
+.THIS .time-btn {
+    text-align: right;
+}
+
+.THIS .x-small {
+     font-size: 70%;
+}

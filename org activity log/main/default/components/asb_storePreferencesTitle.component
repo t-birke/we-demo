@@ -1,0 +1,61 @@
+<apex:component layout="none" allowDML="true">
+	<apex:attribute name="injectedController" description="The store preferences pages controller." type="asb_StorePreferencesController" required="true" />
+
+	<div class="prx-title-bar" id="prx_title_bar">
+		<div class="prx-title-bar-primary">
+			<div class="prx-title-bar-primary-title">
+				<h1><apex:outputText value="{!$Label.asb_Store_Preferences}" /></h1>
+			</div>
+
+			<div class="prx-filter prx-filter-S">
+				<div class="prx-overlaymenu-opener" id="prx_nav2_opener_phone">
+					<span class="prx-icon"></span><span class="prx-overlay-opener-text"></span>
+				</div>
+			</div>
+
+			<div class="prx-filter prx-filter-M">
+				<div class="prx-overlaymenu-opener" id="prx_nav2_opener_small">
+					<span class="prx-icon"></span><span class="prx-overlay-opener-text"></span>
+				</div>
+			</div>
+
+			<div class="prx-title-bar-primary-actions">
+				<a href="{!$Page.asb_home}" target="_blank" class="prx-btn prx-btn-secondary-titlebar prx-btn-secondary-titlebar-all"><apex:outputText value="{!$Label.asb_ViewStore}" /></a>
+			</div>
+		</div>
+	</div>
+	
+	<c:asb_pageMessages extraCss="prx-msg-bar" />
+	
+	<apex:variable var="msgBarClass" value="{!IF(injectedController.storeStatus == 'Online', 'prx-msg-success', 'prx-msg-warning')}" />
+	<div class="prx-msg prx-msg-bar {!msgBarClass}">
+		<div class="prx-msg-inner">
+			<div class="prx-msg-icon"></div>
+			<p class="prx-with-action">
+				<span class="prx-msg-text">
+					<apex:outputPanel layout="none" rendered="{!injectedController.storeStatus == 'offlineNeedsInfo'}">
+						<apex:outputText value="{!$Label.asb_StoreIsOffline}" />&#160;<apex:outputText value="{!$Label.asb_RequiredFieldsForOnline}" />&#160;<apex:outputText value="{!$Label.asb_RequiredFieldsAreMarked}" />
+						<span class="prx-req">*</span>.
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!injectedController.storeStatus == 'Offline'}">
+		        		<apex:outputText value="{!$Label.asb_StoreIsOffline}" />
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!injectedController.storeStatus == 'Online'}">
+		        		<apex:outputText value="{!$Label.asb_StoreIsOnline}" />
+					</apex:outputPanel>
+				</span>
+					<apex:outputPanel layout="none" rendered="{!injectedController.storeStatus == 'Offline'}">
+			        	<a href="javascript:takeStoreOnline();" class="prx-msg-action"><apex:outputText value="{!$Label.asb_TakeStoreOnline}" /></a>
+					</apex:outputPanel>
+					<apex:outputPanel layout="none" rendered="{!injectedController.storeStatus == 'Online'}">
+			        	<a href="javascript:takeStoreOffline();" class="prx-msg-action"><apex:outputText value="{!$Label.asb_TakeStoreOffline}" /></a>
+					</apex:outputPanel>
+			</p>
+		</div>
+	</div>
+
+	<apex:form >
+		<apex:actionFunction name="takeStoreOffline" action="{!injectedController.takeStoreOffline}"/>
+		<apex:actionFunction name="takeStoreOnline" action="{!injectedController.takeStoreOnline}"/>
+	</apex:form>
+</apex:component>

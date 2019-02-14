@@ -1,0 +1,75 @@
+<apex:component id="pickListOverlay" layout="none"> 
+    <apex:attribute name="pickListOverlayController" description="PickList Overlay Controller" type="asb_PickListOverlayController" required="true" />
+    <apex:variable var="overlayId" value="prx_multiselect_overlay" />
+    <div class="prx-dialog" id="{!overlayId}">
+    
+    <apex:actionStatus id="pickListOverlayStatus" onStop="reinitDialog();" >  
+            <apex:facet name="start">
+                <apex:outputPanel id="loadingPanel" styleClass="wait" layout="block" />
+             </apex:facet>
+             <apex:facet name="stop">
+    <apex:outputPanel id="pickListOverlayPanel"> 
+       <div class="prx-dialog-content">
+             <script>
+                function reinitDialog() {
+                    jQuery('#{!overlayId}').dialog({title: '{!JSINHTMLENCODE(pickListOverlayController.title)}'});
+                    PrX.dialogUlTwoColumns(jQuery('#{!overlayId}'));
+                    PrX.reformatDialog(jQuery('#{!overlayId}'));
+                }
+             </script>
+            <div id="errorMessages" style="display:none;" class="prx-msg prx-msg-error">
+				<div class="prx-msg-icon"></div>
+	            <p>{!$Label.asb_Message_Text_Error}</p>
+	            <ul>
+	           		<li>{!pickListOverlayController.errorMessage}</li>
+	            </ul>
+		    </div>
+            <p><apex:outputText value="{!pickListOverlayController.subtitle}"/></p>
+                <ul class="prx-ul-reset prx-ul-2-columns">
+                <apex:repeat id="picklistValues" var="opt" value="{!pickListOverlayController.pickListValues}">
+                    <li class="checkboxOpt">
+                        <apex:inputCheckbox id="options" value="{!opt.Checked}"/>
+                        <input type="hidden" class="hidden-value" value="{!opt.value}" />
+                        <apex:outputLabel id="label" value="{!opt.label}"></apex:outputLabel>
+                        
+                    </li>
+                </apex:repeat>
+                </ul>
+            <div class="prx-dialog-footer">
+                <button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></button>
+                <button class="prx-btn prx-btn-primary" onclick="populateSelectedValues();"><apex:outputText value="{!$Label.asb_BUTTON_Save}" /></button>
+            </div>
+        </div>
+        <script>
+            // <![CDATA[    
+            jQuery(document).ready(function() {
+                // action menus in the table .prx-menu-content .prx-menu-opener
+                PrX.dialogCloseButton(jQuery('#{!overlayId}'));
+            });
+            
+            function populateSelectedValues(){
+                var valSelected = new Array();
+                var index = 0;
+                
+                jQuery('.checkboxOpt :checked').each(function() {
+                    chkOpt = jQuery(this);
+                    valSelected[index++] =  chkOpt.next().val();
+                });
+                document.getElementById('{!$Component.valuesSelected}').value = valSelected.join(';');
+           
+           		if ((document.getElementById('{!$Component.valuesSelected}').value != '') && '{!pickListOverlayController.errorMessage}'!=''){
+						jQuery('#errorMessages').hide();
+						{!pickListOverlayController.saveAction};
+						jQuery('#prx_multiselect_overlay').dialog('close');
+					}else{
+						jQuery('#errorMessages').show();
+					}
+            }
+            //]]>   
+        </script>
+    </apex:outputPanel>
+    </apex:facet>
+    </apex:actionStatus>
+    
+    </div>
+</apex:component>

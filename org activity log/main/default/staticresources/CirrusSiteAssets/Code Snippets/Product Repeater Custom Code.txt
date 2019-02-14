@@ -1,0 +1,15 @@
+<div>
+	<a href="product?Name={!Item_Name__c}" class="btn">Learn More</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a>
+		<img src="iconfacebook.png" height="25" width="25"/>
+	</a>
+	<a>
+		<img src="icontwitter.png" height="25" width="25"/>
+	</a>
+</div>
+
+
+
+
+2D83B1

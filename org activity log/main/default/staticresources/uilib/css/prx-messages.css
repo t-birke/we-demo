@@ -1,0 +1,204 @@
+/**
+ *  Messages.
+ *  4 types: info, error, warning, success.
+ */
+
+/* generic */
+.prx-msg {
+    padding: 6px 10px;
+    margin: 10px 0 10px 0;
+    color: #fff;
+    background: #aaa;
+    overflow: hidden;
+}
+/* when in an overlay */
+.prx-dialog-content .prx-msg {
+    margin-top: 0;
+}
+/* when attached to the title bar */
+.prx-msg-bar {
+    margin: 0;
+    background: #aaa url(../img/bg-content-secondary.png) repeat-y left center;
+}
+
+	.prx-content-block-results .prx-msg-bar,
+	.prx-dialog-content .prx-msg-bar {
+	    background-image: none;
+	}
+	
+    .prx-msg-bar .prx-msg-inner {
+        margin-left: 250px;
+        width: 700px;
+    }
+
+	.prx-content-block-results .prx-msg-bar .prx-msg-inner,
+	.prx-dialog-content .prx-msg-bar .prx-msg-inner {
+	    margin-left: 0;
+	}
+	
+	.prx-dialog-content .prx-msg-bar .prx-msg-inner {
+	    width: 100%;
+	}
+	
+    .prx-msg a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .prx-msg a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .prx-msg p {
+        display: block;
+        overflow: hidden;
+        line-height: 120%;
+        margin: 0;
+        padding: 9px 0 9px 10px;
+    }
+    .prx-msg p.prx-with-action {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+        .prx-msg p.prx-with-action span.prx-msg-text {
+            padding-top: 10px;
+            padding-bottom: 7px;
+            display: inline-block;
+        }
+    .prx-msg p.prx-msg-title {
+        font-weight: bold;
+    }
+    .prx-msg p:last-child {
+        margin-bottom: 0;
+    }
+    .prx-msg ul {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-left: 15px;
+    }
+    .prx-msg ul li {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 0;
+        padding-bottom: 0.5em;
+        line-height: 120%;
+    }
+    .prx-msg ul li:last-child {
+        padding-bottom: 0;
+    }
+    .prx-msg ul.ul-one-item {
+        padding-left: 23px;
+        margin-bottom: 0;
+    }
+        .prx-msg ul.ul-one-item li {
+            list-style: none;
+            padding: 7px 0;
+            font-weight: bold;
+        }
+        
+    .prx-msg .prx-msg-icon {
+        background: url(../img/sprite-prx.png) no-repeat 24px 24px;
+        width: 24px;
+        height: 24px;
+        float: left;
+        vertical-align: bottom;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .prx-msg-info .prx-msg-icon { background-position: -76px 0; }
+    .prx-msg-warning .prx-msg-icon { background-position: -76px -24px; }
+    .prx-msg-error .prx-msg-icon { background-position: -76px -48px; }
+    .prx-msg-success .prx-msg-icon { background-position: -76px -72px; }
+
+.prx-msg-info {
+    background-color: #669bd7;
+}
+.prx-msg-warning {
+    background-color: #dbb245;
+}
+.prx-msg-error {
+    background-color: #d68184;
+}
+.prx-msg-success {
+    background-color: #60c170;
+}
+
+a.prx-msg-action {
+    float: right;
+    text-decoration: none;
+    background: rgba(0,0,0,.2);
+    padding: 9px 21px 8px 21px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+a.prx-msg-action:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,.3);
+}
+
+/* no results paragraph */
+.prx-no-results {
+    text-align: center;
+    line-height: 200%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 113px;
+    background: url(../img/prx-no-results-app.png) no-repeat center top;
+}
+    .prx-no-results .prx-no-results-text {
+        font-size: 123.1%;
+        color: #6b6a6a;
+    }
+    .prx .prx-no-results .prx-btn {
+        margin-top: 10px;
+    }
+/* when all we see on the page is this message block */
+.prx-no-results-alone {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-msg-bar {
+        background-image: none;
+    }
+        .prx-msg-bar .prx-msg-inner {
+            margin-left: 0;
+            width: auto;
+        }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-msg-bar {
+        background-image: none;
+    }
+        .prx-msg-bar .prx-msg-inner {
+            margin-left: 10px;
+            width: 724px;
+        }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+        .prx-msg-bar .prx-msg-inner {
+            width: 960px;
+        }
+}

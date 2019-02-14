@@ -1,0 +1,18 @@
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 950px;
+}
+
+.row-fluid .span8 {
+	width:709px;
+}
+
+.product_detail_viewport {
+	width:185px;
+}
+
+.products_1_row_medium_viewport {
+	width:128px;
+}

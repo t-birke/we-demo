@@ -1,0 +1,37 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="TakeRecordsHandle" type="Boolean" />
+    <aura:attribute name="PictureId" type="String" default="Bqsddi0lEPc" />
+    <aura:attribute name="RenderWithoutScript" type="Boolean" default="false" />
+    <aura:attribute name="Hight" type="Integer" default="500" />
+    
+    <aura:attribute name="showData" type="Boolean" access="global" default="false" />
+    
+    <aura:attribute name="contactFields" type="String[]" access="global" default="Name, SocialMediaInstagramHandle__c"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="fields" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      fields="{!v.contactFields}"                      
+                      targetRecord="{!v.record}"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.fields}"
+                      mode="VIEW" 
+                      recordUpdated="{!c.handleRecordUpdated}"/> 
+    
+    <aura:if isTrue="{!v.showData}">
+        <aura:if isTrue="{!v.RenderWithoutScript}">
+            <div align="center">
+                <iframe src="{! 'https://www.instagram.com/p/' + v.PictureId + '/embed'}" width="100%" height="{!v.Hight + 'px'}" frameborder="0" ></iframe>
+            	<!-- <img src="{! 'https://instagram.com/p/' + v.PictureId + '/media/?size=m'}" /> -->
+            </div>
+            
+            <aura:set attribute="else">
+                <iframe src="{! '/apex/SocialViewInstagram?PictureId=' + v.PictureId}" width="100%" height="{!v.Hight + 'px'}" frameBorder="0"/>    
+            </aura:set>
+        </aura:if> 
+    </aura:if>
+</aura:component>

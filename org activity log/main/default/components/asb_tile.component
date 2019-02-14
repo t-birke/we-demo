@@ -1,0 +1,29 @@
+<apex:component id="tile" allowDML="true">
+    <apex:attribute name="listing" description="the listing for this tile." type="asb_ListingDO" required="true" />
+
+    <div class="prx-tile">
+        <div class="prx-tile-content">
+            <div class="prx-tile-content-inner prx-tile-content-inner-1">
+                <div class="prx-tile-img">
+                    <span class="prx-tile-img-inner">
+                        <img src="{!listing.AppDO.LogoUrl}" />
+                    </span>
+                </div>
+                <div class="prx-tile-title">
+                    <a href="{!$Page.asb_ListingDetail}?listingId={!listing.id}" class="prx-tile-link"><apex:outputText value="{!listing.appDO.name}"/></a>
+                </div>
+                <div class="prx-tile-tag">
+                    <a href="{!$Page.asb_ListingDetail}?listingId={!listing.id}" class="prx-tile-link">
+                        <apex:outputText value="{!listing.tagline}"/>
+                    </a>
+                </div>
+                <div class="prx-tile-info">
+                    <a href="{!$Page.asb_ListingDetail}?listingId={!listing.id}" class="prx-btn prx-btn-primary prx-btn-more prx-tile-link">
+                        <span class="prx-btn-txt">{!$Label.asb_BUTTON_More}</span>
+                        <span class="prx-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:component>

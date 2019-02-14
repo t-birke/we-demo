@@ -1,0 +1,164 @@
+<!--
+ - Created by brandon.rogers on 4/30/18.
+ -->
+
+<apex:component id="cc_Header">
+
+    <script id="cc_HeaderDesktop" type="text/template">
+
+        <nav class="navbar-inverse cc_navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" id="logoUrl">
+                        <!--<img src="https://lh3.googleusercontent.com/-2v54fC5JLkg/WudG_I7ktiI/AAAAAAAAAX8/BzGzCfivMIQqnarkF6K4oa4jZswi-UKhgCL0BGAYYCw/h29/2018-04-30.png"/>-->
+                        <div id="cc_store_logo_img" class="cc_store_logo_img center-block"></div>
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <span class="misc-function cc_misc_function"/>
+                    <span class="lssec cc_lssec"></span>
+
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li class="cc_my_account">
+                                <a href="#" id="goToAccount"><i class="fa fa-user" aria-hidden="true"></i><span>&#160;{{pageLabelMap 'Component_SiteHeader_MyAccount'}}</span></a>
+                            </li>
+                            <li class="cc_my_chead">
+                                <a href="#" id="cartHeader" class="chead cartHeaderLink"></a>
+                            </li>
+                            <li class="loginoutsec cc_loginoutsec"></li>
+                            <li><div class="search_form cc_search_form"></div></li>
+                        </ul>
+
+
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+        <!--<div class="navbar-inverse cc_navbar-inverse">
+            <div class="container cc_container">
+                <div class="row cc_navbar_row">
+                    <div class="col-md-2 cc_navbar_col_logo">
+                        <a href="#" id="logoUrl">
+                            <div id="cc_store_logo_img" class="cc_store_logo_img center-block"></div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-2 cc_navbar_col_misc">
+                        <div class="navbar-header pull-left cc_navbar-header">
+                            <span class="misc-function cc_misc_function"/>
+                            <span class="lssec cc_lssec"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 cc_navbar_col_acct">
+                        <div class="navbar-header pull-right cc_navbar-header">
+                            <ul class="list-inline nav navbar-nav cc_list-inline">
+                                <li class="cc_my_account">
+                                    <a href="#" id="goToAccount"><i class="fa fa-user" aria-hidden="true"></i><span>&#160;{{pageLabelMap 'Component_SiteHeader_MyAccount'}}</span></a>
+                                </li>
+                                <li class="cc_my_chead"><a href="#" id="cartHeader" class="chead cartHeaderLink"></a>
+                                </li>
+                                <li class="loginoutsec cc_loginoutsec"></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 pull-right cc_col_search">
+                        <ul class="nav cc_nav">
+                            <li>
+                                <div class="search_form cc_search_form"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    </script>
+
+    <script id="cc_LocaleSwitcher-Desktop" type="text/template">
+        <ul class="nav navbar-nav cc_navbar_nav">
+            <li><a class="changeLocale cc_change_locale" href="javascript:void(0)">{{pageLabelMap 'LocaleSwitcher_Label'}} {{pageLabelPrefixMap 'LOC_' locale locale}} </a></li>
+        </ul>
+        <div id="modalSecLocale"></div>
+    </script>
+
+    <script id="cc_EffAcctSel-Head-View-Desktop" type="text/template">
+        <ul class="nav navbar-nav cc_navbar-nav">
+            {{#if this.ro}}
+            <li class="effAccount cc_eff_account">
+                <a href="#">
+                    {{pageLabelMap 'EffAcctSwitcher_Label'}} {{pageLabelMap 'SELECTED_ACCOUNT' workingEffAccount.name workingEffAccount.accountNumber workingEffAccount.shippingAddress.address1 workingEffAccount.shippingAddress.city workingEffAccount.shippingAddress.state workingEffAccount.shippingAddress.countryCode}}
+                </a>
+            </li>
+            {{else}}
+            <li class="effAccount cc_eff_account" data-toggle="modal" data-target="#effAccounts">
+                <a href="#">
+                    {{#if this.workingEffAccount }}
+                    {{pageLabelMap 'EffAcctSwitcher_Label'}} {{pageLabelMap 'SELECTED_ACCOUNT' workingEffAccount.name workingEffAccount.accountNumber workingEffAccount.shippingAddress.address1 workingEffAccount.shippingAddress.city workingEffAccount.shippingAddress.state workingEffAccount.shippingAddress.countryCode}}
+                    {{else}}
+                    {{pageLabelMap 'SELECT_ACCOUNT' }}
+                    {{/if}}
+                    <span class="launchSel cc_launch_sel" aria-hidden="true"></span>
+                </a>
+            </li>
+            {{/if}}
+        </ul>
+        <div class="modal fade cc_modal cc_effective_accounts_modal" id="effAccounts" tabindex="-1" role="dialog" aria-labelledby="effAccountsLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content cc_modal_content">
+                    <div class="modal-header cc_modal_header">
+                        <button type="button" class="close cc_close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+                        <h4 class="modal-title cc_modal_title" id="effAccountsLabel">{{pageLabelMap 'EFFECTIVE_ACCOUNT_TITLE'}}</h4>
+                    </div>
+                    <div class="modal-body cc_modal_body">
+                        <div class="table-responsive">
+                            <table class="table table-hover cc_table">
+                                <thead class="cc_thead">
+                                <tr class="cc_tr">
+                                    <th class="cc_th_name">{{pageLabelMap 'Name'}}</th>
+                                    <th class="cc_th_account_number">{{pageLabelMap 'ACCOUNT_NUMBER'}}</th>
+                                    <th class="cc_th_address">{{pageLabelMap 'Address'}}</th>
+                                    <th class="cc_th_picked"></th>
+                                </tr>
+                                </thead>
+                                <tbody class="cc_tbody">
+                                {{#each this.effectiveList}}
+                                <tr class="cc_tr_values">
+                                    <td class="cc_td_name">{{name}}</td>
+                                    <td class="cc_td_account_number">{{accountNumber}}</td>
+                                    <td class="cc_td_address">{{pageLabelMap 'ADDRESS_FORMAT' shippingAddress.address1 shippingAddress.city shippingAddress.state shippingAddress.postalCode shippingAddress.countryCode}}</td>
+                                    <td><a href="#"><i class="pickSel pickAccount cc_pick_account fa fa-chevron-right" data-id="{{sfid}}" aria-hidden="true"></i><span class="sr-only">Select Account</span></a></td>
+                                </tr>
+                                {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            CCRZ.uiProperties.headerView.desktop.tmpl = 'cc_HeaderDesktop';
+            CCRZ.uiProperties.localeSwitcherView.desktop.tmpl = 'cc_LocaleSwitcher-Desktop';
+            CCRZ.uiProperties.EffAccountSelView.header.tmpl = 'cc_EffAcctSel-Head-View-Desktop';
+        });
+    </script>
+
+
+</apex:component>

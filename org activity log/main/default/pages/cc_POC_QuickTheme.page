@@ -1,0 +1,19 @@
+<!--
+ - Created by msobc on 5/21/2018.
+ -->
+
+<apex:page id="cc_POC_QuickTheme" controller="ccPOCQuickTheme" sidebar="false" showHeader="false" standardStylesheets="false">
+
+    <script type="text/javascript">
+
+        //alert('currentUser = ' + CCRZ.currentUser.ContactId);
+
+    </script>
+
+    <style>
+
+        <apex:outputText value="{!QuickStyle}" escape="false"/>
+
+    </style>
+
+</apex:page>

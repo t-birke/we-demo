@@ -1,0 +1,122 @@
+/* High res icons for high res screens like iPads/iPhones retina display. */
+
+/* phone hd */
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (min-resolution: 192dpi) { 
+    .prx-tile-content-inner-1 {
+        background-image: url(../img/arrow-right-hd.png);
+        -moz-background-size: 17px 20px;
+        -ie-background-size: 17px 20px;
+        -o-background-size: 17px 20px;
+        -webkit-background-size: 17px 20px;
+        background-size: 17px 20px;
+    }
+    #phone_categories ul.prx-ul-nav2-phone li.prx-selected span.prx-icon,
+        #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li.prx-selected span.prx-icon {
+            background-image: url(../img/sprite-prx-hd.png) !important;
+            -moz-background-size: 100px 120px;
+            -ie-background-size: 100px 120px;
+            -o-background-size: 100px 120px;
+            -webkit-background-size: 100px 120px;
+            background-size: 100px 120px;
+    }
+    
+}
+
+/* non-phone hd */
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) { 
+}
+
+/* all hd */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    table.prx-data-table tr th.prx-th-asc {
+        background-image: url(../img/bg-prx-th-asc-hd.png) !important;
+        -moz-background-size: 19px 5px;
+        -ie-background-size: 19px 5px;
+        -o-background-size: 19px 5px;
+        -webkit-background-size: 19px 5px;
+        background-size: 19px 5px;
+    }
+    table.prx-data-table tr th.prx-th-desc {
+        background-image: url(../img/bg-prx-th-desc-hd.png) !important;
+        -moz-background-size: 19px 5px;
+        -ie-background-size: 19px 5px;
+        -o-background-size: 19px 5px;
+        -webkit-background-size: 19px 5px;
+        background-size: 19px 5px;
+    }
+    
+    .prx-no-results {
+        background-image: url(../img/prx-no-results-app-hd.png);
+        -moz-background-size: 122px 93px;
+        -ie-background-size: 122px 93px;
+        -o-background-size: 122px 93px;
+        -webkit-background-size: 122px 93px;
+        background-size: 122px 93px;
+    }
+
+    .slider-large .owl-controls .owl-buttons div.owl-prev,
+        .slider-overlay .owl-controls .owl-buttons div.owl-prev {
+            background-image: url(../img/arrow-slider-left-hd.png);
+            -moz-background-size: 32px 50px;
+            -ie-background-size: 32px 50px;
+            -o-background-size: 32px 50px;
+            -webkit-background-size: 32px 50px;
+            background-size: 32px 50px;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-next,
+        .slider-overlay .owl-controls .owl-buttons div.owl-next {
+            background-image: url(../img/arrow-slider-right-hd.png);
+            -moz-background-size: 32px 50px;
+            -ie-background-size: 32px 50px;
+            -o-background-size: 32px 50px;
+            -webkit-background-size: 32px 50px;
+            background-size: 32px 50px;
+    }
+
+
+    .slider-small .owl-controls .owl-buttons div.owl-prev {
+        background-image: url(../img/carousel-prev-hd.png);
+        -moz-background-size: 8px 15px;
+        -ie-background-size: 8px 15px;
+        -o-background-size: 8px 15px;
+        -webkit-background-size: 8px 15px;
+        background-size: 8px 15px;
+    }
+    .slider-small .owl-controls .owl-buttons div.owl-next {
+        background-image: url(../img/carousel-next-hd.png);
+        -moz-background-size: 8px 15px;
+        -ie-background-size: 8px 15px;
+        -o-background-size: 8px 15px;
+        -webkit-background-size: 8px 15px;
+        background-size: 8px 15px;
+    }
+    
+    ul.slidesjs-pagination a,
+        ul.slidesjs-pagination a.active,
+        .prx-btn-back .prx-icon,
+        .prx-icon,
+        .prx-link-more .prx-icon,
+        .prx-overlay-menu ul li a span.prx-icon,
+        .prx-menu-opener .prx-icon,
+        .prx-btn-prev .prx-icon,
+        .prx-btn-next .prx-icon,
+        .prx-msg .prx-msg-icon {
+            background-image: url(../img/sprite-prx-hd.png) !important;
+            -moz-background-size: 100px 120px;
+            -ie-background-size: 100px 120px;
+            -o-background-size: 100px 120px;
+            -webkit-background-size: 100px 120px;
+            background-size: 100px 120px;
+    }
+
+    .ui-dialog-screenshots .ui-dialog-titlebar-close .ui-icon {
+        background-image: url(../img/sprite-prx-hd.png) !important;
+        -moz-background-size: 100px 120px;
+        -ie-background-size: 100px 120px;
+        -o-background-size: 100px 120px;
+        -webkit-background-size: 100px 120px;
+        background-size: 100px 120px;
+    }
+    
+}
+

@@ -1,0 +1,22 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+  <aura:attribute name="events" type="Object"/>
+
+	<lightning:empApi aura:id="empApi"/>
+<aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+
+    
+    <aura:attribute name="subscription" type="Map" />
+
+    
+    <lightning:input aura:id="channel" label="channel" name="channel" type="text" value="/event/New_Lead__e"/>
+    <lightning:button label="Subscribe" onclick="{! c.subscribe }" />
+    <lightning:button label="Unsubscribe" onclick="{! c.unsubscribe }" disabled="{!empty(v.subscription)}"/>
+    
+    <aura:iteration items="{!v.events}" var="event">
+    	<div class="slds-box">
+        	<div class="slds-text-heading_small">New Lead</div>
+            <div class="slds-text-heading_medium">{!event.data.payload.Lead_Name__c}</div>
+            <div class="slds-text-color_weak"><lightning:formattedDateTime value="{!event.data.payload.CreatedDate}"/></div>
+        </div>
+    </aura:iteration>
+</aura:component>

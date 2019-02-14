@@ -1,0 +1,7 @@
+<apex:page standardController="asb_ListingPopularity__c" extensions="asb_ListingPopularityActionsController" action="{!init}" showheader="{!isDesktop}" sidebar="false">
+	<apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+			<apex:pageMessages id="message"/>
+		</apex:define>
+	</apex:composition>
+</apex:page>

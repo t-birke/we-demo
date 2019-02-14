@@ -1,0 +1,19 @@
+﻿body #wrap{font-family: helvetica;float:left;}
+#prev .jFlowPrev{float:left;width:26px;height:50px;display:block; background:URL(prev.png) 26px 0; margin:115px 0 0 0;outline:medium none;}
+#prev .jFlowPrev:hover{background:URL(prev.png) 0 0;}
+#next .jFlowNext{float:left;width:26px;height:50px;display:block; background:URL(next.png) 26px 0; margin:115px 0 0 0;outline:medium none;}
+#next .jFlowNext:hover{background:URL(next.png) 0 0;}
+#slider{display:block;float:none;height:230px;margin:0 auto;width:754px;}
+.infoBlock {background-color:#FFFFFF;border:1px solid #EAEAEA;float:left;height:184px;margin:0 0 0 6px;
+width:340px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;}
+.titleBlock{font-size:17px;padding:10px 10px 10px; float:left;width:100%}
+.btnSelect{border-top:1px solid #EAEAEA;bottom:6px;clear:both;display:block;
+           height:46px;padding-top:7px;position:absolute;text-align:center;width:340px;}
+.btnSelect .Select{width:78px;height:30px;display:block;background:URL(select.png) 0 0;margin:0 auto;}
+.btnSelect .Select:hover{background:URL(select.png) 78px 0;}
+#jFlowSlide{width:702px;}
+#wrap .hidden{display: none;}
+#wrap #prevNext{margin-bottom: -2.5em;}
+#prevNext img{}
+#wrap p{margin: 0;padding: 0 1em;font-size: 1.5em;position: relative;top: -50px;
+	   line-height: 50px;height: 50px;background: black;opacity: .7;filter:alpha(opacity=70);}

@@ -1,0 +1,217 @@
+<apex:page controller="asb_HomeController" title="{!storeName}" action="{!init}" showHeader="{!isDesktop}" sidebar="false" id="home" standardstylesheets="false" tabStyle="Store__tab">
+    <apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+        	<div class="prx-content-block prx-content-block-results">                   
+                <c:asb_header id="header" injectedController="{!controller}"/>
+                    <div class="prx-content-content">
+                        <div class="prx-content-content-inner">
+                            <div class="prx-content-secondary">
+                                <div class="prx-content-secondary-inner">
+                                    <div class="prx-nav2" id="prx_nav2">
+                                        <div class="prx-nav2-inner">
+                                            <apex:repeat value="{!leftNavFilterNodes}" id="f1" var="f1">
+                                                <apex:outputPanel rendered="{!f1.showListAsLinks}" id="llink1" layout="none">
+                                                    <ul class="prx-ul-reset prx-ul-nav2">
+                                                        <apex:repeat value="{!f1['listValues']}" id="f11" var="f11">
+                                                                <li class="{!IF(f11['isSelected'],'prx-selected','')}"><a id="{!$Component.f11}:fil" href="javascript:PrX.selectCategory('{!f1.idValue}','{!f1.ThisFilterOnlyEscapedURL}','{!$Page.asb_Home}','{!f11.value}');"><span class="prx-icon"></span><span class="prx-text">{!f11.label}</span></a></li>
+                                                        </apex:repeat>
+                                                    </ul>
+                                                </apex:outputPanel>
+                                                <apex:outputPanel rendered="{!NOT(f1.showListAsLinks)}" id="llink2" layout="none">
+                                                    <ul class="prx-ul-reset prx-ul-nav2">
+                                                        <apex:repeat value="{!f1.children}" id="f12" var="f12">
+                                                            <li class="{!IF(f12.isSelected,'prx-selected','')}">
+                                                                <apex:outputPanel rendered="{!NOT(f12.isSelected)}" layout="none">                                      
+                                                                    <a href="{!f12.ThisFilterOnlyURL}" id="leftNav{!$Component.f12}"><span class="prx-icon"></span><span class="prx-text">{!f12.label}</span></a>
+                                                                </apex:outputPanel>
+                                                                <apex:outputPanel rendered="{!f12.isSelected}" layout="none">
+                                                                    <span class="link-replace">
+                                                                        <span class="link-txt">{!f12.label}</span>
+                                                                    </span>
+                                                                </apex:outputPanel>
+                                                                <apex:outputPanel rendered="{!f12.showChildren}" layout="none">
+                                                                    <ul class="ul-reset ul-nav2" style="display: {!IF(OR(f12.isAtleastOneChildSelected,f12.isSelected),'','none;')}">
+                                                                        <apex:repeat value="{!f12.children}" id="f121" var="f121">
+                                                                            <li class="{!IF(f121.isSelected,'selected','')}">
+                                                                                <apex:outputPanel rendered="{!NOT(f121.isSelected)}" layout="none">
+                                                                                    <a href="{!f121.ThisFilterOnlyURL}"  id="leftNav{!$Component.f121}"><span class="prx-icon"></span><span class="link-txt">{!f121.label}</span></a>
+                                                                                </apex:outputPanel>
+                                                                                <apex:outputPanel rendered="{!f121.isSelected}" layout="none">
+                                                                                    <a href="{!f121.ThisFilterOnlyURL}"  id="leftNav{!$Component.f121}"><span class="prx-icon"></span><span class="prx-text">{!f121.label}</span></a>
+                                                                                </apex:outputPanel>
+                                                                            </li>
+                                                                        </apex:repeat>
+                                                                    </ul>
+                                                                </apex:outputPanel>
+                                                            </li>
+                                                        </apex:repeat>
+                                                    </ul>
+                                                </apex:outputPanel>
+                                            </apex:repeat>         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="prx-content-primary">
+                                <div class="prx-content-primary-inner">
+                                    <div class="prx-filters" id="prx_filters">
+                                        <div class="prx-filter prx-filter-M">
+                                            <a href="javascript:void(0);" class="prx-medium-nav prx-medium-nav-menu" id="prx_category_opener"><span class="prx-icon"></span></a>
+                                        </div>
+			                            <apex:repeat value="{!topFilterNodes}" id="tf1" var="tf1">
+			                                <div class="prx-filter prx-filter-dropdown">
+		                                        <select id="tf{!SUBSTITUTE(tf1.idValue,' ','')}" name="tf{!tf1.idValue}" class="prx-select-filter prx-select-filter-overlaymenu prx-topfilter" onchange="javascript:PrX.applyFiltersAct();">
+							                        <apex:outputPanel rendered="{!tf1.showListAsLinks}" id="tfVal1" layout="none">
+							                            <apex:repeat value="{!tf1['listValues']}" id="tf11" var="tf11">
+						                                    <option value="{!tf1.idValue + '=' + tf11.value}">{!tf11.label}</option>
+							                            </apex:repeat>
+							                        </apex:outputPanel>
+							                        <apex:outputPanel rendered="{!NOT(tf1.showListAsLinks)}" id="tfVal2" layout="none">
+							                            <apex:repeat value="{!tf1.displayChildren}" id="tf12" var="tf12">
+						                                    <option value="{!tf12.idValue}" class="{!tf12.styleClass}">{!tf12.label}</option>
+							                            </apex:repeat>
+							                        </apex:outputPanel>
+		                                        </select>
+			                                </div>
+			                            </apex:repeat>
+                                        <div class="prx-filter prx-filter-dropdown prx-filter-sort">
+                                            <select id="filter_app_sortby" name="filter_app_sortby" class="prx-select-filter prx-select-filter-overlaymenu" onchange="PrX.sortNow(this);">
+                                                <apex:repeat value="{!sortOptions}" id="sortOpts" var="sortOpt">
+                                                    <apex:outputPanel layout="none" rendered="{!sortOpt.selected}">
+                                                        <option value="{!sortOpt.sortByCode}" selected="selected">{!sortOpt.label}</option>
+                                                    </apex:outputPanel>       
+                                                    <apex:outputPanel layout="none" rendered="{!NOT(sortOpt.selected)}">
+                                                        <option value="{!sortOpt.sortByCode}">{!sortOpt.label}</option>
+                                                    </apex:outputPanel>
+                                                </apex:repeat>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="prx-results">
+                                        <div class="prx-results-inner">
+                                        
+                                        	<apex:outputPanel id="listingsEmpty" rendered="{!NOT(hasResults)}" layout="none">
+	                                        	<p class="prx-no-results">
+													<span class="prx-no-results-text">
+														{!$Label.asb_NoSearchResults}
+													</span>
+												</p>
+											</apex:outputPanel>
+                                        
+                                        	<apex:outputPanel id="listingsNotEmpty" rendered="{!hasResults}" layout="none">
+	                                            <ul id="resultsPanel" class="prx-ul-reset prx-ul-results">
+	                                                <apex:repeat var="listing" value="{!listings}">
+	                                                    <li class="prx-li-tile">
+	                                                        <c:asb_tile id="tile" listing="{!listing}"/>
+	                                                    </li>
+	                                                </apex:repeat>
+	                                                <apex:outputLink value="asb_homeTileAjax?filter={!$CurrentPage.parameters.filter}&amp;keywords={!$CurrentPage.parameters.keywords}&amp;pageNo=2" styleClass="jscroll-next"></apex:outputLink>
+	                                            </ul>
+                                            </apex:outputPanel>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <script language="JavaScript">
+            //<![CDATA[
+            	jQuery(document).ready(function() {
+		            jQuery('.prx-tile').prxTileActions('init');
+		        });
+		        
+                PrX.sortNow = function($this) {
+                    var sortVal = $this;
+                    if($this.value){
+                        sortVal = $this.value;
+                    }
+                    var defaulSort = {!searchParams.defaultSort};
+                    var curUrl = window.location.href;
+                    var pageNameStart = curUrl.lastIndexOf('/asb_home');
+                    if (curUrl.indexOf('?', pageNameStart) < 0) {
+                        // if default selected and no sort param, we're already at the default seach
+                        if (sortVal != defaulSort) window.location = curUrl + '?sort=' + sortVal;
+                        return;
+                    }
+                    if (curUrl.indexOf('sort=', pageNameStart) < 0) {
+                        // if default selected and no sort param, we're already at the default seach
+                        if (sortVal != defaulSort) window.location = curUrl + '&sort=' + sortVal;
+                        return;
+                    }
+                     
+                    var searchStr = sortVal != defaulSort ? 'sort=\\d\\d' : '&sort=\\d\\d|sort=\\d\\d&|\\?sort=\\d\\d$'; 
+                    var replaceStr = sortVal != defaulSort ? 'sort=' + sortVal : ''; 
+                    var patt = new RegExp(searchStr); 
+                    window.location=curUrl.replace(patt,replaceStr);
+                };
+
+		        PrX.applyFiltersAct = function() {
+		            var topFilterParams = '';
+		            jQuery('select.prx-topfilter').each(function(index) {
+		            	var selectedFilterValue = jQuery(this).val();
+		                if (selectedFilterValue != null && selectedFilterValue != '' && selectedFilterValue != ' ' && (selectedFilterValue.indexOf('=') != selectedFilterValue.length - 1))  {
+		                    topFilterParams += ',' + $(this).val();
+		                }               
+		            });
+            
+		            var url = '{!JSINHTMLENCODE(leftNavURL)}';
+		            
+		            if (topFilterParams != '') {
+		                topFilterParams = topFilterParams.substring(1);
+		                if (url.indexOf('filter') != -1) {
+		                    var rgx = /filter=([^&]*)(&?)/;       
+		                    var replaceStr = "filter=$1," + topFilterParams + "$2";
+		                    url = url.replace(rgx,replaceStr);
+		                }
+		                else {
+		                    if (url.indexOf('?') == -1) {
+		                        url += '?filter=';
+		                    }
+		                    else {
+		                        url += '&filter=';
+		                    }
+		                    url += topFilterParams;
+		                }
+		                
+		            }
+		            window.location= url;
+		        }
+	            PrX.setFilters = function() {
+	              <apex:repeat value="{!topFilterNodes}" id="tf2" var="tf2">
+	                  <apex:outputPanel rendered="{!tf2.showListAsLinks}" id="tfVal1" layout="none">
+	                        var val = "{!tf2.idValue + '=' + JSINHTMLENCODE(tf2.selectedVal)}";
+	                        jQuery("#tf{!tf2.idValue} option[value='" + val + "']").attr("selected","selected");
+	                  </apex:outputPanel>
+	                  <apex:outputPanel rendered="{!AND(NOT(tf2.showListAsLinks),NOT(tf2.multiSelect))}" id="tfVal2" layout="none">
+	                        jQuery("#tf{!tf2.idValue} option[value='{!tf2.selectedChild.idValue}']").attr("selected","selected");
+	                  </apex:outputPanel>
+	                  <apex:outputPanel rendered="{!AND(NOT(tf2.showListAsLinks),tf2.multiSelect)}" id="tfVal3" layout="none">
+	                        var attrToSelect = '';
+	                        <apex:repeat value="{!tf2.children}" id="tf22" var="tf22">
+	                            <apex:outputPanel rendered="{!tf22.isSelected}" id="tfVal3" layout="none">
+	                                attrToSelect += ',[value={!tf22.idValue}]';                               
+	                            </apex:outputPanel>
+	                        </apex:repeat>
+	                        if (attrToSelect.length > 0) {
+	                            attrToSelect = attrToSelect.substring(1);
+	                            var multiSelectOpts = "#tf{!SUBSTITUTE(tf2.idValue,' ','')} option" + attrToSelect;
+	                            jQuery(multiSelectOpts).attr("selected", "selected"); 
+	                        }         
+	                  </apex:outputPanel>
+	              </apex:repeat>
+	              };
+	              // on mobile devices we need to maintain the app type parameter if ALL
+	              PrX.selectCategory = function(idVal,url,resetURL,val) {
+	              		<apex:outputPanel layout="none" rendered="{!isMobileDevice}">
+	              			url = url + ',{!appTypeFilter}';
+	              		</apex:outputPanel>
+		              	PrX.selectListFilter(idVal,url,resetURL,val);
+	              };           
+              
+    	          PrX.setFilters();  
+	          // ]]>
+              </script>
+        </apex:define>
+    </apex:composition>
+</apex:page>

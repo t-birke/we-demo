@@ -1,0 +1,161 @@
+<apex:page controller="asb_DashboardController" action="{!init}" showheader="{!isDesktop}" sidebar="false" id="dashboard" standardstylesheets="false" tabStyle="Store_Administration__tab" title="{!storeName} {!$Label.asb_Dashboard}">
+    <apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+            <div class="prx-content-block prx-content-block-admin">
+    		<!-- title bar -->
+    		<div class="prx-title-bar" id="prx_title_bar">
+    			<div class="prx-title-bar-primary">
+        			<div class="prx-title-bar-primary-title">
+            			<h1><apex:outputText value="{!$Label.asb_Dashboard}" /></h1>
+            		</div>
+            		<div class="prx-filter prx-filter-S">
+                  		<div class="prx-overlaymenu-opener" id="prx_nav2_opener_phone"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                		</div>
+                	<div class="prx-filter prx-filter-M">
+                  		<div class="prx-overlaymenu-opener" id="prx_nav2_opener_small"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                	</div>
+                	<div class="prx-title-bar-primary-actions">
+	                  <a href="/{!storeDashboard.Id}" class="prx-btn prx-btn-primary hidden-phone"><apex:outputText value="{!$Label.asb_View_Detailed_Dashboard}" /></a>
+	                  <a href="/{!storeDashboard.Id}" class="prx-btn prx-btn-primary only-phone"><apex:outputText value="{!$Label.asb_Detailed_Dashboard}" /></a>
+	                </div>
+        		</div>
+			</div>           
+            <div class="prx-content-content prx-content-content-with-secondary">
+              <div class="prx-content-content-inner">
+                <c:asb_leftSidebar selected="{!$Label.asb_Dashboard}"/>
+                <div class="prx-content-primary">
+                  <div class="prx-content-primary-inner">
+                  <apex:form >
+                  	<input type="hidden" id="userLocale" value="{!userLocale}"/>
+                    <div class="prx-content-generic">
+                      <div class="prx-dashboard-analytics">
+                        <apex:outputPanel id="chartPanel" layout="block" styleClass="prx-analytics-content">
+                          <div class="prx-analytics-content-links">
+                            <ul class="prx-ul-reset" id="prx_ul_chart_subject">
+                              <li id="prx_chart_subject_requests" class="{!IF(recordType =='Install', 'prx-selected', '')}">
+                                <a href="javascript:void(0)" onclick="changeRecordType('Install');">
+                                  <span class="prx-analytics-text"><apex:outputText value="{!$ObjectType.asb_Store__c.fields.PopularityAllTime__c.label}" /></span>
+                                  <span class="prx-analytics-number">{!FLOOR(store.PopularityAllTime)}</span>
+                                </a>
+                              </li>
+                              <li id="prx_chart_subject_views" class="{!IF(recordType =='PageView', 'prx-selected', '')}">
+                                <a href="javascript:void(0)" onclick="changeRecordType('PageView');">
+                                  <span class="prx-analytics-text"><apex:outputText value="{!$Label.asb_Page_Views}" /></span>
+                                  <span class="prx-analytics-number">{!FLOOR(store.PageViewsAllTime)}</span>
+                                </a>
+                              </li>
+                              <li id="prx_chart_subject_apps" class="{!IF(recordType =='PublishedApps', 'prx-selected', '')}">
+                                <a href="javascript:void(0)" onclick="changeRecordType('PublishedApps');">
+                                  <span class="prx-analytics-text"><apex:outputText value="{!$Label.asb_Published_Apps}" /></span>
+                                  <span class="prx-analytics-number">{!FLOOR(store.LiveApps)}</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <style>
+                              .prx-analytics-content-charts {
+                                  text-align: right;
+                                  vertical-align: bottom;
+                              }
+                                  .prx-analytics-content-charts img {
+                                      max-width: 100%;
+                                      margin-top: 44px;
+                                  }
+
+                              /* MEDIUM: Portrait tablet */
+                              @media (min-width: 768px) and (max-width: 979px) {
+                              
+                              }
+                              
+                              /* GIGANTIC: new desktop */  
+                              @media (min-width: 1240px) {
+                                  .prx-analytics-content-charts img {
+                                      margin-top: 0;
+                                  }
+                              }
+                          </style>
+                          
+                          <div class="prx-analytics-content-charts-top" id="analytics_charts_top">
+                            <div class="prx-chart-y-title" id="analytics_charts_top_title"><apex:outputText value="{!$Label.asb_RequestsInstalls}"/></div>
+                            <div class="prx-chart-controls" id="analytics_charts_top_controls" data-chart-start="0">
+                              <div class="prx-btn-group prx-btn-group-b">
+                                <a href="javascript:void(0)" onclick="prev();" class="prx-btn prx-btn-prev prx-prepend"><span class="prx-icon"></span></a>
+                                <apex:outputLink value="javascript:void(0)" onclick="next()" styleClass="prx-btn prx-btn-next prx-append {!IF(!cpi.hasNext, 'prx-btn-disabled', '')}" disabled="{!IF(cpi.hasNext, false, true)}"><span class="prx-icon"></span></apex:outputLink>
+                              </div>
+                              <div class="prx-btn-group prx-btn-group-b" id="chart_interval">
+                                <a href="javascript:void(0)" onclick="changeTimeSpan('Week');" class="prx-btn prx-prepend {!IF(cpi.periodType =='Week', 'prx-btn-selected', '')}" id="chart_interval_week"><apex:outputText value="{!$Label.asb_Week}" /></a>
+                                <a href="javascript:void(0)" onclick="changeTimeSpan('Month');" class="prx-btn prx-prepend prx-append {!IF(cpi.periodType =='Month', 'prx-btn-selected', '')}" id="chart_interval_month"><apex:outputText value="{!$Label.asb_Month}" /></a>
+                                <a href="javascript:void(0)" onclick="changeTimeSpan('Year');" class="prx-btn prx-append {!IF(cpi.periodType =='Year', 'prx-btn-selected', '')}" id="chart_interval_year"><apex:outputText value="{!$Label.asb_Year}" /></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="prx-analytics-content-charts" id="analytics_charts"><div class="prx-loading"></div></div>
+                          <script>var data = {!chartJson};</script>
+                        </apex:outputPanel>
+                        <apex:actionFunction name="prev" action="{!prev}" oncomplete="PrX.initChartButtons(); PrX.initCreateChart();" rerender="chartPanel"/>
+                        <apex:actionFunction name="next" action="{!next}" oncomplete="PrX.initChartButtons(); PrX.initCreateChart();" rerender="chartPanel"/>
+						<apex:actionFunction name="changeTimeSpan" action="{!changeTimeSpan}" oncomplete="PrX.initChartButtons(); PrX.initCreateChart();" rerender="chartPanel">
+				          	<apex:param name="timeSpan" value="" />
+				          </apex:actionFunction>
+				          <apex:actionFunction name="changeRecordType" action="{!changeRecordType}" oncomplete="PrX.initChartButtons(); PrX.initCreateChart();" rerender="chartPanel">
+				          	<apex:param name="recordType" value="" />
+				          </apex:actionFunction>
+                      </div>
+                      <div class="prx-content-single">
+                        <div class="prx-content-single-inner">
+                          <div class="prx-results prx-results-oneline">
+                            <div class="prx-results-inner">
+                              <div class="prx-tile-header">
+                                <h2>{!$Label.asb_Most_Popular_Apps} <span class="h2-sub"><a href="javascript:void(0);" onclick="PrX.redirectToViewAllWithSort()">{!$Label.asb_View_All}</a></span></h2>
+                                <div class="prx-filter prx-filter-dropdown prx-filter-sort">
+                                    <select id="filter_app_sortby" name="filter_app_sortby" class="prx-select-filter prx-select-filter-overlaymenu" onchange="updatePopularAppsA(this.options[this.selectedIndex].value);">
+                                        <apex:repeat value="{!sortOptions}" id="sortOpts" var="sortOpt">
+                                            <apex:outputPanel layout="none" rendered="{!sortOpt.selected}">
+                                                <option value="{!sortOpt.sortByCode}" selected="true">{!sortOpt.label}</option>
+                                            </apex:outputPanel>       
+                                            <apex:outputPanel layout="none" rendered="{!NOT(sortOpt.selected)}">
+                                                <option value="{!sortOpt.sortByCode}">{!sortOpt.label}</option>
+                                            </apex:outputPanel>
+                                        </apex:repeat>
+                                    </select>
+                                </div>
+                              </div>
+                              <apex:outputPanel layout="inline" id="popularApps">
+                              <ul class="prx-ul-reset prx-ul-results prx-ul-results-oneline">
+                                <apex:repeat var="app" value="{!popularApps}">
+                                  <li class="prx-li-tile">
+			                    	<c:asb_appTile id="tile" app="{!app}" is30DaySort="{!is30DaySort}" showCounters="true" extraStyle="prx-tile-content-inner-noflip"/>
+                                  </li>
+								</apex:repeat>
+                              </ul>
+                              </apex:outputPanel>
+                              <apex:actionFunction name="updatePopularAppsA" action="{!changePopularApps}" rerender="popularApps">
+					          	<apex:param name="sort" value="" />
+					          </apex:actionFunction>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </apex:form>
+                  </div>
+                </div>
+             </div>
+          </div>
+          </div>
+          	<script src="{!$Resource.uilib}/js/external/raphael-min.js" type="text/javascript" ></script>
+    		<script src="{!$Resource.uilib}/js/external/morris.min.js" type="text/javascript" ></script>
+    		<script src="{!$Resource.uilib}/js/external/moment-with-langs.min.js" type="text/javascript" ></script>
+    		<script src="{!$Resource.uilib}/js/prx-charts.js" type="text/javascript" ></script>
+    		<script language="JavaScript">
+	            //<![CDATA[
+	    			PrX.redirectToViewAllWithSort = function() {
+	                    var sortVal = $('#filter_app_sortby').val();
+	                    
+	                    window.location='{!$Page.asb_apps}?sort=' + sortVal;
+	                };
+				// ]]>
+        	</script>
+        </apex:define>
+    </apex:composition>
+</apex:page>

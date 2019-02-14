@@ -1,0 +1,47 @@
+.card{
+    background: #fff;
+    border: 1px solid #cfd4d9;
+    border-radius: 5px;
+    margin: 14px;
+}
+
+.card > div{
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    font-family: ProximaNova-Medium, Helvetica;
+    min-height: 30px;
+    padding: 14px 14px 14px 58px;
+}
+
+.card a{
+    color: #2a94d6;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.card .time{
+	/*background-image: url('Icons/Today.svg');*/
+    font-size: 24px;
+    padding: 14px;
+}
+.card .account{
+    background-image: url('Icons/Account.svg');
+}
+.card .account > div{
+    font-size: 12px;
+}
+
+.card .phone{
+    background-image: url('Icons/Log-A-Call.svg');
+}
+.card .order{
+    background-image: url('Icons/delivery.png');
+}
+
+.card #map-canvas{
+    height: 160px;
+    padding: 0;
+    margin-bottom: 14px;
+    width: 100%;
+}

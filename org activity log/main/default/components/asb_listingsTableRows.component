@@ -1,0 +1,57 @@
+<apex:component id="listingsTableRows" layout="none">
+    <apex:attribute name="injectedController" description="The controller with data." type="asb_AppDetailsController" required="true" />
+  
+    <apex:variable var="listingCtr" value="{!0}" />
+	<apex:repeat value="{!injectedController.appListings}" id="listingDetails" var="listingDetail">
+		<apex:variable var="listingCtr" value="{!listingCtr + 1}" />
+		<apex:variable var="listingDetailPgUrl" value="{!$Page.asb_editListingDetails}?listingId={!listingDetail.Id}" />
+        <tr class="{!IF(MOD(listingCtr, 2) == 0, 'prx-tr-even', 'prx-tr-odd')}">
+			<td class="prx-td-action prx-data-1">
+            	<span class="prx-menu-opener"><span class="prx-icon"></span></span>
+            		<div class="prx-overlay-menu prx-overlay-menu-actionListing prx-overlay-menu-all" style="display: none;" data-submenu-block-id="submenu_block_{!listingDetail.Id}">
+            			<div class="prx-overlay-section">
+                          <p><a href="{!listingDetailPgUrl}"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_EditListing}" /></span></a></p>
+                          <apex:outputPanel rendered="{!NOT(listingDetail.IsDefaultAppListing)}">
+                          	<p><a href="javascript:void(0)" onclick="makeDefault('{!listingDetail.Id}');"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_MakeDefault}" /></span></a></p>
+                          </apex:outputPanel>
+                          <p><a href="javascript:void(0)" class="prx-hover-opener" data-menu-id="analytics_menu_{!listingCtr}"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_ViewAnalytics}" /></span><span class="prx-icon"></span></a></p>
+                          <apex:outputPanel rendered="{!NOT(listingDetail.IsLive)}">
+                          	<p><a href="javascript:void(0)" onclick="setCurrentListingId('{!listingDetail.Id}');" class="prx-dialog-opener" data-prx-dialog-id="prx_app_overlay_publish"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_BUTTON_PublishListing}" /></span></a></p>
+                          </apex:outputPanel>
+                          <apex:outputPanel rendered="{!listingDetail.IsLive}">
+                          	<p><a href="javascript:void(0)" onclick="setCurrentListingId('{!listingDetail.Id}');" class="prx-dialog-opener" data-prx-dialog-id="prx_app_overlay_hide"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_HideListing}" /></span></a></p>
+                          </apex:outputPanel>
+                        </div>
+                        <apex:outputPanel layout="block" styleClass="prx-overlay-section">
+                          <p><a href="javascript:void(0)" onclick="setCurrentListingId('{!listingDetail.Id}');" class="prx-dialog-opener" data-prx-dialog-id="prx_app_overlay_deletelisting"><span class="prx-link-text"><apex:outputText value="{!$Label.asb_BUTTON_Delete_Listing}" /></span></a></p>
+                        </apex:outputPanel>
+	              		<span class="prx-arrow prx-arrow-a"></span>
+	              		<span class="prx-arrow prx-arrow-b"></span>
+	           		</div>
+            		<div class="prx-submenu-block" id="submenu_block_{!listingDetail.Id}">
+		            	<!-- submenu for 'View Analytics' -->
+              			<div class="prx-overlay-menu prx-overlay-submenu prx-overlay-menu-all" style="display: none;" id="analytics_menu_{!listingCtr}">
+                			<div class="prx-overlay-section">
+                  				<apex:repeat value="{!injectedController.listingReports}" id="reports" var="report">
+                   					<p><a href="/{!report.Id}?pv0={!LEFT(listingDetail.Id, 15)}"><span class="prx-link-text"><apex:outputText value="{!report.Name}" /></span></a></p>
+                  				</apex:repeat>
+                			</div>
+              			</div>
+		            </div>
+			</td>
+          	<td class="prx-td-name prx-data-1"><a href="{!listingDetailPgUrl}"><apex:outputText value="{!listingDetail.LanguageLabel}" /></a><apex:outputPanel layout="none" rendered="{!listingDetail.IsDefaultAppListing}">&#160;<apex:outputText value="({!$Label.asb_default})" /></apex:outputPanel></td>
+          	<td class="prx-data-3 prx-td-num">{!listingDetail.PopularityAllTime}</td>
+          	<td class="prx-data-3 prx-td-num">{!listingDetail.Popularity}</td>
+          	<td class="prx-data-3 prx-td-num">{!listingDetail.PageViewsAllTime}</td>
+          	<td class="prx-data-3 prx-td-num">{!listingDetail.PageViews}</td>
+          	<td class="prx-data-1"><apex:outputText value="{!listingDetail.StatusLabel}" /></td>
+		</tr>
+	</apex:repeat>
+	<script>
+    	// <![CDATA[	
+        function setCurrentListingId(listingId) {
+            PrX.listingId = listingId;
+        }
+        // ]]>
+    </script>
+</apex:component>

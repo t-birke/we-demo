@@ -1,0 +1,14 @@
+.THIS.slds-card {
+    background-color: rgb(253,253,253);
+}
+
+.THIS .slds-button {
+    margin-right: .25rem;
+}
+.THIS .slds-button+.slds-button {
+    margin-left: 0;
+}
+
+.THIS.slds-card .slds-card__footer {
+    display: none;
+}

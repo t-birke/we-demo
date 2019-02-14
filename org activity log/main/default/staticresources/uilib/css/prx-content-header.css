@@ -1,0 +1,289 @@
+/**
+ *  Anything that goes into the content header.
+ *  Logos, page titles, high level page info, search boxes, buttons.
+ */
+.prx-content-header-bread {
+    margin-top: 20px;
+}
+
+.prx-content-header .prx-logo,
+    .prx-content-header .prx-store-logo {
+        float: left;
+        margin: 0 20px 0 0;
+}
+.prx-content-header .prx-logo {
+    width: 200px;
+    height: 125px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: center;
+}
+.prx-content-header .prx-store-logo,
+    .prx-store-logo-preferences {
+        height: 50px;
+        font-size: 0;
+}
+.prx-store-logo-preferences {
+    border: 1px solid #ccc;
+    float: left;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding: 5px;
+    height: 60px;
+    border-radius: 3px;
+}
+/* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+.prx-content-header .prx-logo:before,
+    .prx-content-header .prx-store-logo:before,
+    .prx-store-logo-preferences:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+}
+.prx-content-header .prx-logo img,
+    .prx-content-header .prx-store-logo img,
+    .prx-store-logo-preferences img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto\9;
+        /* IE7-8 need help adjusting responsive images */
+        height: auto;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+}
+.prx-content-header .prx-store-logo img,
+    .prx-store-logo-preferences img {
+        display: inline-block;
+        vertical-align: middle;
+}
+
+.prx-content-header h1.prx-h1-store {
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    /*
+    color: #696e71;
+    */
+    text-shadow: 0 1px 0px #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 50px;
+}
+.prx-content-block-listing .prx-content-header h1.prx-h1-store {
+    line-height: 120%;
+    white-space: normal;
+    margin: 7px 0 10px 0;
+} 
+
+.prx-content-header .prx-search {
+    float: right;
+    padding: 0 0 0 0;
+    width: 233px;
+}
+
+.prx-content-header .prx-tagline {
+    font-size: 1.385em;
+    display: block;
+    clear: right;
+    text-shadow: 0 1px 0px #fff;
+}
+
+.prx-content-header .prx-header-actions {
+    float: right;
+    padding: 6px 0 6px 20px;
+}
+
+.prx-content-header .prx-header-actions button {
+    float: right;
+}
+.prx-content-header .prx-header-actions .prx-extra-info {
+    float: right;
+    display: block;
+    padding: 8px 20px 0 0;
+}
+
+.prx-mobile-nav {
+    display: none;
+}
+
+.phone-menu-panel {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-content-header-bread {
+        display: none;
+    }
+    .prx-content-header .prx-logo,
+        .prx-content-header .prx-store-logo {
+            clear: both;
+            width: 80px;
+            height: 50px;
+            margin-top: 5px;
+            margin-right: 10px;
+    }
+    .prx-content-header h1.prx-h1-store {
+        line-height: 22px;
+        clear: right;
+        padding-top: 10px;
+        font-size: 1.2em;
+    }
+    .prx-content-block-admin .prx-content-header h1.prx-h1-store {
+        padding-top: 4px;
+    }
+    .prx-content-block-admin .prx-content-header p {
+        margin-top: 4px;
+    }
+    .prx-content-header .prx-content-header-one h1.prx-h1-store {
+        
+    }
+    .prx-content-header .prx-tagline {
+        font-size: 1.077em;
+        display: none;
+    }
+    
+    .prx-content-header .prx-search {
+        width: auto;
+        min-width: 200px; /* in phone view: really narrow screens would cause wrapping. */
+        float: none;
+        padding-top: 2px;
+    }
+    .prx-content-header .prx-search .prx-search-form {
+        margin: 0 40px 0 10px;
+        padding: 0;
+    }
+    .prx-content-header h1 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .prx-content-header .prx-header-actions {
+        padding-left: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .prx-content-header .prx-header-actions button.prx-btn,
+        .prx-content-header .prx-header-actions a.prx-btn {
+            width: 100%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+    }
+    .prx-content-header .prx-header-actions .prx-extra-info {
+        float: right;
+        display: block;
+        padding: 8px 20px 0 0;
+    }
+    
+    
+    .prx-mobile-nav { 
+        cursor: pointer;
+        display: block; 
+        overflow: visible; 
+        padding: 10px;
+        /* if we need border/background around mobile nav icons
+        padding: 9px; 
+        background: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 3px;
+        */
+    }
+    .prx-mobile-nav:active {
+        /*
+        background: url(../img/sprite-prx.png) no-repeat -160px 0;
+        */
+    }
+    .prx-mobile-nav-menu { 
+        float: left;
+    }
+        .prx-mobile-nav-menu .prx-mobile-icon {
+            background-position: -20px 0; 
+        }
+    .prx-mobile-nav-filter { 
+        float: right; 
+        margin-top: 10px;
+    }
+        .prx-mobile-nav-filter .prx-mobile-icon {
+            background-position: 0 -80px; 
+        }
+    .prx-mobile-nav-search { 
+        float: right; 
+    }
+        .prx-mobile-nav-search .prx-mobile-icon {
+            background-position: 0 0; 
+        }
+        
+    body {  }
+    .prx {
+        position: relative;
+        z-index: 2;
+    }
+    .phone-menu-panel {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-color: #444;
+        padding: 0;
+        margin: 0;
+        width: 250px;
+        /*height: 100%;*/
+        color: #fff;
+        overflow: visible;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+    }
+    
+    .page-wrap-film {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-content-header .prx-header-actions {
+        padding-top: 3px;
+    }
+    
+    .prx-content-header h1.prx-h1-store {
+        font-size: 1.5em;
+    }
+    .prx-content-header .prx-tagline {
+        font-size: 1.154em;
+    }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .prx-content-header .prx-search {
+        width: 303px;
+    }
+}

@@ -1,0 +1,3 @@
+<apex:page id="cc_Storefront_BIB_HP" sidebar="false" showHeader="false" standardStylesheets="false">
+    <c:cc_HeroCarousel />
+</apex:page>

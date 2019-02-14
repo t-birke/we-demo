@@ -1,0 +1,58 @@
+<apex:component >
+	<apex:attribute name="selectListOverlayConfig" description="Select List Overlay Config" type="asb_SelectListOverlayConfig" required="true" />
+  	
+  	<apex:variable var="slOverlayId" value="prx_app_overlay_SelectList" />
+  	<div class="prx-dialog" id="{!slOverlayId}">
+  	<apex:actionStatus id="selectListOverlayStatus" onStop="reinitSelectListDialog();" >
+    	<apex:facet name="start">
+			<apex:outputPanel id="loadingPanel" styleClass="wait" layout="block" />
+		</apex:facet>
+		<apex:facet name="stop">
+			<apex:outputPanel id="selectListOverlayPanel"> 
+		    	<div class="prx-dialog-content">
+		    		<script>
+				    	function reinitSelectListDialog() {
+				    		jQuery('#{!slOverlayId}').dialog({title: '{!JSINHTMLENCODE(selectListOverlayConfig.title)}'});
+				    	}
+				     </script>
+				     <div id="errorMessage" style="display:none;" class="prx-msg prx-msg-error">
+				     	<div class="prx-msg-icon"></div>
+	                    <p>{!$Label.asb_Message_Text_Error}</p>
+	                    <ul>
+	                      <li>{!selectListOverlayConfig.errorMessage}</li>
+	                    </ul>
+		             </div>
+		        	<p><apex:outputText value="{!selectListOverlayConfig.description}" /></p>
+		            <apex:selectList id="values" value="{!selectListOverlayConfig.valueSelected}" multiselect="false" size="1">
+						<apex:selectOptions value="{!selectListOverlayConfig.selectListValues}"/>
+			        </apex:selectList>
+			    </div>
+		        <div class="prx-dialog-footer">
+		        	<button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></button>
+		        	<button class="prx-btn prx-btn-primary" onclick="populateSelectedValue();"><apex:outputText value="{!$Label.asb_Save}" /></button>
+		        </div>
+		    <script>
+		    	// <![CDATA[	
+				jQuery(document).ready(function() {
+					// action menus in the table .prx-menu-content .prx-menu-opener
+		            PrX.dialogCloseButton(jQuery('#{!slOverlayId}'));
+		        });
+		    	
+		    	function populateSelectedValue(){
+		        	var values = document.getElementById('{!$Component.values}');
+					document.getElementById('{!$Component.selectedValue}').value = values.options[values.selectedIndex].value;
+					if ((document.getElementById('{!$Component.selectedValue}').value != '') && '{!selectListOverlayConfig.errorMessage}'!=''){
+						jQuery('#errorMessage').hide();
+						{!selectListOverlayConfig.saveAction};
+						jQuery('#prx_app_overlay_SelectList').dialog('close');
+					}else{
+						jQuery('#errorMessage').show();
+					}
+		        }
+		        //]]>	
+		    </script>
+		    </apex:outputPanel>
+		</apex:facet>
+	</apex:actionStatus>
+	</div>
+</apex:component>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="120px"
+	 height="120px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
+<filter  y="8" x="-7" filterUnits="userSpaceOnUse" id="f1">
+	<feOffset  in="SourceGraphic" result="offOut" dx="0" dy="3"></feOffset>
+	<feGaussianBlur  stdDeviation="2" in="offOut" result="blurOut"></feGaussianBlur>
+	<feBlend  mode="normal" in2="blurOut" in="SourceGraphic"></feBlend>
+</filter>
+<g id="_x2D_background" style="display:none;">
+	<rect x="-326" y="-1170" style="display:inline;fill:#2C3E4F;" width="1400" height="2680"/>
+	<rect x="-296" y="-350" style="display:inline;fill:#344A5F;" width="1340" height="852"/>
+</g>
+<g id="Empty" style="enable-background:new    ;">
+</g>
+<g id="Thanks_-_loading" style="enable-background:new    ;">
+</g>
+<g id="Group_-_loading" style="enable-background:new    ;">
+</g>
+<g id="Avatar_-_loading" style="enable-background:new    ;">
+</g>
+<g id="People" style="enable-background:new    ;">
+</g>
+<g id="Groups" style="enable-background:new    ;">
+</g>
+<g id="Avatar" style="enable-background:new    ;">
+</g>
+<g id="Feed" style="enable-background:new    ;">
+</g>
+<g id="Today" style="enable-background:new    ;">
+</g>
+<g id="Apps" style="enable-background:new    ;">
+</g>
+<g id="Related_List" style="enable-background:new    ;">
+</g>
+<g id="Chatterbox" style="enable-background:new    ;">
+</g>
+<g id="Dropbox" style="enable-background:new    ;">
+</g>
+<g id="Concur" style="enable-background:new    ;">
+</g>
+<g id="Evernote" style="enable-background:new    ;">
+</g>
+<g id="Photo" style="enable-background:new    ;">
+</g>
+<g id="Log_a_Call" style="enable-background:new    ;">
+</g>
+<g id="Change_Status" style="enable-background:new    ;">
+</g>
+<g id="Email_and_Note" style="enable-background:new    ;">
+	<g id="Note">
+		<g id="shape_copy_45">
+			<g>
+				<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="60.0005" y1="120" x2="60.0005" y2="0">
+					<stop  offset="0" style="stop-color:#DBD75D"/>
+					<stop  offset="1" style="stop-color:#DDD965"/>
+				</linearGradient>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);" d="M108,0H12C5.373,0,0,5.373,0,12v96
+					c0,6.628,5.373,12,12,12h96c6.627,0,12-5.372,12-12V12C120,5.373,114.627,0,108,0z"/>
+			</g>
+		</g>
+		<g id="shape_copy_43_" style="opacity:0.2;filter:url(#f1);">
+			<path d="M91.037,27.839H29.958c-3.016,0-5.461,2.444-5.461,5.461v55.394c0,3.017,2.445,5.461,5.461,5.461h43.875l22.664-22.196
+				V33.3C96.497,30.284,94.053,27.839,91.037,27.839z"/>
+		</g>
+		<g id="shape_copy_38_">
+			<g>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#F8F8EE;" d="M92.167,26H27.699c-3.183,0-5.764,2.58-5.764,5.764V90.23
+					c0,3.184,2.581,5.764,5.764,5.764h48.145L97.93,74V31.764C97.93,28.58,95.35,26,92.167,26z"/>
+			</g>
+		</g>
+		<g id="Rounded_Rectangle_21_12_">
+			<g>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#A3A398;" d="M38.917,17h-2c-1.104,0-2,0.896-2,2v15c0,1.104,0.896,2,2,2
+					h2c1.104,0,2-0.896,2-2V19C40.917,17.896,40.021,17,38.917,17z"/>
+			</g>
+		</g>
+		<g id="Rounded_Rectangle_21_5_">
+			<g>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#A3A398;" d="M60.917,17h-2c-1.104,0-2,0.896-2,2v15c0,1.104,0.896,2,2,2
+					h2c1.104,0,2-0.896,2-2V19C62.917,17.896,62.021,17,60.917,17z"/>
+			</g>
+		</g>
+		<g id="Rounded_Rectangle_21_2_">
+			<g>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#A3A398;" d="M82.917,17h-2c-1.104,0-2,0.896-2,2v15c0,1.104,0.896,2,2,2
+					h2c1.104,0,2-0.896,2-2V19C84.917,17.896,84.021,17,82.917,17z"/>
+			</g>
+		</g>
+		<g id="Rectangle_18_copy_2_2_">
+			<g>
+				<polygon style="fill-rule:evenodd;clip-rule:evenodd;fill:#DAD9C6;" points="34.917,74 34.667,80 68.083,80 68.333,74 				"/>
+			</g>
+		</g>
+		<g id="Rectangle_18_copy_3_">
+			<g>
+				<rect x="34.917" y="61" style="fill-rule:evenodd;clip-rule:evenodd;fill:#DAD9C6;" width="50" height="6"/>
+			</g>
+		</g>
+		<g id="Rectangle_18_4_">
+			<g>
+				<rect x="34.917" y="48" style="fill-rule:evenodd;clip-rule:evenodd;fill:#DAD9C6;" width="50" height="6"/>
+			</g>
+		</g>
+		<g id="shape_copy_36_">
+			<g>
+				<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#E5E3CC;" d="M82.141,74c-3.729,0-6.291,1.832-6.291,6.348l-0.006,15.667
+					L97.938,74H82.141z"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Share" style="enable-background:new    ;">
+</g>
+<g id="Link">
+</g>
+<g id="Thanks" style="enable-background:new    ;">
+</g>
+<g id="Poll" style="enable-background:new    ;">
+</g>
+<g id="File" style="enable-background:new    ;">
+	<g id="shape_copy_46_" style="enable-background:new    ;">
+	</g>
+</g>
+<g id="Post" style="enable-background:new    ;">
+</g>
+<g id="Custom__x28_bbq_x29_" style="display:none;">
+</g>
+<g id="Custom">
+</g>
+<g id="Default">
+</g>
+<g id="Record" style="enable-background:new    ;">
+</g>
+<g id="Dashboard" style="enable-background:new    ;">
+</g>
+<g id="Contract" style="enable-background:new    ;">
+</g>
+<g id="Portal" style="enable-background:new    ;">
+</g>
+<g id="Contact" style="enable-background:new    ;">
+</g>
+<g id="Case" style="enable-background:new    ;">
+</g>
+<g id="Account" style="enable-background:new    ;">
+</g>
+<g id="Opportunity" style="enable-background:new    ;">
+</g>
+<g id="Task" style="enable-background:new    ;">
+</g>
+<g id="Event">
+</g>
+<g id="Campaign" style="enable-background:new    ;">
+</g>
+<g id="Lead" style="enable-background:new    ;">
+</g>
+<g id="_x2D_content">
+	<g>
+	</g>
+</g>
+<g id="_x2D_nyt_x5F_exporter_x5F_info" style="display:none;">
+</g>
+<g id="nyt_x5F_exporter_x5F_info" style="display:none;">
+</g>
+</svg>

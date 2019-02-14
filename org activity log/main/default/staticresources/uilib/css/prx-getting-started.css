@@ -1,0 +1,148 @@
+/**
+ *  Getting Started (gs) related CSS
+ */
+
+.prx-gs-intro {
+    padding: 20px 0 0 0;
+}
+    .prx-gs-intro .prx-gs-intro-text {
+        font-size: 115.4%;
+    }
+        .prx-gs-intro .prx-gs-intro-text p {
+            margin-top: 0;
+        }
+        .prx-gs-intro .prx-gs-intro-text .prx-btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    .prx-gs-intro .prx-gs-intro-video {
+        float: right;
+        width: 300px;
+        height: 183px;
+    }
+        .prx-gs-intro .prx-gs-intro-video a {
+            position: relative;
+            width: 300px;
+            height: 183px;
+            display: block;
+            text-indent: -9999px;
+        }
+            .prx-gs-intro .prx-gs-intro-video a img {
+                position: absolute;
+                display: block;
+                width: 300px;
+                height: 183px;
+            }
+            .prx-gs-intro .prx-gs-intro-video a span.prx-gs-intro-video-button {
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background: url(../img/prx-video-button.png) no-repeat center 0;
+                left: 110px;
+                top: 50px;
+            }
+            .prx-gs-intro .prx-gs-intro-video a:hover span.prx-gs-intro-video-button {
+                background-position: center -80px;
+            }
+
+.prx-gs-steps {
+    clear: both;
+}
+    .prx-gs-steps ul {
+        padding-top: 20px;
+    }
+    .prx-gs-steps ul li.prx-gs-step {
+        min-height: 130px;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        padding: 10px 10px 20px 10px;
+    }
+    .prx-gs-steps ul li.prx-gs-step-even {
+        padding-left: 260px;
+    }
+    .prx-gs-steps ul li.prx-gs-step-odd {
+        padding-right: 250px;
+        padding-left: 20px;
+    }
+    .prx-gs-steps ul li.prx-gs-step-1 {
+        background: #f9fafb url(../img/getting-started-2.png) no-repeat right center;
+        min-height: 148px;
+    }
+    .prx-gs-steps ul li.prx-gs-step-2 {
+        background: #f9fafb url(../img/getting-started-3.png) no-repeat left center;
+        min-height: 178px;
+    }
+    .prx-gs-steps ul li.prx-gs-step-3 {
+        background: #f9fafb url(../img/getting-started-4.png) no-repeat right center;
+        min-height: 150px;
+    }
+        .prx-gs-steps ul li button.prx-btn {
+            margin-bottom: 5px;
+        }
+    .prx-gs-steps h2 {
+        margin-bottom: 0;
+    }
+    
+    .prx-gs-steps ul ul {
+        padding-top: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-gs-intro {
+        padding-top: 10px;
+    }
+        .prx-gs-intro .prx-gs-intro-video {
+            float: none;
+            padding: 0 0 10px 0;
+        }
+        .prx-gs-steps ul li.prx-gs-step {
+            min-height: 0;
+        }
+        .prx-gs-steps ul li.prx-gs-step-1,
+            .prx-gs-steps ul li.prx-gs-step-2,
+            .prx-gs-steps ul li.prx-gs-step-3 {
+                background-image: none;
+                padding: 5px 10px 10px 10px;
+        }
+    
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-gs-intro .prx-gs-intro-text {}
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .prx-gs-intro .prx-gs-intro-text {
+        line-height: 150%;
+    }
+    .prx-gs-intro .prx-gs-intro-video {
+        width: 426px;
+        height: 260px;
+    }
+        .prx-gs-intro .prx-gs-intro-video a {
+            width: 426px;
+            height: 260px;
+        }
+            .prx-gs-intro .prx-gs-intro-video a img {
+                width: 426px;
+                height: 260px;
+            }
+            .prx-gs-intro .prx-gs-intro-video a span.prx-gs-intro-video-button {
+                left: 173px;
+                top: 90px;
+            }
+}

@@ -1,0 +1,20 @@
+<apex:component id="editListingDetailTop" layout="none">
+
+	<apex:attribute name="selectListing" description="Selected Listing" type="asb_ListingDO" required="true" />
+
+			<div class="prx-content-header-one">
+				<div class="prx-logo"><img src="{!selectListing.AppDO.LogoUrl}" /></div>
+				<h1 class="prx-h1-store">{!selectListing.AppDO.Name}</h1>
+				<p>
+					<apex:outputPanel layout="none" rendered="{!!selectListing.isNew}">
+						<apex:outputText value="{!$Label.asb_Listing_Lang}" >
+							<apex:param value="{!selectListing.LanguageLabel}"/>
+						</apex:outputText>
+						<br />
+	                    <a href="{!$Page.asb_listingDetail}?listingId={!selectListing.Id}" target="_blank" class="prx-view-listing only-phone"><apex:outputText value="{!$Label.asb_BUTTON_ViewListing}"/></a> 
+	                    <span class="only-phone">-</span>
+	                    <a href="javascript:void(0)" class="prx-dialog-opener only-phone" data-prx-dialog-id="prx_app_overlay_deletelisting"><apex:outputText value="{!$Label.asb_BUTTON_Delete_Listing}"/></a>
+	                </apex:outputPanel>
+                </p>
+			</div>
+</apex:component>

@@ -1,0 +1,46 @@
+/**
+ * All the styles specific to responsive design
+ */
+
+.phone-test, 
+    .small-test, 
+    .large-test { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        width: 1px !important; 
+        height: 1px !important; 
+        text-indent: -9999px; 
+        display: none;
+}
+
+.hidden-phone {
+    
+}
+.only-phone { display: none !important; }
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .phone-test { display: block; }
+    .hidden-phone { display: none !important; }
+    .only-phone { display: inline-block !important; }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .small-test { display: block; }
+    .only-phone { display: none !important; }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .large-test { display: block; }
+    .only-phone { display: none !important; }
+}

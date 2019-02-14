@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/png</contentType>
+    <description>This is used by the Data.com Account page layout to simulate a whitespace report.  A real report is not used because it requires a large amount of data to be imported, but this report accurately represents how it would look.</description>
+</StaticResource>

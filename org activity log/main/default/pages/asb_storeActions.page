@@ -1,0 +1,2 @@
+<apex:page standardController="asb_Store__c" extensions="asb_StoreActionsController" action="{!init}">
+</apex:page>

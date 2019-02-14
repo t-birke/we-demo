@@ -1,0 +1,200 @@
+<apex:page controller="asb_StorePreferencesController" action="{!init}" showheader="{!isDesktop}" title="{!storeName}" sidebar="false" id="apps" standardstylesheets="false" tabStyle="Store_Administration__tab" cache="false">
+	<apex:composition template="asb_AppxStoreBldrLayout">
+		<apex:define name="content">
+			<div class="prx-content-block prx-content-block-admin">
+
+				<!-- title bar -->
+				<c:asb_storePreferencesTitle injectedController="{!controller}" />
+
+				<div class="prx-content-content prx-content-content-with-secondary">
+					<div class="prx-content-content-inner">
+						<c:asb_leftSidebar selected="{!$Label.asb_Store_Preferences}" />
+						<div class="prx-content-primary">
+							<div class="prx-content-primary-inner">
+								<div class="prx-content-generic">
+									<c:asb_storePreferencesTabs selected="{!$Label.asb_Banners}" storeIsCreated="{!NOT(store.isNew)}" />
+									<div class="prx-form-info-a">
+										<label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$Label.asb_StoreBanners}" /></span></label>
+										<div class="prx-form-group">
+											<p class="prx-form-explanation">
+												<apex:outputText value="{!$Label.asb_UploadBannersMsg}" /><br />
+												<apex:outputText value="{!$Label.asb_RearrangeBannersMsg}" />
+											</p>
+											<apex:outputPanel layout="none" rendered="{!NOT(store.storeBanner.hasMaxImages)}">
+												<p>
+													<button class="prx-btn prx-btn-banner prx-dialog-opener" data-prx-dialog-id="prx_app_overlay_banner">
+														<span class="prx-icon"></span><span class="prx-btn-txt"><apex:outputText value="{!$Label.asb_UploadStoreBanners}" /></span>
+													</button>
+												</p>
+											</apex:outputPanel>
+										</div>
+										<apex:outputPanel layout="none" rendered="{!store.hasBanner}">
+											<ul class="prx-ul-reset prx-ul-sortable prx-ul-sortable-banners prx-sortable" id="prx_sortable_banners">
+												<apex:repeat value="{!store.storeBanner.bannerImages}" id="bannerImages" var="bannerImage">
+													<li id="{!bannerImage.Id}" class="prx-banner-li">
+														<a href="{!bannerImage.imageURL}" target="_blank" class="prx-banner-a"><img src="{!bannerImage.imageURL}" class="prx-banner-img" /></a>
+														<div class="prx-bannersortable-actions">
+															<a href="javascript:void(0);" onclick="PrX.setDeleteBannerId('{!bannerImage.Id}'); return false;" class="prx-bannersortable-action prx-dialog-opener prx-banner-action-delete" data-prx-dialog-id="prx_app_overlay_deletebanner"><span class="prx-icon"></span></a> 
+															<a href="javascript:void(0);" onclick="PrX.populateEditDialog('{!JSINHTMLENCODE(bannerImage.name)}', '{!JSINHTMLENCODE(bannerImage.link)}', '{!bannerImage.Id}', {!bannerImage.openInNewWindow}); return false;" class="prx-bannersortable-action prx-dialog-opener prx-banner-action-edit" data-prx-dialog-id="prx_app_overlay_editbanner"><span class="prx-icon"></span></a>
+														</div>
+														<apex:outputPanel layout="block" styleClass="prx-banner-caption" title="{!HTMLENCODE(bannerImage.link)}" rendered="{!bannerImage.hasLink}"><apex:outputText value="{!bannerImage.link}" /></apex:outputPanel>
+													</li>
+												</apex:repeat>
+											</ul>
+										</apex:outputPanel>
+									</div>
+									<div class="prx-dialogs" style="display: none;">
+										<!-- overlay for upload banner -->
+										<div class="prx-dialog" id="prx_app_overlay_banner" title="{!HTMLENCODE($Label.asb_UploadBanner)}">
+											<apex:form id="uploadBannersForm">
+												<div class="prx-dialog-content">
+													<p><apex:outputText value="{!$Label.asb_UploadBannerInfo}" /></p>
+													<div class="prx-form-group">
+														<div class="prx-form-group-label">
+															<label><apex:outputText value="{!$Label.asb_File}" /></label>
+														</div>
+														<div class="prx-form-group-field">
+															<apex:inputFile id="uploadBannerInput" value="{!imageBlob}" filename="{!imageFname}" />
+														</div>
+													</div>
+													<div class="prx-form-group">
+														<div class="prx-form-group-label">
+															<label><apex:outputText value="{!$ObjectType.asb_ListingAsset__c.fields.Location__c.label}" />&#160;<apex:outputText value="{!$Label.asb_OptionalParens}" /></label>
+														</div>
+														<div class="prx-form-group-field">
+															<apex:inputText value="{!bannerImageLink}" styleClass="prx-text-field" id="banner_url" maxlength="{!$ObjectType.asb_BannerImage__c.fields.Link__c.length}" />
+														</div>
+													</div>
+													<div class="prx-form-group">
+														<div class="prx-form-group-label">
+															<label></label>
+														</div>
+														<div class="prx-form-group-field">
+															<apex:inputCheckbox value="{!openInNewWindow}" id="openLink" />
+															<label for="openLink" class="prx-label-inline"><apex:outputText value="{!$Label.asb_OpenLinkNewWindow}" /></label>
+														</div>
+													</div>
+												</div>
+												<div class="prx-dialog-footer">
+													<a href="javascript:void(0)" class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></a>
+													<a href="javascript:void(0);" onclick="this.onclick=function(){return false;}; uploadBannerAct()" class="prx-btn prx-btn-primary"><apex:outputText value="{!$Label.asb_Save}" /></a>
+												</div>
+												<apex:actionFunction name="uploadBannerAct" action="{!uploadBanner}" />
+											</apex:form>
+										</div>
+	                                    <!-- overlay for delete banner -->
+	                                    <div class="prx-dialog" id="prx_app_overlay_deletebanner" title="{!$Label.asb_DeleteBanner}">
+	                                    	<apex:form id="deleteBannerForm">
+	                                    		<div class="prx-dialog-content">
+	                                    			<p><apex:outputText value="{!$Label.asb_EditBannerInfo}" /></p>
+	                                    		</div>
+	                                    		<div class="prx-dialog-footer">
+													<a href="javascript:void(0)" class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></a>
+	                                    			<a href="javascript:deleteBannerAct();" class="prx-btn prx-btn-alert"><apex:outputText value="{!$Label.asb_BUTTON_Delete}" /></a>
+	                                    		</div>
+	                                    		<apex:inputHidden value="{!actionParamValue}" id="deleteBannerId"/>
+												<apex:actionFunction name="deleteBannerAct" action="{!deleteBanner}" />
+								          		<script>
+								          			//<![CDATA[
+										            PrX.setDeleteBannerId = function(imgId) {
+										                  document.getElementById('{!$Component.deleteBannerId}').value = imgId;
+										            };
+								          			// ]]>
+								          		</script>
+					                        </apex:form>
+					                    </div>
+					                    <!--  form used to update the banner order -->
+					                    <div>
+						                    <apex:form id="bannerOrderUpdateForm">
+												<apex:actionFunction name="updateBannerOrderAct" action="{!updateBannerOrder}" rerender="bannerOrderUpdateForm">
+													<apex:param name="assetIds" assignTo="{!actionParamValue}" value=""/>
+												</apex:actionFunction>
+						                    </apex:form>
+					                    </div>
+		                                <!-- overlay for EDIT banner -->
+		                                <div class="prx-dialog" id="prx_app_overlay_editbanner" title="{!HTMLENCODE($Label.asb_EditBanner)}">
+		                                	<apex:form id="editBannerForm">
+			                                	<div class="prx-dialog-content">
+			                                		<p><apex:outputText value="{!$Label.asb_EditBannerInfo}" /></p>
+			                                		<div class="prx-form-group">
+			                                			<div class="prx-form-group-label">
+			                                				<label><apex:outputText value="{!$Label.asb_CurrentFile}" /></label>
+		                                				</div>
+		                                				<div class="prx-form-group-field">
+		                                					<span class="prx-text-alt" id="currentFilename"></span>
+		                                				</div>
+		                                			</div>
+		                                			<div class="prx-form-group">
+		                                				<div class="prx-form-group-label">
+		                                					<label><apex:outputText value="{!$Label.asb_NewFile}" /></label>
+		                                				</div>
+		                                				<div class="prx-form-group-field">
+		                                					<apex:inputFile id="editBannerInput" value="{!imageBlob}" filename="{!imageFname}" />
+		                                				</div>
+		                                			</div>
+		                                			<div class="prx-form-group">
+		                                				<div class="prx-form-group-label">
+			                                				<label><apex:outputText value="{!$ObjectType.asb_ListingAsset__c.fields.Location__c.label}" />&#160;<apex:outputText value="{!$Label.asb_OptionalParens}" /></label>
+			                                			</div>
+		    	                            			<div class="prx-form-group-field">
+		        	                        				<apex:inputText value="{!bannerImageLink}" styleClass="prx-text-field" id="editImageLink" maxlength="{!$ObjectType.asb_BannerImage__c.fields.Link__c.length}" />
+		            	                    			</div>
+		                	                		</div>
+		                    	            		<div class="prx-form-group">
+		                        	        			<div class="prx-form-group-label">
+		                            	    				<label></label>
+		                                				</div>
+		                                				<div class="prx-form-group-field">
+			                                				<apex:inputCheckbox value="{!openInNewWindow}" id="editOpenInNewWindow" />
+				                                			<apex:outputLabel id="label" value="{!$Label.asb_OpenLinkNewWindow}"></apex:outputLabel>
+		        		                        		</div>
+		                		                	</div>
+		                        		        </div>
+		                                		<div class="prx-dialog-footer">
+		                                			<a href="javascript:void(0)" class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></a>
+		                                			<a href="javascript:updateBannerAct();" class="prx-btn prx-btn-primary"><apex:outputText value="{!$Label.asb_Save}" /></a>
+		                                		</div>
+	                                    		<apex:inputHidden value="{!actionParamValue}" id="editBannerId"/>
+								          		<apex:actionFunction name="updateBannerAct" action="{!updateBanner}" />
+								          		<script>
+								          			//<![CDATA[
+										            PrX.populateEditDialog = function(currentImageName, link, imageId, openInNewWindow) {
+										              document.getElementById('currentFilename').textContent = currentImageName;
+										              document.getElementById('{!$Component.editImageLink}').value = link;
+										              document.getElementById('{!$Component.editBannerId}').value = imageId;
+										              document.getElementById('{!$Component.editOpenInNewWindow}').checked = openInNewWindow;
+										            }; 
+								          			// ]]>
+								          		</script>
+			                            	</apex:form>
+		                            	</div>	
+					                </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+			    //<![CDATA[
+		        jQuery(document).ready(function() {
+		            $('#prx_sortable_banners').sortable({
+		                cursor: 'move',
+		                opacity: 0.5,
+		                delay: 150,
+		                placeholder: 'prx-sortable-placeholder prx-sortable-placeholder-banner',
+		                update: function(event, ui) {
+		                    var imageIds = $(this).sortable('toArray').toString();
+		                    updateBannerOrderAct(imageIds);
+		                }
+		            });
+		        });
+		    
+		        jQuery(window).on('debouncedresize', function() {
+		        });
+
+	            // ]]>
+			</script>
+		</apex:define>
+	</apex:composition>
+</apex:page>

@@ -1,0 +1,5 @@
+<design:component>
+    <design:attribute name="TakeRecordsHandle" label="Take Username from record" />
+    <design:attribute name="Username" label="Twitter Username" />
+    <design:attribute name="Hight" label="Hight" />
+</design:component>

@@ -1,0 +1,17 @@
+/**
+ *  Overriding CSS that lives inside Salesforce and that is messing with our page.
+ */
+
+.bodyDiv .outerNoSidebar {
+    padding: 0 !important;
+}
+
+.noSidebarCell {
+    padding: 0 !important;
+}
+
+/* Chatter */
+/* Do not show the header bar above the Chatter feed, that contains the 'show/hide feed' links. */
+.prx .bPageTitle #section_header {
+    display: none;
+}

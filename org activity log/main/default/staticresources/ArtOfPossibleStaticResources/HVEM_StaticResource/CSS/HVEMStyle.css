@@ -1,0 +1,237 @@
+body {
+	margin:6px !important;
+	background:#fff !important;
+}
+
+body .bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .overlayDialog .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+	margin:0 !important;
+	border:none !important;
+	padding:0 !important;
+	background:none !important;
+}
+body .apexp .bPageBlock.apexDefaultPageBlock .pbBody {
+	margin:0 !important;
+}
+
+/* COMMON CSS START */
+	 #disablingDiv
+		{
+        /* Do not display it on entry */
+        display: none;
+    
+        /* Display it on the layer with index 1001.
+           Make sure this is the highest z-index value
+           used by layers on that page */
+        z-index:1001;
+         
+        /* make it cover the whole screen */
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+    
+        /* make it white but fully transparent */
+        background-color: #6D7B8D;
+        opacity:.20;
+        filter: alpha(opacity=20);
+    }
+    #loadingImage{
+        display:none;
+    }
+/* COMMON CSS END */
+
+/* START style from Component: HVEMCaseListDetails */
+
+.commonCss { 
+	font-size:9px;  
+	font-family: Arial,Helvetica,sans-serif;
+}
+.commonCssBold { 
+	font-size:10px; 
+	font-weight:bold; 
+	font-family: Arial,Helvetica,sans-serif;
+}
+.LabelStyle{
+	font-size:9px;
+	font-weight:bold;
+	color:red;
+}
+rich-table-thead{
+	display:none;
+}
+/* END Styles from Component: HVEMCaseListDetails */
+
+/* START HVEMStyles */
+.hvemTable {
+	width:100%;
+}
+
+a {
+	color:#0055e3 !important;
+	text-decoration:none;
+	cursor:pointer !important;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+.hvemTable .list, .hvemBasicPanel, .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader.first, .pbBody .hvemEmailItem > div > .pbSubheader, .hvemEmailItem > div > .pbSubsection {
+	margin:0 0 6px;
+	border:1px solid #D5DADC !important;
+	border-bottom:1px solid #8B8D8E !important;
+}
+.hvemTable .list, .hvemTable .list tr:last-child td.dataCell:first-child, .hvemEmailItem > div > .pbSubsection {
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+.hvemTable .list, .hvemTable .list tr:last-child td.dataCell:last-child, .hvemEmailItem > div > .pbSubsection {
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+}
+.hvemEmailItem > div > .pbSubsection {
+	position:relative;
+	z-index:0;
+	border-top:none !important;
+	margin-top:-12px;
+	background-color:#fff;
+}
+.hvemTable th, .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader.first {
+	border-bottom:1px solid #7EADBF !important;
+	padding:6px 8px !important;
+	background: #f6fcfe !important;
+	background: -moz-linear-gradient(top,  #f6fcfe 0%, #d7eaf3 100%) !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6fcfe), color-stop(100%,#d7eaf3)) !important;
+	background: -webkit-linear-gradient(top,  #f6fcfe 0%,#d7eaf3 100%) !important;
+	background: -o-linear-gradient(top,  #f6fcfe 0%,#d7eaf3 100%) !important;
+	background: -ms-linear-gradient(top,  #f6fcfe 0%,#d7eaf3 100%) !important;
+	background: linear-gradient(top,  #f6fcfe 0%,#d7eaf3 100%) !important;
+	font-size:1em !important;
+	color:#00121d !important;
+}
+
+.pbBody .hvemEmailItem > div > .pbSubheader, .apexp .bPageBlock.apexDefaultPageBlock .pbBody .hvemEmailItem > div > .pbSubheader.first, .hvemControlPanel {
+	position:relative;
+	z-index:1;
+	border:1px solid #d5dadc !important;
+	border-bottom-color:#8A8C8D !important;
+	padding:6px 8px !important;
+	background: #ffffff !important;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #ededed 100%) !important;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)) !important;
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#ededed 100%) !important;
+	background: -o-linear-gradient(top,  #ffffff 0%,#ededed 100%) !important;
+	background: -ms-linear-gradient(top,  #ffffff 0%,#ededed 100%) !important;
+	background: linear-gradient(top,  #ffffff 0%,#ededed 100%) !important;
+	font-size:1em !important;
+	color:#00121d !important;
+}
+
+.hvemTable td {
+	position:relative;
+}
+.hvemTable .list, .hvemTable th:first-child, .hvemHeading, .cke_top {
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+}
+.hvemTable .list, .hvemTable th:last-child, .hvemHeading, .cke_top {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+}
+
+.hvemListItem, .hvemBasicPanel, .hvemCaseItem, .hvemCaseItemSelection, .rightArrowIcon, input[type=text], .apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader.first, .pbBody .hvemEmailItem > div > .pbSubheader {
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+.rightArrowIcon {
+	margin:0;
+}
+.list td {
+	padding:5px !important;
+}
+.hvemListItem, .list td .hvemListItem {
+	display:block;
+	padding:4px 7px !important;
+}
+.list td .tdNone {
+	padding:0 !important;
+}
+.hvemListItem {
+	width:auto;
+	cursor:pointer;
+}
+.hvemSelected {
+	border-color:#7AA3B4;
+	background-color:#DDF7FE;
+}
+.hvemLabel {
+	font-size:1em;
+	font-weight:normal;
+}
+
+.hvemBasicPanel {
+	display:block;
+	background-color:#fff;
+}
+table.hvemBasicPanel {
+	display:table;
+}
+.hvemHeading {
+	display:block;
+	border-bottom:1px solid #D5DADC;
+	padding:5px 7px !important;
+	background:#F2F2F2;
+	font-size:1em;
+}
+
+.hvemCaseItem, .hvemCaseItemSelection {
+	display:block;
+	padding:5px 7px !important;    
+	font-size:1em;
+}
+.hvemCaseItem a, .hvemCaseItemSelection a {
+	display:block;
+	text-decoration:none;
+}
+.hvemCaseItem a:hover, .hvemCaseItemSelection a:hover {
+	text-decoration:underline;
+}
+.hvemCaseItem em, .hvemCaseItemSelection em {
+	display:block;
+	color:#6b6b6b;
+}
+.hvemCaseItem p, .hvemCaseItemSelection p {
+	margin:0;
+	color:#041018;
+}
+
+.hvemArticleViewer {
+	padding:10px;
+}
+
+/* START Email Pub */
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .hvemEmailItem > div > .pbSubheader {
+	padding:;
+}
+.pbBody .pbSubheader img {
+	margin:-2px 0;
+	vertical-align:middle;
+}
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader h3 {
+	font-size:1em !important;
+	color:#000;
+}
+/* END Email Pub */
+
+input[type=text] {
+	border:1px solid #D5DADC;
+	border-top-color:#828383;
+	padding:4px;
+	box-shadow:0 1px 1px #B8B8B8 inset;
+}
+/* END HVEMStyles */

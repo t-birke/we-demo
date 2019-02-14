@@ -1,0 +1,6 @@
+<!-- Taken from https://sam-cousins.com/embedding-twitter-feeds-on-lightning-pages/ -->
+<apex:page >
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8"/>
+    <a class="twitter-timeline" data-link-color="#2B7BB9" 
+       href="https://twitter.com/{!$CurrentPage.Parameters.Username}"/>
+</apex:page>

@@ -1,0 +1,186 @@
+.prx-overlay-menu {
+    position: absolute;
+    z-index: 1501;
+    margin-top: 4px;
+    background: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #ccc;
+    -moz-box-shadow: 0 .3em .6em -.1em #999;
+    -webkit-box-shadow: 0 .3em .6em -.1em #999;
+    box-shadow: 0 .3em .6em -.1em #999;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.prx-overlay-menu.is-overlay {
+    position: fixed;
+}
+
+    /* UL - LI overlay menus */
+    .prx-overlay-menu ul {
+        position: relative;
+        z-index: 1502;
+        padding: 4px 0;
+    }
+        .prx-overlay-menu ul li {
+            display: block;
+        }
+        .prx-overlay-menu ul li.prx-filter-hidden {
+            visibility: hidden;
+            height: 0;
+        }
+            .prx-overlay-menu ul li a {
+                display: block;
+                margin: 0;
+                padding: 4px 12px;
+                text-decoration: none;
+                color: #444;
+                white-space: nowrap;
+                /*
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                */
+            }
+            .prx-overlay-menu ul li .prx-text {
+                white-space: nowrap;
+            }
+            .prx-overlay-menu ul li.new-section a {
+                border-top: 1px dotted #ddd;
+            }
+            .prx-overlay-menu-select ul li a {
+                margin: 0;
+                padding-left: 8px;
+            }
+            .prx-overlay-menu ul li a span.prx-icon {
+                width: 10px;
+                height: 10px;
+                margin-right: 8px;
+                display: inline-block;
+                background: url(../img/sprite-prx.png) no-repeat 10px 10px;
+            }
+            .prx-overlay-menu ul li.prx-selected a span.prx-icon {
+                background-position: 0 -40px;
+                width: 13px;
+                margin-right: 5px;
+            }
+            .prx-overlay-menu ul li.selected a,
+                .prx-overlay-menu ul li a:hover,
+                .prx-overlay-menu ul li.selected a:hover {
+                    background-color: #c7d9e5;
+                    border-color: #c7d9e5;
+                    color: #000;
+            }
+            .prx-overlay-menu ul li.prx-overlay-menu-item-first a {
+                /* since the UL has extra padding, commenting this out
+                border-radius: 3px 3px 0 0;
+                -moz-border-radius: 3px 3px 0 0;
+                -webkit-border-radius: 3px 3px 0 0;
+                border-top: 0;
+                */
+            }
+            .prx-overlay-menu ul li.prx-overlay-menu-item-last a {
+                /* since the UL has extra padding, commenting this out
+                margin-bottom: 0;
+                border-bottom: 0;
+                border-radius: 0 0 3px 3px;
+                -moz-border-radius: 0 0 3px 3px;
+                -webkit-border-radius: 0 0 3px 3px;
+                */
+            }
+            /* hover menu arrow */
+            .prx-overlay-menu span.prx-arrow {
+                bottom: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                z-index: 1503;
+            }
+            .prx-overlay-menu span.prx-arrow-b {
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #ffffff;
+                border-width: 5px;
+                left: 50%;
+                margin-left: -5px;
+            }
+            .prx-overlay-menu span.prx-arrow-a {
+                border-color: rgba(170, 170, 170, 0);
+                border-bottom-color: #aaa;
+                border-width: 6px;
+                left: 50%;
+                margin-left: -6px;
+            }
+            
+    /* DIV - P overlay menus */
+    .prx-overlay-section {
+        padding: 4px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    .prx-overlay-section:last-of-type {
+        border-bottom: 0;
+    }
+        .prx-overlay-section p {
+            margin: 0;
+            padding: 0;
+        }
+            .prx-overlay-section p a {
+                display: block;
+                margin: 0;
+                padding: 4px 12px;
+                text-decoration: none;
+                color: #444;
+                cursor: pointer;
+            }
+            .prx-overlay-menu p.selected a,
+                .prx-overlay-menu p a:hover,
+                .prx-overlay-menu p.selected a:hover {
+                    background-color: #c7d9e5;
+                    border-color: #c7d9e5;
+                    color: #000;
+                    text-decoration: none;
+            }
+            
+            
+/* special one off classes for specific overlay menus */
+.prx-overlay-menu-category ul {
+    margin-top: -5px;
+}
+
+/* sub menus */
+.prx-overlay-section p a.prx-hover-opener {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.prx-overlay-section p a.prx-hover-opener-open {
+    background-color: #c7d9e5;
+    border-color: #c7d9e5;
+    color: #000;
+}
+    .prx-is-touch .prx-overlay-section p a.prx-hover-opener:hover {
+        background-color: #fff;
+    }
+    .prx-is-touch .prx-overlay-section p a.prx-hover-opener-open:hover {
+        background-color: #c7d9e5;
+    }
+
+.prx-overlay-section p a.prx-hover-opener .prx-link-text {
+    display: inline-block;
+    float: left;
+}
+.prx-overlay-section p a.prx-hover-opener .prx-icon {
+    width: 5px;
+    height: 7px;
+    margin: 4px 0 0 11px;
+    padding: 0;
+    display: inline-block;
+    background-position: -40px -60px;
+    float: right;
+}
+.prx-submenu-block {
+    z-index: 1502;
+}
+    .prx-overlay-submenu {
+        z-index: 1502;
+    }

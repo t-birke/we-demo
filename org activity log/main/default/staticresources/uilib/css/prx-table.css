@@ -1,0 +1,225 @@
+/**
+ *  CSS for tables
+ */
+
+.prx-data-table-header {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+    .prx-data-table-header h2 {
+        margin: 3px 0 0 0;
+        padding: 0;
+        font-size: 1.846em;
+    }
+    .prx-data-table-header p {
+        margin: 10px 0 0 3px;
+        padding: 0;
+        line-height: 110%;
+    }
+    .prx-data-table-header-main {
+        float: left;
+        overflow: hidden;
+    }
+    .prx-data-table-header-extra {
+        float: right;
+        overflow: hidden;
+        text-align: right;
+    }
+        .prx-data-table-header-extra .prx-action-link {
+            margin-top: 16px;
+            display: inline-block;
+        }
+
+table.prx-data-table {
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+    table.prx-data-table tr td {
+        font-size: 92.3%;
+    }
+
+    table.prx-data-table tr th,
+        table.prx-data-table tr.prx-tr-foot td {
+            padding: 0;
+            text-align: left;
+            border-left: 1px solid #e1e1e1;
+            font-weight: bold;
+            background: #f2f3f3;
+            padding: 5px 10px;
+    }
+    table.prx-data-table tr th:first-of-type,
+        table.prx-data-table tr.prx-tr-foot td:first-of-type {
+            border-left: 0;
+    }
+    table.prx-data-table tr.prx-tr-foot td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    table.prx-data-table tr.prx-th-row-2 th:first-of-type {
+        border-left: 1px solid #e1e1e1;
+    }
+    table.prx-data-table tr th.prx-th-asc {
+        /*
+        background: #e0e3e6 url(../img/bg-prx-th-asc.png) no-repeat right center;
+        */
+        background: #f2f3f3 url(../img/bg-prx-th-asc.png) no-repeat right center;
+        padding-right: 26px;
+    }
+    table.prx-data-table tr th.prx-th-desc {
+        /*
+        background: #e0e3e6 url(../img/bg-prx-th-desc.png) no-repeat right center;
+        */
+        background: #f2f3f3 url(../img/bg-prx-th-desc.png) no-repeat right center;
+        padding-right: 26px;
+    }
+    table.prx-data-table tr th.prx-th-num {
+        text-align: right;
+    }
+    table.prx-data-table tr th.prx-th-colspan {
+        text-align: center;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+        table.prx-data-table tr th a,
+            table.prx-data-table tr th span.prx-link-replacement {
+                color: #6b6a6a;
+                line-height: 100%;
+        }
+        table.prx-data-table tr th a.prx-th-asc span.prx-th-text,
+            table.prx-data-table tr th a.prx-th-desc span.prx-th-text {
+                margin-right: 6px;
+        }
+        table.prx-data-table tr th span.prx-th-sub-text {
+            font-size: 85%;
+            clear: both;
+            display: inline-block;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        table.prx-data-table tr th a:hover {
+            text-decoration: none;
+        }
+    table.prx-data-table tr td {
+        padding: 10px;
+        border-top: 1px solid #e1e1e1;
+        line-height: 130%;
+    }
+    table.prx-data-table tr td.prx-td-action {
+        text-align: center;
+        padding: 4px 10px 4px 10px;
+        width: 1%;
+    }
+    table.prx-data-table tr td.prx-td-name {
+        /*
+        white-space: nowrap;
+        */
+    }
+    table.prx-data-table tr.prx-tr-even td {
+        /*
+        background: #f9f9f9;
+        */
+    }
+    table.prx-data-table tr td.prx-td-num {
+        text-align: right;
+    }
+    
+        table.prx-data-table tr td a {
+            color: #6b6a6a;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+        }
+        table.prx-data-table tr td a:hover {
+            text-decoration: none;
+            border-bottom: 1px solid #009ddc;
+        }
+        table.prx-data-table tr td .prx-td-sub {
+            font-size: 84.6%;
+        }
+
+.prx-menu-opener {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b5b5b5;
+    border-top: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #ffffff; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlM2UzZTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ffffff 0%, #e3e3e3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e3e3e3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#e3e3e3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e3e3e3',GradientType=0 ); /* IE6-8 */
+}
+.prx-ie9 .prx-menu-opener {
+    filter: none;
+}
+.prx-menu-opener:hover {
+    background: #ffffff; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmVmZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
+}
+    .prx-menu-opener .prx-icon {
+        background: url(../img/sprite-prx.png) no-repeat -40px -40px;
+        margin: 7px 0 0 6px;
+    }
+
+
+
+
+
+
+
+
+
+
+/* TINY: Phone portrait */  
+@media (max-width: 479px) {
+     .prx-data-2 {
+         display: none;
+     }
+}
+    
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-data-table-header h2 {
+        font-size: 1.5em;
+    }
+    .prx-data-3 {
+        display: none;
+    }
+
+    .prx-data-table-header-search {
+        padding-top: 0;
+    }
+        .prx-data-table-header-search .prx-data-table-header-main {
+            float: none;
+            clear: both;
+        }
+        .prx-data-table-header-search .prx-data-table-header-extra {
+            padding-bottom: 10px;
+            float: left;
+        }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}

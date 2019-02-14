@@ -1,0 +1,40 @@
+.hvemAction {
+	float:right;
+	padding:6px 12px !important;
+	font-size:1em !important;
+}
+
+span.cke_skin_kama {
+	padding:0;
+}
+.cke_skin_kama .cke_wrapper {
+	padding:0;
+	background:none;
+}
+.cke_top {
+	border-bottom:1px solid #D5DADC;
+	padding:7px;
+	background:#F2F2F2;
+}
+.cke_skin_kama .cke_toolgroup {
+	margin:0;
+	border:1px solid #d5d9dc;
+}
+.cke_toolbox_collapser {
+	display:none;
+}
+
+.apexp .bPageBlock.apexDefaultPageBlock .pbBody .pbSubheader .hideListButton {
+	background-position:-95px -7px;
+}
+
+.hvemPubTable {
+	padding:0 0 15px;
+}
+
+.hvemPubTable td {
+	vertical-align:middle;
+}
+textarea{
+	resize:none; 
+}

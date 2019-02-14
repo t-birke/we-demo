@@ -1,0 +1,103 @@
+/**
+ * Overriding values that we don't like in normalize.css
+ *
+ */
+
+@font-face {
+    font-family: 'ProximaNovaSoftRegular';
+    src: url('../fonts/ProximaNovaSoft-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNovaSoftBold';
+    src: url('../fonts/ProximaNovaSoft-Bold.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 75% !important;
+}
+
+body .prx,
+    body .prx-overlay-menu,
+    body .phone-menu-panel {
+        font-size: 108.3%; /* 13px */
+        font-family: Helvetica Neue, Helvetica, Arial;
+        color: #6b6a6a;
+}
+/* touch devices font overrides */
+body.prx-is-touch .prx,
+    body.prx-is-touch .prx-overlay-menu,
+    body.prx-is-touch .phone-menu-panel {
+        font-size: 116.6%;
+        font-family: ProximaNovaSoftRegular, Helvetica Neue, Helvetica, Arial;
+}
+body.prx-is-touch .prx-dialog-outer {
+    font-family: ProximaNovaSoftRegular, Helvetica Neue, Helvetica, Arial;
+}
+body .prx {
+    background: #fff;    
+}
+
+.prx button,
+.prx input,
+.prx select,
+.prx textarea {
+    font-family: inherit;
+}
+
+.prx a {
+    color: #015ba7;
+    text-decoration: none;
+}
+.prx a:hover {
+    color: #015ba7;
+    text-decoration: underline;
+}
+
+.prx h1, .prx h2, .prx h3, .prx h4, .prx h5, .prx h6 { 
+    color: #2e2e2d;
+    font-weight: normal;
+    display: block;
+}
+.prx h2 {
+    font-size: 1.5em;
+}
+
+.prx ::-webkit-input-placeholder { color: #aaa; }
+.prx ::-moz-placeholder { color: #aaa; } /* firefox 19+ */
+.prx :-ms-input-placeholder { color: #aaa; } /* ie */
+.prx input:-moz-placeholder { color: #aaa; }
+.prx .placeholder { color: #aaa; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    body .prx {
+        background: transparent;    
+    }
+    
+    .prx h1 { font-size: 1.4em; }
+    .prx h2 { font-size: 1.231em; }
+    .prx h3, .prx h4 { font-size: 1.077em; }
+    .prx h5, .prx h6 { font-size: 1em; }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}

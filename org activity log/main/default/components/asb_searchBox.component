@@ -1,0 +1,13 @@
+<apex:component layout="none">
+	<div class="prx-search" id="prx_search">
+        <a href="javascript:void(0);" class="prx-mobile-nav prx-mobile-nav-filter" style="display: none;"><span class="prx-icon prx-mobile-icon"></span></a>
+		<div class="prx-search-form">
+			<form>
+				<input type="text" placeholder="{!$Label.asb_BUTTON_SearchApps}..." id="input_search_apps" class="prx-input prx-input-text prx-input-search input-placeholder" autocomplete="off" name="keywords" value="{!$CurrentPage.parameters.keywords}"/>
+				<button class="prx-btn prx-btn-search">
+				    <span class="prx-icon"></span>
+				</button>
+			</form>
+		</div>
+	</div>
+</apex:component>

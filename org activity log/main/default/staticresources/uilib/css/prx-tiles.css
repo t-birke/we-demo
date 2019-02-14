@@ -1,0 +1,441 @@
+/**
+ *  App Tiles.
+ *
+ */
+
+/* tiles typically live inside 2 DIVs with class names 'prx-results' and 'prx-results-inner' */
+.prx-results {
+}
+
+    .prx-results-inner {
+        position: relative;
+    }
+    
+        .prx-results h2 {
+            float: left;
+            font-size: 150%;
+            margin-top: 0;
+        }
+        .prx-content-block-similar .prx-results h2 {
+            padding-top: 15px;
+        }
+
+/* tiles typically live inside a UL/LI structure ('prx-ul-results' and 'prx-li-tile'). */
+ul.prx-ul-results {
+    white-space: nowrap;
+    margin-right: -17px;
+}
+ul.prx-ul-results-oneline {
+    height: 193px;
+}
+
+    li.prx-li-tile {
+        display: block;
+        float: left;
+        white-space: normal;
+    }
+
+/* the actual tile starts with a DIV with class name 'prx-tile' */
+.prx-tile {
+    width: 220px;
+    height: 184px;
+    overflow: hidden;
+    border-radius: 3px;
+    padding: 0;
+    margin: 5px 17px 14px 2px;
+    box-shadow: 0 1px 1px 1px #d7d6d5;
+}
+.prx-app-info-tile .prx-tile {
+    margin-bottom: 5px;
+} 
+.prx .prx-tile a:hover { text-decoration: none; }
+    .prx-tile-content,
+        .prx-tile-content-inner {
+            display: block;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+    }
+    
+    /* front and back of tiles */
+    .prx-tile-content {
+        position: relative;
+        width: 220px;
+        height: 184px;
+        border-radius: 2px;
+    }
+        .prx-tile-content-inner {
+            display: block;
+            background: #fff;
+            position: absolute;
+            overflow: hidden;
+            width: 218px;
+            height: 182px;
+            top: 0;
+            left: 0;
+            border-radius: 2px;
+            border: 1px solid #cfd4d9;
+        }
+        .prx-tile-content-inner-2 {
+            background-color: rgba(50,50,50,.8);
+            border: 1px solid #bbb;
+        }
+        .prx-ie-soso .prx-tile-content-inner-2 { background-color: #666; }
+        .prx .prx-tile-content-inner-4,
+            .prx-tile-content-inner-4 {
+                display: block;
+                background-color: rgba(255,255,255,.9);
+                height: 143px;
+                border-bottom: 0;
+                border-radius: 2px 2px 0 0;
+                text-align: right;
+                color: #6b6a6a;
+        }
+        .prx .prx-tile-content-inner-4:hover,
+            .prx-tile-content-inner-4:hover {
+                color: #6b6a6a;
+        }
+        .prx-ie-soso .prx-tile-content-inner-4 { background-color: #fff; }
+            .prx-tile-install-info {
+                display: block;
+                padding: 20px 20px 5px 5px;
+                font-size: 123.1%;
+                line-height: 300%;
+            }
+            .prx-tile-install-number {
+                font-size: 150%;
+                display: inline-block;
+            }
+            .prx-tile-install-info-sub {
+                color: #999;
+            }
+        
+
+        .prx-tile-img {
+            display: table;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+            width: 218px;
+            height: 143px;
+            margin: 0;
+            padding: 0;
+        }
+            .prx-tile-img-inner {
+                overflow: hidden;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                border: 0;
+                width: 208px;
+                height: 133px;
+                margin: 0;
+                padding: 5px;
+            }
+                .prx-tile-img img {
+                    display: inline;
+                    max-height: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    vertical-align: bottom;
+                }
+        .prx-tile-title {
+            overflow: hidden;
+            height: 39px;
+            background: #e8eaeb;
+        }
+            .prx .prx-tile-title a,
+                .prx .prx-tile-title span.link-replace {
+                    display: block;
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0 5px 0 15px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    color: #696e71;
+                    font-size: 123.1%;
+                    line-height: 40px;
+            }
+        .prx-tile-2-top {
+            width: 218px;
+            height: 143px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        
+        .prx-tile-info  {
+            overflow: hidden;
+            padding: 10px;
+        }
+            .prx-tile-info .prx-tile-info-data {
+                float: left;
+            }
+            .prx-tile-info .prx-btn {
+                float: right;
+            }
+        .prx-tile-info-data {
+            margin-top: 5px;
+        }
+        .prx-tile-tag {
+            margin: 3px 5px 0 10px;
+            padding: 0;
+            line-height: 140%;
+            overflow: hidden;
+            height: 7em;
+        }
+            .prx-tile-content-inner-2 .prx-tile-tag a {
+            }
+
+
+
+    .prx-tile-content-inner-1 .prx-tile-info,
+        .prx-tile-content-inner-1 .prx-tile-tag {
+            display: none;
+    }
+    .prx-tile-content-inner-2 .prx-tile-img {
+        display: none;
+    }
+    .prx-tile-content-inner-1 .prx-tile-title a {
+        cursor: default;
+    }
+    .prx-tile-content-inner-noflip .prx-tile-title a {
+        cursor: pointer;
+    }
+    .prx-tile-content-inner-1 .prx-tile-title { border-radius: 0; }
+    
+    .prx-tile-content-inner-2 a.prx-tile-info-data,
+        .prx-tile-content-inner-2 .prx-tile-tag a {
+            color: #fff;
+    }
+    
+.prx-results-oneline .prx-filter-sort {
+    margin-top: 5px;
+}
+
+.prx-tile-header {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    
+    .prx-results {
+    }
+        .prx-results-inner {
+            background: #fff;
+            box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+            margin: 10px 9px 0 9px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .prx-content-generic .prx-results-inner {
+            margin: 0;
+        }
+
+        .prx-results h2 {
+            float: none;
+            margin: 0;
+            padding: 10px 5px 10px 10px;
+            border-bottom: 1px solid #e8eaeb;
+            font-size: 123.1%;
+        }
+        .prx-content-block-similar .prx-results h2 {
+            padding-top: 10px;
+        }
+        .prx-results .prx-filter {
+            margin: 10px 10px 0 10px;
+        }
+
+    ul.prx-ul-results {
+        margin-right: 0;
+    }
+    ul.prx-ul-results-oneline {
+        height: auto;
+    }
+        li.prx-li-tile {
+            float: none;
+        }
+    .prx-tile {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 5px 0;
+        margin: 0;
+        border-bottom: 1px solid #e8eaeb;
+        cursor: pointer;
+    }
+        .prx-tile {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        .prx-tile-img {
+            float: left;
+            display: table;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+            width: 75px;
+            height: 75px;
+            margin: 0;
+            padding: 0;
+        }
+            .prx-tile-img-inner {
+                overflow: hidden;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                border: 0;
+                width: 55px;
+                height: 75px;
+                margin: 0;
+                padding: 0 10px;
+            }
+                .prx-tile-img img {
+                    display: inline;
+                    max-height: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    vertical-align: bottom;
+                }
+        .prx-tile-title {
+            height: auto;
+            background: transparent;
+        }
+            .prx .prx-tile-title a {
+                display: block;
+                overflow: hidden;
+                margin: 0;
+                padding: 10px 30px 0 0;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: #696e71;
+                font-size: 123.1%;
+                line-height: 123.1%;
+            }
+        
+        .prx-tile-tag,
+            .prx-tile-content-inner-1 .prx-tile-tag {
+                display: block;
+                padding: 5px 0;
+                margin-left: 75px;
+                line-height: 130%;
+                display: block;
+                height: auto;
+        }
+            .prx-tile-content-inner-1 .prx-tile-tag a {
+                margin: 0;
+                padding: 0 30px 0 0;
+                color: #696e71;
+                display: block;
+                text-overflow: clip;
+            }
+
+        .prx-tile-info  {
+            display: none;
+        }
+
+        /* front and back of tiles */
+        .prx-tile-content {
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            padding-right: 10px;
+        }
+        .prx-tile-content-inner-1 {
+            background: transparent url(../img/arrow-right.png) no-repeat right center;
+            position: relative;
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            border: 0;
+        }
+        .prx-ul-results-noclick .prx-tile-content-inner-1 {
+            background-image: none;
+        }
+        .prx-tile-content-inner-2,
+            .prx-tile-content-inner-3 {
+                display: none;
+        }
+            .prx-tile-content-inner-1 .prx-tile-title a {
+                cursor: pointer;
+            }
+
+        .prx .prx-tile-content-inner-4,
+            .prx-tile-content-inner-4 {
+                background-color: transparent;
+                border-radius: 0;
+                border: 0;
+                width: auto;
+                height: auto;
+                text-align: left;
+        }
+        .prx-ie-soso .prx-tile-content-inner-4 { background-color: transparent; }
+            .prx-tile-install-info {
+                padding: 34px 0 0 75px;
+                font-size: 100%;
+                line-height: 140%;
+            }
+            .prx-tile-install-number {
+                font-size: 100%;
+                clear: none;
+            }
+            .prx-tile-install-info-sub {
+                color: #999;
+            }
+
+
+    .prx-is-touch .prx-tile-phone-clicked:hover, 
+        .prx-is-touch .prx-tile-phone-clicked:active {
+            background-color: #f4f5f5;
+    }
+    
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    ul.prx-ul-results {
+        margin-right: -29px;
+    }
+    .prx-tile {
+        margin-right: 29px;
+        margin-bottom: 26px;  /* 3 less that left */ 
+    }
+    .prx-results-oneline .prx-filter-sort {
+        margin-right: 0;
+    }
+}
+
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    ul.prx-ul-results {
+        margin-right: -22px;
+    }
+    .prx-tile {
+        margin-right: 22px;
+        margin-bottom: 19px;  /* 3 less that left */ 
+    }
+    .prx-results-oneline .prx-filter-sort {
+        margin-right: 5px;
+    }
+}

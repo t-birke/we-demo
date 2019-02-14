@@ -1,0 +1,762 @@
+<apex:page title="Insight Generator" controller="InsightGeneratorCtrl" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <apex:slds ></apex:slds>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"/>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"/>
+    
+    <style>
+    	.slds-notify_container {left: 50% !important; transform:translateX(-50%)}
+        .add-insight {border: 1px dashed #999; border-radius: 3px;}
+        .add-insight:hover {background-color: #fff;cursor:pointer;}
+    </style>
+    
+    <script>
+    
+    function Insight(insightTypeId, parentId, rationale, customTitle, supportingData) {
+        this.InsightTypeId = insightTypeId;
+        this.ParentId = parentId;
+        this.Score = Math.random();
+        this.Rationale = rationale;
+        this.CustomTitle = customTitle;
+        this.SupportingData = supportingData;
+    }
+    
+    function InsightUserValue(insightId, ownerId, prepopulatedData){
+        this.InsightId = insightId;
+        this.OwnerId = ownerId;
+        this.ActionPrepopulationValues = JSON.stringify(prepopulatedData);
+        this.Score = Math.random();
+    }
+    
+    function RecordSupportingData(collectionName, itemName, data, descriptor){
+        var collectionObject = {};
+        collectionObject[collectionName] = [];
+        
+        var singleObject = {}
+        singleObject[itemName] = {}
+        singleObject[itemName]['payload'] = data
+        singleObject[itemName]['descriptor'] = descriptor
+        
+        collectionObject[collectionName].push(singleObject)
+        
+        return collectionObject;
+    }
+    
+    var remote = InsightGeneratorCtrl;
+    var app = angular.module('InsightGeneratorApp', ['ngSanitize'])
+    
+    .controller('MainCtrl', function($scope,$rootScope) {
+        
+        $scope.insightTypeDisplayFormat = {      
+            IMPLISIT_ADC_NEW_OPPORTUNITY_CONTACT_ROLE : {
+                name: 'SupportingData.records.0.record.payload.FirstName_SupportingData.records.0.record.payload.LastName',
+                parent: 'Parent.Name'
+            },
+            IMPLISIT_ADC_NEW_CONTACT : { 
+                name: 'SupportingData.records.0.record.payload.FirstName_SupportingData.records.0.record.payload.LastName',
+                parent: 'Parent.Name'
+            }
+        }
+        
+        
+        /* Definitions for insight types available for generation (**STRATEGIES**) */
+        
+        /* Shard into directives in future - Current state has multiple controllers and objects hosted on main controller */
+        $scope.insightTypeDefinitions = {
+            IMPLISIT_ADC_NEW_OPPORTUNITY_CONTACT_ROLE: function(insightTypeId) {
+                var self = this;
+                
+                this.label = 'Automated Opportunity Contact Role'
+                this.insightTypeId = insightTypeId
+                this.parentIdField = 'OpportunityId'
+                this.parentId = ''
+                this.hasTitle = false
+                this.multirecord = false
+                this.trendType = 'Informational'
+                this.collectionName = 'records'
+                this.itemName = 'record'
+                this.customTitle = {
+                    formatter:"label",
+                    formatString:"Insight.NewOpportunityContactRoleFound",
+                    parameters:[]
+                }
+                this.rationale = {
+                    formatter:"label",
+                    formatString:"Insight.OpportunityContactRoleSuggestionRationale",
+                    parameters:[]
+                }
+                this.descriptor = {
+                    id:null,
+                    type:"OpportunityContactRole"
+                }
+                this.supportingData = [
+                    {
+                        name: 'OpportunityId',
+                        label: 'Opportunity',
+                        type: 'lookup',
+                        lookupDisplayField: 'Name',
+                        lookupObject: 'Opportunity',
+                        lookupField: 'Name',
+                        value: null,
+                        term: '',
+                        lookupValues: [],
+                        showSearch: false,
+                        term: '',
+                        getLookupValues: function(searchTerm, idx){
+                            
+                            if(searchTerm && self.term != searchTerm && searchTerm.length > 1){
+                                self.term = searchTerm;
+                                self.supportingData[idx].showSearch = true;
+                                remote.getLookupData(self.supportingData[idx].lookupDisplayField, self.supportingData[idx].lookupObject, self.supportingData[idx].lookupField, searchTerm, function(res,evt){
+                                    if(evt.status){
+                                        self.supportingData[idx].lookupValues = res;
+                                        $scope.$apply();
+                                    } else {
+                                        console.log('ERROR:ADC:getLookupValues', res, evt);
+                                    }
+                                })
+                            }
+                        },
+                        setLookup: function(id, idx){
+                            self.parentId = id;
+                            self.supportingData[idx].value = id;
+                            self.supportingData[idx].showSearch = false;
+                        }
+                    },
+                    {
+                        name: 'ContactId',
+                        label: 'Contact',
+                        type: 'lookup',
+                        lookupDisplayField: 'Name',
+                        lookupObject: 'Contact',
+                        lookupField: 'Name',
+                        value: null,
+                        term: '',
+                        lookupValues: [],
+                        showSearch: false,
+                        term: '',
+                        getLookupValues: function(searchTerm, idx){
+                            
+                            if(searchTerm && self.term != searchTerm && searchTerm.length > 1){
+                                self.term = searchTerm;
+                                self.supportingData[idx].showSearch = true;
+                                remote.getLookupData(self.supportingData[idx].lookupDisplayField, self.supportingData[idx].lookupObject, self.supportingData[idx].lookupField, searchTerm, function(res,evt){
+                                    if(evt.status){
+                                        self.supportingData[idx].lookupValues = res;
+                                        $scope.$apply();
+                                    } else {
+                                        console.log('ERROR:ADC:getLookupValues', res, evt);
+                                    }
+                                })
+                            }
+                        },
+                        setLookup: function(id, idx){
+                            self.supportingData[idx].value = id;
+                            self.supportingData[idx].showSearch = false;
+                        }
+                    },
+                    {
+                        name: 'Role',
+                        label: 'Role',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'FirstName',
+                        label: 'First Name',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'LastName',
+                        label: 'Last Name',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'Email',
+                        label: 'Email',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'IsPrimary',
+                        label: 'Primary Contact',
+                        type: 'boolean',
+                        value: null
+                    }
+                ]
+                this.getData = function() {
+                    var supportingData = {}
+                    
+                    angular.forEach(self.supportingData, function(field){
+                        supportingData[field.name] = field.value;
+                    })
+                    
+                    return new Insight(self.insightTypeId, self.parentId, JSON.stringify(self.rationale), JSON.stringify(self.customTitle), JSON.stringify(new RecordSupportingData(self.collectionName,self.itemName, supportingData, self.descriptor)))
+                }
+            },
+            IMPLISIT_ADC_NEW_CONTACT: function(insightTypeId) {
+                var self = this;
+                
+                this.label = 'Automated Contact'
+                this.insightTypeId = insightTypeId;
+                this.parentIdField = 'AccountId'
+                this.parentId = ''
+                this.multirecord = false
+                this.trendType = 'Informational'
+                this.collectionName = 'records'
+                this.itemName = 'record'
+                this.customTitle = {
+                    formatter:"label",
+                    formatString:"Insight.NewContactFound",
+                    parameters:[]
+                }
+                this.rationale = {
+                    formatter:"label",
+                    formatString:"Insight.ContactSuggestionRationale ",
+                    parameters:[]
+                }
+                this.descriptor = {
+                    id: null,
+                    type: "Contact"
+                }
+                this.supportingData = [
+                    {
+                        name: 'AccountId',
+                        label: 'Account',
+                        type: 'lookup',
+                        lookupDisplayField: 'Name',
+                        lookupObject: 'Account',
+                        lookupField: 'Name',
+                        value: null,
+                        lookupValues: [],
+                        showSearch: false,
+                        term: '',
+                        getLookupValues: function(searchTerm, idx){
+                            if(searchTerm && self.term != searchTerm && searchTerm.length > 1){
+                                self.term = searchTerm;
+                                self.supportingData[idx].showSearch = true;
+                                remote.getLookupData(self.supportingData[idx].lookupDisplayField, self.supportingData[idx].lookupObject, self.supportingData[idx].lookupField, searchTerm, function(res,evt){
+                                    if(evt.status){
+                                        self.supportingData[idx].lookupValues = res;
+                                        $scope.$apply();
+                                    } else {
+                                        console.log('ERROR:ADC:getLookupValues', res, evt);
+                                    }
+                                })
+                            }
+                        },
+                        setLookup: function(id, idx){
+                            self.parentId = id;
+                            self.supportingData[idx].value = id;
+                            self.supportingData[idx].showSearch = false;
+                        }
+                    },
+                    {
+                        name: 'FirstName',
+                        label: 'First Name',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'LastName',
+                        label: 'Last Name',
+                        type: 'string',
+                        value: null
+                    },
+                    {
+                        name: 'Email',
+                        label: 'Email',
+                        type: 'string',
+                        value: null
+                    }
+                ]
+                this.getData = function() {
+                    var supportingData = {}
+                    
+                    angular.forEach(self.supportingData, function(field){
+                        supportingData[field.name] = field.value;
+                    })
+                    
+                    return new Insight(self.insightTypeId, self.parentId, JSON.stringify(self.rationale), JSON.stringify(self.customTitle), JSON.stringify(new RecordSupportingData(self.collectionName,self.itemName, supportingData, self.descriptor)))
+                }
+                
+                return self;
+            }
+        }
+        
+        $scope.stepCtrl = {
+            steps: [
+                'Select Insight Type',
+                'Create Insight(s)',
+                'Assign Insight(s)'
+            ],
+            currentStep: 0,
+            setStep: function(stepNumber) {
+                $scope.stepCtrl.currentStep = stepNumber;
+            },
+            nextStep: function() {
+                if ($scope.stepCtrl.currentStep < $scope.stepCtrl.steps.length)
+                    $scope.stepCtrl.currentStep++;
+            },
+            prevStep: function() {
+                if ($scope.stepCtrl.currentStep > 0)
+                    $scope.stepCtrl.currentStep--;
+            }
+        }
+        
+        $scope.getStepStatus = function(stepNumber) {
+            if (stepNumber == $scope.stepCtrl.currentStep) {
+                return 'slds-is-current';
+            }
+            else if (stepNumber < $scope.stepCtrl.currentStep) {
+                return 'slds-is-complete';
+            } else {
+                return 'slds-is-incomplete';
+            }
+        }
+        
+        $scope.insightTypesCtrl = {
+            options: [],
+            selected: null,
+            getTypes: function() {
+                remote.getInsightTypes(JSON.stringify(Object.keys($scope.insightTypeDefinitions)), function(res, evt) {
+                    if (evt.status) {
+                        console.log('SUCCESS:insightTypesCtrl.getTypes', res);
+                        $scope.insightTypesCtrl.options = res;
+                        $scope.insightTypesCtrl.selected = res[0];
+                        $scope.$apply();
+                    }
+                    else {
+                        console.log('ERROR:insightTypesCtrl.getTypes', evt);
+                    }
+                })
+            }
+        }
+        
+        $scope.$watch('insightTypesCtrl.selected', function(newVal, oldVal) {
+            if (newVal != oldVal && $scope.insightTypesCtrl.selected != null)
+                $scope.insightsUserCtrl.getInsights();
+        });
+        
+        
+        $scope.getDisplayInfo = function(insight, field){
+            var display = ''
+            var format = $scope.insightTypeDisplayFormat[insight.InsightType.DeveloperName][field];
+            var concatParts = format.split('_');
+            
+            angular.forEach(concatParts, function(concatPart){
+                var objectMap = concatPart.split('.');
+                data = objectMap.reduce(function(currentPath, nextPath){
+                    return currentPath[nextPath];
+                }, insight)
+                
+                display += data + ' ';
+            })
+            
+            display.trim();
+            
+            return display;
+        }
+        
+        
+        $scope.newInsightsCtrl = {
+            insights: [],
+            addInsight: function() {
+                $scope.newInsightsCtrl.insights.push(new $scope.insightTypeDefinitions[$scope.insightTypesCtrl.selected.DeveloperName]($scope.insightTypesCtrl.selected.Id));
+            },
+            insertData: function() {
+                var records = [];
+                
+                angular.forEach($scope.newInsightsCtrl.insights, function(insight){
+                    records.push(insight.getData())
+                })
+                
+                console.log('DATA:newInsightsCtrl:insertData',records);
+                
+                remote.generateInsights(JSON.stringify(records),function(res,evt){
+                    if(evt.status){
+                        console.log('SUCCESS:newInsightsCtrl:insertData ', res);
+                        $scope.insightsUserCtrl.getInsights();
+                        $scope.createToast('<div>Successfully created ' + res.length + ' insight(s)!</div>', 'success');
+                        $scope.stepCtrl.nextStep();
+                        $scope.newInsightsCtrl.clearData();
+                    }
+                    else {
+                        $scope.createToast('<div>An error occurred inserting insights!</div>', 'error');
+                        console.log('ERROR:newInsightsCtrl:insertData', evt);
+                    }
+                })
+                
+            },
+            removeInsight: function(idx){
+                console.log('Removing index of:',idx);
+            	$scope.newInsightsCtrl.insights.splice(idx,1);
+                $scope.$apply();
+            },
+            clearData: function(){
+                $scope.newInsightsCtrl.insights = [];
+                $scope.$apply();
+            }
+        };
+        
+        $scope.insightsUserCtrl = {
+            insights: [],
+            users: [],
+            getUsers: function(){
+                remote.getUsers(function(res, evt) {
+                    if (evt.status) {
+                        console.log('SUCCESS:insightsUserCtrl:getUsers ', res);
+                        $scope.insightsUserCtrl.users = res;
+                        $scope.$apply();
+                    }
+                    else {
+                        console.log('ERROR:insightsUserCtrl:getUsers', evt);
+                    }
+                }, { escape: false });
+            },
+            getInsights: function() {
+                remote.getInsights($scope.insightTypesCtrl.selected.Id, function(res, evt) {
+                    if (evt.status) {
+                        console.log('SUCCESS:insightsUserCtrl:getInsights ', res);
+                        angular.forEach(res, function(item) {
+                            item['SupportingData'] = JSON.parse(item['SupportingData']);
+                        })
+                        $scope.insightsUserCtrl.insights = res;
+                        $scope.$apply();
+                    } else {
+                        console.log('ERROR:insightsUserCtrl:getInsights', evt);
+                    }
+                }, { escape: false });
+            },
+            deleteInsight: function(insight, insightIndex){
+                console.log('Deleting Insights', insight);
+                if(confirm('Delete Insight?')){
+                    remote.deleteInsightUserValues(insight.Id,function(res,evt){
+                        if(evt.status){
+                            remote.deleteInsight(insight.Id, function(res,evt){
+                                if(evt.status){
+                                    $scope.insightsUserCtrl.insights.splice(insightIndex,1);
+                                    $scope.createToast('<div>Insight deleted</div>', 'success');
+                                    $scope.$apply();
+                                } else {
+                                    console.log('ERROR:insightsUserCtrl:deleteInsight', evt);
+                                }
+                            });
+                        } else {
+                            console.log('ERROR:insightsUserCtrl:deleteInsightUserValues', evt);
+                        }
+                    });
+                }
+            },
+            createAssignment : function(insight, user){
+                console.log('Assignment being created', insight, user);
+                remote.assignInsight( JSON.stringify( new InsightUserValue(insight.Id, user.Id, {}) ), function(res,evt){
+                	if(evt.status){
+                        res['Owner'] = {};
+                        res['Owner']['Id'] = user.Id;
+                        res['Owner']['Name'] = user.Name;
+                        
+                        if(!insight['InsightUserValues']){
+                            insight['InsightUserValues'] = [];
+                            $scope.$apply();
+                            insight['InsightUserValues'].push(res);
+                        } else {
+                            insight['InsightUserValues'].push(res);   
+                        }
+                        $scope.createToast('<div>Insight assigned to ' + res.Owner.Name + '</div>', 'success');
+                        $scope.$apply();
+                    } else {
+                        console.log('ERROR:insightsUserCtrl:addUser', evt);
+                        $scope.createToast('<div>Could not create InsightUserValue. User may already have this Insight assigned</div>', 'error');
+                    }
+                })
+            },
+            deleteInsightUserValue: function(insight, assignmentIndex, insightUserValueId){
+                console.log('Assignment being deleted', insight);
+                if(confirm('Delete Assignment?')){
+                    remote.deleteInsightUserValue(insightUserValueId, function(res,evt){
+                        if(evt.status){
+                            insight['InsightUserValues'].splice(assignmentIndex,1);
+                            $scope.$apply();
+                        }  else {
+                            console.log('ERROR:insightsUserCtrl:deleteInsightUserValue', evt);
+                        }
+                    })
+                }
+            }
+        };
+        
+        $scope.insightTypesCtrl.getTypes();
+        $scope.insightsUserCtrl.getUsers();
+        
+        $scope.createToast = function(message, type){
+            console.log('Toast Event Sent',message,type)
+        	$scope.$broadcast('create-toast', [message, type]);
+        }
+    })
+    
+    .controller('ToastsCtrl', function($scope,$sce){
+        $scope.Toast =  function Toast(message, type){
+            var self = this;
+            
+            this.INTERVAL_RATE = 1000;
+            this.DURATION = 6000;
+            this.message = message;
+            this.type = type;
+            this.expiry = (new Date).getTime() + self.DURATION;
+            this.shown = true;
+            this.currentTime = (new Date).getTime();
+            
+            this.countdown = function(){
+                
+                self.currentTime += self.INTERVAL_RATE;
+                
+                if(self.expiry <= self.currentTime){
+                    self.dismiss();
+                }
+                $scope.$apply();
+            }
+            
+            this.dismiss = function(){
+                self.shown = false;
+            	clearInterval(self.interval);
+            }
+            
+            this.interval = setInterval(this.countdown, self.INTERVAL_RATE);
+        }
+        
+        $scope.toasts = [];
+        
+    	$scope.$on('create-toast', function(evt, args){
+            console.log('Toast Event Heard',evt, args)
+            $scope.toasts.push( new $scope.Toast(args[0],args[1]) );
+        })
+        
+        $scope.trustHtml = function(htmlString){
+        	return $sce.trustAsHtml(htmlString);
+        }
+        
+        $scope.dismiss = function(idx){
+        	$scope.toasts[idx].dismiss();
+        }
+    })
+    
+    </script>
+    
+    <body ng-app="InsightGeneratorApp" ng-controller="MainCtrl" class="slds" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <div class="slds-notify_container slds-container_medium slds-is-fixed" ng-controller="ToastsCtrl" >
+            <div ng-repeat="toast in toasts" ng-show="toast.shown" class="slds-notify slds-notify_toast {{'slds-theme_' + toast.type}}">
+                <span class="slds-assistive-text">{{toast.type}}</span>
+                <div class="slds-notify__content">
+                    <h2 class="slds-text-heading_small" ng-bind-html="trustHtml(toast.message)"></h2>
+                </div>
+                <button ng-click="toast.dismiss()" class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse">
+                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="slds-container_center slds-container_large">
+            <div class="slds-m-bottom_medium">
+                <div class="slds-text-heading_large">Einstein Insights Generator</div>
+            </div>
+            
+            <div class="slds-m-vertical_medium">
+                <div class="slds-path-coach">
+                    <div class="slds-grid">
+                        <div class="slds-tabs_path">
+                            <ul class="slds-tabs_path__nav">
+                                <li ng-repeat="step in stepCtrl.steps" class="slds-tabs_path__item" ng-class="getStepStatus($index)" ng-click="stepCtrl.setStep($index)">
+                                    <a class="slds-tabs_path__link" href="javascript:void(0);" id="path-2" role="option" tabindex="-1">
+                                        <span class="slds-tabs_path__stage">
+                                            <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                                                <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
+                                            </svg>
+                                        </span>
+                                        <span class="slds-tabs_path__title">{{stepCtrl.steps[$index]}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="slds-container_center slds-container_large">
+                <div class="slds-card slds-p-around_medium slds-m-vertical_medium">
+                    
+                    <!--Insight Types-->
+                    <div ng-show="stepCtrl.currentStep == 0" class="step">
+                        <div class="slds-text-heading_medium slds-m-bottom_small">
+                            Insight Type
+                        </div>
+                        <p>
+                            Select which type of Insight you would like to generate
+                        </p>
+                        <div class="slds-panel slds-m-vertical_medium slds-p-around_medium">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label">Available Insight Types</label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-select_container">
+                                        <select class="slds-select" ng-model="insightTypesCtrl.selected" ng-options="insight.MasterLabel for insight in insightTypesCtrl.options"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!--Insights-->
+                    <div ng-show="stepCtrl.currentStep == 1" class="step">
+                        <div class="slds-m-bottom_medium">
+                            <div class="slds-text-heading_medium slds-m-bottom_small">Create Insights</div>
+                            <p>
+                                Press the add button below to create an insight
+                            </p>
+                        </div>
+                        
+                        <div ng-repeat="insight in newInsightsCtrl.insights" class="slds-panel slds-m-vertical_medium slds-p-around_medium">
+                            
+                            <div class="slds-m-bottom_medium slds-clearfix">
+                                <div class="slds-text-heading_small slds-float_left">{{insight.label}}</div>
+                                <button ng-click="newInsightsCtrl.removeInsight($index)" class="slds-button slds-button_icon slds-float_right">
+                                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </div>
+                            
+                            
+                            <div ng-repeat="input in insight.supportingData" class="slds-form-element">
+                                <!--Supporting Data Inputs-->
+                                <label ng-if="input.type != 'boolean'" class="slds-form-element__label">{{input.label}}</label>
+                                <input ng-if="input.type == 'string'" class="slds-input" ng-model="input.value"/>
+                                
+                                <div ng-if="input.type == 'lookup'" class="slds-form-element__control">
+                                    <div class="slds-combobox_container slds-has-inline-listbox">
+                                        <div class="slds-combobox slds-dropdown-trigger slds-dropdown-trigger_click" ng-class="{'slds-is-open': input.showSearch}">
+                                            <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right">
+                                                <input ng-model="input.term" ng-keyup="input.getLookupValues(input.term, $index)" class="slds-input slds-combobox__input"/>
+                                                <input ng-model="input.value" class="slds-hide"/>
+                                                <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right" title="Description of icon when needed">
+                                                    <svg class="slds-icon slds-icon slds-icon_x-small slds-icon-text-default" aria-hidden="true">
+                                                        <use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+                                                    </svg>
+                                                    <span class="slds-assistive-text">Description of icon</span>
+                                                </span>
+                                            </div>
+                                            <ul ng-show="input.showSearch && input.lookupValues.length > 0" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid">
+                                                <li ng-repeat="lookupValue in input.lookupValues" ng-click="input.setLookup(lookupValue.Id, $parent.$index); input.term = lookupValue.Name" class="slds-listbox__item">
+                                                    <span  class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta">
+                                                        <span class="slds-media__body">
+                                                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{{lookupValue.Name}}</span>
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div ng-if="input.type == 'boolean'" class="slds-form-element__control">
+                                    <span class="slds-checkbox">
+                                        <input type="checkbox" ng-model="input.value" id="{{input.name + $index}}"/>
+                                        <label class="slds-checkbox__label" for="{{input.name + $index}}">
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label">{{input.label}}</span>
+                                        </label>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="slds-text-align_center slds-p-around_x-large add-insight" ng-click="newInsightsCtrl.addInsight();">
+                            Click to add insight
+                        </div>
+                        
+                        <div class="slds-text-align_center slds-m-top_medium">
+                            <button class="slds-button slds-button_brand" ng-click="newInsightsCtrl.insertData()" ng-disabled="newInsightsCtrl.insights.length == 0">Insert Insight{{newInsightsCtrl.insights.length > 1 ? 's': ''}}</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <!--Insight Assignments-->
+                    <div ng-show="stepCtrl.currentStep == 2" class="step">
+                        <div class="slds-text-heading_medium slds-m-bottom_medium">Assign insights to select user</div>
+                        
+                        <div ng-repeat="insight in insightsUserCtrl.insights" class="slds-panel slds-m-vertical_medium slds-p-around_medium">
+                            <div class="slds-clearfix">
+                                
+                                <div class="slds-text-heading_small slds-float_left">
+                                    {{insight.InsightType.MasterLabel}} • {{getDisplayInfo(insight,'name')}} • {{getDisplayInfo(insight,'parent')}}
+                                </div>
+                                <button ng-click="insightsUserCtrl.deleteInsight(insight, $index)" class="slds-button slds-button_icon slds-float_right">
+                                    <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                        <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </div>
+                            
+                            <div class="slds-m-vertical_medium">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label">Select user to add an assignment</label>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-select_container">
+                                            <select class="slds-select" ng-model="userSelection" ng-options="user.Name for user in insightsUserCtrl.users" ng-change="insightsUserCtrl.createAssignment(insight, userSelection)">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                Current Assignments
+                                <div ng-show="!insight.InsightUserValues || insight.InsightUserValues.length == 0" class="slds-text-align_center slds-text-color_weak">
+                                    No Assigments
+                                </div>
+                                <div class="slds-p-vertical_small">
+                                    <span ng-repeat="assignment in insight.InsightUserValues" class="slds-pill slds-pill_link">
+                                        <a href="javascript:void(0);" class="slds-pill__action" title="Full pill label verbiage mirrored here">
+                                            <span class="slds-pill__label">{{assignment.Owner.Name}}</span>
+                                        </a>
+                                        <button ng-click="insightsUserCtrl.deleteInsightUserValue(insight, $index, assignment.Id)"  class="slds-button slds-button_icon slds-button_icon slds-pill__remove" title="Remove">
+                                            <svg class="slds-button__icon" aria-hidden="true">
+                                                <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
+                                            </svg>
+                                            <span class="slds-assistive-text">Remove</span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-text-align_center slds-m-vertical_medium">
+                    <button class="slds-button slds-button_neutral" ng-click="stepCtrl.prevStep()" ng-disabled="stepCtrl.currentStep == 0">Prev</button>
+                    <button class="slds-button slds-button_brand" ng-click="stepCtrl.nextStep()" ng-disabled="stepCtrl.currentStep == stepCtrl.steps.length-1">Next</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', 'UA-46606102-1', 'auto');
+    ga('send', 'pageview');
+    
+    </script>
+</apex:page>

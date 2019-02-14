@@ -1,0 +1,148 @@
+.support-sidebar
+{
+	width:260px;
+	float:left;
+}
+.support-main-content
+{
+	width:625px;
+	float:right;
+}
+.support-links
+{
+	margin-bottom:12px;
+}
+.support-links h2
+{
+	color:#39A8E5;
+	display:block;
+	font-weight:bold;
+	margin-top:14px;
+	padding:4px 0;
+	text-align:left;
+	text-decoration:none;
+	font-size:12px;
+}
+.support-links ul li a
+{
+	display:block;
+	padding:4px 0 2px 17px;
+	text-align:left;
+	text-decoration:none;
+	font-size:11px;
+	color:#8A8A8A;
+	background:url(/left_arrow.png) no-repeat scroll 4px 4px transparent;
+}
+.support-links ul li a:hover
+{
+	color:#FFA100;
+}
+.support-links ul li
+{
+}
+.form-wrapper
+{
+	-moz-border-bottom-colors:none;
+	-moz-border-image:none;
+	-moz-border-left-colors:none;
+	-moz-border-right-colors:none;
+	-moz-border-top-colors:none;
+	border-color:#DCE0E2;
+	border-style:solid;
+	border-width:1px;
+	margin:0 0 24px 0;
+}
+.form-wrapper h2
+{
+	background-color:#39A8E5;
+	color:white;
+	font-size:16px;
+	margin:0;
+	padding:6px;
+}
+.support-main-content .content-column
+{
+	width:188px;
+	padding:0 12px 0 0;
+	margin:0 12px 0 0;
+}
+.support-main-content .content-column.first
+{
+	padding:0 12px 0 0;
+	margin:0 12px 0 0;
+}
+.support-main-content .content-column.last
+{
+	margin:0 0 0 0;
+}
+.support-main-content .content-column h2
+{
+	color:#39A8E5;
+	display:block;
+	font-weight:400;
+	padding:4px 0;
+	text-align:left;
+	text-decoration:none;
+	font-size:16px;
+}
+.form-wrapper label
+{
+	color:#AAAAAA;
+	display:inline-block;
+	float:left;
+	font-size:14px;
+	margin:10px 6px 6px 14px;
+	text-align:left;
+	width:200px;
+}
+.form-wrapper .login_button
+{
+	background:none repeat scroll 0 0 #CCCCCC;
+	border-radius:4px 4px 4px 4px;
+	color:#FFFFFF;
+	display:inline-block;
+	font-size:12px;
+	margin:12px 0 12px 12px;
+	padding:4px 10px;
+	text-decoration:none;
+	text-align:center;
+}
+.form-wrapper .login_button:hover
+{
+	background-color:#FFA100;
+}
+.form-wrapper input
+{
+	margin:0 0 8px 12px;
+	width:200px;
+}
+.static-banner
+{
+	margin:0 0 16px 0;
+}
+.support-intro-copy
+{
+	width:600px;
+	margin:0 0 16px 0;
+}
+p
+{
+	font-size:12px;
+	line-height:18px;
+	margin:0 0 10px;
+}
+a.btn
+{
+	background:url(shadow-up.png) repeat-x scroll 0 bottom #FF6600;
+	border-radius:3px 3px 3px 3px;
+	color:#FFFFFF;
+	display:inline-block;
+	font-size:11px;
+	line-height:18px;
+	padding-left:8px;
+	padding-right:8px;
+}
+a.btn:hover
+{
+	color:#666666;
+}

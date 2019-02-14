@@ -1,0 +1,170 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <div class="article_volks">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                <div class="main_article">
+                    <div class="article_tile">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                                <div class="article_image">
+                                    <img src="https://427dp63llx7zmfivh1tezitj-wpengine.netdna-ssl.com/wp-content/uploads/2018/10/VW-dealer.jpg" width="350"/>		
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12">
+                                <div class="article_description">
+                                    <div class="article_header">
+                                        Volkswagen presents the Dealer of Tomorrow
+                                    </div>
+                                    <div class="article_link">
+                                        https://www.volklswagen-newsroom.com  |  16-11-2018
+                                    </div>
+                                    <div class="article_descrtiption">
+                                        Volkswagen is making its sales organization fit for the future. The brand is to 
+                                        fundementally realign its sales model together with its dealers. The new sales model 
+                                        is to be launched in Europe in April 2020. Today in Berlin, Volkswagen and the Eurpoean 
+                                        dealer Council presented their vision for the future world of...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                <div class="article_buttons">
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:announcement" size="small"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom1" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom11" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:social" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:live_chat" size="small" class="heart"/>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="article_volks">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                <div class="main_article">
+                    <div class="article_tile">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                                <div class="article_image">
+                                    <img src="http://stat.overdrive.in/wp-content/uploads/2018/12/vw-i-d-test-mules-4.jpg" width="350"/>		
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12">
+                                <div class="article_description">
+                                    <div class="article_header">
+                                        Volkswagen ID electric hatchback 2020: prices, specs and release date
+                                    </div>
+                                    <div class="article_link">
+                                        https://www.theweek.co.uk  |  17-12-2018
+                                    </div>
+                                    <div class="article_descrtiption">
+                                        Volkswagen has released images of its upcoming all-electric hatchback. The new vehicle is undergoing testing in South Africa ahead of its world debut next year. 
+                                        The hatchback, which is often referred to as the ID Neo, will become the German car giant’s first EV to be built on its new MEB platform. It has been designed 
+                                        from the ground up for the firm’s upcoming range of electric models.
+                                        Judging by the photos, the ID hatchback will bear a strong resemblance to the ID Concept that first appeared at the 2016 Paris Motor Show. The thin LED headlights, 
+                                        for example, have been plucked from the prototype EV. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                <div class="article_buttons">
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom40" size="small"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom1" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom11" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:social" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:live_chat" size="small" class="heart"/>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="article_volks">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_11-of-12 slds-medium-size_11-of-12 slds-large-size_11-of-12">
+                <div class="main_article">
+                    <div class="article_tile">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12">
+                                <div class="article_image">
+                                    <img src="https://icdn2.digitaltrends.com/image/2019-volkwagen-jetta-white-angle-640x640.jpg" width="350"/>		
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12">
+                                <div class="article_description">
+                                    <div class="article_header">
+                                        Automotive trend forum 2019 - The future of sales
+                                    </div>
+                                    <div class="article_link">
+                                        Conference  |  Posted 1 Week ago
+                                    </div>
+                                    <div class="article_descrtiption">
+                                        This international science and economic congress focuses on the latest trends 
+                                        in automotive sales and marketing. The whole-day event is held at CongressPark 
+                                        Wolfsburg. Approximately 600 international Automotive Trend Forum participants 
+                                        in Wolfsburg come from business and science. Top experts from all over the world
+                                        present the latest studies, examples of best-practice and offer solutions for your 
+                                        specific problems. All lectures will be translated simultaneously. In addition to 
+                                        numerous managers from the Volkswagen Group, guests also include participants 
+                                        from other automotive manufacturers, the supply industry, the automotive trade, 
+                                        medium-sized businesses and importers. The science representatives are mainly 
+                                        professors, employees and students of the Ostfalia University or our partner 
+                                        universities abroad.
+
+ 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-medium-size_1-of-12 slds-large-size_1-of-12">
+                <div class="article_buttons">
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:event" size="small"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom1" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="custom:custom11" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:social" size="small" class="heart"/>
+                    </div>  
+                    <div class="buttons_article">
+                        <lightning:icon iconName="standard:live_chat" size="small" class="heart"/>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

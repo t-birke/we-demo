@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="TakeRecordsHandle" type="Boolean" />
+    <aura:attribute name="Username" type="String"/>
+    <aura:attribute name="Hight" type="Integer" default="500" />
+    
+    <aura:attribute name="showData" type="Boolean" access="global" default="false" />
+    
+    <aura:attribute name="contactFields" type="String[]" access="global" default="Name, SocialMediaTwitterHandle__c"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="fields" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.recordId}"
+                      fields="{!v.contactFields}"                      
+                      targetRecord="{!v.record}"
+                      targetError="{!v.recordError}"
+                      targetFields="{!v.fields}"
+                      mode="VIEW" 
+                      recordUpdated="{!c.handleRecordUpdated}"/> 
+    
+    <aura:if isTrue="{!v.showData}">
+        <iframe src="{! '/apex/SocialViewTwitter?Username=' + v.Username}" width="100%" height="{!v.Hight + 'px'}" frameBorder="0"/>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,5484 @@
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+/* This normalize file is scoped to .prx */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+.prx article, 
+.prx aside, 
+.prx details, 
+.prx figcaption, 
+.prx figure, 
+.prx footer, 
+.prx header, 
+.prx hgroup, 
+.prx main, 
+.prx nav, 
+.prx section, 
+.prx summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+.prx audio, 
+.prx canvas, 
+.prx video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+.prx audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+
+.prx [hidden], 
+.prx template {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ * original: html (JG)
+ */
+
+.prx {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ * original: body (JG)
+ */
+
+.prx {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+.prx a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+.prx a:active, 
+.prx a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+.prx h1 {
+    font-size: 1.846em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+.prx abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+.prx b, 
+.prx strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+.prx dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+.prx hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+.prx mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+.prx code, 
+.prx kbd, 
+.prx pre, 
+.prx samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+.prx pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+.prx q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+.prx small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+.prx sub, 
+.prx sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+.prx sup {
+    top: -0.5em;
+}
+
+.prx sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+.prx img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+.prx svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+.prx figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+.prx fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+.prx legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+.prx button, 
+.prx input, 
+.prx select, 
+.prx textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+.prx button, 
+.prx input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+.prx button, 
+.prx select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+.prx button, 
+.prx html input[type="button"], /* 1 */
+.prx input[type="reset"], 
+.prx input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ * original: html input[disabled] (JG)
+ */
+
+.prx button[disabled], 
+.prx input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+.prx input[type="checkbox"], 
+.prx input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+.prx input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+.prx input[type="search"]::-webkit-search-cancel-button,
+.prx input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+.prx button::-moz-focus-inner, 
+.prx input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+.prx textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+.prx table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/**
+ * Overriding values that we don't like in normalize.css
+ *
+ */
+
+@font-face {
+    font-family: 'ProximaNovaSoftRegular';
+    src: url('../fonts/ProximaNovaSoft-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ProximaNovaSoftBold';
+    src: url('../fonts/ProximaNovaSoft-Bold.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 75% !important;
+}
+
+body .prx,
+    body .prx-overlay-menu,
+    body .phone-menu-panel {
+        font-size: 108.3%; /* 13px */
+        font-family: Helvetica Neue, Helvetica, Arial;
+        color: #6b6a6a;
+}
+/* touch devices font overrides */
+body.prx-is-touch .prx,
+    body.prx-is-touch .prx-overlay-menu,
+    body.prx-is-touch .phone-menu-panel {
+        font-size: 116.6%;
+        font-family: ProximaNovaSoftRegular, Helvetica Neue, Helvetica, Arial;
+}
+body.prx-is-touch .prx-dialog-outer {
+    font-family: ProximaNovaSoftRegular, Helvetica Neue, Helvetica, Arial;
+}
+body .prx {
+    background: #fff;    
+}
+
+.prx button,
+.prx input,
+.prx select,
+.prx textarea {
+    font-family: inherit;
+}
+
+.prx a {
+    color: #015ba7;
+    text-decoration: none;
+}
+.prx a:hover {
+    color: #015ba7;
+    text-decoration: underline;
+}
+
+.prx h1, .prx h2, .prx h3, .prx h4, .prx h5, .prx h6 { 
+    color: #2e2e2d;
+    font-weight: normal;
+    display: block;
+}
+.prx h2 {
+    font-size: 1.5em;
+}
+
+.prx ::-webkit-input-placeholder { color: #aaa; }
+.prx ::-moz-placeholder { color: #aaa; } /* firefox 19+ */
+.prx :-ms-input-placeholder { color: #aaa; } /* ie */
+.prx input:-moz-placeholder { color: #aaa; }
+.prx .placeholder { color: #aaa; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    body .prx {
+        background: transparent;    
+    }
+    
+    .prx h1 { font-size: 1.4em; }
+    .prx h2 { font-size: 1.231em; }
+    .prx h3, .prx h4 { font-size: 1.077em; }
+    .prx h5, .prx h6 { font-size: 1em; }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}
+/**
+ *  Generic stuff.
+ *
+ */
+
+h2 span.h2-sub {
+    font-size: 70%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/**
+ *  Reset for ULs and LIs: add 'prx-ul-reset' to the UL:
+ *  - no padding/margin
+ *  - no list style
+ */
+ul.prx-ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    overflow: hidden;
+}
+    ul.prx-ul-reset li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+    }
+    
+/**
+ *  Simple ul
+ */    
+ul.prx-ul-simple,
+    ol.prx-ul-simple {
+        margin: 2px 10px;
+        padding: 2px 10px;
+        overflow: visible;
+} 
+ul.prx-ul-simple {
+    list-style: disc outside none;
+}
+    ul.prx-ul-simple li,
+        ol.prx-ul-simple li {
+            margin: 2px 0;
+            padding: 2px 0;
+            overflow: visible;
+    }
+
+/**
+ *  Icons typically live inside a span with class name 'prx-icon'.
+ *  They all have certain common/default attributes.
+ */
+.prx-icon {
+    display: inline-block;
+    background: url(../img/sprite-prx.png) no-repeat 20px 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.prx-mobile-icon {
+    display: none;
+}
+
+a.prx-link-more {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 110%;
+    vertical-align: top;
+    margin: 0 0 1px 0;
+}
+    a.prx-link-more .prx-btn-txt {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 0 0 0 2px;
+        float: left;
+    }
+    a.prx-link-more:hover .prx-btn-txt {
+        text-decoration: underline !important;
+        float: left;
+    }
+    .prx-link-more .prx-icon {
+        display: inline-block;
+        background: url(../img/sprite-prx.png) no-repeat -60px -20px;
+        width: 10px;
+        height: 12px;
+        vertical-align: top;
+        margin: 2px 0 0 4px;
+        padding: 0;
+    }
+
+/* loading spinners */
+.prx-loading {
+    background: url(../img/loading-medium.gif) no-repeat center center;
+    min-height: 30px;
+    min-width: 30px;
+}
+    .prx-analytics-content-charts .prx-loading {
+        height: 270px;
+    }
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-mobile-icon { 
+        display: block; 
+        width: 20px;
+        height: 20px; 
+    }
+    h2 span.h2-sub {
+        float: right;
+        font-size: 100%;
+    }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}
+
+/**
+ *  The page content, on every page, lives inside a div with class 'prx' (and id 'prx').
+ *  This allows us to scope all the store builder html to these class names and id for CSS and JS purposes.
+ *  We can also style this div: think padding, margin, background, but let's not for now.
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx {
+    position: relative;
+}
+
+/**
+ *  Inside the 'prx' div live 2 wrapper divs: 'prx-wrap' and 'prx-wrap-inner'.
+ *  Potential styling options:
+ *  pr-wrap: define the width of the page.
+ *  pr-wrap-inner: define padding.
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx-wrap {
+
+}
+    .prx-wrap-inner {
+
+    }
+
+/**
+ *  A page can have multiple content blocks. They are all wrapped inside a div with class 'prx-content-block'.
+ *  Each content block can contain divs with the following class names:
+ *  - prx-content-header and prx-content-header-inner: a header area that always spans the whole width of the content.
+ *    The header can be split up in 2 areas: 'prx-content-header-main' and 'prx-content-header-extra'
+ *  - prx-content-content: a wrapper around the real content. Possible content blocks:
+ *      - prx-content-secondary: an area with content navigation for instance. very likely a narrow left column on the big screen.
+ *      - prx-content-primary: main content of the page. very likely a wide right column on the big screen.
+ *      - prx-content-single: if there is only main content and no navigation, for instance: the whole width of the content. 
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx-content-block {
+    margin-bottom: 0;
+    clear: both;
+}
+
+    /**
+     *  Each content header gets a certain style.
+     *  This style can be overwritten by a page specific class, set on the prx-content-block. 
+     *  Tip: if you can help it, no side padding or margin here (left or right).
+     */
+    .prx-content-header {
+        overflow: hidden;
+        /*
+        background: #e8eaeb;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZWFlYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #e8eaeb 0%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8eaeb), color-stop(100%,#ffffff));
+        background: -webkit-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: -o-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: -ms-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #e8eaeb 0%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8eaeb', endColorstr='#ffffff',GradientType=0 );
+        */
+    }
+    .prx-content-block-listing .prx-content-header {
+        background: #f5f5f5 url(../img/p_cccccc.gif) repeat-x center bottom;
+    }
+    .prx-ie9 .prx-content-header {
+        filter: none;
+    } 
+        /* by default we'll have a fixed width. */
+        .prx-content-block .prx-content-header .prx-content-header-inner {
+            width: 940px;
+            margin-left: 20px;
+        }
+        .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+            width: 700px;
+            margin-left: 0;
+        }
+        .prx-is-touch .prx-content-block .prx-content-header .prx-content-header-inner,
+            .prx-is-touch .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+                margin-left: auto;
+                margin-right: auto;
+        }
+            /* if the header is just one block */
+            .prx-content-header-one {
+                margin: 0;
+                padding: 20px 0;
+                overflow: hidden;
+            }
+            /* the header can be broken into a 'main' part and an 'extra' part */
+            /* by default, each of these have a certain width */
+            .prx-content-header-main {
+                float: left;
+                margin: 20px 0;
+                padding: 0;
+                width: 66%;
+                overflow: hidden;
+            }
+            /* header 'main' and 'extra' width can be overwritten for specific pages. */
+            .prx-content-block-results .prx-content-header-main {
+                width: 670px;
+            }
+            .prx-content-header-extra {
+                float: right;
+                margin: 29px 0;
+                padding: 0;
+                width: 33%;
+                text-align: right;
+                overflow: hidden;
+            }
+            .prx-content-block-results .prx-content-header-extra {
+                width: 263px;
+            }
+            
+        /* by default we'll have a fixed width. */
+       
+        .prx-content-block .prx-content-content-with-secondary {
+           background: url(../img/bg-content-secondary.png) repeat-y left center;
+           overflow: hidden;
+           border-radius: 0 0 3px 3px;
+        }
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 960px;
+            margin-left: 20px;
+        }
+        .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+            width: 960px;
+            margin-left: 0;
+            overflow: hidden;
+        }
+        /* for touch devices, we will assume that the screens aren't crazy wide and therefore we will horizontally center the site. */
+        .prx-is-touch .prx-content-block .prx-content-content .prx-content-content-inner {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .prx-is-touch .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    .prx-content-secondary {
+        width: 230px;
+        float: left;
+    }
+    .prx-content-content-with-secondary .prx-content-secondary {
+        width: 240px;
+        position: absolute;
+        top: 0;
+    }
+        .prx-content-secondary-inner {
+            
+        }
+        
+    .prx-content-primary {
+        margin-left: 240px;
+    }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 240px;
+    }
+        .prx-content-primary-inner {
+            min-height: 150px;
+            padding-bottom: 40px;
+        }
+        
+    .prx-content-single {
+        padding-bottom: 20px;
+    }
+        .prx-content-single-inner {
+            
+        }
+
+    /* 2 columns: 50-50 */
+    .prx-content-primary1,
+        .prx-content-primary2 {
+            width: 50%;
+            float: left;
+    }
+        .prx-content-primary1-inner,
+            .prx-content-primary2-inner {
+                margin: 20px;
+        }
+    .prx-content-primary2 {
+
+    }
+        .prx-content-primary1-inner {
+            margin-left: 0;
+        }
+        .prx-content-primary2-inner {
+            margin-right: 0;
+        }
+
+    /* actual content block with undefined, generic content */
+    .prx-content-generic {
+        background: #fff;
+        padding: 0 0 0 20px;
+        overflow: hidden;
+    }
+    
+    /* Title Bar */
+    .prx-title-bar {
+        background: #344a5f url(../img/bg-content-secondary.png) repeat-y left center;
+        overflow: hidden;
+        height: 44px;
+    }
+        .prx-title-bar-secondary {
+            width: 240px;
+            float: left;
+            background: transparent url(../img/bg-content-secondary.png) repeat-y left center;
+        }
+        .prx-title-bar-primary {
+            margin-left: 240px;
+            width: 720px;
+        }
+            .prx-title-bar-primary-title {
+                float: left;
+                padding: 8px 5px 7px 20px;
+            }
+                .prx-title-bar-primary-title h1 {
+                    margin: 0;
+                    color: #fff;
+                }
+            .prx-title-bar-primary-actions {
+                float: right;
+                padding: 6px 0 6px 5px;
+            }
+                .prx .prx-title-bar-primary-actions .prx-btn {
+                    margin-left: 10px;
+                }
+
+    /* button bar (below the content, for instance, to repeat the buttons) */
+    .prx-button-bar {
+        overflow: hidden;
+        padding: 30px 0 10px 0;
+    }
+        .prx-button-bar .prx-button-bar-primary {
+            float: right;
+        }
+        .prx-button-bar .prx-button-bar-secondary {
+            float: left;
+        }
+
+    /* app info page: top section */
+    .prx-app-info {
+        overflow: hidden;
+        padding-bottom: 20px;
+        border-top: 1px solid #e1e1e1;
+        margin-top: 20px;
+    }
+    .prx-listings-info {
+        border-top: 1px solid #e1e1e1;
+    }
+        .prx-app-info .prx-app-info-a,
+            .prx-app-info .prx-app-info-b {
+                width: 50%;
+                float: left;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        .prx-app-info .prx-app-info-a {
+            padding-right: 30px;
+        }
+        .prx-app-info .prx-app-info-b {
+            padding-left: 30px;
+        }
+            .prx-app-info .prx-app-info-text label {
+            }
+            .prx-app-info .prx-app-info-text p {
+                margin: 0.4em 0 1.4em 0;
+                padding: 0;
+            }
+        .prx-app-info .prx-app-info-tile {
+            float: left;
+            width: auto;
+        }
+        .prx-app-info .prx-app-info-tile-preview {
+            float: none;
+        }
+            .prx-app-info .prx-app-info-tile label {
+                padding-left: 3px;
+            }
+
+    .prx-form-info-a {
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+    .prx-form-info-b {
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+        .prx-form-info-b1,
+            .prx-form-info-b2 {
+                width: 50%;
+                float: left;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        .prx-form-info-b1 {
+            padding-right: 30px;
+        }
+        .prx-form-info-b2 {
+            padding-left: 30px;
+        }
+            .prx-form-info-b input.prx-input,
+                .prx-form-info-b textarea.prx-textarea,
+                .prx-app-info input.prx-input,
+                .prx-app-info textarea.prx-textarea,
+                .prx-dialog-content input.prx-input {
+                    width: 100%;
+            }
+            .prx-dialog-content input.prx-input {
+                margin-left: 0; 
+                margin-right: 0;
+            }
+            .prx-form-info-b textarea.prx-textarea {
+                height: 120px;
+            }
+
+    .prx-content-block-similar {
+        border-top: 1px solid #ccc;
+    }
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    html, body { background-color: #e8eaeb; }
+    .prx {
+    }
+    .prx-content-header {
+/*        background: #0097dc;*/
+    }
+    .prx-content-content,
+        .prx-content-block-results {
+            background: #e8eaeb;
+    }
+    .prx-content-block-listing .prx-content-content {
+        background: #fff;
+        overflow: hidden;
+    }
+        .prx-content-block .prx-content-content-with-secondary {
+           background-image: none;
+        }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner,
+        .prx-content-block-admin .prx-content-content .prx-content-content-inner,
+        .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+            width: auto;
+            margin-left: 0;
+    }
+
+    .prx-content-header-one {
+        margin: 4px 0 10px 0;
+        padding: 0 10px;
+    }
+    .prx-content-generic .prx-content-header-one {
+        padding: 0;
+    }
+    .prx-content-header-main {
+        display: none;
+    }
+    .prx-content-header-extra {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        background: #344a5f !important;
+    }
+    .prx-content-header-extra {
+        clear: both;
+        width: auto;
+        float: none;
+        text-align: left;
+        padding-top: 0;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        margin: 0;
+        width: auto;
+    }
+    .prx-content-block-results .prx-content-header-extra {
+        margin: 0;
+        width: auto;
+        box-shadow: inset 0 3px 2px -2px rgba(0,0,0,.4);
+    }
+    .prx-content-secondary,
+        .prx-content-content-with-secondary .prx-content-secondary {
+            width: auto;
+            float: none;
+    }
+    .prx-content-primary {
+        margin-left: 0;
+    }
+    .prx-content-content-with-secondary .prx-content-primary {
+        border-left: 0;
+        margin-left: 0;
+    }
+    .prx-content-single {
+    }
+    
+    .prx-content-primary1,
+        .prx-content-primary2 {
+            width: 100%;
+            float: none;
+    }
+        .prx-content-primary1-inner,
+            .prx-content-primary2-inner {
+                margin: 10px;
+        }
+
+    .prx-content-generic {
+        padding: 10px;
+    }
+    /* Title Bar */
+   
+    .prx-title-bar {
+        height: auto;
+    }
+        .prx-title-bar-secondary {
+            display: none;
+        }
+        .prx-title-bar-primary {
+            margin-left: 0;
+            width: 100%;
+        }
+            .prx-title-bar-primary-title {
+                padding: 8px 5px 9px 12px;
+                display: none;
+            }
+            .prx-title-bar-primary-actions {
+                padding: 9px 10px;
+                float: right;
+                clear: none;
+            }
+                .prx .prx-title-bar-primary-actions .prx-btn {
+                    margin-left: 0;
+                }
+                .prx-title-bar-primary-actions .prx-filter label {
+                    display: none;
+                }
+        .prx-app-info .prx-app-info-text {
+            width: 100%;
+            float: none;
+        }
+        .prx-app-info .prx-app-info-tile {
+            float: none;
+            width: 100%;
+        }
+            .prx-app-info .prx-app-info-tile ul {
+                border: 1px solid #e8eaeb;
+                border-bottom: 0;
+                margin-top: 5px;
+            }
+        .prx-button-bar .prx-button-bar-secondary {
+            float: none;
+        }
+    .prx-title-bar {
+        background: #344a5f;
+    }
+
+        .prx-app-info .prx-app-info-a,
+            .prx-app-info .prx-app-info-b {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+        }
+
+        .prx-form-info-b1,
+            .prx-form-info-b2 {
+                width: 100%;
+                float: none;
+                clear: both;
+        }
+        .prx-form-info-b1 {
+            padding-right: 0;
+        }
+        .prx-form-info-b2 {
+            padding-left: 0;
+        }
+
+    .prx-content-block-similar {
+        border-top: 0;
+    }
+    #detailsContent {
+        border-bottom: 1px solid #ccc;
+    }
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+        .prx-content-block .prx-content-content-with-secondary {
+           background-image: none;
+        }
+    .prx-content-secondary { display: none; }
+    .prx-content-primary { margin-left: 0; }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 0;
+    }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 724px;
+    }
+    .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+        width: 744px;
+    }
+    .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+        width: 724px;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        width: 460px;
+    }
+
+    /* Title Bar */
+        .prx-title-bar-primary-title {
+            display: none;
+        }
+       .prx-title-bar-secondary {
+            display: none;
+        }
+        .prx-title-bar-primary {
+            margin-left: 0;
+            width: 744px;
+        }
+    .prx-title-bar {
+        background: #344a5f;
+    }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    
+    .prx-content-secondary { width: 236px; }
+    .prx-content-content-with-secondary .prx-content-secondary {
+        width: 240px;
+    }
+    .prx-content-primary { margin-left: 246px; }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 240px;
+    }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 1200px;
+    }
+    .prx-content-block .prx-content-content .prx-content-content-inner {
+        width: 1222px;
+    }
+    .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+        width: 1220px;
+    }
+    .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+        width: 960px;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        width: 850px;
+    }
+    .prx-content-block-results .prx-content-header-extra {
+        width: 333px;
+    }
+        .prx-title-bar-primary {
+            width: 980px;
+        }
+        .prx-app-info .prx-app-info-text {
+            width: 710px;
+        }
+    
+
+}
+
+/**
+ *  Messages.
+ *  4 types: info, error, warning, success.
+ */
+
+/* generic */
+.prx-msg {
+    padding: 6px 10px;
+    margin: 10px 0 10px 0;
+    color: #fff;
+    background: #aaa;
+    overflow: hidden;
+}
+/* when in an overlay */
+.prx-dialog-content .prx-msg {
+    margin-top: 0;
+}
+/* when attached to the title bar */
+.prx-msg-bar {
+    margin: 0;
+    background: #aaa url(../img/bg-content-secondary.png) repeat-y left center;
+}
+
+	.prx-content-block-results .prx-msg-bar,
+	.prx-dialog-content .prx-msg-bar {
+	    background-image: none;
+	}
+	
+    .prx-msg-bar .prx-msg-inner {
+        margin-left: 250px;
+        width: 700px;
+    }
+
+	.prx-content-block-results .prx-msg-bar .prx-msg-inner,
+	.prx-dialog-content .prx-msg-bar .prx-msg-inner {
+	    margin-left: 0;
+	}
+	
+	.prx-dialog-content .prx-msg-bar .prx-msg-inner {
+	    width: 100%;
+	}
+	
+    .prx-msg a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .prx-msg a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .prx-msg p {
+        display: block;
+        overflow: hidden;
+        line-height: 120%;
+        margin: 0;
+        padding: 9px 0 9px 10px;
+    }
+    .prx-msg p.prx-with-action {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+        .prx-msg p.prx-with-action span.prx-msg-text {
+            padding-top: 10px;
+            padding-bottom: 7px;
+            display: inline-block;
+        }
+    .prx-msg p.prx-msg-title {
+        font-weight: bold;
+    }
+    .prx-msg p:last-child {
+        margin-bottom: 0;
+    }
+    .prx-msg ul {
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-left: 15px;
+    }
+    .prx-msg ul li {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding-top: 0;
+        padding-bottom: 0.5em;
+        line-height: 120%;
+    }
+    .prx-msg ul li:last-child {
+        padding-bottom: 0;
+    }
+    .prx-msg ul.ul-one-item {
+        padding-left: 23px;
+        margin-bottom: 0;
+    }
+        .prx-msg ul.ul-one-item li {
+            list-style: none;
+            padding: 7px 0;
+            font-weight: bold;
+        }
+        
+    .prx-msg .prx-msg-icon {
+        background: url(../img/sprite-prx.png) no-repeat 24px 24px;
+        width: 24px;
+        height: 24px;
+        float: left;
+        vertical-align: bottom;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .prx-msg-info .prx-msg-icon { background-position: -76px 0; }
+    .prx-msg-warning .prx-msg-icon { background-position: -76px -24px; }
+    .prx-msg-error .prx-msg-icon { background-position: -76px -48px; }
+    .prx-msg-success .prx-msg-icon { background-position: -76px -72px; }
+
+.prx-msg-info {
+    background-color: #669bd7;
+}
+.prx-msg-warning {
+    background-color: #dbb245;
+}
+.prx-msg-error {
+    background-color: #d68184;
+}
+.prx-msg-success {
+    background-color: #60c170;
+}
+
+a.prx-msg-action {
+    float: right;
+    text-decoration: none;
+    background: rgba(0,0,0,.2);
+    padding: 9px 21px 8px 21px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+a.prx-msg-action:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,.3);
+}
+
+/* no results paragraph */
+.prx-no-results {
+    text-align: center;
+    line-height: 200%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 113px;
+    background: url(../img/prx-no-results-app.png) no-repeat center top;
+}
+    .prx-no-results .prx-no-results-text {
+        font-size: 123.1%;
+        color: #6b6a6a;
+    }
+    .prx .prx-no-results .prx-btn {
+        margin-top: 10px;
+    }
+/* when all we see on the page is this message block */
+.prx-no-results-alone {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-height: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-msg-bar {
+        background-image: none;
+    }
+        .prx-msg-bar .prx-msg-inner {
+            margin-left: 0;
+            width: auto;
+        }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-msg-bar {
+        background-image: none;
+    }
+        .prx-msg-bar .prx-msg-inner {
+            margin-left: 10px;
+            width: 724px;
+        }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+        .prx-msg-bar .prx-msg-inner {
+            width: 960px;
+        }
+}
+/**
+ *  Form elements related CSS
+ */
+
+input.prx-input {
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
+    background: #fafafa;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -ms-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+input.prx-input:focus {
+    background: #fff;
+    border-color: #999;
+    outline: none;
+}
+input.prx-input-text-highlight,
+    textarea.prx-input-text-highlight {
+        background: #fff;
+}
+
+input.prx-input-search {
+    font-size: 123.1%;
+    display: block;
+    float: left;
+    width: 232px;
+    height: 32px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    margin-right: -32px;
+    padding-right: 32px;
+}
+
+.prx-textarea {
+    background: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.prx-textarea:focus {
+    background: #fff;
+    border-color: #999;
+    outline: none;
+}
+
+.prx-text-alt {
+    display: inline-block;
+    margin:  10px 5px;
+}
+
+/**
+ *  Buttons
+ *  - default button is secondary button style.
+ *  - there are special buttons as well (think icons).
+ */
+.prx .prx-btn,
+    .ui-dialog .prx-btn {
+        text-decoration: none;
+        display: inline-block;
+        background: #f4f4f4; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZjRmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWViZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #f4f4f4 0%, #eaebed 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#eaebed)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #f4f4f4 0%,#eaebed 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#eaebed',GradientType=0 ); /* IE6-8 */
+        font-weight: bold;
+        border: 1px solid #bbb;
+        color: #757575;
+        margin: 0;
+        padding: 7px 20px;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px -1px rgba(0,0,0,0.3);
+        text-align: center;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+/* touch devices font overrides */
+body.prx-is-touch .prx .prx-btn,
+    body.prx-is-touch .ui-dialog .prx-btn {
+        font-weight: normal;
+        font-size: 115.4%;
+        padding-top: 8px;
+        padding-bottom: 6px;
+}
+
+.prx .prx-btn-small {
+    padding: 2px 10px;
+}
+.prx-ie9 .prx .prx-btn, 
+    .prx-ie9 .ui-dialog .prx-btn 
+        { filter: none; }
+.prx .prx-btn:hover,
+    .ui-dialog .prx-btn:hover {
+        text-decoration: none;
+        color: #757575;
+        background: #ffffff; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmVmZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-8 */
+        text-shadow: 0px 1px 0px rgba(255,255,255,1);
+}
+.prx-ie9 .prx .prx-btn:hover,
+    .prx-ie9 .ui-dialog .prx .prx-btn:hover
+        { filter: none; }
+.prx .prx-btn:active,
+    .ui-dialog .prx-btn:active,
+    .prx .prx-btn-selected,
+    .prx .prx-btn-selected:hover {
+        background: #e3e3e3; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UzZTNlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #e3e3e3 0%, #ffffff 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e3e3e3), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #e3e3e3 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #e3e3e3 0%,#ffffff 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #e3e3e3 0%,#ffffff 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #e3e3e3 0%,#ffffff 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e3e3', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+        text-shadow: 0px 1px 0px rgba(255,255,255,1);
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+.prx-ie9 .prx .prx-btn:active,
+    .prx-ie9 .ui-dialog .prx-btn:active,
+    .prx-ie9 .prx .prx-btn-selected,
+    .prx-ie9 .prx .prx-btn-selected:hover { filter: none; }
+
+.prx .prx-btn-disabled,
+    .ui-dialog .prx-btn-disabled,
+    .prx .prx-btn-disabled:hover,
+    .ui-dialog .prx-btn-disabled:hover,
+    .prx .prx-btn-disabled:active,
+    .ui-dialog .prx-btn-disabled:active {
+background: #ffffff; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNGY0ZjQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #ffffff 0%, #f4f4f4 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#f4f4f4 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #ffffff 0%,#f4f4f4 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-8 */
+        color: #ccc;
+        box-shadow: none;
+        text-shadow: none;
+        border: 1px solid #ddd;
+        cursor: default;
+}
+
+.prx .prx-btn-primary,
+    .ui-dialog .prx-btn-primary {
+        background: #a0cb3d; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2EwY2IzZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4N2FjMzEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #a0cb3d 0%, #87ac31 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a0cb3d), color-stop(100%,#87ac31)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #a0cb3d 0%,#87ac31 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #a0cb3d 0%,#87ac31 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #a0cb3d 0%,#87ac31 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #a0cb3d 0%,#87ac31 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0cb3d', endColorstr='#87ac31',GradientType=0 ); /* IE6-8 */
+        border: 1px solid #6c8049;
+        color: #fff;    
+        text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-primary,
+    .prx-ie9 .ui-dialog .prx-btn-primary
+        { filter: none; }
+.prx .prx-btn-primary:hover,
+    .ui-dialog .prx-btn-primary:hover {
+        background: #b3d757; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzZDc1NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhMGJlNTAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #b3d757 0%, #a0be50 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3d757), color-stop(100%,#a0be50)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #b3d757 0%,#a0be50 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #b3d757 0%,#a0be50 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #b3d757 0%,#a0be50 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #b3d757 0%,#a0be50 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3d757', endColorstr='#a0be50',GradientType=0 ); /* IE6-8 */
+        border: 1px solid #6c8049;
+        color: #fff;    
+        text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-primary:hover,
+    .prx-ie9 .ui-dialog .prx-btn-primary:hover
+        { filter: none; }
+.prx .prx-btn-primary:active,
+    .ui-dialog .prx-btn-primary:active {
+        background: #769b24; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc2OWIyNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4N2FjMzEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #769b24 0%, #87ac31 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#769b24), color-stop(100%,#87ac31)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #769b24 0%,#87ac31 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #769b24 0%,#87ac31 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #769b24 0%,#87ac31 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #769b24 0%,#87ac31 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#769b24', endColorstr='#87ac31',GradientType=0 ); /* IE6-8 */
+        border: 1px solid #6c8049;
+        color: #fff;    
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        text-shadow: 0px -1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-primary:active,
+    .prx-ie9 .ui-dialog .prx-btn-primary:active
+        { filter: none; }
+
+.prx .prx-btn-alert,
+    .ui-dialog .prx-btn-alert {
+    background: #ad3333; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2FkMzMzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5OTAwMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ad3333 0%, #990000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ad3333), color-stop(100%,#990000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ad3333 0%,#990000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ad3333 0%,#990000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ad3333 0%,#990000 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ad3333 0%,#990000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad3333', endColorstr='#990000',GradientType=0 ); /* IE6-8 */
+    border: 1px solid #7a0000;
+    color: #fff;    
+    text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-alert,
+    .prx-ie9 .ui-dialog .prx-btn-alert { filter: none; }
+.prx .prx-btn-alert:hover,
+     .ui-dialog .prx-btn-alert:hover {
+background: #b84d4d; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I4NGQ0ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhMzFhMWEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #b84d4d 0%, #a31a1a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b84d4d), color-stop(100%,#a31a1a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #b84d4d 0%,#a31a1a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #b84d4d 0%,#a31a1a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #b84d4d 0%,#a31a1a 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #b84d4d 0%,#a31a1a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b84d4d', endColorstr='#a31a1a',GradientType=0 ); /* IE6-8 */
+    border: 1px solid #7a0000;
+    color: #fff;    
+    text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-alert:hover,
+    .prx-ie9 .ui-dialog .prx-btn-alert:hover { filter: none; }
+.prx .prx-btn-alert:active,
+    .ui-dialog .prx-btn-alert:active {
+background: #990000; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk5MDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhZDMzMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #990000 0%, #ad3333 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#990000), color-stop(100%,#ad3333)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #990000 0%,#ad3333 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #990000 0%,#ad3333 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #990000 0%,#ad3333 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #990000 0%,#ad3333 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#990000', endColorstr='#ad3333',GradientType=0 ); /* IE6-8 */
+    border: 1px solid #7a0000;
+    color: #fff;    
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    text-shadow: 0px -1px 0px rgba(0,0,0,.3);
+}
+.prx-ie9 .prx .prx-btn-alert:active,
+    .prx-ie9 .ui-dialog .prx-btn-alert:active { filter: none; }
+
+.prx .prx-append,
+    .prx button.prx-append {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -1px;
+}
+.prx .prx-prepend,
+    .prx button.prx-prepend,
+    .prx input.prx-prepend {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+}
+
+/* special buttons */
+.prx .prx-btn-search {
+    display: block;
+    float: left;
+    padding: 4px 5px 2px 5px;
+    height: 32px;
+    border-radius: 0 3px 3px 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+/* touch devices font overrides */
+body.prx-is-touch .prx .prx-btn-search {
+    padding-top: 4px;
+}
+
+.prx .prx-btn-search:focus {
+    outline: none;
+}
+    .prx .prx-btn-search .prx-icon {
+        background-position: 0 0;
+    }
+.prx .prx-btn-more {
+    padding: 5px 5px 5px 10px;
+}
+    .prx .prx-btn-more .prx-icon {
+        background-position: -60px 0;
+        width: 10px;
+        height: 12px;
+        float: right;
+        margin-top: 0;
+    }
+    .prx .prx-btn-more .prx-btn-txt {
+        margin-right: 4px;
+        float: left;
+        line-height: 100%;
+    }
+
+    .prx .prx-btn-image .prx-icon {
+        background-position: -40px -87px;
+        width: 12px;
+        height: 9px;
+        float: left;
+        margin-top: 4px;
+    }
+    .prx .prx-btn-image .prx-btn-txt {
+        margin-left: 8px;
+        line-height: 100%;
+    }
+
+    .prx .prx-btn-video .prx-icon {
+        background-position: -40px -80px;
+        width: 12px;
+        height: 7px;
+        float: left;
+        margin-top: 5px;
+    }
+    .prx .prx-btn-video .prx-btn-txt {
+        margin-left: 8px;
+        line-height: 100%;
+    }
+
+    .prx .prx-btn-file .prx-icon {
+        background-position: -30px -80px;
+        width: 8px;
+        height: 10px;
+        float: left;
+        margin-top: 3px;
+    }
+    .prx .prx-btn-file .prx-btn-txt {
+        margin-left: 8px;
+        line-height: 100%;
+    }
+
+    .prx .prx-btn-link .prx-icon {
+        background-position: -20px -80px;
+        width: 10px;
+        height: 10px;
+        float: left;
+        margin-top: 3px;
+    }
+    .prx .prx-btn-link .prx-btn-txt {
+        margin-left: 8px;
+        line-height: 100%;
+    }
+
+    .prx .prx-btn-banner .prx-icon {
+        background-position: -20px -90px;
+        width: 10px;
+        height: 9px;
+        float: left;
+        margin-top: 4px;
+    }
+    .prx .prx-btn-banner .prx-btn-txt {
+        margin-left: 8px;
+        line-height: 100%;
+    }
+
+span.prx-button-separator {
+    padding: 0 10px;
+}
+
+.prx .prx-btn-secondary-titlebar {
+    color: #fff;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid transparent;
+    text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie-soso .prx .prx-btn-secondary-titlebar {
+    background: #6e818e;
+}
+    .prx .prx-btn-secondary-titlebar:hover {
+        background: rgba(255,255,255,0.4);
+        color: #fff;
+        text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+    }
+    .prx-ie-soso .prx .prx-btn-secondary-titlebar:hover {
+        background: #84939f;
+    }
+    
+.prx .prx-title-bar .prx-btn-alert {
+    color: #fff;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid transparent;
+    text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+.prx-ie-soso .prx .prx-title-bar .prx-btn-alert {
+    background: #6e818e;
+}
+    .prx .prx-title-bar .prx-btn-alert:hover {
+        background: #ad3333;
+        color: #fff;
+        text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+    }
+.prx .prx-title-bar .prx-btn-primary {
+    color: #fff;
+    background: #87ac31;
+    border: 1px solid transparent;
+    text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+}
+    .prx .prx-title-bar .prx-btn-primary:hover {
+        background: #a0cb3d;
+        color: #fff;
+        text-shadow: 0px 1px 0px rgba(0,0,0,.3);
+    }
+
+
+
+/* form layout styles */
+.prx-filters {
+    padding: 5px 20px 30px 0;
+    overflow: hidden;
+}
+.prx-nav-filters {
+    display: none;
+}
+    .prx-filter {
+        float: left;
+        position: relative;
+        overflow: visible;
+        padding-right: 50px;
+        padding-left: 5px;
+    }
+    .prx-filter-dropdown {
+        padding-left: 0;
+        padding-right: 30px;
+    }
+    .prx-title-bar .prx-filter {
+        padding-top: 8px;
+    }
+        .prx-filter label {
+            font-weight: bold; 
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .prx-title-bar .prx-filter label {
+            color: #fff;
+        }
+        .prx-filter select, 
+            .prx-optionlist select {
+                position: absolute;
+                top: 0;
+                left: 0;
+        }
+        .prx-filter-sort select {
+            margin-right: 0;
+        }
+        select.prx-select-filter-overlaymenu {
+            display: none;
+        }
+
+    /* only for medium screens (iPad Portrait) */
+    .prx-filter-M {
+        display: none;
+    }
+    /* only for small screens (phone) */
+    .prx-filter-S {
+        display: none;
+    }
+    .prx-filter-sort {
+        float: right;
+        padding-right: 0;
+    }
+    
+    .prx-overlaymenu-opener {
+        padding: 1px 0 1px 0;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .prx-filter-dropdown .prx-overlaymenu-opener {
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 6px 3px 4px 8px;
+        background: #f5f5f5;
+    }
+    
+        .prx-overlaymenu-opener .prx-icon {
+            float: right;
+            width: 10px;
+            height: 10px;
+            margin: 6px 2px 2px 6px;
+            background-position: -40px 0;
+        }
+        .prx-title-bar .prx-overlaymenu-opener .prx-icon {
+            background-position: -40px -20px;
+        }
+        .prx-overlaymenu-opener .prx-overlay-opener-text {
+        }
+        .prx-title-bar .prx-overlaymenu-opener .prx-overlay-opener-text {
+            color: #fff;
+        }
+        .prx-filter-sort .prx-overlaymenu-opener {
+        }
+
+    .prx-overlaymenu-opener-optionlist {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 4px 5px 2px 5px;
+        margin: 0;
+    }
+        .prx-overlaymenu-opener-optionlist .prx-icon {
+            margin-left: 50px;
+        }
+    .prx-optionlist {
+        overflow: hidden;
+        margin: 10px 0 20px 0;
+        position: relative;
+    }
+    .prx-title-bar .prx-overlaymenu-opener-optionlist {
+        border: 1px solid #fff;
+    }
+    .prx-title-bar .prx-optionlist {
+        margin-top: 3px;
+        margin-bottom: 0;
+    }
+
+.prx-label {
+    font-weight: bold;
+}
+
+.prx-btn-group {
+    padding: 20px 0;
+    overflow: hidden;
+}
+.prx-btn-group-a {
+    float: left;
+}
+.prx-btn-group-b {
+    float: right;
+    margin-left: 20px;
+}
+
+    .prx-btn-group .prx-btn {
+        float: left;
+    }
+    .prx-btn-group-a .prx-btn {
+        margin-right: 10px;
+    }
+
+span.prx-req {
+    color: red;
+    font-size: 110%;
+    line-height: 90%;
+    margin-left: 5px;
+}
+
+label.prx-form-label {
+    font-size: 1.385em;
+    padding-top: 20px;
+    overflow: hidden;
+    display: block;
+    color: #303030;
+}
+label.prx-form-label span.prx-label-text {
+    float: left;
+}
+label.prx-form-label a.prx-label-edit,
+    label.prx-form-label span.prx-label-edit {
+        float: right;
+        font-size: 66.7%;
+        padding-top: 6px;
+}
+label.prx-form-label span.prx-label-edit {
+    cursor: pointer;
+    color: #015ba7;
+}
+label.prx-form-label span.prx-label-edit:hover {
+    text-decoration: underline;
+}
+label.prx-label-inline {
+    font-weight: normal;
+}
+
+.prx-btn-back .prx-icon {
+    background: url(../img/sprite-prx.png) no-repeat 0 -20px;
+    width: 16px;
+    height: 13px;
+    margin: -1px 5px 1px 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+p.prx-tile-extra-text {
+    margin: 10px 0 1em 2px;
+}
+
+.prx-btn-prev .prx-icon,
+    .prx-btn-next .prx-icon {
+        background: url(../img/sprite-prx.png) no-repeat -60px -40px;
+        width: 10px;
+        height: 12px;
+        margin: 2px 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        vertical-align: middle;
+}
+.prx-btn-next .prx-icon {
+    background-position: -60px -60px;
+}
+.prx-btn-prev.prx-btn-disabled .prx-icon,
+    .prx-btn-next.prx-btn-disabled .prx-icon {
+        opacity: .3;
+}
+
+/* label/form el combos */
+.prx-form-group {
+    overflow: hidden;
+    padding: 10px 0;
+}
+.ui-dialog .prx-dialog-content .prx-form-group {
+    padding: 0;
+}
+    .prx-form-group input {
+        margin: 10px 0;
+    }
+    .prx-form-group .prx-checkbox {
+        margin: 10px 10px 10px 5px;
+    }
+    .prx-form-group .prx-form-group-label {
+        overflow: hidden;
+        float: left;
+        width: 100px;
+        padding: 5px 0 0 0;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+        .prx-form-group .prx-form-group-label label {
+            display: inline-block;
+            margin: 5px 0;
+        }
+    .prx-form-group .prx-form-group-field {
+        overflow: hidden;
+        margin: 0 0 0 100px;
+        padding: 5px 5px 5xp 10px;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+
+p.prx-page-explanation {
+    margin: 20px 0 0 0;
+}
+p.prx-form-explanation {
+    margin: 5px 0 10px 0;
+}
+
+span.prx-char-counter {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #999;
+}
+span.prx-char-counter-error {
+    color: red;
+}
+
+/* error styling */
+.prx-form-error {
+    border: 1px solid red !important;
+    background-color: #edd8a2 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx .prx-btn {
+        width: 100%;
+    }
+    input.prx-input-search {
+        width: 100%;
+        margin-right: -32px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        padding-right: 32px;
+        height: 40px;
+        border: 1px solid #999;
+        background: #fff;
+        box-shadow: none;
+        border-radius: 3px;
+    }
+    .prx .prx-btn-search {
+        float: right;
+        margin-right: 2px;
+        margin-top: 12px;
+        padding-top: 0;
+        padding-right: 8px;
+        padding-left: 2px;
+        height: 32px;
+        border: 0;
+        background: #fff;
+        box-shadow: none;
+        border-radius: 3px;
+        opacity: 0.8;
+        width: auto;
+    }
+    /* touch devices font overrides */
+    body.prx-is-touch .prx .prx-btn-search{
+        padding-top: 0;
+        padding-bottom: 6px;
+    }
+    .prx .prx-btn-search:hover {
+        background: #fff;
+        box-shadow: none;
+    }
+    .prx-btn-search .prx-icon { margin-top: 5px; }
+    .prx-filters {
+        display: none;
+        padding: 10px  10px 0 10px;
+        overflow: hidden;
+        background: #344a5f;
+    }
+        .prx-filter {
+            float: none;
+            margin: 10px 0;
+            padding-left: 0;
+            padding-bottom: 10px;
+            padding-right: 0;
+            
+        }
+        .prx-title-bar .prx-filter {
+            margin: 0;
+        } 
+        .prx-filter-sort {
+            float: none;
+            padding-left: 0;
+        }
+    .prx-filter-S {
+        display: block;
+        margin: 0;
+        padding-left: 0;
+    }
+    .prx-title-bar-primary .prx-filter-S {
+        padding: 17px 10px 13px 10px;
+        float: left;
+    }
+        .prx-tile-header {
+            border-bottom: 1px solid #e8eaeb;
+        }
+            .prx-filter label {
+                font-size: 123.1%;
+                padding: 0 0 5px 1px;
+                display: block;
+            }
+            .prx-filter select, 
+                .prx-optionlist select {
+                    clear: both;
+                    width: 100%;
+                    font-size: 123.1%;
+            }
+            
+    .prx-overlaymenu-opener {
+        width: 100%;
+        margin: 0;
+        padding: 5px 5px 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fff;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .prx-overlaymenu-opener-optionlist {
+        width: auto !important;
+    }
+    .prx-title-bar .prx-overlaymenu-opener {
+        width: auto;
+        padding: 1px 0;
+        padding-right: 0;
+        border: 0;
+        background: transparent;
+    }
+    .prx-title-bar .prx-overlaymenu-opener-optionlist {
+        border: 1px solid #fff;
+        padding: 4px 5px 2px 5px;
+    }
+        .prx-title-bar .prx-overlaymenu-opener .prx-icon {
+            margin-right: 10px;
+        }
+        .prx-title-bar .prx-overlaymenu-opener-optionlist .prx-icon {
+            margin-right: 2px;
+        }
+        .prx-title-bar .prx-overlaymenu-opener .prx-overlay-opener-text {
+            margin-left: 0;
+        }
+        select.prx-select-filter-overlaymenu {
+            display: block;
+            height: 30px;
+        }
+
+    .prx-btn-group-a {
+        float: none;
+    }
+        .prx-btn-group-a .prx-btn {
+            float: none;
+            display: block;
+            text-align: center;
+        }
+        .prx-btn-group .prx-btn {
+            display: none;
+        }
+        .prx-btn-group .prx-btn-primary {
+            display: block;
+        }
+
+    label.prx-form-label {
+        font-size: 1.2em;
+    }
+        label.prx-form-label a.prx-label-edit,
+            label.prx-form-label span.prx-label-edit {
+                font-size: .833em;
+        }
+
+
+    .prx-form-group .prx-form-group-label {
+        float: none;
+        width: auto;
+        padding: 5px 0 0 0;
+    }
+        .prx-form-group .prx-form-group-label label {
+            margin-bottom: 0;
+        }
+    .prx-form-group .prx-form-group-field {
+        margin: 0;
+        padding: 5px 0;
+        width: 100%;
+    }
+
+    span.prx-button-separator {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+        
+    /* on phone: no secondary buttons in the title bar */ 
+    .prx .prx-btn-secondary-titlebar {
+        display: none;
+    } 
+    .prx .prx-btn-secondary-titlebar-all {
+        display: block;
+    }  
+    
+    /* certain button icons don't work well on the phone */
+    .prx .prx-btn-image .prx-icon,
+        .prx .prx-btn-video .prx-icon,
+        .prx .prx-btn-file .prx-icon,
+        .prx .prx-btn-link .prx-icon,
+        .prx .prx-btn-banner .prx-icon {
+            display: none;
+    }
+    .prx .prx-btn-image .prx-btn-txt,
+        .prx .prx-btn-video .prx-btn-txt,
+        .prx .prx-btn-file .prx-btn-txt,
+        .prx .prx-btn-link .prx-btn-txt,
+        .prx .prx-btn-banner .prx-btn-txt {
+            margin-left: 0;
+    }
+
+         
+        /* webkit */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            select.prx-select-filter-overlaymenu {
+                -webkit-appearance: none;
+            }
+        }
+    
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-filters {
+        padding-bottom: 20px;
+        padding-right: 0;
+        overflow: hidden;
+    }
+    .prx-nav-filters {
+        padding: 10px 20px;
+        overflow: hidden;
+        display: block;
+        background: #0097dc;
+    }
+        .prx-nav-filters-inner {
+            width: 724px;
+            overflow: hidden;
+        }
+            .prx-nav-filters .prx-filter {
+                float: left;
+                margin-top: 5px;
+            }
+    .prx-filter-M {
+        display: block;
+        margin: 0;
+        padding-left: 0;
+    }
+    .prx-title-bar-primary .prx-filter-M {
+        padding: 13px 10px 11px 20px;
+    }
+
+    .prx-medium-nav { 
+        cursor: pointer;
+        display: block; 
+        overflow: visible; 
+        padding: 10px;
+        /* if we need border/background around mobile nav icons
+        padding: 9px; 
+        background: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 3px;
+        */
+    }
+    .prx-medium-nav-menu { 
+        float: left;
+        margin-top: -6px;
+    }
+        .prx-medium-nav-menu .prx-icon {
+            background-position: -20px -20px; 
+            vertical-align: bottom; /* weird extra 3 pixels in the bottom issue */
+        }
+        
+    .prx-nav-filters .prx-overlaymenu-opener .prx-overlay-opener-text {
+        color: #fff;
+    }
+    .prx-nav-filters .prx-overlaymenu-opener .prx-icon {
+        background-position: -40px -20px;
+    }
+
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    input.prx-input-search {
+        width: 302px;
+    }
+    .prx-filters {
+        padding-right: 22px;
+    }
+}
+/**
+ *  Anything that goes into the content header.
+ *  Logos, page titles, high level page info, search boxes, buttons.
+ */
+.prx-content-header-bread {
+    margin-top: 20px;
+}
+
+.prx-content-header .prx-logo,
+    .prx-content-header .prx-store-logo {
+        float: left;
+        margin: 0 20px 0 0;
+}
+.prx-content-header .prx-logo {
+    width: 200px;
+    height: 125px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 1px;
+    text-align: center;
+}
+.prx-content-header .prx-store-logo,
+    .prx-store-logo-preferences {
+        height: 50px;
+        font-size: 0;
+}
+.prx-store-logo-preferences {
+    border: 1px solid #ccc;
+    float: left;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    padding: 5px;
+    height: 60px;
+    border-radius: 3px;
+}
+/* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+.prx-content-header .prx-logo:before,
+    .prx-content-header .prx-store-logo:before,
+    .prx-store-logo-preferences:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+}
+.prx-content-header .prx-logo img,
+    .prx-content-header .prx-store-logo img,
+    .prx-store-logo-preferences img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto\9;
+        /* IE7-8 need help adjusting responsive images */
+        height: auto;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+}
+.prx-content-header .prx-store-logo img,
+    .prx-store-logo-preferences img {
+        display: inline-block;
+        vertical-align: middle;
+}
+
+.prx-content-header h1.prx-h1-store {
+    font-weight: normal;
+    margin-bottom: 0px;
+    margin-top: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    /*
+    color: #696e71;
+    */
+    text-shadow: 0 1px 0px #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 50px;
+}
+.prx-content-block-listing .prx-content-header h1.prx-h1-store {
+    line-height: 120%;
+    white-space: normal;
+    margin: 7px 0 10px 0;
+} 
+
+.prx-content-header .prx-search {
+    float: right;
+    padding: 0 0 0 0;
+    width: 233px;
+}
+
+.prx-content-header .prx-tagline {
+    font-size: 1.385em;
+    display: block;
+    clear: right;
+    text-shadow: 0 1px 0px #fff;
+}
+
+.prx-content-header .prx-header-actions {
+    float: right;
+    padding: 6px 0 6px 20px;
+}
+
+.prx-content-header .prx-header-actions button {
+    float: right;
+}
+.prx-content-header .prx-header-actions .prx-extra-info {
+    float: right;
+    display: block;
+    padding: 8px 20px 0 0;
+}
+
+.prx-mobile-nav {
+    display: none;
+}
+
+.phone-menu-panel {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-content-header-bread {
+        display: none;
+    }
+    .prx-content-header .prx-logo,
+        .prx-content-header .prx-store-logo {
+            clear: both;
+            width: 80px;
+            height: 50px;
+            margin-top: 5px;
+            margin-right: 10px;
+    }
+    .prx-content-header h1.prx-h1-store {
+        line-height: 22px;
+        clear: right;
+        padding-top: 10px;
+        font-size: 1.2em;
+    }
+    .prx-content-block-admin .prx-content-header h1.prx-h1-store {
+        padding-top: 4px;
+    }
+    .prx-content-block-admin .prx-content-header p {
+        margin-top: 4px;
+    }
+    .prx-content-header .prx-content-header-one h1.prx-h1-store {
+        
+    }
+    .prx-content-header .prx-tagline {
+        font-size: 1.077em;
+        display: none;
+    }
+    
+    .prx-content-header .prx-search {
+        width: auto;
+        min-width: 200px; /* in phone view: really narrow screens would cause wrapping. */
+        float: none;
+        padding-top: 2px;
+    }
+    .prx-content-header .prx-search .prx-search-form {
+        margin: 0 40px 0 10px;
+        padding: 0;
+    }
+    .prx-content-header h1 {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .prx-content-header .prx-header-actions {
+        padding-left: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .prx-content-header .prx-header-actions button.prx-btn,
+        .prx-content-header .prx-header-actions a.prx-btn {
+            width: 100%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+    }
+    .prx-content-header .prx-header-actions .prx-extra-info {
+        float: right;
+        display: block;
+        padding: 8px 20px 0 0;
+    }
+    
+    
+    .prx-mobile-nav { 
+        cursor: pointer;
+        display: block; 
+        overflow: visible; 
+        padding: 10px;
+        /* if we need border/background around mobile nav icons
+        padding: 9px; 
+        background: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 3px;
+        */
+    }
+    .prx-mobile-nav:active {
+        /*
+        background: url(../img/sprite-prx.png) no-repeat -160px 0;
+        */
+    }
+    .prx-mobile-nav-menu { 
+        float: left;
+    }
+        .prx-mobile-nav-menu .prx-mobile-icon {
+            background-position: -20px 0; 
+        }
+    .prx-mobile-nav-filter { 
+        float: right; 
+        margin-top: 10px;
+    }
+        .prx-mobile-nav-filter .prx-mobile-icon {
+            background-position: 0 -80px; 
+        }
+    .prx-mobile-nav-search { 
+        float: right; 
+    }
+        .prx-mobile-nav-search .prx-mobile-icon {
+            background-position: 0 0; 
+        }
+        
+    body {  }
+    .prx {
+        position: relative;
+        z-index: 2;
+    }
+    .phone-menu-panel {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        background-color: #444;
+        padding: 0;
+        margin: 0;
+        width: 250px;
+        /*height: 100%;*/
+        color: #fff;
+        overflow: visible;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+    }
+    
+    .page-wrap-film {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-content-header .prx-header-actions {
+        padding-top: 3px;
+    }
+    
+    .prx-content-header h1.prx-h1-store {
+        font-size: 1.5em;
+    }
+    .prx-content-header .prx-tagline {
+        font-size: 1.154em;
+    }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .prx-content-header .prx-search {
+        width: 303px;
+    }
+}
+/**
+ *  Navigation.
+ *
+ */
+
+/**
+ *  Nav 2: e.g. the categories on the left hand side.
+ *  Each nav 2 item is an href, that lives inside an LI, inside a UL (prx-ul-nav2), inside 2 DIVs (prx-nav2, and prx-nav2-inner).
+ */
+
+/* Nav 2 end user */
+.prx-nav2 {
+    
+}
+    .prx-nav2-inner {
+        
+    }
+        ul.prx-ul-nav2 {
+            margin: 0 20px 30px 0;
+        }
+            ul.prx-ul-nav2 li {
+                padding: 5px 0;
+            }
+                .prx ul.prx-ul-nav2 li a,
+                    ul.prx-ul-nav2 li a {
+                        display: block;
+                        font-size: 123.1%;
+                        color: #696e71;
+                        text-decoration: none;
+                        border-radius: 3px;
+                        padding: 5px 10px;
+                        background: #f5f5f5;
+                        -webkit-transition: background 0.5s ease;
+                        -moz-transition: background 0.5s ease;
+                        -ms-transition: background 0.5s ease;
+                        -o-transition: background 0.5s ease;
+                        transition: background 0.5s ease;
+                }
+                .prx ul.prx-ul-nav2 li a:hover,
+                    ul.prx-ul-nav2 li a:hover {
+                        background: #e8e8e8;
+                }
+                .prx ul.prx-ul-nav2 li.prx-selected a,
+                    ul.prx-ul-nav2 li.prx-selected a,
+                    .prx ul.prx-ul-nav2 li.prx-selected a:hover,
+                    ul.prx-ul-nav2 li.prx-selected a:hover {
+                        background: #c7d9e5;
+                }
+                
+                .prx ul.prx-ul-nav2 li .prx-icon,
+                    ul.prx-ul-nav2 li .prx-icon {
+                        display: none;
+                }
+
+/* Nav 2 admin user */
+.prx-nav2-admin {
+    
+}
+    .prx-nav2-admin-inner {
+        
+    }
+        ul.prx-ul-nav2-admin {
+            margin: 0 0 -1px 0;
+            padding-bottom: 1px;
+            background: transparent url(../img/bg-prx-ul-nav2-admin.png) repeat-x center -1px;
+        }
+            ul.prx-ul-nav2-admin li {
+                padding: 0;
+                height: 45px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+                .prx ul.prx-ul-nav2-admin li a,
+                    ul.prx-ul-nav2-admin li a {
+                        border-right: 1px solid #dde5e7;
+                        display: block;
+                        color: #3f4c5c;
+                        text-decoration: none;
+                        height: 45px;
+                        padding: 15px 10px;
+                        background: transparent url(../img/bg-prx-ul-nav2-admin.png) repeat-x center bottom;
+                        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                }
+                .prx ul.prx-ul-nav2-admin li a:hover,
+                    ul.prx-ul-nav2-admin li a:hover {
+                        color: #0085cb;
+                }
+                .prx ul.prx-ul-nav2-admin li.prx-selected a,
+                    ul.prx-ul-nav2-admin li.prx-selected a,
+                    .prx ul.prx-ul-nav2-admin li.prx-selected a:hover,
+                    ul.prx-ul-nav2-admin li.prx-selected a:hover {
+                        background-color: #fff;
+                        color: #0085cb;
+                        font-weight: bold;
+                }
+                
+                .prx ul.prx-ul-nav2-admin li .prx-icon,
+                    ul.prx-ul-nav2-admin li .prx-icon {
+                        display: none;
+                }
+
+
+/**
+ *  Tabs
+ */
+.prx-tabs {}
+
+ul.prx-tab-set {
+    height: 39px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    overflow: visible;
+}
+    ul.prx-tab-set li {
+        float: left;
+        display: block;
+    }
+        ul.prx-tab-set li .prx-tab {
+            background: #f6f6f6;
+            display: inline-block;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+            color: #464646;
+            line-height: 38px;
+            height: 38px;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        ul.prx-tab-set li .prx-tab-disabled {
+            background: #f0f0f0;
+            color: #bbb;
+        }
+        ul.prx-tab-set li .prx-tab:hover {
+            background: #f0f0f0;
+        }
+        ul.prx-tab-set li.prx-selected .prx-tab {
+            background: #fff;
+            border-bottom: 1px solid #fff;
+        }
+            ul.prx-tab-set li .prx-tab .prx-tab-text {
+                display: block;
+                padding: 0 20px;
+                border-right: 1px solid #ccc;
+            }
+
+/* status (store status and listing status) */
+.prx-status {
+    padding: 0;
+    background: #666;
+    border-bottom: 1px solid #777;
+}
+.prx-status-offline {
+}
+.prx-status-online {
+}
+    .prx-status a {
+        display: block;
+        padding: 17px 17px 17px 10px;
+        text-align: left;
+        font-weight: bold;
+        color: #fff;
+    }
+    .prx-status a:hover {
+        text-decoration: none;
+    }
+    .prx-status-offline a,
+        .prx-status-offline a:hover {
+            color: #fff;
+    }
+        .prx-status-offline a .prx-actual-status,
+            .prx-status-offline a:hover .prx-actual-status {
+                color: #f66;
+        }
+    .prx-status-online a .prx-actual-status,
+        .prx-status-online a:hover .prx-actual-status {
+            color: #9c3;
+    }
+        .prx-status-online a,
+            .prx-status-online a:hover {
+                color: #fff;
+        }
+        .prx-status a span.prx-icon {
+            display: none;
+        }
+        .prx-status a span.prx-text {
+            
+        }
+        
+/* nav2 admin phone */
+#prx_nav2_admin_phone {
+    display: none;
+}        
+        
+        
+        
+        
+        
+        
+        
+    
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-nav2 { display: none; }
+    
+    #phone_categories {
+        overflow: hidden;
+        clear: both;
+        background: #344a5f;
+    }
+    
+    #prx_nav2_admin_phone {
+        overflow: hidden;
+        clear: both;
+    }
+    
+    #phone_categories ul.prx-ul-nav2-phone,
+        #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone { 
+            border-top: 1px solid rgba(0,0,0,0.3);
+    }
+        #phone_categories ul.prx-ul-nav2-phone li,
+            #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li {
+                border-bottom: 1px solid rgba(0,0,0,0.3);
+        }
+            #phone_categories ul.prx-ul-nav2-phone li a,
+                #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li a { 
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 10px;
+                    overflow: hidden;
+                    display: block;
+            }
+            #phone_categories ul.prx-ul-nav2-phone li a:hover,
+                #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li a:hover { 
+                    color: #fff;
+                    text-decoration: none;
+            }
+                #phone_categories ul.prx-ul-nav2-phone li span.prx-icon,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li span.prx-icon { 
+                        display: none;
+                }
+                #phone_categories ul.prx-ul-nav2-phone li span.prx-text,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li span.prx-text { 
+                        color: #fff;
+                        padding: 10px 0;
+                        display: inline-block;
+                }
+                #phone_categories ul.prx-ul-nav2-phone li.prx-selected span.prx-icon,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li.prx-selected  span.prx-icon { 
+                        float: right;
+                        display: inline-block;
+                        background: url(../img/sprite-prx.png) no-repeat 0 -60px;
+                        width: 13px;
+                        height: 10px;
+                        margin: 12px 10px 0 10px;
+                }
+
+    .prx-content-secondary .prx-status { display: none; }
+    .prx-status {
+        padding: 7px 10px 0 0;
+        float: right;
+        border-bottom: 0;
+        background: transparent;
+    }
+        .prx-status a {
+            border-radius: 3px;
+            padding: 5px;
+            color: #444;
+            display: inline-block;
+        }
+        .prx-status a:hover {
+            color: #444;
+        }
+        .prx-status-offline a {
+            background: #fff;
+        }
+        .prx-status-offline a:hover {
+            color: #444;
+        }
+        .prx-status-online a {
+            background: #fff;
+        }
+        .prx-status-online a:hover {
+            color: #444;
+        }
+            .prx-status-offline a .prx-actual-status,
+                .prx-status-offline a:hover .prx-actual-status {
+                    color: #900;
+            }
+            .prx-status-online a .prx-actual-status,
+                .prx-status-online a:hover .prx-actual-status {
+                    color: #060;
+            }
+
+
+    .prx-nav2-admin { display: none; }
+        ul.prx-ul-nav2,
+            ul.prx-ul-nav2-admin { 
+            margin: 0;
+            border-bottom: 1px solid #555;
+        }
+            ul.prx-ul-nav2 li, 
+                ul.prx-ul-nav2-admin li { 
+                    padding: 0; 
+                    height: auto;
+            }
+                ul.prx-ul-nav2 li a,
+                    ul.prx-ul-nav2-admin li a {
+                        font-size: 123.1%;
+                        border-radius: 0; 
+                        display: block; 
+                        border-bottom: 1px solid #333;
+                        border-top: 1px solid #555;
+                        border-right: 0;
+                        background: #444;
+                        color: #ddd;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        text-shadow: 0px 1px 0px rgba(0,0,0,1);
+                }
+                ul.prx-ul-nav2 li a:hover, 
+                    ul.prx-ul-nav2-admin li a:hover { 
+                        background: #444; 
+                        color: #ddd;
+                }
+                ul.prx-ul-nav2 li.prx-selected a,
+                    ul.prx-ul-nav2-admin li.prx-selected a, 
+                    ul.prx-ul-nav2 li.prx-selected a:hover,
+                    ul.prx-ul-nav2-admin li.prx-selected a:hover { 
+                        background: #333;
+                        color: #fff; 
+                }
+                
+    .prx-tabs { padding: 0 10px; }
+    .prx-content-generic .prx-tabs { padding-left: 0; padding-right: 0; }
+        ul.prx-tab-set { width: 100%; }
+            ul.prx-tab-set li { width: 33%; }
+            ul.prx-tab-set2 li { width: 49%; }
+                ul.prx-tab-set li .prx-tab { width: 100%; }
+                    ul.prx-tab-set li .prx-tab .prx-tab-text { text-align: center; }
+
+    /* nav2 admin phone */
+    #prx_nav2_admin_phone {
+        display: block;
+    }
+    
+    /* don't show tabs on the listing details page on the phone, since we don't want to show Chatter on the phone */
+    #prx_listing_details_tabs {
+        display: none;
+    }
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-title-bar .prx-status {
+        display: none;
+    }
+
+    .prx-status {
+        float: right;
+        padding: 0;
+        border-bottom: 0;
+        background: transparent;
+    }
+        .prx-status a {
+            padding: 5px;
+            background: #fff;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .prx-status-offline a {
+            color: #444;
+        }
+        .prx-status-offline a:hover {
+            color: #444;
+        }
+        .prx-status-online a {
+            color: #444;
+        }
+        .prx-status-online a:hover {
+            color: #444;
+        }
+            .prx-status-offline a .prx-actual-status,
+                .prx-status-offline a:hover .prx-actual-status {
+                    color: #900;
+            }
+            .prx-status-online a .prx-actual-status,
+                .prx-status-online a:hover .prx-actual-status {
+                    color: #060;
+            }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}
+/**
+ *  App Tiles.
+ *
+ */
+
+/* tiles typically live inside 2 DIVs with class names 'prx-results' and 'prx-results-inner' */
+.prx-results {
+}
+
+    .prx-results-inner {
+        position: relative;
+    }
+    
+        .prx-results h2 {
+            float: left;
+            font-size: 150%;
+            margin-top: 0;
+        }
+        .prx-content-block-similar .prx-results h2 {
+            padding-top: 15px;
+        }
+
+/* tiles typically live inside a UL/LI structure ('prx-ul-results' and 'prx-li-tile'). */
+ul.prx-ul-results {
+    white-space: nowrap;
+    margin-right: -17px;
+}
+ul.prx-ul-results-oneline {
+    height: 193px;
+}
+
+    li.prx-li-tile {
+        display: block;
+        float: left;
+        white-space: normal;
+    }
+
+/* the actual tile starts with a DIV with class name 'prx-tile' */
+.prx-tile {
+    width: 220px;
+    height: 184px;
+    overflow: hidden;
+    border-radius: 3px;
+    padding: 0;
+    margin: 5px 17px 14px 2px;
+    box-shadow: 0 1px 1px 1px #d7d6d5;
+}
+.prx-app-info-tile .prx-tile {
+    margin-bottom: 5px;
+} 
+.prx .prx-tile a:hover { text-decoration: none; }
+    .prx-tile-content,
+        .prx-tile-content-inner {
+            display: block;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+    }
+    
+    /* front and back of tiles */
+    .prx-tile-content {
+        position: relative;
+        width: 220px;
+        height: 184px;
+        border-radius: 2px;
+    }
+        .prx-tile-content-inner {
+            display: block;
+            background: #fff;
+            position: absolute;
+            overflow: hidden;
+            width: 218px;
+            height: 182px;
+            top: 0;
+            left: 0;
+            border-radius: 2px;
+            border: 1px solid #cfd4d9;
+        }
+        .prx-tile-content-inner-2 {
+            background-color: rgba(50,50,50,.8);
+            border: 1px solid #bbb;
+        }
+        .prx-ie-soso .prx-tile-content-inner-2 { background-color: #666; }
+        .prx .prx-tile-content-inner-4,
+            .prx-tile-content-inner-4 {
+                display: block;
+                background-color: rgba(255,255,255,.9);
+                height: 143px;
+                border-bottom: 0;
+                border-radius: 2px 2px 0 0;
+                text-align: right;
+                color: #6b6a6a;
+        }
+        .prx .prx-tile-content-inner-4:hover,
+            .prx-tile-content-inner-4:hover {
+                color: #6b6a6a;
+        }
+        .prx-ie-soso .prx-tile-content-inner-4 { background-color: #fff; }
+            .prx-tile-install-info {
+                display: block;
+                padding: 20px 20px 5px 5px;
+                font-size: 123.1%;
+                line-height: 300%;
+            }
+            .prx-tile-install-number {
+                font-size: 150%;
+                display: inline-block;
+            }
+            .prx-tile-install-info-sub {
+                color: #999;
+            }
+        
+
+        .prx-tile-img {
+            display: table;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+            width: 218px;
+            height: 143px;
+            margin: 0;
+            padding: 0;
+        }
+            .prx-tile-img-inner {
+                overflow: hidden;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                border: 0;
+                width: 208px;
+                height: 133px;
+                margin: 0;
+                padding: 5px;
+            }
+                .prx-tile-img img {
+                    display: inline;
+                    max-height: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    vertical-align: bottom;
+                }
+        .prx-tile-title {
+            overflow: hidden;
+            height: 39px;
+            background: #e8eaeb;
+        }
+            .prx .prx-tile-title a,
+                .prx .prx-tile-title span.link-replace {
+                    display: block;
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0 5px 0 15px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    color: #696e71;
+                    font-size: 123.1%;
+                    line-height: 40px;
+            }
+        .prx-tile-2-top {
+            width: 218px;
+            height: 143px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        
+        .prx-tile-info  {
+            overflow: hidden;
+            padding: 10px;
+        }
+            .prx-tile-info .prx-tile-info-data {
+                float: left;
+            }
+            .prx-tile-info .prx-btn {
+                float: right;
+            }
+        .prx-tile-info-data {
+            margin-top: 5px;
+        }
+        .prx-tile-tag {
+            margin: 3px 5px 0 10px;
+            padding: 0;
+            line-height: 140%;
+            overflow: hidden;
+            height: 7em;
+        }
+            .prx-tile-content-inner-2 .prx-tile-tag a {
+            }
+
+
+
+    .prx-tile-content-inner-1 .prx-tile-info,
+        .prx-tile-content-inner-1 .prx-tile-tag {
+            display: none;
+    }
+    .prx-tile-content-inner-2 .prx-tile-img {
+        display: none;
+    }
+    .prx-tile-content-inner-1 .prx-tile-title a {
+        cursor: default;
+    }
+    .prx-tile-content-inner-noflip .prx-tile-title a {
+        cursor: pointer;
+    }
+    .prx-tile-content-inner-1 .prx-tile-title { border-radius: 0; }
+    
+    .prx-tile-content-inner-2 a.prx-tile-info-data,
+        .prx-tile-content-inner-2 .prx-tile-tag a {
+            color: #fff;
+    }
+    
+.prx-results-oneline .prx-filter-sort {
+    margin-top: 5px;
+}
+
+.prx-tile-header {
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    
+    .prx-results {
+    }
+        .prx-results-inner {
+            background: #fff;
+            box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+            margin: 10px 9px 0 9px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .prx-content-generic .prx-results-inner {
+            margin: 0;
+        }
+
+        .prx-results h2 {
+            float: none;
+            margin: 0;
+            padding: 10px 5px 10px 10px;
+            border-bottom: 1px solid #e8eaeb;
+            font-size: 123.1%;
+        }
+        .prx-content-block-similar .prx-results h2 {
+            padding-top: 10px;
+        }
+        .prx-results .prx-filter {
+            margin: 10px 10px 0 10px;
+        }
+
+    ul.prx-ul-results {
+        margin-right: 0;
+    }
+    ul.prx-ul-results-oneline {
+        height: auto;
+    }
+        li.prx-li-tile {
+            float: none;
+        }
+    .prx-tile {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 5px 0;
+        margin: 0;
+        border-bottom: 1px solid #e8eaeb;
+        cursor: pointer;
+    }
+        .prx-tile {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        .prx-tile-img {
+            float: left;
+            display: table;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+            width: 75px;
+            height: 75px;
+            margin: 0;
+            padding: 0;
+        }
+            .prx-tile-img-inner {
+                overflow: hidden;
+                display: table-cell;
+                text-align: center;
+                vertical-align: middle;
+                border: 0;
+                width: 55px;
+                height: 75px;
+                margin: 0;
+                padding: 0 10px;
+            }
+                .prx-tile-img img {
+                    display: inline;
+                    max-height: 100%;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                    vertical-align: bottom;
+                }
+        .prx-tile-title {
+            height: auto;
+            background: transparent;
+        }
+            .prx .prx-tile-title a {
+                display: block;
+                overflow: hidden;
+                margin: 0;
+                padding: 10px 30px 0 0;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: #696e71;
+                font-size: 123.1%;
+                line-height: 123.1%;
+            }
+        
+        .prx-tile-tag,
+            .prx-tile-content-inner-1 .prx-tile-tag {
+                display: block;
+                padding: 5px 0;
+                margin-left: 75px;
+                line-height: 130%;
+                display: block;
+                height: auto;
+        }
+            .prx-tile-content-inner-1 .prx-tile-tag a {
+                margin: 0;
+                padding: 0 30px 0 0;
+                color: #696e71;
+                display: block;
+                text-overflow: clip;
+            }
+
+        .prx-tile-info  {
+            display: none;
+        }
+
+        /* front and back of tiles */
+        .prx-tile-content {
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            padding-right: 10px;
+        }
+        .prx-tile-content-inner-1 {
+            background: transparent url(../img/arrow-right.png) no-repeat right center;
+            position: relative;
+            width: auto;
+            height: auto;
+            border-radius: 0;
+            border: 0;
+        }
+        .prx-ul-results-noclick .prx-tile-content-inner-1 {
+            background-image: none;
+        }
+        .prx-tile-content-inner-2,
+            .prx-tile-content-inner-3 {
+                display: none;
+        }
+            .prx-tile-content-inner-1 .prx-tile-title a {
+                cursor: pointer;
+            }
+
+        .prx .prx-tile-content-inner-4,
+            .prx-tile-content-inner-4 {
+                background-color: transparent;
+                border-radius: 0;
+                border: 0;
+                width: auto;
+                height: auto;
+                text-align: left;
+        }
+        .prx-ie-soso .prx-tile-content-inner-4 { background-color: transparent; }
+            .prx-tile-install-info {
+                padding: 34px 0 0 75px;
+                font-size: 100%;
+                line-height: 140%;
+            }
+            .prx-tile-install-number {
+                font-size: 100%;
+                clear: none;
+            }
+            .prx-tile-install-info-sub {
+                color: #999;
+            }
+
+
+    .prx-is-touch .prx-tile-phone-clicked:hover, 
+        .prx-is-touch .prx-tile-phone-clicked:active {
+            background-color: #f4f5f5;
+    }
+    
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    ul.prx-ul-results {
+        margin-right: -29px;
+    }
+    .prx-tile {
+        margin-right: 29px;
+        margin-bottom: 26px;  /* 3 less that left */ 
+    }
+    .prx-results-oneline .prx-filter-sort {
+        margin-right: 0;
+    }
+}
+
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    ul.prx-ul-results {
+        margin-right: -22px;
+    }
+    .prx-tile {
+        margin-right: 22px;
+        margin-bottom: 19px;  /* 3 less that left */ 
+    }
+    .prx-results-oneline .prx-filter-sort {
+        margin-right: 5px;
+    }
+}
+/**
+ *  CSS for banners and banner sliders
+ */
+
+
+
+/* banners and banner sliders */
+.page-banner-outer,
+    .page-banner-slider-outer {
+        clear: both;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        margin-bottom: 30px;
+}
+.page-banner-outer img,
+    .slides-banner-container img {
+        max-width: 100%;
+        width: auto;
+        /* IE7-8 need help adjusting responsive images */
+        height: auto;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+}
+
+.owl-banner {
+    position: relative;
+}
+.owl-banner .owl-controls {
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    height: 0;
+}
+.owl-pagination {
+    width: 100%;
+    text-align: center;
+    margin-top: -21px;
+    height: 0;
+}
+/* Styling Pagination*/
+.owl-banner .owl-controls .owl-page {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;/*IE7 life-saver */
+}
+.owl-banner .owl-controls .owl-page span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);/*IE7 fix*/
+    opacity: 0.5;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,1)
+}
+
+.owl-banner .owl-controls .owl-page.active span,
+.owl-banner .owl-controls.clickable .owl-page:hover span{
+    filter: Alpha(Opacity=100);/*IE7 fix*/
+    opacity: 1;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5)
+}
+
+/* If PaginationNumbers is true */
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+    height: auto;
+    width: auto;
+    color: #FFF;
+    padding: 2px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+
+/* banner sliders */
+.page-banner-outer {
+    margin-top: 20px;
+}
+.prx-content-block-admin .page-banner-outer {
+    float: left;
+    width: 663px; 
+    border-color: #aaa;
+}
+
+.page-banner-slider {
+    width: 940px;
+    margin: 0 0 0 -1px;
+}
+.slides-banner-container {
+    display: none;
+    position: relative;
+}
+
+.slidesjs-navigation {
+    position: absolute;
+    width: 36px;
+    height: 100%;
+    top: 0;
+    z-index: 11;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    text-indent: 100%;
+}
+.slides-banner-container:hover .slidesjs-navigation {
+    opacity: .5;
+}
+.slides-banner-container .slidesjs-navigation:hover {
+    opacity: 1;
+}
+.slidesjs-previous {
+    background: url(../img/arrow-slider-left.png) no-repeat center center;
+}
+.slidesjs-next {
+    right: 0;
+    background: url(../img/arrow-slider-right.png) no-repeat center center;
+}
+.prx-is-touch .slidesjs-navigation { display: none; }
+
+ul.slidesjs-pagination {
+    position: absolute;
+    z-index: 12;
+    bottom: 0;
+    left: 50%;
+    margin-left: 50px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    overflow: hidden;
+}
+    ul.slidesjs-pagination li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+        float: left;
+    }
+        ul.slidesjs-pagination a {
+            background: url(../img/sprite-prx.png) no-repeat -20px -40px;
+            width: 20px;
+            height: 20px;
+            display: block;
+            text-indent: -99px;
+        }
+        ul.slidesjs-pagination a.active {
+            background: url(../img/sprite-prx.png) no-repeat -20px -60px;
+        }
+.prx-is-touch ul.slidesjs-pagination { display: none; }
+
+    
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .page-banner-outer,
+        .page-banner-slider-outer {
+            display: none;
+    }
+    .prx-content-block-admin .page-banner-outer {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .page-banner-slider {
+        width: 724px;
+    }
+    .prx-content-block-admin .page-banner-outer {
+        width: 687px; 
+    }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .page-banner-slider {
+        width: 1200px;
+    }
+    .page-banner-outer img,
+        .slides-banner-container img {
+            max-width: 1200px;
+            margin-left: -1px;
+    }
+    .prx-content-block-admin .page-banner-outer {
+        width: 923px; 
+    }
+    .prx-content-block-admin .page-banner-outer img {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+}
+.prx-overlay-menu {
+    position: absolute;
+    z-index: 1501;
+    margin-top: 4px;
+    background: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #ccc;
+    -moz-box-shadow: 0 .3em .6em -.1em #999;
+    -webkit-box-shadow: 0 .3em .6em -.1em #999;
+    box-shadow: 0 .3em .6em -.1em #999;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.prx-overlay-menu.is-overlay {
+    position: fixed;
+}
+
+    /* UL - LI overlay menus */
+    .prx-overlay-menu ul {
+        position: relative;
+        z-index: 1502;
+        padding: 4px 0;
+    }
+        .prx-overlay-menu ul li {
+            display: block;
+        }
+        .prx-overlay-menu ul li.prx-filter-hidden {
+            visibility: hidden;
+            height: 0;
+        }
+            .prx-overlay-menu ul li a {
+                display: block;
+                margin: 0;
+                padding: 4px 12px;
+                text-decoration: none;
+                color: #444;
+                white-space: nowrap;
+                /*
+                border-top: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+                */
+            }
+            .prx-overlay-menu ul li .prx-text {
+                white-space: nowrap;
+            }
+            .prx-overlay-menu ul li.new-section a {
+                border-top: 1px dotted #ddd;
+            }
+            .prx-overlay-menu-select ul li a {
+                margin: 0;
+                padding-left: 8px;
+            }
+            .prx-overlay-menu ul li a span.prx-icon {
+                width: 10px;
+                height: 10px;
+                margin-right: 8px;
+                display: inline-block;
+                background: url(../img/sprite-prx.png) no-repeat 10px 10px;
+            }
+            .prx-overlay-menu ul li.prx-selected a span.prx-icon {
+                background-position: 0 -40px;
+                width: 13px;
+                margin-right: 5px;
+            }
+            .prx-overlay-menu ul li.selected a,
+                .prx-overlay-menu ul li a:hover,
+                .prx-overlay-menu ul li.selected a:hover {
+                    background-color: #c7d9e5;
+                    border-color: #c7d9e5;
+                    color: #000;
+            }
+            .prx-overlay-menu ul li.prx-overlay-menu-item-first a {
+                /* since the UL has extra padding, commenting this out
+                border-radius: 3px 3px 0 0;
+                -moz-border-radius: 3px 3px 0 0;
+                -webkit-border-radius: 3px 3px 0 0;
+                border-top: 0;
+                */
+            }
+            .prx-overlay-menu ul li.prx-overlay-menu-item-last a {
+                /* since the UL has extra padding, commenting this out
+                margin-bottom: 0;
+                border-bottom: 0;
+                border-radius: 0 0 3px 3px;
+                -moz-border-radius: 0 0 3px 3px;
+                -webkit-border-radius: 0 0 3px 3px;
+                */
+            }
+            /* hover menu arrow */
+            .prx-overlay-menu span.prx-arrow {
+                bottom: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                z-index: 1503;
+            }
+            .prx-overlay-menu span.prx-arrow-b {
+                border-color: rgba(255, 255, 255, 0);
+                border-bottom-color: #ffffff;
+                border-width: 5px;
+                left: 50%;
+                margin-left: -5px;
+            }
+            .prx-overlay-menu span.prx-arrow-a {
+                border-color: rgba(170, 170, 170, 0);
+                border-bottom-color: #aaa;
+                border-width: 6px;
+                left: 50%;
+                margin-left: -6px;
+            }
+            
+    /* DIV - P overlay menus */
+    .prx-overlay-section {
+        padding: 4px 0;
+        border-bottom: 1px solid #ddd;
+    }
+    .prx-overlay-section:last-of-type {
+        border-bottom: 0;
+    }
+        .prx-overlay-section p {
+            margin: 0;
+            padding: 0;
+        }
+            .prx-overlay-section p a {
+                display: block;
+                margin: 0;
+                padding: 4px 12px;
+                text-decoration: none;
+                color: #444;
+                cursor: pointer;
+            }
+            .prx-overlay-menu p.selected a,
+                .prx-overlay-menu p a:hover,
+                .prx-overlay-menu p.selected a:hover {
+                    background-color: #c7d9e5;
+                    border-color: #c7d9e5;
+                    color: #000;
+                    text-decoration: none;
+            }
+            
+            
+/* special one off classes for specific overlay menus */
+.prx-overlay-menu-category ul {
+    margin-top: -5px;
+}
+
+/* sub menus */
+.prx-overlay-section p a.prx-hover-opener {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.prx-overlay-section p a.prx-hover-opener-open {
+    background-color: #c7d9e5;
+    border-color: #c7d9e5;
+    color: #000;
+}
+    .prx-is-touch .prx-overlay-section p a.prx-hover-opener:hover {
+        background-color: #fff;
+    }
+    .prx-is-touch .prx-overlay-section p a.prx-hover-opener-open:hover {
+        background-color: #c7d9e5;
+    }
+
+.prx-overlay-section p a.prx-hover-opener .prx-link-text {
+    display: inline-block;
+    float: left;
+}
+.prx-overlay-section p a.prx-hover-opener .prx-icon {
+    width: 5px;
+    height: 7px;
+    margin: 4px 0 0 11px;
+    padding: 0;
+    display: inline-block;
+    background-position: -40px -60px;
+    float: right;
+}
+.prx-submenu-block {
+    z-index: 1502;
+}
+    .prx-overlay-submenu {
+        z-index: 1502;
+    }
+/**
+ *  CSS for tables
+ */
+
+.prx-data-table-header {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+    .prx-data-table-header h2 {
+        margin: 3px 0 0 0;
+        padding: 0;
+        font-size: 1.846em;
+    }
+    .prx-data-table-header p {
+        margin: 10px 0 0 3px;
+        padding: 0;
+        line-height: 110%;
+    }
+    .prx-data-table-header-main {
+        float: left;
+        overflow: hidden;
+    }
+    .prx-data-table-header-extra {
+        float: right;
+        overflow: hidden;
+        text-align: right;
+    }
+        .prx-data-table-header-extra .prx-action-link {
+            margin-top: 16px;
+            display: inline-block;
+        }
+
+table.prx-data-table {
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+    table.prx-data-table tr td {
+        font-size: 92.3%;
+    }
+
+    table.prx-data-table tr th,
+        table.prx-data-table tr.prx-tr-foot td {
+            padding: 0;
+            text-align: left;
+            border-left: 1px solid #e1e1e1;
+            font-weight: bold;
+            background: #f2f3f3;
+            padding: 5px 10px;
+    }
+    table.prx-data-table tr th:first-of-type,
+        table.prx-data-table tr.prx-tr-foot td:first-of-type {
+            border-left: 0;
+    }
+    table.prx-data-table tr.prx-tr-foot td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    table.prx-data-table tr.prx-th-row-2 th:first-of-type {
+        border-left: 1px solid #e1e1e1;
+    }
+    table.prx-data-table tr th.prx-th-asc {
+        /*
+        background: #e0e3e6 url(../img/bg-prx-th-asc.png) no-repeat right center;
+        */
+        background: #f2f3f3 url(../img/bg-prx-th-asc.png) no-repeat right center;
+        padding-right: 26px;
+    }
+    table.prx-data-table tr th.prx-th-desc {
+        /*
+        background: #e0e3e6 url(../img/bg-prx-th-desc.png) no-repeat right center;
+        */
+        background: #f2f3f3 url(../img/bg-prx-th-desc.png) no-repeat right center;
+        padding-right: 26px;
+    }
+    table.prx-data-table tr th.prx-th-num {
+        text-align: right;
+    }
+    table.prx-data-table tr th.prx-th-colspan {
+        text-align: center;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+        table.prx-data-table tr th a,
+            table.prx-data-table tr th span.prx-link-replacement {
+                color: #6b6a6a;
+                line-height: 100%;
+        }
+        table.prx-data-table tr th a.prx-th-asc span.prx-th-text,
+            table.prx-data-table tr th a.prx-th-desc span.prx-th-text {
+                margin-right: 6px;
+        }
+        table.prx-data-table tr th span.prx-th-sub-text {
+            font-size: 85%;
+            clear: both;
+            display: inline-block;
+            font-weight: normal;
+            white-space: nowrap;
+        }
+        table.prx-data-table tr th a:hover {
+            text-decoration: none;
+        }
+    table.prx-data-table tr td {
+        padding: 10px;
+        border-top: 1px solid #e1e1e1;
+        line-height: 130%;
+    }
+    table.prx-data-table tr td.prx-td-action {
+        text-align: center;
+        padding: 4px 10px 4px 10px;
+        width: 1%;
+    }
+    table.prx-data-table tr td.prx-td-name {
+        /*
+        white-space: nowrap;
+        */
+    }
+    table.prx-data-table tr.prx-tr-even td {
+        /*
+        background: #f9f9f9;
+        */
+    }
+    table.prx-data-table tr td.prx-td-num {
+        text-align: right;
+    }
+    
+        table.prx-data-table tr td a {
+            color: #6b6a6a;
+            text-decoration: none;
+            border-bottom: 1px solid #999;
+        }
+        table.prx-data-table tr td a:hover {
+            text-decoration: none;
+            border-bottom: 1px solid #009ddc;
+        }
+        table.prx-data-table tr td .prx-td-sub {
+            font-size: 84.6%;
+        }
+
+.prx-menu-opener {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b5b5b5;
+    border-top: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #ffffff; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlM2UzZTMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ffffff 0%, #e3e3e3 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e3e3e3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#e3e3e3 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#e3e3e3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e3e3e3',GradientType=0 ); /* IE6-8 */
+}
+.prx-ie9 .prx-menu-opener {
+    filter: none;
+}
+.prx-menu-opener:hover {
+    background: #ffffff; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZmVmZWYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#efefef 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#efefef 100%); /* W3C */
+}
+    .prx-menu-opener .prx-icon {
+        background: url(../img/sprite-prx.png) no-repeat -40px -40px;
+        margin: 7px 0 0 6px;
+    }
+
+
+
+
+
+
+
+
+
+
+/* TINY: Phone portrait */  
+@media (max-width: 479px) {
+     .prx-data-2 {
+         display: none;
+     }
+}
+    
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-data-table-header h2 {
+        font-size: 1.5em;
+    }
+    .prx-data-3 {
+        display: none;
+    }
+
+    .prx-data-table-header-search {
+        padding-top: 0;
+    }
+        .prx-data-table-header-search .prx-data-table-header-main {
+            float: none;
+            clear: both;
+        }
+        .prx-data-table-header-search .prx-data-table-header-extra {
+            padding-bottom: 10px;
+            float: left;
+        }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}
+/**
+ *  CSS for dashboard specific stuff
+ */
+
+.prx-dashboard-analytics {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+
+.prx-analytics-header {
+    overflow: hidden;
+}
+    .prx-analytics-header .prx-btn-group {
+        padding: 0;
+    }
+
+.prx-analytics-content {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+    .prx-analytics-content-links {
+        float: left;
+        width: 165px;
+    }
+        .prx-analytics-content-links ul {
+            
+        }
+            .prx-analytics-content-links ul li {
+                padding: 0 0 35px 0;
+            }
+                .prx-analytics-content-links ul li a {
+                    display: block;
+                    color: #6b6a6a;
+                    border-radius: 3px;
+                    height: 75px;
+                    text-align: right;
+                    font-size: 123.1%;
+                    padding: 10px 20px 5px 5px;
+                    line-height: 210%;
+                }
+                    .prx-analytics-content-links ul li a span.prx-analytics-number {
+                        display: block;
+                        font-size: 150%;
+                    }
+                .prx-analytics-content-links ul li a:hover {
+                    color: #6b6a6a;
+                    text-decoration: none;
+                }
+                .prx-analytics-content-links ul li.prx-selected a,
+                    .prx-analytics-content-links ul li a:hover {
+                        background: #e8eaeb; 
+                }
+
+    .prx-analytics-content-charts-top {
+        margin-left: 200px;
+        height: 40px;
+    }
+        .prx-analytics-content-charts-top .prx-chart-controls .prx-btn-group {
+            padding: 0;
+        }
+        .prx-analytics-content-charts-top .prx-chart-y-title {
+            padding-top: 20px;
+            float: left;
+            color: #888;
+        }
+    .prx-analytics-content-charts {
+        margin-left: 200px;
+        height: 300px;
+    }
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-dashboard-analytics {
+        padding: 0 0 20px 0;
+    }
+    .prx-analytics-header .prx-btn-group-b {
+        display: none;
+    }
+    .prx-analytics-content-charts-top {
+        display: none;
+    }
+    .prx-analytics-content-charts {
+        display: none;
+    }
+    .prx-analytics-content-links {
+        float: left;
+        width: 100%;
+    }
+        .prx-analytics-content-links ul li a {
+            display: block;
+            color: #6b6a6a;
+            border-radius: 3px;
+            height: auto;
+            text-align: left;
+            font-size: 123.1%;
+            padding: 8px 10px;
+            line-height: 123.1%;
+            background: #e8eaeb;
+            overflow: hidden;
+        }
+            .prx-analytics-content-links ul li a span.prx-analytics-text {
+                float: left;
+            }
+            .prx-analytics-content-links ul li a span.prx-analytics-number {
+                display: inline-block;
+                margin-left: 5px;
+                float: right;
+            }
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+
+}
+/**
+ *  CSS for charts
+ */
+
+.morris-hover { 
+    position: absolute;
+    z-index: 1000;
+}
+
+.morris-hover.morris-default-style {
+    border-radius: 3px;
+    padding: 6px;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.prx-ie-soso .morris-hover.morris-default-style {
+    background: #fff;
+    border: 1px solid #999;    
+} 
+
+.morris-hover.morris-default-style .morris-hover-row-label {
+    font-weight: normal;
+    margin: 0 5px 0.25em 5px;
+}
+.morris-hover.morris-default-style .morris-hover-row-value {
+    font-size: 200%;
+    padding: 0 2px 0 0;
+    color: #0085cb;
+}
+
+.morris-hover.morris-default-style .morris-hover-point {
+    white-space: nowrap;
+    margin: 0.25em 0 0.25em 0;
+}
+
+/**
+ *  Screenshot Viewer.
+ *
+ */
+
+/* phone button that opens the screenshot/video viewer overlay */
+.prx-media-link {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+}
+    .prx .prx-media-link .prx-media-btn {
+        text-decoration: none;
+        background: #f4f4f4; /* Old browsers */
+        /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y0ZjRmNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWViZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #f4f4f4 0%, #eaebed 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#eaebed)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  #f4f4f4 0%,#eaebed 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  #f4f4f4 0%,#eaebed 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#eaebed',GradientType=0 ); /* IE6-8 */
+        font-weight: bold;
+        color: #757575;
+        margin: 0;
+        padding: 7px 20px;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px -1px rgba(0,0,0,0.3);
+        text-align: center;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        border: 0;
+        border-top: 1px solid #bbb;
+        border-radius: 0 0 3px 3px;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+    }
+    .prx .prx-media-link .prx-media-btn:first-child {
+        border-top: 0;
+        border-radius: 3px 3px 0 0;
+    }
+
+    .prx-dialog-ol-video a {
+        text-decoration: none;
+        color: #015ba7;
+    }
+        .prx-dialog-ol-video a:hover {
+            text-decoration: underline;
+        }
+
+#prx_videos_phone {
+    padding-bottom: 10px;
+    width: 100%;
+}
+    #prx_videos_phone-inner {
+        margin-right: -2px;
+        padding: 10px;
+        border: 1px solid #bbb;
+        border-radius: 3px;
+        background: #f4f4f4;
+    }
+
+/* general layout for screenshot/video viewer (owl) */
+.prx-screenshot-wrapper {
+    padding: 0 10px 0 0;
+    margin: 30px 0;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+    .slider-screen { 
+        width: 100%; 
+        margin: 0 auto;
+        border: 0;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+
+/* slider */
+
+.slider-large .item {
+    height: 390px;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.slider-phone .item {
+    height: 390px;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+    .slider-large .item .prx-screenshot-img-outer,
+        .slider-large .item .prx-slider-video {
+            border: 1px solid #e2e2e2;
+            border-radius: 3px;
+            padding: 5px;
+            display: block; 
+            vertical-align: middle; 
+            text-decoration: none;
+            height: 330px;
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .slider-phone .item .prx-screenshot-img-outer,
+        .slider-phone .item .prx-slider-video {
+            display: block; 
+            vertical-align: middle; 
+            text-decoration: none;
+            height: 330px;
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+
+    .slider-large .item .prx-screenshot-img-outer {
+        text-align: center;
+    }
+    .slider-phone .item .prx-screenshot-img-outer {
+        text-align: center;
+    }
+        /* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+        .slider-large .item .prx-screenshot-img-outer:before,
+            .slider-small .item .prx-carousel-item span.prx-carousel-img-outer:before,
+            .slider-phone .item .prx-screenshot-img-outer:before {
+                content: '';
+                width: 0;
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                overflow: none;
+        }
+        .slider-large .item .prx-screenshot-img-outer img,
+            .slider-small .item .prx-carousel-item span.prx-carousel-img-outer img,
+            .slider-phone .item .prx-screenshot-img-outer img {
+                display: inline-block;
+                width: auto;
+                height: auto;
+                max-height: 100%;
+                max-width: 100%;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                vertical-align: middle;
+                cursor: pointer;
+        }
+
+        .slider-large .item img, 
+            .slider-large .item .prx-slider-video {
+                max-width: 100%;
+                margin: 0 auto;
+        }
+        .display .item img, 
+            .display .item .prx-slider-video {
+                max-width: 100%;
+                margin: 0 auto;
+        }
+        .slider-large .item .prx-slider-video {
+            width: 440px;
+            overflow: hidden;
+        }
+        .slider-large .item img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .slider-phone .item img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    .slider-caption {
+        display: block;
+        clear: both;
+        height: 60px;
+        padding: 15px 10px 0 10px;
+        text-align: center;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+
+.dialog-screenshot-outer {
+    padding: 10px;
+}
+.dialog-screenshot-table {
+    width: 100%;
+    height: 100%;
+}
+.dialog-screenshot-table tr td {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.dialog-screenshot {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+/* carousel */
+.slider-small {
+    width: 354px;
+    margin-left: 43px; 
+}
+    .slider-small .item {
+        height: 66px;
+        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        cursor: pointer;
+    }
+        .slider-small .item .prx-carousel-item {
+            height: 66px;
+            margin: 0 8px;
+            border: 1px solid #666;
+            border-radius: 3px;
+            padding: 3px;
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            opacity: 0.2;
+        }
+        .slider-small .item:hover .prx-carousel-item,
+            .slider-small .synced .item .prx-carousel-item {
+                opacity: 1;
+        }
+
+            .slider-small .item .prx-carousel-item span.prx-carousel-img-outer {
+                display: inline-block; 
+                vertical-align: middle; 
+                text-decoration: none;
+                text-align: center;
+                width: 100%;
+                height: 58px;
+            }
+                /* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+                .slider-small .item .prx-carousel-item span.prx-carousel-img-outer:before {
+                    content: '';
+                    width: 0;
+                    display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
+                    overflow: none;
+                }
+                .slider-small .item .prx-carousel-item span.prx-carousel-img-outer img {
+                    display: inline-block;
+                    width: auto;
+                    height: auto;
+                    max-height: 100%;
+                    max-width: 100%;
+                    text-decoration: none;
+                    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                    vertical-align: middle;
+                    cursor: pointer;
+                }
+
+.slider-large .owl-controls,
+    .slider-overlay .owl-controls {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 50%;
+        height: 0;
+        z-index: 99 !important;
+}
+
+    .slider-large .owl-controls .owl-buttons div,
+        .slider-overlay .owl-controls .owl-buttons div {
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+    }
+
+    .slider-large .owl-controls .owl-buttons div.owl-prev,
+        .slider-overlay .owl-controls .owl-buttons div.owl-prev {
+            position: relative;
+            margin-left: 10px;
+            margin-top: -125px;
+            display: block;
+            background: url(../img/arrow-slider-left.png) no-repeat center center;
+            width: 32px;
+            height: 200px;
+            left: 5px;
+            opacity: 0;
+            outline: 0;
+            float: left;
+            text-indent: -9999px;
+            z-index: 99 !important;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-next,
+        .slider-overlay .owl-controls .owl-buttons div.owl-next {
+            position: relative;
+            margin-right: 10px;
+            margin-top: -125px;
+            display: block;
+            background: url(../img/arrow-slider-right.png) no-repeat center center;
+            width: 32px;
+            height: 200px;
+            right: 5px;
+            opacity: 0;
+            outline: 0;
+            float: right;
+            text-indent: -9999px;
+            z-index: 99 !important;
+    }
+    .prx-is-touch .slider-large .owl-controls .owl-buttons div.owl-prev,
+        .prx-is-touch .slider-overlay .owl-controls .owl-buttons div.owl-prev {
+            left: -45px;
+    }
+    .prx-is-touch .slider-large .owl-controls .owl-buttons div.owl-next,
+        .prx-is-touch .slider-overlay .owl-controls .owl-buttons div.owl-next {
+            right: -45px;
+    }
+
+    .slider-large:hover .owl-controls .owl-buttons div.owl-prev,
+        .slider-large:hover .owl-controls .owl-buttons div.owl-next,
+        .slider-overlay:hover .owl-controls .owl-buttons div.owl-prev,
+        .slider-overlay:hover .owl-controls .owl-buttons div.owl-next {
+            opacity: 0.3;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-prev:hover,
+        .slider-large:hover .owl-controls .owl-buttons div.owl-next:hover,
+        .slider-overlay .owl-controls .owl-buttons div.owl-prev:hover,
+        .slider-overlay:hover .owl-controls .owl-buttons div.owl-next:hover {
+            opacity: 1;
+    }
+    .prx-is-touch .slider-large .owl-controls .owl-buttons div.owl-prev,
+        .prx-is-touch .slider-large .owl-controls .owl-buttons div.owl-next,
+        .prx-is-touch .slider-overlay .owl-controls .owl-buttons div.owl-prev,
+        .prx-is-touch .slider-overlay .owl-controls .owl-buttons div.owl-next {
+            opacity: 1;
+    } 
+
+.slider-small .owl-controls {
+}
+
+    .slider-small .owl-controls .owl-buttons div.owl-prev {
+        margin-left: -45px;
+        margin-top: -66px;
+        display: block;
+        background: url(../img/carousel-prev.png) no-repeat center center;
+        width: 32px;
+        height: 66px;
+        left: -50px;
+        opacity: 0.8 !important;
+        outline: 0;
+        text-indent: -9999px;
+        float: left;
+    }
+    .slider-small .owl-controls .owl-buttons div.owl-next {
+        margin-right: -45px;
+        margin-top: -66px;
+        display: block;
+        background: url(../img/carousel-next.png) no-repeat center center;
+        width: 32px;
+        height: 66px;
+        left: -50px;
+        opacity: 0.8 !important;
+        outline: 0;
+        text-indent: -9999px;
+        float: right;
+    }
+
+
+/* image lightbox */
+
+#imagelightbox {
+    position: fixed;
+    z-index: 9999;
+}
+#imagelightbox-overlay {
+    background-color: #000;
+    background-color: rgba( 0, 0, 0, .7 );
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+                
+
+        #imagelightbox-close
+        {
+            width: 40px; /* 40 */
+            height: 40px; /* 40 */
+            text-align: left;
+            text-indent: -9999px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 10002;
+            top: 40px; /* 40 */
+            right: 40px; /* 40 */
+
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            -webkit-transition: color .3s ease;
+            -moz-transition: color .3s ease;
+            -ms-transition: color .3s ease;
+            -o-transition: color .3s ease;
+            transition: color .3s ease;
+        }
+            #imagelightbox-close:hover
+            {
+                background-color: #eee;
+            }
+            #imagelightbox-close:before,
+            #imagelightbox-close:after
+            {
+                width: 2px;
+                background-color: #333;
+                content: '';
+                position: absolute;
+                top: 20%;
+                bottom: 20%;
+                left: 50%;
+                margin-left: -1px;
+            }
+            #imagelightbox-close:before
+            {
+                -webkit-transform: rotate( 45deg );
+                -moz-transform: rotate( 45deg );
+                -ms-transform: rotate( 45deg );
+                -o-transform: rotate( 45deg );
+                transform: rotate( 45deg );
+            }
+            #imagelightbox-close:after
+            {
+                -webkit-transform: rotate( -45deg );
+                -moz-transform: rotate( -45deg );
+                -ms-transform: rotate( -45deg );
+                -o-transform: rotate( -45deg );
+                transform: rotate( -45deg );
+            }
+
+.slider-overlay .item {
+    text-align: center;
+    padding: 20px;
+}
+    .slider-overlay .item .prx-screenshot-img-outer {
+        overflow: hidden;
+        display: block;
+    }
+    .slider-overlay .item img {
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-screenshot-wrapper {
+        padding-right: 0;
+    }
+    .slider-small {
+        display: none !important;
+    }
+    
+    .slider-phone .prx-slider-video {
+        position: relative;
+    }
+    .slider-phone .prx-slider-video img {
+    }
+    .slider-phone .prx-slider-video .prx-item-video-button {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background: url(../img/prx-video-button.png) no-repeat center 0;
+        width: 80px;
+        height: 80px;
+        margin: -40px 0 0 -40px; 
+        cursor: pointer;
+    }
+            .slider-phone .prx-slider-video:hover .prx-item-video-button{
+                background-position: center -80px;
+            }
+    
+    .slider-large:hover .owl-controls .owl-buttons div.owl-prev,
+        .slider-large:hover .owl-controls .owl-buttons div.owl-next {
+            opacity: 0;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-prev:hover,
+        .slider-large:hover .owl-controls .owl-buttons div.owl-next:hover {
+            opacity: 0;
+    }
+    
+    .title-phone-screenshot {
+        padding: 0 0 20px 0;
+    }
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .slider-large .item .prx-slider-video { width: 332px; }
+    .slider-large .item { height: 309px; } /* 249+60 */
+    .slider-large .item .prx-screenshot-img-outer,
+        .slider-large .item .prx-slider-video {
+            height: 249px;
+    }
+
+    .slider-small {
+        width: 236px;
+        margin-left: 48px; 
+    }
+    
+    .slider-large .owl-controls .owl-buttons div.owl-prev {
+        margin-top: -75px;
+        height: 100px;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-next {
+        margin-top: -75px;
+        height: 100px;
+    }
+    
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .slider-large .item .prx-slider-video { width: 570px; }
+    .slider-large .item { height: 488px; } /* 428+60 */
+    .slider-large .item .prx-screenshot-img-outer,
+        .slider-large .item .prx-slider-video {
+            height: 428px;
+    }
+
+    .slider-small {
+        width: 472px;
+        margin-left: 49px; 
+    }
+}
+/**
+ *  CSS for jQuery UI
+ */
+
+.ui-widget {
+    font-family: Helvetica Neue, Helvetica, Arial;
+    color: #6b6a6a;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button,
+    .ui-dialog .ui-dialog-buttonpane button.ui-button {
+        font-family: Helvetica Neue, Helvetica, Arial;
+        margin: 10px 10px 10px 5px;
+}
+.ui-widget .prx-form-group-field input.prx-text-field {
+    width: 355px;
+}
+.ui-widget .prx-dialog-700 .prx-form-group-field input.prx-text-field {
+    width: 555px;
+}
+.ui-widget .prx-dialog-900 .prx-form-group-field input.prx-text-field {
+    width: 755px;
+}
+.ui-widget p {
+    margin-top: 0;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 0;
+}
+
+.ui-widget-header {
+    border: 0;
+    background: transparent;
+    color: #444;
+    font-size: 115.4% !important;
+}
+
+.ui-widget-content {
+    border: 0;
+}
+.ui-dialog {
+    padding: 0;  
+    background: #fff;  
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: .7em 0;
+    margin: 0 1em;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+.ui-dialog-screenshots.ui-dialog .ui-dialog-titlebar {
+    border-bottom: 0;
+} 
+    .ui-dialog-titlebar-close {
+        display: none;
+    }
+    .ui-dialog-screenshots .ui-dialog-titlebar-close {
+        display: block;
+        border: 0;
+        background: none;
+    }
+        .ui-dialog-screenshots .ui-dialog-titlebar-close .ui-icon {
+            background: #fff url(../img/sprite-prx.png) no-repeat 2px -98px;
+        }
+.ui-dialog .ui-dialog-content {
+    padding: 0;
+}
+
+.ui-dialog .prx-dialog-content {
+    padding: 10px 15px;
+    overflow: hidden;
+    clear: both;
+}
+    .ui-dialog .prx-dialog-content label {
+        font-weight: bold;
+    }
+    .ui-dialog .prx-dialog-content label.prx-label-inline {
+        font-weight: normal;
+    }
+
+
+.ui-dialog .prx-dialog-footer {
+    border-top: 1px solid #ccc;
+    padding: 5px 0;
+    overflow: hidden;
+    text-align: center;
+    clear: both;
+    background: #fbfbfb;
+    border-radius: 0 0 4px 4px;
+}
+    .ui-dialog .prx-dialog-footer .prx-btn {
+        margin: 5px;
+        cursor: pointer;
+        min-width: 90px;
+    }
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+    border: 0;
+}
+    .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+        float: none;
+    }
+
+/* 2 ul blocks in columns next to each other */
+ul.prx-ul-1,
+    ul.prx-ul-2 {
+        float: left;
+        width: 50%;
+}
+
+/* form elements inside dialog */
+.prx-dialog textarea.prx-textarea {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 5px 10px;
+    margin-bottom: 0;
+}
+.prx-dialog select.prx-select {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 5px;
+}
+
+/* faded background */
+.ui-widget-overlay {
+    background: #000;
+    opacity: .6;
+}
+
+/* sortable styles */
+ul.prx-ul-sortable {
+    margin: 30px 0 0 0;
+}
+    ul.prx-ul-sortable li {
+        
+    }
+    
+ul.prx-ul-sortable-screenshots,
+    ul.prx-ul-sortable-banners {
+        margin-left: -10px;
+}
+        ul.prx-ul-sortable-screenshots li,
+            ul.prx-ul-sortable-banners li {
+                float: left;
+                margin: 0 0 40px 10px;
+                position: relative;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 30px;
+        }
+            ul.prx-ul-sortable-screenshots li.prx-screenshot-li {
+                width: 225px;
+                height: 160px;
+                overflow: hidden;
+                border-radius: 3px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+            ul.prx-ul-sortable-banners li.prx-banner-li {
+                width: 310px;
+                height: 85px;
+                overflow: hidden;
+                border-radius: 3px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+            .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li,
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover,
+                .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li,
+                ul.prx-ul-sortable-banners li.prx-banner-li:hover {
+                    overflow: visible;
+            }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a,
+                    ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                        width: 195px;
+                        height: 134px;
+                        display: block;
+                        overflow: hidden;
+                        padding: 5px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        border-radius: 3px;
+                        float: left;
+                        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                        text-align: center;
+                        vertical-align: middle;
+                }
+                ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                    width: 280px;
+                    height: 61px;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover a.prx-screenshot-a {
+                        border: 1px solid #aaa;
+                        border-radius: 3px 0 3px 3px;
+                }
+                .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover a.prx-banner-a {
+                        border: 1px solid #aaa;
+                        border-radius: 3px 0 0 3px;
+                }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-video-image-overlay {
+                    width: 80px;
+                    height: 80px;
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                    background: transparent url(../img/prx-video-button.png) no-repeat center top;
+                    left: 58px;
+                    top: 27px;
+                }
+                    /* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a:before,
+                        ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a:before {
+                            content: '';
+                            width: 0;
+                            display: inline-block;
+                            height: 100%;
+                            vertical-align: middle;
+                            overflow: none;
+                    }
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li img.prx-screenshot-img,
+                        ul.prx-ul-sortable-banners li.prx-banner-li img.prx-banner-img {
+                            display: inline-block;
+                            max-height: 100%;
+                            max-width: 100%;
+                            height: auto;
+                            width: auto;
+                            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                            vertical-align: middle;
+                    }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions,
+                    .prx-banner-actions,
+                    .prx-bannersortable-actions {
+                        visibility: hidden;
+                        float: left;
+                        width: 30px;
+                        height: 60px;
+                        border-radius: 0 3px 3px 0;
+                        border-top: 1px solid #aaa;
+                }
+                .prx-banner-actions {
+                    visibility: visible;
+                    margin-top: 20px;
+                    height: 30px;
+                    border-top: 0;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover .prx-screenshot-actions,
+                    .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover .prx-bannersortable-actions {
+                        visibility: visible;
+                }
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action,
+                        .prx-banner-action,
+                        .prx-bannersortable-action {
+                            display: inline-block;
+                            border: 1px solid #aaa;
+                            border-top: 0;
+                            border-left: 0;
+                            background: #fff;
+                            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                            width: 30px;
+                            height: 30px;
+                    }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-delete,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-delete,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions .prx-banner-action-delete {
+                                border-radius: 0 3px 0 0;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-edit,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-edit,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions .prx-banner-action-edit,
+                            .prx-banner-actions .prx-banner-action-edit {
+								border-radius: 0 0 3px 0;
+                        }
+                        .prx-banner-actions .prx-banner-action-delete {
+                                border-radius: 0 3px 0 0;
+                                border-top: 1px solid #aaa;
+                        }
+                        ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete {
+                            visibility: hidden;
+                        }
+                        .prx-is-touch ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete,
+                            ul.prx-ul-sortable-resources li.prx-resource-li:hover .prx-resource-action-delete {
+                                visibility: visible;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-delete .prx-icon,
+                            .prx-banner-actions .prx-banner-action-delete .prx-icon,
+                            .prx-bannersortable-actions .prx-banner-action-delete .prx-icon,
+                            ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete .prx-icon {
+                                background-position: 0 -100px;
+                                width: 12px;
+                                height: 12px;
+                                margin: 8px 0 0 9px;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-edit .prx-icon,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-edit .prx-icon,
+                            .prx-bannersortable-actions .prx-banner-action-edit .prx-icon,
+                            .prx-banner-actions .prx-banner-action-edit .prx-icon {
+								background-position: -60px -80px;
+                                width: 14px;
+                                height: 14px;
+                                margin: 7px 0 0 8px;
+                        }
+
+
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-caption,
+                    ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-caption {
+                        clear: both;
+                        padding: 6px 20px 6px 6px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-caption,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover .prx-screenshot-caption,
+                    .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-caption,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover .prx-banner-caption {
+                        color: #333;
+                        white-space: normal;
+                }
+                .prx-video-iframe {
+                    float: left;
+                }
+                
+ul.prx-ul-sortable-resources {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    ul.prx-ul-sortable-resources li.prx-resource-li {
+    }
+        ul.prx-ul-sortable-resources li.prx-resource-li .resource-text {
+            float: left;
+            padding: 7px 1px;
+        }
+            ul.prx-ul-sortable-resources li.prx-resource-li .resource-text .prx-type {
+                padding-right: 5px;
+            }
+                
+.prx-sortable-placeholder {
+    border: 1px dashed #aaa !important;
+    border-radius: 3px;
+}
+.prx-sortable-placeholder-image {
+    width: 225px;
+    height: 160px;
+}
+.prx-sortable-placeholder-resource {
+    height: 35px;
+}
+.prx-sortable-placeholder-banner {
+    width: 310px;
+    height: 85px;
+}
+
+.prx-dialog-ol li {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .ui-widget .prx-form-group-field input.prx-text-field,
+        .ui-widget .prx-dialog-700 .prx-form-group-field input.prx-text-field,
+        .ui-widget .prx-dialog-900 .prx-form-group-field input.prx-text-field {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .ui-widget input, .ui-widget select, .ui-widget textarea {
+        margin-left: 0;
+    }
+    
+    .prx-banner-actions {
+        margin-top: 0;
+        height: 30px;
+        border-top: 0;
+        float: right;
+    }
+        .prx-banner-actions .prx-banner-action-delete {
+            border-radius: 0 0 3px 3px;
+            border-left: 1px solid #aaa;
+            border-top: 0;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 0;
+        }
+    .ui-dialog {
+        width: 470px !important;
+    }
+}
+
+/* TINY: Phone portrait */  
+@media (max-width: 479px) {
+    ul.prx-ul-1,
+        ul.prx-ul-2 {
+            float: none;
+            width: 100%;
+    }
+            ul.prx-ul-sortable-banners li.prx-banner-li {
+                width: 290px;
+            }
+                ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                    width: 260px;
+                }
+                
+    .ui-dialog {
+        width: 310px !important;
+    }
+}
+
+
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+        ul.prx-ul-sortable-screenshots li {
+            margin-right: 8px;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 40px;
+        }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+        ul.prx-ul-sortable-screenshots li,
+            ul.prx-ul-sortable-banners li {
+                margin-right: 0;
+        }
+}
+
+/**
+ *  Overriding CSS that lives inside Salesforce and that is messing with our page.
+ */
+
+.bodyDiv .outerNoSidebar {
+    padding: 0 !important;
+}
+
+.noSidebarCell {
+    padding: 0 !important;
+}
+
+/* Chatter */
+/* Do not show the header bar above the Chatter feed, that contains the 'show/hide feed' links. */
+.prx .bPageTitle #section_header {
+    display: none;
+}
+/**
+ * All the styles specific to responsive design
+ */
+
+.phone-test, 
+    .small-test, 
+    .large-test { 
+        margin: 0 !important; 
+        padding: 0 !important; 
+        width: 1px !important; 
+        height: 1px !important; 
+        text-indent: -9999px; 
+        display: none;
+}
+
+.hidden-phone {
+    
+}
+.only-phone { display: none !important; }
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .phone-test { display: block; }
+    .hidden-phone { display: none !important; }
+    .only-phone { display: inline-block !important; }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .small-test { display: block; }
+    .only-phone { display: none !important; }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    .large-test { display: block; }
+    .only-phone { display: none !important; }
+}
+/* High res icons for high res screens like iPads/iPhones retina display. */
+
+/* phone hd */
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (min-resolution: 192dpi) { 
+    .prx-tile-content-inner-1 {
+        background-image: url(../img/arrow-right-hd.png);
+        -moz-background-size: 17px 20px;
+        -ie-background-size: 17px 20px;
+        -o-background-size: 17px 20px;
+        -webkit-background-size: 17px 20px;
+        background-size: 17px 20px;
+    }
+    #phone_categories ul.prx-ul-nav2-phone li.prx-selected span.prx-icon,
+        #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li.prx-selected span.prx-icon {
+            background-image: url(../img/sprite-prx-hd.png) !important;
+            -moz-background-size: 100px 120px;
+            -ie-background-size: 100px 120px;
+            -o-background-size: 100px 120px;
+            -webkit-background-size: 100px 120px;
+            background-size: 100px 120px;
+    }
+    
+}
+
+/* non-phone hd */
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) { 
+}
+
+/* all hd */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    table.prx-data-table tr th.prx-th-asc {
+        background-image: url(../img/bg-prx-th-asc-hd.png) !important;
+        -moz-background-size: 19px 5px;
+        -ie-background-size: 19px 5px;
+        -o-background-size: 19px 5px;
+        -webkit-background-size: 19px 5px;
+        background-size: 19px 5px;
+    }
+    table.prx-data-table tr th.prx-th-desc {
+        background-image: url(../img/bg-prx-th-desc-hd.png) !important;
+        -moz-background-size: 19px 5px;
+        -ie-background-size: 19px 5px;
+        -o-background-size: 19px 5px;
+        -webkit-background-size: 19px 5px;
+        background-size: 19px 5px;
+    }
+    
+    .prx-no-results {
+        background-image: url(../img/prx-no-results-app-hd.png);
+        -moz-background-size: 122px 93px;
+        -ie-background-size: 122px 93px;
+        -o-background-size: 122px 93px;
+        -webkit-background-size: 122px 93px;
+        background-size: 122px 93px;
+    }
+
+    .slider-large .owl-controls .owl-buttons div.owl-prev,
+        .slider-overlay .owl-controls .owl-buttons div.owl-prev {
+            background-image: url(../img/arrow-slider-left-hd.png);
+            -moz-background-size: 32px 50px;
+            -ie-background-size: 32px 50px;
+            -o-background-size: 32px 50px;
+            -webkit-background-size: 32px 50px;
+            background-size: 32px 50px;
+    }
+    .slider-large .owl-controls .owl-buttons div.owl-next,
+        .slider-overlay .owl-controls .owl-buttons div.owl-next {
+            background-image: url(../img/arrow-slider-right-hd.png);
+            -moz-background-size: 32px 50px;
+            -ie-background-size: 32px 50px;
+            -o-background-size: 32px 50px;
+            -webkit-background-size: 32px 50px;
+            background-size: 32px 50px;
+    }
+
+
+    .slider-small .owl-controls .owl-buttons div.owl-prev {
+        background-image: url(../img/carousel-prev-hd.png);
+        -moz-background-size: 8px 15px;
+        -ie-background-size: 8px 15px;
+        -o-background-size: 8px 15px;
+        -webkit-background-size: 8px 15px;
+        background-size: 8px 15px;
+    }
+    .slider-small .owl-controls .owl-buttons div.owl-next {
+        background-image: url(../img/carousel-next-hd.png);
+        -moz-background-size: 8px 15px;
+        -ie-background-size: 8px 15px;
+        -o-background-size: 8px 15px;
+        -webkit-background-size: 8px 15px;
+        background-size: 8px 15px;
+    }
+    
+    ul.slidesjs-pagination a,
+        ul.slidesjs-pagination a.active,
+        .prx-btn-back .prx-icon,
+        .prx-icon,
+        .prx-link-more .prx-icon,
+        .prx-overlay-menu ul li a span.prx-icon,
+        .prx-menu-opener .prx-icon,
+        .prx-btn-prev .prx-icon,
+        .prx-btn-next .prx-icon,
+        .prx-msg .prx-msg-icon {
+            background-image: url(../img/sprite-prx-hd.png) !important;
+            -moz-background-size: 100px 120px;
+            -ie-background-size: 100px 120px;
+            -o-background-size: 100px 120px;
+            -webkit-background-size: 100px 120px;
+            background-size: 100px 120px;
+    }
+
+    .ui-dialog-screenshots .ui-dialog-titlebar-close .ui-icon {
+        background-image: url(../img/sprite-prx-hd.png) !important;
+        -moz-background-size: 100px 120px;
+        -ie-background-size: 100px 120px;
+        -o-background-size: 100px 120px;
+        -webkit-background-size: 100px 120px;
+        background-size: 100px 120px;
+    }
+    
+}
+

@@ -1,0 +1,32 @@
+.THIS .list {
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.THIS a.button {
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-size: 1em;
+}
+
+.THIS .csLink {
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 40px; 
+    font-family: Lato; 
+    font-weight: 300;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+.THIS #supportButton{   
+    color:white; 
+    padding-left: 30px;
+    padding-right: 30px;
+    text-transform:uppercase;
+    padding: 5px 40px 5px 40px;
+    font-weight: 600;
+    text-decoration:none;
+    margin-top: 3px;
+}

@@ -1,0 +1,66 @@
+<apex:page contentType="application/javascript">
+    const tools = [
+    	{
+    		'title': 'Einstein Account/Opportunity Insights',
+    		'description': 'Secure opportunities and reduce.',
+    		'link': 'https://salesforce.quip.com/8CQiAu4sVzjX',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Einstein Automated Contacts',
+    		'description': 'Never type a contact record again.',
+    		'link': 'https://salesforce.quip.com/8CQiAu4sVzjX',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Einstein Lead Scoring',
+    		'description': 'Convert more leads faster.',
+    		'link': 'https://salesforce.quip.com/G8lIAS9JTcZP',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Einstein Forecasting (BETA)',
+    		'description': 'Show how sales teams will perform and how to pivot from using forecastings. Setup Einstein forecasting for the home page and forecasting tab.',
+    		'link': 'https://salesforce.quip.com/AlyNA4jeLbKr',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Einstein Opportunity Scoring',
+    		'description': 'Focus on the right deals, every time.',
+    		'link': 'https://salesforce.quip.com/xr18A8WbzahU',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Salesforce Inbox',
+    		'description': 'Bring email, calendar, and Salesforce together, eliminate data entry and spend more time selling.',
+    		'link': 'https://quip.com/XJxtAOarNcOb',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Sales Analytics',
+    		'description': 'The smartest analytics for Sales Cloud customers.',
+    		'link': 'https://quip.com/MBs7Ag8nXdFh',
+    		'tags': ['Sales Cloud Einstein']
+    	},
+    	{
+    		'title': 'Einstein Case Classification',
+    		'description': 'Einstein helps fill in the blanks and helps priority cases.',
+    		'link': 'https://salesforce.quip.com/XgHIAC158YTf',
+    		'tags': ['Einstein for Service']
+    	},
+    	{
+    		'title': 'Einstein Case Sentiment',
+    		'description': 'See how Einstein can view your cases and read between the lines.',
+    		'link': 'https://salesforce.quip.com/sx0BA8v7zQFf',
+    		'tags': ['Einstein for Service','Einstein.ai']
+    	}
+    ]
+    
+    function HomeCtrl($scope){
+    	$scope.init = function(){
+    
+    	}
+    
+    	$scope.tools = tools;
+    } 
+</apex:page>

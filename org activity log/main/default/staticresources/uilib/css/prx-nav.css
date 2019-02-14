@@ -1,0 +1,399 @@
+/**
+ *  Navigation.
+ *
+ */
+
+/**
+ *  Nav 2: e.g. the categories on the left hand side.
+ *  Each nav 2 item is an href, that lives inside an LI, inside a UL (prx-ul-nav2), inside 2 DIVs (prx-nav2, and prx-nav2-inner).
+ */
+
+/* Nav 2 end user */
+.prx-nav2 {
+    
+}
+    .prx-nav2-inner {
+        
+    }
+        ul.prx-ul-nav2 {
+            margin: 0 20px 30px 0;
+        }
+            ul.prx-ul-nav2 li {
+                padding: 5px 0;
+            }
+                .prx ul.prx-ul-nav2 li a,
+                    ul.prx-ul-nav2 li a {
+                        display: block;
+                        font-size: 123.1%;
+                        color: #696e71;
+                        text-decoration: none;
+                        border-radius: 3px;
+                        padding: 5px 10px;
+                        background: #f5f5f5;
+                        -webkit-transition: background 0.5s ease;
+                        -moz-transition: background 0.5s ease;
+                        -ms-transition: background 0.5s ease;
+                        -o-transition: background 0.5s ease;
+                        transition: background 0.5s ease;
+                }
+                .prx ul.prx-ul-nav2 li a:hover,
+                    ul.prx-ul-nav2 li a:hover {
+                        background: #e8e8e8;
+                }
+                .prx ul.prx-ul-nav2 li.prx-selected a,
+                    ul.prx-ul-nav2 li.prx-selected a,
+                    .prx ul.prx-ul-nav2 li.prx-selected a:hover,
+                    ul.prx-ul-nav2 li.prx-selected a:hover {
+                        background: #c7d9e5;
+                }
+                
+                .prx ul.prx-ul-nav2 li .prx-icon,
+                    ul.prx-ul-nav2 li .prx-icon {
+                        display: none;
+                }
+
+/* Nav 2 admin user */
+.prx-nav2-admin {
+    
+}
+    .prx-nav2-admin-inner {
+        
+    }
+        ul.prx-ul-nav2-admin {
+            margin: 0 0 -1px 0;
+            padding-bottom: 1px;
+            background: transparent url(../img/bg-prx-ul-nav2-admin.png) repeat-x center -1px;
+        }
+            ul.prx-ul-nav2-admin li {
+                padding: 0;
+                height: 45px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+                .prx ul.prx-ul-nav2-admin li a,
+                    ul.prx-ul-nav2-admin li a {
+                        border-right: 1px solid #dde5e7;
+                        display: block;
+                        color: #3f4c5c;
+                        text-decoration: none;
+                        height: 45px;
+                        padding: 15px 10px;
+                        background: transparent url(../img/bg-prx-ul-nav2-admin.png) repeat-x center bottom;
+                        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                }
+                .prx ul.prx-ul-nav2-admin li a:hover,
+                    ul.prx-ul-nav2-admin li a:hover {
+                        color: #0085cb;
+                }
+                .prx ul.prx-ul-nav2-admin li.prx-selected a,
+                    ul.prx-ul-nav2-admin li.prx-selected a,
+                    .prx ul.prx-ul-nav2-admin li.prx-selected a:hover,
+                    ul.prx-ul-nav2-admin li.prx-selected a:hover {
+                        background-color: #fff;
+                        color: #0085cb;
+                        font-weight: bold;
+                }
+                
+                .prx ul.prx-ul-nav2-admin li .prx-icon,
+                    ul.prx-ul-nav2-admin li .prx-icon {
+                        display: none;
+                }
+
+
+/**
+ *  Tabs
+ */
+.prx-tabs {}
+
+ul.prx-tab-set {
+    height: 39px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    overflow: visible;
+}
+    ul.prx-tab-set li {
+        float: left;
+        display: block;
+    }
+        ul.prx-tab-set li .prx-tab {
+            background: #f6f6f6;
+            display: inline-block;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+            color: #464646;
+            line-height: 38px;
+            height: 38px;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        ul.prx-tab-set li .prx-tab-disabled {
+            background: #f0f0f0;
+            color: #bbb;
+        }
+        ul.prx-tab-set li .prx-tab:hover {
+            background: #f0f0f0;
+        }
+        ul.prx-tab-set li.prx-selected .prx-tab {
+            background: #fff;
+            border-bottom: 1px solid #fff;
+        }
+            ul.prx-tab-set li .prx-tab .prx-tab-text {
+                display: block;
+                padding: 0 20px;
+                border-right: 1px solid #ccc;
+            }
+
+/* status (store status and listing status) */
+.prx-status {
+    padding: 0;
+    background: #666;
+    border-bottom: 1px solid #777;
+}
+.prx-status-offline {
+}
+.prx-status-online {
+}
+    .prx-status a {
+        display: block;
+        padding: 17px 17px 17px 10px;
+        text-align: left;
+        font-weight: bold;
+        color: #fff;
+    }
+    .prx-status a:hover {
+        text-decoration: none;
+    }
+    .prx-status-offline a,
+        .prx-status-offline a:hover {
+            color: #fff;
+    }
+        .prx-status-offline a .prx-actual-status,
+            .prx-status-offline a:hover .prx-actual-status {
+                color: #f66;
+        }
+    .prx-status-online a .prx-actual-status,
+        .prx-status-online a:hover .prx-actual-status {
+            color: #9c3;
+    }
+        .prx-status-online a,
+            .prx-status-online a:hover {
+                color: #fff;
+        }
+        .prx-status a span.prx-icon {
+            display: none;
+        }
+        .prx-status a span.prx-text {
+            
+        }
+        
+/* nav2 admin phone */
+#prx_nav2_admin_phone {
+    display: none;
+}        
+        
+        
+        
+        
+        
+        
+        
+    
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-nav2 { display: none; }
+    
+    #phone_categories {
+        overflow: hidden;
+        clear: both;
+        background: #344a5f;
+    }
+    
+    #prx_nav2_admin_phone {
+        overflow: hidden;
+        clear: both;
+    }
+    
+    #phone_categories ul.prx-ul-nav2-phone,
+        #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone { 
+            border-top: 1px solid rgba(0,0,0,0.3);
+    }
+        #phone_categories ul.prx-ul-nav2-phone li,
+            #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li {
+                border-bottom: 1px solid rgba(0,0,0,0.3);
+        }
+            #phone_categories ul.prx-ul-nav2-phone li a,
+                #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li a { 
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 10px;
+                    overflow: hidden;
+                    display: block;
+            }
+            #phone_categories ul.prx-ul-nav2-phone li a:hover,
+                #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li a:hover { 
+                    color: #fff;
+                    text-decoration: none;
+            }
+                #phone_categories ul.prx-ul-nav2-phone li span.prx-icon,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li span.prx-icon { 
+                        display: none;
+                }
+                #phone_categories ul.prx-ul-nav2-phone li span.prx-text,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li span.prx-text { 
+                        color: #fff;
+                        padding: 10px 0;
+                        display: inline-block;
+                }
+                #phone_categories ul.prx-ul-nav2-phone li.prx-selected span.prx-icon,
+                    #prx_nav2_admin_phone ul.prx-ul-nav2-admin-phone li.prx-selected  span.prx-icon { 
+                        float: right;
+                        display: inline-block;
+                        background: url(../img/sprite-prx.png) no-repeat 0 -60px;
+                        width: 13px;
+                        height: 10px;
+                        margin: 12px 10px 0 10px;
+                }
+
+    .prx-content-secondary .prx-status { display: none; }
+    .prx-status {
+        padding: 7px 10px 0 0;
+        float: right;
+        border-bottom: 0;
+        background: transparent;
+    }
+        .prx-status a {
+            border-radius: 3px;
+            padding: 5px;
+            color: #444;
+            display: inline-block;
+        }
+        .prx-status a:hover {
+            color: #444;
+        }
+        .prx-status-offline a {
+            background: #fff;
+        }
+        .prx-status-offline a:hover {
+            color: #444;
+        }
+        .prx-status-online a {
+            background: #fff;
+        }
+        .prx-status-online a:hover {
+            color: #444;
+        }
+            .prx-status-offline a .prx-actual-status,
+                .prx-status-offline a:hover .prx-actual-status {
+                    color: #900;
+            }
+            .prx-status-online a .prx-actual-status,
+                .prx-status-online a:hover .prx-actual-status {
+                    color: #060;
+            }
+
+
+    .prx-nav2-admin { display: none; }
+        ul.prx-ul-nav2,
+            ul.prx-ul-nav2-admin { 
+            margin: 0;
+            border-bottom: 1px solid #555;
+        }
+            ul.prx-ul-nav2 li, 
+                ul.prx-ul-nav2-admin li { 
+                    padding: 0; 
+                    height: auto;
+            }
+                ul.prx-ul-nav2 li a,
+                    ul.prx-ul-nav2-admin li a {
+                        font-size: 123.1%;
+                        border-radius: 0; 
+                        display: block; 
+                        border-bottom: 1px solid #333;
+                        border-top: 1px solid #555;
+                        border-right: 0;
+                        background: #444;
+                        color: #ddd;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        text-shadow: 0px 1px 0px rgba(0,0,0,1);
+                }
+                ul.prx-ul-nav2 li a:hover, 
+                    ul.prx-ul-nav2-admin li a:hover { 
+                        background: #444; 
+                        color: #ddd;
+                }
+                ul.prx-ul-nav2 li.prx-selected a,
+                    ul.prx-ul-nav2-admin li.prx-selected a, 
+                    ul.prx-ul-nav2 li.prx-selected a:hover,
+                    ul.prx-ul-nav2-admin li.prx-selected a:hover { 
+                        background: #333;
+                        color: #fff; 
+                }
+                
+    .prx-tabs { padding: 0 10px; }
+    .prx-content-generic .prx-tabs { padding-left: 0; padding-right: 0; }
+        ul.prx-tab-set { width: 100%; }
+            ul.prx-tab-set li { width: 33%; }
+            ul.prx-tab-set2 li { width: 49%; }
+                ul.prx-tab-set li .prx-tab { width: 100%; }
+                    ul.prx-tab-set li .prx-tab .prx-tab-text { text-align: center; }
+
+    /* nav2 admin phone */
+    #prx_nav2_admin_phone {
+        display: block;
+    }
+    
+    /* don't show tabs on the listing details page on the phone, since we don't want to show Chatter on the phone */
+    #prx_listing_details_tabs {
+        display: none;
+    }
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .prx-title-bar .prx-status {
+        display: none;
+    }
+
+    .prx-status {
+        float: right;
+        padding: 0;
+        border-bottom: 0;
+        background: transparent;
+    }
+        .prx-status a {
+            padding: 5px;
+            background: #fff;
+            border-radius: 3px;
+            display: inline-block;
+        }
+        .prx-status-offline a {
+            color: #444;
+        }
+        .prx-status-offline a:hover {
+            color: #444;
+        }
+        .prx-status-online a {
+            color: #444;
+        }
+        .prx-status-online a:hover {
+            color: #444;
+        }
+            .prx-status-offline a .prx-actual-status,
+                .prx-status-offline a:hover .prx-actual-status {
+                    color: #900;
+            }
+            .prx-status-online a .prx-actual-status,
+                .prx-status-online a:hover .prx-actual-status {
+                    color: #060;
+            }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}

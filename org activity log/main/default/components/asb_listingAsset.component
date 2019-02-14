@@ -1,0 +1,66 @@
+<apex:component id="asset" allowDML="true" layout="none">
+    <apex:attribute name="asset" description="an asset for this listing." type="asb_ListingAssetDO" required="true" />
+    <apex:attribute name="assetPlacement" description="Describes where this asset appears slider/carousel" type="String" required="true" />
+    
+        <apex:outputPanel layout="none" rendered="{!asset.isImageType}">
+          <div class="item">
+            <apex:outputPanel layout="inline" rendered="{!assetPlacement == 'slider'}">
+              <a class="prx-screenshot-img-outer" href="{!asset['AssetUrl']}"><img id="{!asset.Id}" src="{!asset['AssetUrl']}"/></a>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block" styleClass="slider-caption" rendered="{!assetPlacement == 'slider'}"> 
+                <apex:outputText value="{!asset['Caption']}" />
+                <apex:outputText rendered="{!ISBLANK(asset['Caption'])}">&#160;</apex:outputText>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!assetPlacement == 'carousel'}">
+              <div class="prx-carousel-item"><span class="prx-carousel-img-outer"><img src="{!asset['AssetUrl']}"/></span></div>
+            </apex:outputPanel>
+            <apex:outputPanel layout="inline" rendered="{!assetPlacement == 'phone'}">
+              <span class="prx-screenshot-img-outer"><img id="{!asset.Id}_phone" src="{!asset['AssetUrl']}"/></span>
+            </apex:outputPanel>
+            <apex:outputPanel layout="block" styleClass="slider-caption" rendered="{!assetPlacement == 'phone'}"> 
+                <apex:outputText value="{!asset['Caption']}" />
+                <apex:outputText rendered="{!ISBLANK(asset['Caption'])}">&#160;</apex:outputText>
+            </apex:outputPanel>
+          </div>
+        </apex:outputPanel>
+        <apex:outputPanel layout="none" rendered="{!asset.isVideoType}">
+          <div class="item item-video">
+            <apex:outputPanel layout="none" rendered="{!asset['VideoType'] == 'Vimeo'}"> 
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'slider'}">
+                    <iframe id="vimeo_{!asset.Id}" class="prx-slider-video prx-slider-video-vimeo" data-video-id="{!asset['VideoEmbedId']}" src="https://player.vimeo.com/video/{!asset['VideoEmbedId']}?api=1&amp;player_id=vimeo_{!asset.Id}" frameborder="0" webkitAllowFullScreen="true" mozallowfullscreen="true" allowFullScreen="true"></iframe>
+                    <apex:outputPanel layout="block" styleClass="slider-caption" rendered="{!assetPlacement == 'slider'}"> 
+                        <apex:outputText value="{!asset['Caption']}" />
+                        <apex:outputText rendered="{!ISBLANK(asset['Caption'])}">&#160;</apex:outputText>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'carousel'}">
+                  <div class="prx-carousel-item"><span class="prx-carousel-img-outer"><img id="{!asset['VideoEmbedId']}" class="vimeo_thumbnail img-vimeo" data-id="{!asset['VideoEmbedId']}" data-descr="{!asset['Caption']}" src=""/></span></div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!asset['VideoType'] == 'YouTube'}">
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'slider'}">
+                    <div id="{!asset.Id}" class="prx-slider-video ytPlayer prx-slider-video-youtube" data-video-id="{!asset['VideoEmbedId']}"></div>
+                    <apex:outputPanel layout="block" styleClass="slider-caption" rendered="{!assetPlacement == 'slider'}"> 
+                        <apex:outputText value="{!asset['Caption']}" />
+                        <apex:outputText rendered="{!ISBLANK(asset['Caption'])}">&#160;</apex:outputText>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'carousel'}">
+                  <div class="prx-carousel-item"><span class="prx-carousel-img-outer"><img src="https://img.youtube.com/vi/{!asset['VideoEmbedId']}/hqdefault.jpg" id="{!asset['VideoEmbedId']}" data-id="{!asset['VideoEmbedId']}" data-descr="{!asset['Caption']}" class="img-youtube" /></span></div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!asset['VideoType'] == 'Brainshark'}">
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'slider'}">
+                    <div id="{!asset.Id}" class="prx-slider-video prx-slider-video-brainshark" data-video-id="{!asset['VideoEmbedId']}" data-company-id="{!asset['CompanyId']}" data-src="https://www.brainshark.com/{!asset['CompanyId']}/vu?pi={!asset['VideoEmbedId']}&#38;dm=5&#38;pause=1&#38;nrs=1"></div>
+                    <apex:outputPanel layout="block" styleClass="slider-caption" rendered="{!assetPlacement == 'slider'}"> 
+                        <apex:outputText value="{!asset['Caption']}" />
+                        <apex:outputText rendered="{!ISBLANK(asset['Caption'])}">&#160;</apex:outputText>
+                    </apex:outputPanel>
+                </apex:outputPanel>
+                <apex:outputPanel layout="none" rendered="{!assetPlacement == 'carousel'}">
+                  <div class="prx-carousel-item"><span class="prx-carousel-img-outer"><img src="https://www.brainshark.com/brainshark/brainshark.net/apppresentation/splash.aspx?pi={!asset['VideoEmbedId']}" id="{!asset['VideoEmbedId']}" data-id="{!asset['VideoEmbedId']}" data-company="{!asset['CompanyId']}" data-descr="{!asset['Caption']}" class="img-brainshark"  /></span></div>
+                </apex:outputPanel>
+            </apex:outputPanel>
+          </div>
+        </apex:outputPanel>
+</apex:component>

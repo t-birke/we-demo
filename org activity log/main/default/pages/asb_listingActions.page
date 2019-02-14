@@ -1,0 +1,2 @@
+<apex:page standardController="asb_Listing__c" extensions="asb_ListingActionsController" action="{!init}">
+</apex:page>

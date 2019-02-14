@@ -1,0 +1,567 @@
+/**
+ *  The page content, on every page, lives inside a div with class 'prx' (and id 'prx').
+ *  This allows us to scope all the store builder html to these class names and id for CSS and JS purposes.
+ *  We can also style this div: think padding, margin, background, but let's not for now.
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx {
+    position: relative;
+}
+
+/**
+ *  Inside the 'prx' div live 2 wrapper divs: 'prx-wrap' and 'prx-wrap-inner'.
+ *  Potential styling options:
+ *  pr-wrap: define the width of the page.
+ *  pr-wrap-inner: define padding.
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx-wrap {
+
+}
+    .prx-wrap-inner {
+
+    }
+
+/**
+ *  A page can have multiple content blocks. They are all wrapped inside a div with class 'prx-content-block'.
+ *  Each content block can contain divs with the following class names:
+ *  - prx-content-header and prx-content-header-inner: a header area that always spans the whole width of the content.
+ *    The header can be split up in 2 areas: 'prx-content-header-main' and 'prx-content-header-extra'
+ *  - prx-content-content: a wrapper around the real content. Possible content blocks:
+ *      - prx-content-secondary: an area with content navigation for instance. very likely a narrow left column on the big screen.
+ *      - prx-content-primary: main content of the page. very likely a wide right column on the big screen.
+ *      - prx-content-single: if there is only main content and no navigation, for instance: the whole width of the content. 
+ *  Tip: if you can help it, no side padding or margin here (left or right).
+ */
+.prx-content-block {
+    margin-bottom: 0;
+    clear: both;
+}
+
+    /**
+     *  Each content header gets a certain style.
+     *  This style can be overwritten by a page specific class, set on the prx-content-block. 
+     *  Tip: if you can help it, no side padding or margin here (left or right).
+     */
+    .prx-content-header {
+        overflow: hidden;
+        /*
+        background: #e8eaeb;
+        background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U4ZWFlYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        background: -moz-linear-gradient(top,  #e8eaeb 0%, #ffffff 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8eaeb), color-stop(100%,#ffffff));
+        background: -webkit-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: -o-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: -ms-linear-gradient(top,  #e8eaeb 0%,#ffffff 100%);
+        background: linear-gradient(to bottom,  #e8eaeb 0%,#ffffff 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8eaeb', endColorstr='#ffffff',GradientType=0 );
+        */
+    }
+    .prx-content-block-listing .prx-content-header {
+        background: #f5f5f5 url(../img/p_cccccc.gif) repeat-x center bottom;
+    }
+    .prx-ie9 .prx-content-header {
+        filter: none;
+    } 
+        /* by default we'll have a fixed width. */
+        .prx-content-block .prx-content-header .prx-content-header-inner {
+            width: 940px;
+            margin-left: 20px;
+        }
+        .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+            width: 700px;
+            margin-left: 0;
+        }
+        .prx-is-touch .prx-content-block .prx-content-header .prx-content-header-inner,
+            .prx-is-touch .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+                margin-left: auto;
+                margin-right: auto;
+        }
+            /* if the header is just one block */
+            .prx-content-header-one {
+                margin: 0;
+                padding: 20px 0;
+                overflow: hidden;
+            }
+            /* the header can be broken into a 'main' part and an 'extra' part */
+            /* by default, each of these have a certain width */
+            .prx-content-header-main {
+                float: left;
+                margin: 20px 0;
+                padding: 0;
+                width: 66%;
+                overflow: hidden;
+            }
+            /* header 'main' and 'extra' width can be overwritten for specific pages. */
+            .prx-content-block-results .prx-content-header-main {
+                width: 670px;
+            }
+            .prx-content-header-extra {
+                float: right;
+                margin: 29px 0;
+                padding: 0;
+                width: 33%;
+                text-align: right;
+                overflow: hidden;
+            }
+            .prx-content-block-results .prx-content-header-extra {
+                width: 263px;
+            }
+            
+        /* by default we'll have a fixed width. */
+       
+        .prx-content-block .prx-content-content-with-secondary {
+           background: url(../img/bg-content-secondary.png) repeat-y left center;
+           overflow: hidden;
+           border-radius: 0 0 3px 3px;
+        }
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 960px;
+            margin-left: 20px;
+        }
+        .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+            width: 960px;
+            margin-left: 0;
+            overflow: hidden;
+        }
+        /* for touch devices, we will assume that the screens aren't crazy wide and therefore we will horizontally center the site. */
+        .prx-is-touch .prx-content-block .prx-content-content .prx-content-content-inner {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .prx-is-touch .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    .prx-content-secondary {
+        width: 230px;
+        float: left;
+    }
+    .prx-content-content-with-secondary .prx-content-secondary {
+        width: 240px;
+        position: absolute;
+        top: 0;
+    }
+        .prx-content-secondary-inner {
+            
+        }
+        
+    .prx-content-primary {
+        margin-left: 240px;
+    }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 240px;
+    }
+        .prx-content-primary-inner {
+            min-height: 150px;
+            padding-bottom: 40px;
+        }
+        
+    .prx-content-single {
+        padding-bottom: 20px;
+    }
+        .prx-content-single-inner {
+            
+        }
+
+    /* 2 columns: 50-50 */
+    .prx-content-primary1,
+        .prx-content-primary2 {
+            width: 50%;
+            float: left;
+    }
+        .prx-content-primary1-inner,
+            .prx-content-primary2-inner {
+                margin: 20px;
+        }
+    .prx-content-primary2 {
+
+    }
+        .prx-content-primary1-inner {
+            margin-left: 0;
+        }
+        .prx-content-primary2-inner {
+            margin-right: 0;
+        }
+
+    /* actual content block with undefined, generic content */
+    .prx-content-generic {
+        background: #fff;
+        padding: 0 0 0 20px;
+        overflow: hidden;
+    }
+    
+    /* Title Bar */
+    .prx-title-bar {
+        background: #344a5f url(../img/bg-content-secondary.png) repeat-y left center;
+        overflow: hidden;
+        height: 44px;
+    }
+        .prx-title-bar-secondary {
+            width: 240px;
+            float: left;
+            background: transparent url(../img/bg-content-secondary.png) repeat-y left center;
+        }
+        .prx-title-bar-primary {
+            margin-left: 240px;
+            width: 720px;
+        }
+            .prx-title-bar-primary-title {
+                float: left;
+                padding: 8px 5px 7px 20px;
+            }
+                .prx-title-bar-primary-title h1 {
+                    margin: 0;
+                    color: #fff;
+                }
+            .prx-title-bar-primary-actions {
+                float: right;
+                padding: 6px 0 6px 5px;
+            }
+                .prx .prx-title-bar-primary-actions .prx-btn {
+                    margin-left: 10px;
+                }
+
+    /* button bar (below the content, for instance, to repeat the buttons) */
+    .prx-button-bar {
+        overflow: hidden;
+        padding: 30px 0 10px 0;
+    }
+        .prx-button-bar .prx-button-bar-primary {
+            float: right;
+        }
+        .prx-button-bar .prx-button-bar-secondary {
+            float: left;
+        }
+
+    /* app info page: top section */
+    .prx-app-info {
+        overflow: hidden;
+        padding-bottom: 20px;
+        border-top: 1px solid #e1e1e1;
+        margin-top: 20px;
+    }
+    .prx-listings-info {
+        border-top: 1px solid #e1e1e1;
+    }
+        .prx-app-info .prx-app-info-a,
+            .prx-app-info .prx-app-info-b {
+                width: 50%;
+                float: left;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        .prx-app-info .prx-app-info-a {
+            padding-right: 30px;
+        }
+        .prx-app-info .prx-app-info-b {
+            padding-left: 30px;
+        }
+            .prx-app-info .prx-app-info-text label {
+            }
+            .prx-app-info .prx-app-info-text p {
+                margin: 0.4em 0 1.4em 0;
+                padding: 0;
+            }
+        .prx-app-info .prx-app-info-tile {
+            float: left;
+            width: auto;
+        }
+        .prx-app-info .prx-app-info-tile-preview {
+            float: none;
+        }
+            .prx-app-info .prx-app-info-tile label {
+                padding-left: 3px;
+            }
+
+    .prx-form-info-a {
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+    .prx-form-info-b {
+        overflow: hidden;
+        padding-bottom: 20px;
+    }
+        .prx-form-info-b1,
+            .prx-form-info-b2 {
+                width: 50%;
+                float: left;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        .prx-form-info-b1 {
+            padding-right: 30px;
+        }
+        .prx-form-info-b2 {
+            padding-left: 30px;
+        }
+            .prx-form-info-b input.prx-input,
+                .prx-form-info-b textarea.prx-textarea,
+                .prx-app-info input.prx-input,
+                .prx-app-info textarea.prx-textarea,
+                .prx-dialog-content input.prx-input {
+                    width: 100%;
+            }
+            .prx-dialog-content input.prx-input {
+                margin-left: 0; 
+                margin-right: 0;
+            }
+            .prx-form-info-b textarea.prx-textarea {
+                height: 120px;
+            }
+
+    .prx-content-block-similar {
+        border-top: 1px solid #ccc;
+    }
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    html, body { background-color: #e8eaeb; }
+    .prx {
+    }
+    .prx-content-header {
+/*        background: #0097dc;*/
+    }
+    .prx-content-content,
+        .prx-content-block-results {
+            background: #e8eaeb;
+    }
+    .prx-content-block-listing .prx-content-content {
+        background: #fff;
+        overflow: hidden;
+    }
+        .prx-content-block .prx-content-content-with-secondary {
+           background-image: none;
+        }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner,
+        .prx-content-block-admin .prx-content-content .prx-content-content-inner,
+        .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+            width: auto;
+            margin-left: 0;
+    }
+
+    .prx-content-header-one {
+        margin: 4px 0 10px 0;
+        padding: 0 10px;
+    }
+    .prx-content-generic .prx-content-header-one {
+        padding: 0;
+    }
+    .prx-content-header-main {
+        display: none;
+    }
+    .prx-content-header-extra {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        background: #344a5f !important;
+    }
+    .prx-content-header-extra {
+        clear: both;
+        width: auto;
+        float: none;
+        text-align: left;
+        padding-top: 0;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        margin: 0;
+        width: auto;
+    }
+    .prx-content-block-results .prx-content-header-extra {
+        margin: 0;
+        width: auto;
+        box-shadow: inset 0 3px 2px -2px rgba(0,0,0,.4);
+    }
+    .prx-content-secondary,
+        .prx-content-content-with-secondary .prx-content-secondary {
+            width: auto;
+            float: none;
+    }
+    .prx-content-primary {
+        margin-left: 0;
+    }
+    .prx-content-content-with-secondary .prx-content-primary {
+        border-left: 0;
+        margin-left: 0;
+    }
+    .prx-content-single {
+    }
+    
+    .prx-content-primary1,
+        .prx-content-primary2 {
+            width: 100%;
+            float: none;
+    }
+        .prx-content-primary1-inner,
+            .prx-content-primary2-inner {
+                margin: 10px;
+        }
+
+    .prx-content-generic {
+        padding: 10px;
+    }
+    /* Title Bar */
+   
+    .prx-title-bar {
+        height: auto;
+    }
+        .prx-title-bar-secondary {
+            display: none;
+        }
+        .prx-title-bar-primary {
+            margin-left: 0;
+            width: 100%;
+        }
+            .prx-title-bar-primary-title {
+                padding: 8px 5px 9px 12px;
+                display: none;
+            }
+            .prx-title-bar-primary-actions {
+                padding: 9px 10px;
+                float: right;
+                clear: none;
+            }
+                .prx .prx-title-bar-primary-actions .prx-btn {
+                    margin-left: 0;
+                }
+                .prx-title-bar-primary-actions .prx-filter label {
+                    display: none;
+                }
+        .prx-app-info .prx-app-info-text {
+            width: 100%;
+            float: none;
+        }
+        .prx-app-info .prx-app-info-tile {
+            float: none;
+            width: 100%;
+        }
+            .prx-app-info .prx-app-info-tile ul {
+                border: 1px solid #e8eaeb;
+                border-bottom: 0;
+                margin-top: 5px;
+            }
+        .prx-button-bar .prx-button-bar-secondary {
+            float: none;
+        }
+    .prx-title-bar {
+        background: #344a5f;
+    }
+
+        .prx-app-info .prx-app-info-a,
+            .prx-app-info .prx-app-info-b {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+        }
+
+        .prx-form-info-b1,
+            .prx-form-info-b2 {
+                width: 100%;
+                float: none;
+                clear: both;
+        }
+        .prx-form-info-b1 {
+            padding-right: 0;
+        }
+        .prx-form-info-b2 {
+            padding-left: 0;
+        }
+
+    .prx-content-block-similar {
+        border-top: 0;
+    }
+    #detailsContent {
+        border-bottom: 1px solid #ccc;
+    }
+
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+        .prx-content-block .prx-content-content-with-secondary {
+           background-image: none;
+        }
+    .prx-content-secondary { display: none; }
+    .prx-content-primary { margin-left: 0; }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 0;
+    }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 724px;
+    }
+    .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+        width: 744px;
+    }
+    .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+        width: 724px;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        width: 460px;
+    }
+
+    /* Title Bar */
+        .prx-title-bar-primary-title {
+            display: none;
+        }
+       .prx-title-bar-secondary {
+            display: none;
+        }
+        .prx-title-bar-primary {
+            margin-left: 0;
+            width: 744px;
+        }
+    .prx-title-bar {
+        background: #344a5f;
+    }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+    
+    .prx-content-secondary { width: 236px; }
+    .prx-content-content-with-secondary .prx-content-secondary {
+        width: 240px;
+    }
+    .prx-content-primary { margin-left: 246px; }
+    .prx-content-content-with-secondary .prx-content-primary {
+        margin-left: 240px;
+    }
+    
+    .prx-content-block .prx-content-header .prx-content-header-inner,
+        .prx-content-block .prx-content-content .prx-content-content-inner {
+            width: 1200px;
+    }
+    .prx-content-block .prx-content-content .prx-content-content-inner {
+        width: 1222px;
+    }
+    .prx-content-block-admin .prx-content-content .prx-content-content-inner {
+        width: 1220px;
+    }
+    .prx-content-block-admin .prx-content-header .prx-content-header-inner {
+        width: 960px;
+    }
+    .prx-content-block-results .prx-content-header-main {
+        width: 850px;
+    }
+    .prx-content-block-results .prx-content-header-extra {
+        width: 333px;
+    }
+        .prx-title-bar-primary {
+            width: 980px;
+        }
+        .prx-app-info .prx-app-info-text {
+            width: 710px;
+        }
+    
+
+}
+

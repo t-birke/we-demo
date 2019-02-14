@@ -1,0 +1,2 @@
+<apex:page standardController="asb_ListingAsset__c" extensions="asb_ListingAssetActionsController" action="{!init}">
+</apex:page>

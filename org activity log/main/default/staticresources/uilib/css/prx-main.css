@@ -1,0 +1,127 @@
+/**
+ *  Generic stuff.
+ *
+ */
+
+h2 span.h2-sub {
+    font-size: 70%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/**
+ *  Reset for ULs and LIs: add 'prx-ul-reset' to the UL:
+ *  - no padding/margin
+ *  - no list style
+ */
+ul.prx-ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    overflow: hidden;
+}
+    ul.prx-ul-reset li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        overflow: hidden;
+    }
+    
+/**
+ *  Simple ul
+ */    
+ul.prx-ul-simple,
+    ol.prx-ul-simple {
+        margin: 2px 10px;
+        padding: 2px 10px;
+        overflow: visible;
+} 
+ul.prx-ul-simple {
+    list-style: disc outside none;
+}
+    ul.prx-ul-simple li,
+        ol.prx-ul-simple li {
+            margin: 2px 0;
+            padding: 2px 0;
+            overflow: visible;
+    }
+
+/**
+ *  Icons typically live inside a span with class name 'prx-icon'.
+ *  They all have certain common/default attributes.
+ */
+.prx-icon {
+    display: inline-block;
+    background: url(../img/sprite-prx.png) no-repeat 20px 0;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.prx-mobile-icon {
+    display: none;
+}
+
+a.prx-link-more {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 110%;
+    vertical-align: top;
+    margin: 0 0 1px 0;
+}
+    a.prx-link-more .prx-btn-txt {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        padding: 0 0 0 2px;
+        float: left;
+    }
+    a.prx-link-more:hover .prx-btn-txt {
+        text-decoration: underline !important;
+        float: left;
+    }
+    .prx-link-more .prx-icon {
+        display: inline-block;
+        background: url(../img/sprite-prx.png) no-repeat -60px -20px;
+        width: 10px;
+        height: 12px;
+        vertical-align: top;
+        margin: 2px 0 0 4px;
+        padding: 0;
+    }
+
+/* loading spinners */
+.prx-loading {
+    background: url(../img/loading-medium.gif) no-repeat center center;
+    min-height: 30px;
+    min-width: 30px;
+}
+    .prx-analytics-content-charts .prx-loading {
+        height: 270px;
+    }
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-mobile-icon { 
+        display: block; 
+        width: 20px;
+        height: 20px; 
+    }
+    h2 span.h2-sub {
+        float: right;
+        font-size: 100%;
+    }
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+}
+

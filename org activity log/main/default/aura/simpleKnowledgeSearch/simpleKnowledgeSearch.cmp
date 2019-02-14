@@ -1,0 +1,27 @@
+<aura:component controller="knowledgeSearch_CT" implements="forceCommunity:availableForAllPageTypes">
+    <ltng:require styles="/resource/SLDS090_KQS1/assets/styles/salesforce-lightning-design-system-ltng.css" />
+    
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
+    
+    <aura:attribute name="articles" type="KnowledgeArticleVersion[]"/>    
+    <aura:attribute name="searchKey" type="String" default=""/>  
+    <aura:attribute name="searchPlaceholder" type="String" default="Search Knowledge Articles..." />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:ArticleSearchKeyChange" action="{!c.searchKeyChange}"/>
+ 	
+    <div class="demo-only slds-card slds-p-around--small">
+       <div class="slds-grid slds-grid_align-spread test slds-m-bottom--small slds-text-heading--small ">
+            <lightning:Icon iconName="custom:custom55" size="small" alternativeText="Product" class="slds-m-right--small"/>
+			Knowledge
+        </div>
+    	<c:ArticleSearchBar searchPlaceholder="{v.searchPlaceholder}" />
+        <div class="slds-text-title--caps slds-m-left--medium slds-p-top--small">Related Articles</div>
+        <ul class="slds-p-right--medium slds-p-left--medium slds-p-bottom--medium">
+            <aura:iteration items="{!v.articles}" var="a">
+                <!--SF1 URL {!'/one/one.app?#/sObject/'+ a.Id + '/view'}-->
+                <li class="slds-truncate slds-text-body--small slds-m-top--small"><a href="{! $SfdcSite.pathPrefix + '/s/article/' + a.UrlName }"> {!a.Title}</a></li>      
+            </aura:iteration>
+        </ul>
+	</div>
+</aura:component>

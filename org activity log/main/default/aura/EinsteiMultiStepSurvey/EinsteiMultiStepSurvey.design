@@ -1,0 +1,7 @@
+<design:component label="Einstein Platform - Survey">
+    <design:attribute name="surveyName" label="Surveyforce Survey Name" description="Name of the survey where these results will be stored" default="Cirrus Retail Survey" />
+	<design:attribute name="modelId" label="Object Detection Model ID" description="Model ID of the trained Object Detection model" />
+    <design:attribute name="intentModelId" label="Language Model ID" description="Model ID of the trained intent model used to analyze question 2" />
+    <design:attribute name="question1" label="Question 1" description="Question used to generate sentiment of the survey" />
+    <design:attribute name="question2" label="Question 2" description="Question use to generate intent" />
+</design:component>

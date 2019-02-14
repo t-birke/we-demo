@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="TakeRecordsHandle" label="Take Username from record" />
+    <design:attribute name="RenderWithoutScript" label="Don't use script for rendering" />
+    <design:attribute name="PictureId" label="Instagram Embed Picture Id" />
+    <design:attribute name="Hight" label="Hight" />
+</design:component>

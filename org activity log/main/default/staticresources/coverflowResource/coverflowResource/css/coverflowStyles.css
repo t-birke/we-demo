@@ -1,0 +1,192 @@
+﻿div.contentPublish {
+	background:transparent url(../imgs/back.png) repeat scroll 0 0;
+	float:left;
+	margin:-7px 15px;
+	padding-bottom:30px;
+	padding-left:50px;
+	padding-top:25px;
+	width:597px;
+}
+
+div.contentPublish a {
+	width: 43px;
+	height: 42px;
+	display: block;
+	float: left;
+	background: blue;
+	margin: 90px 10px 0 10px;
+}
+
+div.contentPublish a.end {
+	margin-left: 0;
+	background: url(../imgs/leftArrow.png) 0 42px;
+}
+
+div.contentPublish a.prev {
+	margin-left: 0;
+	background: url(../imgs/leftArrow.png) 0 42px;
+}
+
+div.contentPublish a.next {
+	margin-right: 0;
+	background: url(../imgs/rightArrow.png) 0 41px;
+}
+div.scrollable { 
+	float: left;
+	position:relative;
+	overflow:hidden;
+	width: 429px;
+	height:242px;
+} 
+
+div.scrollable div.items { 
+	width:20000em; 
+	position:absolute; 
+}
+
+div.scrollable div.items div { 
+	float: left;
+	width: 420px;
+	height: 242px;
+	margin: 5px;
+}
+
+div.scrollable div.items div h2 {
+	margin: 5px 0;
+}
+
+div.scrollable div.items div h2 a {
+	float: none;
+	display: inline;
+	background: none;
+	width: auto;
+	height: 0;
+	margin: 0;
+	color: #000;
+	text-decoration: none;
+}
+
+div.scrollable div.items div h2 a:hover {
+	text-decoration: underline;
+}
+
+div.scrollable div.items div input.techButton {
+	background: url(../imgs/buttons.png) 0 0;
+	border:0 none;
+	height:32px;
+	text-indent:-300px;
+	width:143px;
+}
+
+div.scrollable div.items div input.warrantyButton {
+	background:transparent url(../imgs/buttons.png) repeat scroll 143px 0;
+	border:0 none;
+	height:32px;
+	text-indent:-300px;
+	width:143px;
+}
+
+div.scrollable div.items div ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+div.scrollable div.items div ul li {
+	margin: 0;
+	padding: 0;
+}
+
+div.scrollable div.items div ul li a {
+	display: block;
+	width: 104px;
+	height: 56px;
+	margin: 10px 1px 0 0;
+}
+
+div.scrollable div.items div ul li a.postLink {
+	background: url(../imgs/postLink.png);
+}
+
+div.scrollable div.items div ul li a.promotedLink {
+	background: url(../imgs/promotedLink.png);
+}
+
+div.scrollable div.items div ul li a.discussLink {
+	background: url(../imgs/discussLink.png);
+}
+
+div.scrollable div.items div ul li a.seeLink {
+	background: url(../imgs/seeLink.png);
+}
+
+div.scrollable div.items div .data {
+	background: none;
+	font-family: Arial;
+	font-size: 13px;
+	margin: 0;
+	height: auto;
+}
+
+div.scrollable div.items div .data a{
+	width: auto;
+	height: 0;
+	margin: 0;
+	color: #000;
+	text-decoration: underline;
+}
+
+div.scrollable div.items div .data span {
+	font-weight: bolder;
+}
+
+img.imgDell {
+	display:block;
+	margin:0 50px;
+	float:left;
+}
+
+
+
+
+
+div.buttons {
+	height: auto!important;
+	width: 290px!important;
+	margin: auto!important;
+	float: none!important;
+}
+
+div.items div span {
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+div.items div h2 {
+	text-align: center;
+}
+
+div.second_category_left {
+	height: auto;
+	background-position: 0 2px;
+}
+
+div.second_category {
+	border-left: 0;
+}
+div.scrollable div.items div input.techButton {
+	text-indent: 0;
+	font-size: 0;
+	text-align: left;
+	color: #0871F3;
+	cursor: pointer;
+}
+
+div.scrollable div.items div input.warrantyButton {
+	text-indent: 0;
+	font-size: 0;
+	text-align: left;
+	color: #0871F3;
+	cursor: pointer;
+}

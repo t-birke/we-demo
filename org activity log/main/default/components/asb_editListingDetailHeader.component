@@ -1,0 +1,69 @@
+<apex:component id="editListingDetailHeader" layout="none" controller="asb_EditListingDetailHeaderController" allowDML="true">
+
+	<apex:attribute name="selectListing" description="Selected Listing" type="asb_ListingDO" required="true" assignTo="{!selectedListing}"/>
+            
+            <div class="prx-title-bar" id="prx_title_bar">
+              <div class="prx-title-bar-primary">
+                <div class="prx-title-bar-primary-title">
+                  <h1><apex:outputText value="{!IF(selectedListing.isNew, $Label.asb_ListNewApp, selectedListing.LanguageLabel)}"/></h1>
+                </div>
+                <div class="prx-filter prx-filter-S">
+                  <div class="prx-overlaymenu-opener" id="prx_nav2_opener_phone"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                </div>
+                <div class="prx-filter prx-filter-M">
+                  <div class="prx-overlaymenu-opener" id="prx_nav2_opener_small"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                </div>
+      <!-- THIS IS WHAT I SHOULD SHOW WHEN IS EDITING A DETAIL -->
+      <apex:outputPanel id="buttons" rendered="{!!selectedListing.isNew}" styleclass="prx-title-bar-primary-actions">
+      	<apex:form >
+      			  <a href="{!$Page.asb_listingDetail}?listingId={!selectedListing.Id}" target="_blank" class="prx-btn prx-btn-secondary-titlebar prx-view-listing">{!$Label.asb_BUTTON_ViewListing}</a>
+                  <a href="javascript:void(0)" class="prx-btn hidden-phone prx-btn-alert prx-dialog-opener prx-btn-delete" data-prx-dialog-id="prx_app_overlay_deletelisting">{!$Label.asb_BUTTON_Delete_Listing}</a>
+                  <apex:commandLink styleclass="prx-btn prx-btn-primary prx-btn-publish" action="{!toggleStatus}" id="toggleStatus" value="{!IF(selectedListing.IsLive, $Label.asb_BUTTON_Take_Offline, $Label.asb_BUTTON_PublishListing)}"/>
+        		  <apex:actionFunction name="deleteListingJS" action="{!deleteListing}" rerender="errorMessages" onComplete="jQuery('#prx_app_overlay_deletelisting').dialog('close');"/>
+        </apex:form>
+      
+      	<div class="prx-dialogs" style="display: none;">
+      		<apex:form >
+              <!-- overlay for delete listing -->
+              <div class="prx-dialog" id="prx_app_overlay_deletelisting" title="{!$Label.asb_BUTTON_Delete_Listing}">
+                <div class="prx-dialog-content">
+                  <p>{!$Label.asb_Delete_Listing_Text}</p>
+                </div>
+                <div class="prx-dialog-footer">
+                  <button class="prx-btn btn-close-overlay">{!$Label.asb_BUTTON_Cancel}</button>
+                  <a href="javascript:void(0)" onclick="deleteListingJS();" class="prx-btn prx-btn-alert">{!$Label.asb_BUTTON_Delete_Listing}</a>
+                </div>
+              </div>
+              
+              <!-- overlay for 'view listing' when there are unsaved data on the page -->
+              <div class="prx-dialog" id="prx_app_overlay_viewlisting" title="{!$Label.asb_UnsavedChanges}">
+                <div class="prx-dialog-content">
+                  <p>{!$Label.asb_Unsaved_Message_Listings}</p>
+                </div>
+                <div class="prx-dialog-footer">
+                  <button class="prx-btn btn-close-overlay">{!$Label.asb_BUTTON_Cancel}</button>
+                  <button class="prx-btn prx-btn-primary btn-close-overlay"  onclick="saveForPreviewJS();">{!$Label.asb_BUTTON_Save_Changes}</button>
+                  <a href="{!$Page.asb_listingDetail}?listingId={!selectedListing.Id}" target="_blank" class="prx-btn prx-btn-primary btn-close-overlay">{!$Label.asb_BUTTON_ViewListing}</a>
+                </div>
+              </div>
+              <!-- overlay for 'publish listing' when there are unsaved data on the page -->
+              <div class="prx-dialog" id="prx_app_overlay_publishlisting" title="{!$Label.asb_UnsavedChanges}">
+                <div class="prx-dialog-content">
+                  <apex:outputText value="{!$Label.asb_UnsavedChangesPublish}">
+                  	<apex:param value="{!IF(selectedListing.IsLive, LOWER($Label.asb_BUTTON_Take_Offline), $Label.asb_Publish)}"/>
+                  </apex:outputText>
+                </div>
+                <div class="prx-dialog-footer">
+                  <button class="prx-btn btn-close-overlay">{!$Label.asb_BUTTON_Cancel}</button>
+                  <button class="prx-btn prx-btn-primary btn-close-overlay"  onclick="saveForPublishJS();">{!$Label.asb_BUTTON_Save_Changes}</button>
+                  <apex:commandLink styleclass="prx-btn prx-btn-primary btn-close-overlay"  onClick="PrX.onbeforeunload='';" action="{!toggleStatus}" value="{!IF(selectedListing.IsLive, $Label.asb_BUTTON_Take_Offline, $Label.asb_BUTTON_PublishListing)}"/>
+                </div>
+              </div>
+            
+            </apex:form>
+            </div>
+         </apex:outputPanel>
+     <!-- END THIS IS WHAT I SHOULD SHOW WHEN IS EDITING -->           
+              </div>
+            </div>
+</apex:component>

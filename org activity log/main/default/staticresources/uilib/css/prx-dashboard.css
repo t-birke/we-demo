@@ -1,0 +1,124 @@
+/**
+ *  CSS for dashboard specific stuff
+ */
+
+.prx-dashboard-analytics {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+
+.prx-analytics-header {
+    overflow: hidden;
+}
+    .prx-analytics-header .prx-btn-group {
+        padding: 0;
+    }
+
+.prx-analytics-content {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+}
+    .prx-analytics-content-links {
+        float: left;
+        width: 165px;
+    }
+        .prx-analytics-content-links ul {
+            
+        }
+            .prx-analytics-content-links ul li {
+                padding: 0 0 35px 0;
+            }
+                .prx-analytics-content-links ul li a {
+                    display: block;
+                    color: #6b6a6a;
+                    border-radius: 3px;
+                    height: 75px;
+                    text-align: right;
+                    font-size: 123.1%;
+                    padding: 10px 20px 5px 5px;
+                    line-height: 210%;
+                }
+                    .prx-analytics-content-links ul li a span.prx-analytics-number {
+                        display: block;
+                        font-size: 150%;
+                    }
+                .prx-analytics-content-links ul li a:hover {
+                    color: #6b6a6a;
+                    text-decoration: none;
+                }
+                .prx-analytics-content-links ul li.prx-selected a,
+                    .prx-analytics-content-links ul li a:hover {
+                        background: #e8eaeb; 
+                }
+
+    .prx-analytics-content-charts-top {
+        margin-left: 200px;
+        height: 40px;
+    }
+        .prx-analytics-content-charts-top .prx-chart-controls .prx-btn-group {
+            padding: 0;
+        }
+        .prx-analytics-content-charts-top .prx-chart-y-title {
+            padding-top: 20px;
+            float: left;
+            color: #888;
+        }
+    .prx-analytics-content-charts {
+        margin-left: 200px;
+        height: 300px;
+    }
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .prx-dashboard-analytics {
+        padding: 0 0 20px 0;
+    }
+    .prx-analytics-header .prx-btn-group-b {
+        display: none;
+    }
+    .prx-analytics-content-charts-top {
+        display: none;
+    }
+    .prx-analytics-content-charts {
+        display: none;
+    }
+    .prx-analytics-content-links {
+        float: left;
+        width: 100%;
+    }
+        .prx-analytics-content-links ul li a {
+            display: block;
+            color: #6b6a6a;
+            border-radius: 3px;
+            height: auto;
+            text-align: left;
+            font-size: 123.1%;
+            padding: 8px 10px;
+            line-height: 123.1%;
+            background: #e8eaeb;
+            overflow: hidden;
+        }
+            .prx-analytics-content-links ul li a span.prx-analytics-text {
+                float: left;
+            }
+            .prx-analytics-content-links ul li a span.prx-analytics-number {
+                display: inline-block;
+                margin-left: 5px;
+                float: right;
+            }
+    
+}
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+
+}

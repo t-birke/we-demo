@@ -1,0 +1,501 @@
+<apex:page controller="asb_AppDetailsController" action="{!init}" showheader="{!isDesktop}" sidebar="false" id="appDetails" standardstylesheets="false" tabStyle="Store_Administration__tab">
+    <apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+            <div class="prx-content-block prx-content-block-admin">
+            <!-- title bar -->
+            <apex:outputPanel layout="none" rendered="{!NOT(hasErrorMessage)}">
+            <div class="prx-title-bar" id="prx_title_bar">
+                <div class="prx-title-bar-primary">
+                    <div class="prx-title-bar-primary-title">
+                        <h1><apex:outputText id="appNameTitle" value="{!IF((currentApp.name==''),$Label.asb_ListNewApp,currentApp.name)}" /></h1>
+                    </div>
+                    <div class="prx-filter prx-filter-S">
+                        <div class="prx-overlaymenu-opener" id="prx_nav2_opener_phone"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                    </div>
+                    <div class="prx-filter prx-filter-M">
+                        <div class="prx-overlaymenu-opener" id="prx_nav2_opener_small"><span class="prx-icon"></span><span class="prx-overlay-opener-text"></span></div>
+                    </div>
+                    <apex:outputPanel rendered="{!isEdit}">
+                    <div class="prx-title-bar-primary-actions">
+                      <div class="prx-filter-sort prx-optionlist">
+                        <select id="filter_app_sortby" name="filter_app_sortby" class="prx-select-filter prx-select-filter-overlaymenu prx-select-optionlist" onchange="PrX.showAppReport(this)">
+                          <option class="prx-filter-hidden"><apex:outputText value="{!$Label.asb_ViewAnalytics}" /></option>
+                  				<apex:repeat value="{!appReports}" id="reports" var="report">
+		                          <option value="{!report.Id}"><apex:outputText value="{!report.Name}" /></option>
+                  				</apex:repeat>
+                        </select>
+                      </div>
+                    </div>
+                    </apex:outputPanel>
+                </div>
+            </div>    
+            </apex:outputPanel>  
+            <apex:outputPanel id="message">
+            	<c:asb_pageMessages extraCss="prx-msg-bar"/>  
+            </apex:outputPanel>  
+            <div class="prx-content-content prx-content-content-with-secondary">
+              <div class="prx-content-content-inner">
+                <c:asb_leftSidebar selected="{!$Label.asb_App_Listings}"/>
+                <div class="prx-content-primary">
+                  <div class="prx-content-primary-inner">
+                    <div class="prx-content-generic">
+                      <apex:outputPanel layout="none" rendered="{!NOT(hasErrorMessage)}">
+                      <div class="prx-data-table-header">
+                        <div class="prx-data-table-header-main">
+                          <h2><apex:outputText value="{!$Label.asb_App_Information}"/></h2>
+                        </div>
+                      </div>
+					<apex:form >
+                      <div class="prx-app-info">
+                        <div class="prx-app-info-a">
+                          	<label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$Label.asb_Name}" /></span> <span class="prx-req">*</span> <apex:outputPanel rendered="{!isEdit}"><span data-prx-dialog-id="prx_app_overlay_name" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}" /></span></apex:outputPanel></label>
+		                    <apex:outputPanel rendered="{!isEdit}">
+		                    	<p><apex:outputText id="appName" value="{!currentApp.name}" /></p>
+		                    </apex:outputPanel>
+		                    <apex:outputPanel rendered="{!NOT(isEdit)}">
+			                    <div class="prx-form-group">
+			                    	<apex:inputText value="{!currentApp.Name}"  maxlength="80"  id="app_name" styleclass="prx-input prx-input-text" />
+			                    </div>
+			                </apex:outputPanel>
+                            <label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$ObjectType.asb_App__c.fields.InstallUrl__c.label}" /></span> <span class="prx-req">*</span> <apex:outputPanel rendered="{!isEdit}"><span data-prx-dialog-id="prx_app_overlay_installurl" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}" /></span></apex:outputPanel></label>
+			                <div class="prx-form-group">
+			                	<apex:outputPanel rendered="{!NOT(isEdit)}">
+			                    	<apex:inputText value="{!currentApp.InstallUrl}" maxlength="255"  styleclass="prx-input prx-input-text" />
+			                    </apex:outputPanel>
+			                    <apex:outputPanel rendered="{!isEdit}">
+			                    	<apex:outputText id="installUrl" value="{!currentApp.InstallUrl}" styleclass="prx-input prx-input-text" />
+			                    </apex:outputPanel>
+			                </div>
+			                <apex:outputPanel rendered="{!NOT(isEdit)}">
+			                    <div class="prx-app-info-tile">
+			                    	<label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$Label.asb_App_Logo}"/></span> <span class="prx-req">*</span></label>
+			                        <div class="prx-form-group">
+			                        	<p class="prx-form-explanation"><apex:outputText value="{!$Label.asb_UploadInfo}"/></p>
+			                            <apex:inputFile id="app_logo" value="{!appLogoBlob}" filename="{!appLogofname}"/>
+			                        </div>
+			                    </div>
+                            </apex:outputPanel>
+                            <apex:outputPanel rendered="{!isEdit}" layout="none">
+	                            <div class="prx-app-info-tile prx-app-info-tile-preview">
+		                            <label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$Label.asb_App_Logo}"/></span> <span class="prx-req">*</span> <span data-prx-dialog-id="prx_app_overlay_applogo" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}" /></span></label>
+		                            <ul class="prx-ul-reset prx-ul-results">
+		                              <li class="prx-li-tile">
+		                                <c:asb_appTile id="tile" app="{!currentApp}" showCounters="false"/>
+		                              </li>
+		                            </ul>
+	                          	</div>
+                          	</apex:outputPanel>
+                        </div>
+                         <apex:outputPanel styleClass="prx-app-info-b" layout="block"  id="appInfoSection2">
+                          <label class="prx-form-label"><span class="prx-label-text"><apex:outputText value="{!$ObjectType.asb_App__c.fields.AppType__c.label}" /></span> <span class="prx-req">*</span> <span data-prx-dialog-id="prx_app_overlay_type" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}"/></span></label>
+                          <p><apex:outputText id="typeSection" value="{!IF(NOT(ISBLANK(currentApp.AppType)),currentApp.AppType,$Label.asb_NoneSelected)}" /></p>
+                          <label class="prx-form-label"><span id="categoriesSection" class="prx-label-text"><apex:outputText value="{!$ObjectType.asb_App__c.fields.Categories__c.label}" /></span> <span class="prx-req">*</span> <a href="javascript:void(0)" onclick="initializeCat();" data-prx-dialog-id="prx_multiselect_overlay" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}"/></a></label>
+			  			  <p><apex:outputText id="categoriesSection" value="{!currentApp.CategoriesLabel}" /></p>
+                          <label class="prx-form-label"><span id="languagesSection" class="prx-label-text"><apex:outputText value="{!$ObjectType.asb_App__c.fields.Languages__c.label}" /></span> <span class="prx-req">*</span> <a href="javascript:void(0)" onclick="initializeLang();" data-prx-dialog-id="prx_multiselect_overlay" class="prx-dialog-opener prx-label-edit"><apex:outputText value="{!$Label.asb_BUTTON_Edit}"/></a></label>
+                          <p><apex:outputText id="languagesSection" value="{!currentApp.LanguagesLabel}" /></p>
+                        </apex:outputPanel>
+                        
+                      </div>
+                      
+                      <apex:outputPanel rendered="{!NOT(isEdit)}">
+                      	<div class="prx-btn-group prx-btn-group-a">
+				           	<a href="{!$Page.asb_apps}" class="prx-btn" onClick="PrX.onbeforeunload='';"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></a>
+				            <apex:commandLink id="saveNextButton" action="{!save}" styleClass="prx-btn prx-btn-primary saveButton" onClick="if(jQuery('.prx-btn-disabled').length > 0)return false;PrX.onbeforeunload='';jQuery('.saveButton').addClass('prx-btn-disabled');jQuery('.saveButton').removeClass('prx-btn-primary');"><apex:outputText value="{!$Label.asb_BUTTON_SaveNext}" /></apex:commandLink>
+				        </div>
+                      </apex:outputPanel>
+                      
+                      </apex:form>
+                      
+                      
+                      
+                      <div class="prx-dialogs" style="display: none;">
+                        <apex:form id="form">
+                        <apex:actionRegion >
+                        <apex:inputHidden value="{!typeSelected}" id="typeSelected"/>
+                        <apex:inputHidden value="{!valuesSelected}" id="valuesSelected"/>
+                        <apex:inputHidden value="{!nameSelected}" id="nameSelected"/>
+                        <apex:inputHidden value="{!installUrlSelected}" id="installUrlSelected"/>
+                        <apex:actionFunction name="deleteCurrentApp" action="{!deleteCurrentApp}" />
+                        <apex:actionFunction name="initializeLang" action="{!initializeLanguages}" status="pickListOverlayStatus" rerender="pickListOverlayPanel"/>
+                        <apex:actionFunction name="initializeCat" action="{!initializeCategories}" status="pickListOverlayStatus" rerender="pickListOverlayPanel"/>
+                        <apex:actionFunction name="saveChangesLanguages" action="{!saveLanguages}" rerender="languagesSection"/>
+                        <apex:actionFunction name="saveChangesCategories" action="{!saveCategories}" rerender="categoriesSection"/>
+                        <apex:actionFunction name="saveTypeJS" action="{!saveAppType}" rerender="typeSection"/>
+                        <apex:actionFunction name="saveAppNameAction" action="{!saveAppName}" rerender="appName,appNameTitle"/>
+                        <apex:actionFunction name="saveInstallUrlAction" action="{!saveInstallUrl}" rerender="installUrl"/>
+                        </apex:actionRegion>
+                        <c:asb_pickListOverlay id="prx_multiselect_overlay" pickListOverlayController="{!pickListOverlayController}"/>
+                        <c:asb_selectListOverlay id="prx_app_overlay_SelectList" selectListOverlayConfig="{!selectListOverlayConfig}" />
+                        <!-- overlay for type -->
+			            	<div class="prx-dialog" id="prx_app_overlay_type" title="Type">
+			                	<div id="errorMessageType" style="display:none;" class="prx-msg prx-msg-error">
+									<div class="prx-msg-icon"></div>
+									<p>{!$Label.asb_Message_Text_Error}</p>
+									<ul>
+										<li><apex:outputText value="{!$Label.asb_ERROR_AppTypesRequired}"/></li>
+									</ul>
+								</div>
+			                	<div class="prx-dialog-content">
+			                    	<div id="errorMessage" style="display:none;" class="prx-msg prx-msg-error">
+										<div class="prx-msg-icon"></div>
+								        <p>{!$Label.asb_Message_Text_Error}</p>
+								        <ul>
+								        	<li><apex:outputText value="{!$Label.asb_ERROR_AppTypesRequired}"/></li>
+								        </ul>
+									</div>
+			                        <p><apex:outputText value="{!$Label.asb_Select_The_Type}"/></p>
+			                        <ul id="types" class="prx-ul-reset prx-ul-2-columns">
+			                        	<li>
+			                        		<apex:outputPanel rendered="{!currentApp.AppType == 'Web'}">
+			                        			<input type="radio" name="type" id="Web" value="Web" checked="checked" />
+			                        			<label for="Web"><apex:outputText value="{!$Label.asb_App_Type_Web}"/></label>
+			                        		</apex:outputPanel>
+			                        		<apex:outputPanel rendered="{!AND(currentApp.AppType != 'Web', AppTypeWebEnabled)}">
+			                        			<input type="radio" name="type" id="Web" value="Web"/>
+			                        			<label for="Web"><apex:outputText value="{!$Label.asb_App_Type_Web}"/></label>
+			                        		</apex:outputPanel>
+			                        		
+			                        	</li>
+			                            <li>
+			                            	<apex:outputPanel rendered="{!currentApp.AppType == 'iOS'}">
+			                        			<input type="radio" name="type" id="iOS" value="iOS" checked="checked"/>
+			                        			<label for="iOS"><apex:outputText value="{!$Label.asb_App_Type_iOS}"/></label>
+			                        		</apex:outputPanel>
+			                        		<apex:outputPanel rendered="{!AND(currentApp.AppType != 'iOS', AppTypeIOSEnabled)}">
+			                        			<input type="radio" name="type" id="iOS" value="iOS"/>
+			                        			<label for="iOS"><apex:outputText value="{!$Label.asb_App_Type_iOS}"/></label>
+			                        		</apex:outputPanel>
+			                            </li>
+			                            <li>
+			                            	<apex:outputPanel rendered="{!currentApp.AppType == 'Android'}">
+			                        			<input type="radio" name="type" id="Android" value="Android" checked="checked"/>
+			                        			<label for="Android"><apex:outputText value="{!$Label.asb_App_Type_Android}"/></label>
+			                        		</apex:outputPanel>
+			                        		<apex:outputPanel rendered="{!AND(currentApp.AppType != 'Android', AppTypeAndroidEnabled)}">
+			                        			<input type="radio" name="type" id="Android" value="Android" />
+			                        			<label for="Android"><apex:outputText value="{!$Label.asb_App_Type_Android}"/></label>
+			                        		</apex:outputPanel>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                    <div class="prx-dialog-footer">
+			                    	<button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}"/></button>
+			                        <button class="prx-btn prx-btn-primary" onclick="saveType()"><apex:outputText value="{!$Label.asb_BUTTON_Save}"/></button>
+			                    </div>
+			            	</div>
+			            	<!-- overlay for name -->
+	                        <div class="prx-dialog" id="prx_app_overlay_name" title="Name">
+	                          <div id="errorMessageName" style="display:none;" class="prx-msg prx-msg-error">
+								<div class="prx-msg-icon"></div>
+								<p>{!$Label.asb_Message_Text_Error}</p>
+								<ul>
+									<li><apex:outputText value="{!$Label.asb_ERROR_EmptyAppName}"/></li>
+								</ul>
+							  </div>
+	                          <div class="prx-dialog-content">
+	                            <div class="prx-form-group">
+	                              <p class="prx-form-explanation"><apex:outputText value="{!$Label.asb_ChangeTheNameOfYourApp}"/></p>
+	                              <input type="text" id="appNameOverlay"  maxlength="80" value="{!currentApp.Name}" class="prx-input prx-input-text" />
+	                            </div>
+	                          </div>
+	                          <div class="prx-dialog-footer">
+	                            <button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}"/></button>
+	                            <button class="prx-btn prx-btn-primary" onclick="saveAppName()"><apex:outputText value="{!$Label.asb_BUTTON_Save}"/></button>
+	                          </div>
+	                        </div>
+	                        <!-- overlay for install URL -->
+	                        <div class="prx-dialog" id="prx_app_overlay_installurl" title="Install URL">
+	                          <div id="errorMessageInstall" style="display:none;" class="prx-msg prx-msg-error">
+								<div class="prx-msg-icon"></div>
+								<p>{!$Label.asb_Message_Text_Error}</p>
+								<ul>
+									<li><apex:outputText value="{!$Label.asb_ERROR_EmptyInstallUrl}"/></li>
+								</ul>
+							  </div>
+	                          <div class="prx-dialog-content">
+	                            <div class="prx-form-group">
+	                              <p class="prx-form-explanation"><apex:outputText value="{!$Label.asb_ChangeTheInstallURLOfYourApp}"/></p>
+	                              <input type="text"  maxlength="255" name="app_installurl" id="app_installurl" class="prx-input prx-input-text" value="{!currentApp.installUrl}" ></input>
+	                            </div>
+	                          </div>
+	                          <div class="prx-dialog-footer">
+	                            <button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}"/></button>
+	                            <button class="prx-btn prx-btn-primary" onclick="saveInstallUrl()"><apex:outputText value="{!$Label.asb_BUTTON_Save}"/></button>
+	                          </div>
+	                        </div>
+	                        </apex:form>
+	                        <!-- overlay for app logo --> 
+	                        <div class="prx-dialog" id="prx_app_overlay_applogo" title="App Logo">
+								<apex:form id="appLogoOverlayForm">
+								<div id="errorMessageLogo" style="display:none;" class="prx-msg prx-msg-error">
+									<div class="prx-msg-icon"></div>
+									<p>{!$Label.asb_Message_Text_Error}</p>
+									<ul>
+										<li><apex:outputText value="{!$Label.asb_ERROR_selectFile}"/></li>
+									</ul>
+								</div>
+								<div class="prx-dialog-content">
+									<div class="prx-app-info-tile">
+										<div class="prx-form-group">
+											<p class="prx-form-explanation"><apex:outputText value="{!$Label.asb_UploadInfo}"/></p>
+											<apex:inputFile id="app_logo" value="{!appLogoBlob}" filename="{!appLogofname}"/>
+										</div>
+									</div>
+								</div>
+								<div class="prx-dialog-footer">
+									<button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}"/></button>
+									<apex:commandLink action="{!UploadAppLogo}" id="uploadLogo" styleClass="prx-btn prx-btn-primary" onclick="if(!validateLogo()){return false;}"><apex:outputText value="{!$Label.asb_BUTTON_Save}"/></apex:commandLink>
+								</div>
+								</apex:form>
+							</div>
+                        	
+                      </div>
+                    <apex:outputPanel rendered="{!isEdit}">
+                    <div class="prx-listings-info">
+                      <div class="prx-data-table-header">
+                        <div class="prx-data-table-header-main">
+                          <h2>{!$ObjectType.asb_Listing__c.LabelPlural}</h2>
+                        </div>
+                        <div class="prx-data-table-header-extra">
+                          <a href="{!$Page.asb_editListingDetails}?appId={!currentApp.id}" class="prx-action-link"><apex:outputText value="{!$Label.asb_ListInAnotherLanguage}" /></a>
+                        </div>
+                      </div>
+                      <apex:outputPanel layout="none" rendered="true">
+                      <div id="resultsPanel">
+                            <apex:form id="appsListForm">
+                            <apex:actionFunction name="makeDefault" action="{!makeDefaultListing}" rerender="message,appsListForm" oncomplete="if({!NOT(hasErrorMessage)})PrX.initAppActionMenu();">
+					        	<apex:param name="listingId" value="" />
+					        </apex:actionFunction>
+					        <apex:actionFunction name="changeListingStatus" action="{!changeListingStatus}" rerender="message,appsListForm" oncomplete="if({!NOT(hasErrorMessage)})PrX.initAppActionMenu();">
+					        	<apex:param name="listingId" value="" />
+					        </apex:actionFunction>
+                            <apex:actionFunction name="deactivateListingStatus" action="{!deactivateListingStatus}" rerender="message,appsListForm" oncomplete="if({!NOT(hasErrorMessage)})PrX.initAppActionMenu();">
+					        	<apex:param name="listingId" value="" />
+					        </apex:actionFunction>
+                            <table border="0" cellpadding="0" cellspacing="0" class="prx-data-table">
+                              <tr>
+                                <th class="prx-data-1" rowspan="2"><span class="prx-link-replacement"><span class="prx-th-text">&#160;</span></span></th>
+                                <apex:variable var="cso" value="{!columnSortOptions['Language']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-1 {!sortIconStyle}" rowspan="2"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text">{!$Label.asb_ListingLanguages}</span></a></th>
+                                <th class="prx-data-3 prx-th-colspan" colspan="2"><span class="prx-link-replacement"><span class="prx-th-text">{!$Label.asb_RequestsInstalls}</span></span></th>
+                                <th class="prx-data-3 prx-th-colspan" colspan="2"><span class="prx-link-replacement"><span class="prx-th-text">{!$Label.asb_Page_Views}</span></span></th>
+                                <apex:variable var="cso" value="{!columnSortOptions['Status']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-1 {!sortIconStyle}" rowspan="2"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text">{!$ObjectType.asb_Listing__c.fields.Status__c.label}</span></a></th>
+                              </tr>
+                              <tr class="prx-th-row-2">
+                                <apex:variable var="cso" value="{!columnSortOptions['InstallsAT']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-3 prx-th-num {!sortIconStyle}"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text"><span class="prx-th-sub-text">{!$Label.asb_All_Time}</span></span></a></th>
+                                <apex:variable var="cso" value="{!columnSortOptions['Installs30']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-3 prx-th-num {!sortIconStyle}"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text"><span class="prx-th-sub-text">{!$Label.asb_PopularityMetricThirtyDays}</span></span></a></th>
+                                <apex:variable var="cso" value="{!columnSortOptions['PageViewsAT']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-3 prx-th-num {!sortIconStyle}"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text"><span class="prx-th-sub-text">{!$Label.asb_All_Time}</span></span></a></th>
+                                <apex:variable var="cso" value="{!columnSortOptions['PageViews30']}" />
+                                <apex:variable var="sortIconStyle" value="{!IF(cso.columnIsSelected, IF(cso.ascendingOption.selected, 'prx-th-asc', 'prx-th-desc'), '')}" />
+                                <th class="prx-data-3 prx-th-num {!sortIconStyle}"><a href="javascript:PrX.sortByColumn({!cso.nextOption.sortByCode});"><span class="prx-th-text"><span class="prx-th-sub-text">{!$Label.asb_PopularityMetricThirtyDays}</span></span></a></th>
+                              </tr>
+                              <c:asb_listingsTableRows injectedController="{!controller}" />
+							  <tr class="prx-tr-foot">
+	                            <td class="prx-td-action prx-data-1"></td>
+	                            <td class="prx-data-1"><apex:outputText value="{!$Label.asb_Total}" /></td>
+	                            <td class="prx-data-3 prx-td-num">{!currentApp.PopularityAllTime}</td>
+	                            <td class="prx-data-3 prx-td-num">{!currentApp.Popularity}</td>
+	                            <td class="prx-data-3 prx-td-num">{!currentApp.PageViewsAllTime}</td>
+	                            <td class="prx-data-3 prx-td-num">{!currentApp.PageViewsAllTime}</td>
+	                            <td class="prx-data-1"><apex:outputText value="{!currentApp.Status}" /></td>
+	                          </tr>
+							</table>
+						</apex:form>
+                      </div>
+                      </apex:outputPanel>
+                      
+                      </div>
+                      <!-- bottom button bar -->
+                      <div class="prx-button-bar">
+                        <div class="prx-button-bar-secondary">
+                          <a href="javascript:void(0)" class="prx-btn prx-btn-alert prx-dialog-opener" data-prx-dialog-id="prx_app_overlay_removeapp">{!$Label.asb_RemoveAppFromStore}</a>
+                        </div>
+                      </div>
+                      <div class="prx-dialogs" style="display: none;">
+                        <apex:form id="formOverlay">
+	                        <!-- overlay for publish -->
+	                        <div class="prx-dialog" id="prx_app_overlay_publish" title="{!HTMLENCODE($Label.asb_BUTTON_PublishListing)}">
+	                          <div class="prx-dialog-content">
+	                            <p><apex:outputText value="{!$Label.asb_PublishConfirmMsg}" /></p>
+	                          </div>
+	                          <div class="prx-dialog-footer">
+	                            <button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></button>
+	                            <button onclick="changeListingStatus(PrX.listingId);" class="prx-btn prx-btn-alert btn-close-overlay" ><apex:outputText value="{!$Label.asb_BUTTON_Publish}" /></button>
+	                          </div>
+	                        </div>
+	                        <!-- overlay for hiding a listing -->
+	                        <div class="prx-dialog" id="prx_app_overlay_hide" title="{!HTMLENCODE($Label.asb_HideListing)}">
+	                          <div class="prx-dialog-content">
+	                            <p><apex:outputText value="{!$Label.asb_HideConfirmMsg}" /></p>
+	                          </div>
+	                          <div class="prx-dialog-footer">
+	                            <button class="prx-btn btn-close-overlay"><apex:outputText value="{!$Label.asb_BUTTON_Cancel}" /></button>
+	                            <button onclick="changeListingStatus(PrX.listingId);" class="prx-btn prx-btn-alert btn-close-overlay" ><apex:outputText value="{!$Label.asb_BUTTON_Hide}" /></button>
+	                          </div>
+	                        </div>
+                          <!-- overlay for remove app -->
+                          <div class="prx-dialog" id="prx_app_overlay_removeapp" title="{!$Label.asb_RemoveAppFromStore}">
+                            <div class="prx-dialog-content">
+                              <p>{!$Label.asb_RemoveAppConfirmMessage}</p>
+                            </div>
+                            <div class="prx-dialog-footer">
+                              <button class="prx-btn btn-close-overlay">{!$Label.asb_BUTTON_Cancel}</button>
+                              <button class="prx-btn prx-btn-alert btn-close-overlay" onclick="deleteCurrentApp();">{!$Label.asb_BUTTON_RemoveApp}</button>
+                            </div>
+                          </div>
+                          <!-- overlay for delete listing -->
+                          <div class="prx-dialog" id="prx_app_overlay_deletelisting" title="{!$Label.asb_BUTTON_Delete_Listing}">
+                            <div class="prx-dialog-content">
+                              <p>{!$Label.asb_Delete_Listing_Text}</p>
+                            </div>
+                            <div class="prx-dialog-footer">
+                              <button class="prx-btn btn-close-overlay">{!$Label.asb_BUTTON_Cancel}</button>
+                              <button class="prx-btn prx-btn-alert btn-close-overlay" onclick="deactivateListingStatus(PrX.listingId);">{!$Label.asb_BUTTON_Delete_Listing}</button>
+                            </div>
+                          </div>
+                        </apex:form>
+                      </div>
+                      </apex:outputPanel>
+                      </apex:outputPanel>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+          // <![CDATA[	
+          
+          	function saveType(){
+			   	var typeValue = $('#types input:radio:checked').val();
+			   	if(typeValue != null && typeValue != 'undefined'){
+			   		jQuery('#errorMessageType').hide();
+			   		document.getElementById('{!$Component.form.typeSelected}').value = typeValue;
+			   		saveTypeJS();
+			   		jQuery('#prx_app_overlay_type').dialog('close');
+			   	}else{
+			   		jQuery('#errorMessageType').show();
+			   	}
+			}
+			    
+		    function saveAppName(){
+			   	var name = document.getElementById('appNameOverlay').value;
+			   	if(name != null && name.trim() != ''){
+			   		document.getElementById('{!$Component.form.nameSelected}').value = name;
+			   		jQuery('#errorMessageName').hide();
+			   		saveAppNameAction();
+			   		jQuery('#prx_app_overlay_name').dialog('close');
+			   	}else{
+			   		jQuery('#errorMessageName').show();
+			   	}
+			}
+			    
+			function saveInstallUrl(){
+			   	var url = document.getElementById('app_installurl').value;
+			   	if(url != null && url.trim() != '' && (url.indexOf('http://')==0 || url.indexOf('https://')==0)){
+			   		document.getElementById('{!$Component.form.installUrlSelected}').value = url;
+			   		jQuery('#errorMessageInstall').hide();
+			   		saveInstallUrlAction();
+			   		jQuery('#prx_app_overlay_installurl').dialog('close');
+			   	}else{
+			   		jQuery('#errorMessageInstall').show();
+			   	}
+			}
+			
+			function validateLogo(){
+			   	var file = $('#prx_app_overlay_applogo input:file').val();
+			   	if(file != null && file.trim() != '' && (file.indexOf('.png') > -1 || file.indexOf('.jpg') > -1)){
+			   		jQuery('#errorMessageLogo').hide();
+			   		jQuery('#prx_app_overlay_applogo').dialog('close');
+			   		return true;
+			   	}else{
+			   		jQuery('#errorMessageLogo').show();
+			   		return false;
+			   	}
+			}    
+	    	// ]]>
+            </script>
+	    	
+	    	<apex:outputPanel rendered="{!isEdit}">
+	    	<script>
+          	// <![CDATA[	
+            jQuery(document).ready(function() {
+				// action menus in the table .prx-menu-content .prx-menu-opener
+          		PrX.initAppActionMenu();
+          		
+          		// action menus in the table .prx-menu-content .prx-menu-opener
+	            jQuery('.prx-overlay-menu-action').each(function() {
+	                $thisMenu = jQuery(this);
+	                $thisOpener = $thisMenu.prev('.prx-menu-opener');
+	                $thisMenu.overlayMenu('init',{
+	                    opener: $thisOpener
+	                });
+	            });
+				
+	            // tile preview: clicking the new shouldn't take the user anywhere
+	            jQuery('.prx-app-info-tile').on('click','.prx-tile-title a',function(e) {
+	                e.preventDefault();
+	            })
+	             
+	        });
+	    	
+            PrX.initAppActionMenu = function() {
+                jQuery('.prx-overlay-menu-actionListing').each(function() {
+                    $thisMenu = jQuery(this);
+                    $thisOpener = $thisMenu.prev('.prx-menu-opener');
+                    $thisMenu.overlayMenu('init',{
+                        opener: $thisOpener
+                    });
+                });
+                PrX.initDialog();
+            }
+        
+            PrX.sortByColumn = function(sortBy) {
+	            var defaultSort = {!searchParams.defaultSort};
+	            var curUrl = window.location.href;
+	            var newUrl = curUrl;
+	            var pageNameStart = curUrl.lastIndexOf('/asb_appDetails');
+	            var concatChar = curUrl.indexOf('?', pageNameStart) < 0 ? '?' : '&';
+	            if (curUrl.indexOf('sort=', pageNameStart) < 0) {
+	                // if default selected and no sort param, we're already at the default search
+	                if (sortBy != defaultSort) {
+	                	newUrl += concatChar + 'sort=' + sortBy;
+	                }
+	            }
+	            else {
+	            	var searchStr = sortBy != defaultSort ? 'sort=\\d\\d' : '&sort=\\d\\d|sort=\\d\\d&|\\?sort=\\d\\d$';
+	                var replaceStr = sortBy != defaultSort ? 'sort=' + sortBy : ''; 
+	                var patt = new RegExp(searchStr); 
+	                newUrl = curUrl.replace(patt,replaceStr);
+	            }
+	
+	            if (newUrl != curUrl) window.location = newUrl;
+	            	return;
+	        };
+                
+            PrX.showAppReport = function($this) {
+            	var reportId = $this;
+                if($this.value){
+                    reportId = $this.value;
+                }
+                	
+	            window.location = "/" + reportId + "?pv0={!LEFT(currentApp.Id, 15)}";
+            };
+                
+            PrX.listingId = '';
+                
+      		// ]]>
+            </script>
+            </apex:outputPanel>
+        </apex:define>
+    </apex:composition>
+</apex:page>

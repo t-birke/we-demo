@@ -1,0 +1,465 @@
+/**
+ *  CSS for jQuery UI
+ */
+
+.ui-widget {
+    font-family: Helvetica Neue, Helvetica, Arial;
+    color: #6b6a6a;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button,
+    .ui-dialog .ui-dialog-buttonpane button.ui-button {
+        font-family: Helvetica Neue, Helvetica, Arial;
+        margin: 10px 10px 10px 5px;
+}
+.ui-widget .prx-form-group-field input.prx-text-field {
+    width: 355px;
+}
+.ui-widget .prx-dialog-700 .prx-form-group-field input.prx-text-field {
+    width: 555px;
+}
+.ui-widget .prx-dialog-900 .prx-form-group-field input.prx-text-field {
+    width: 755px;
+}
+.ui-widget p {
+    margin-top: 0;
+}
+.ui-button-text-only .ui-button-text {
+    padding: 0;
+}
+
+.ui-widget-header {
+    border: 0;
+    background: transparent;
+    color: #444;
+    font-size: 115.4% !important;
+}
+
+.ui-widget-content {
+    border: 0;
+}
+.ui-dialog {
+    padding: 0;  
+    background: #fff;  
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: .7em 0;
+    margin: 0 1em;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+}
+.ui-dialog-screenshots.ui-dialog .ui-dialog-titlebar {
+    border-bottom: 0;
+} 
+    .ui-dialog-titlebar-close {
+        display: none;
+    }
+    .ui-dialog-screenshots .ui-dialog-titlebar-close {
+        display: block;
+        border: 0;
+        background: none;
+    }
+        .ui-dialog-screenshots .ui-dialog-titlebar-close .ui-icon {
+            background: #fff url(../img/sprite-prx.png) no-repeat 2px -98px;
+        }
+.ui-dialog .ui-dialog-content {
+    padding: 0;
+}
+
+.ui-dialog .prx-dialog-content {
+    padding: 10px 15px;
+    overflow: hidden;
+    clear: both;
+}
+    .ui-dialog .prx-dialog-content label {
+        font-weight: bold;
+    }
+    .ui-dialog .prx-dialog-content label.prx-label-inline {
+        font-weight: normal;
+    }
+
+
+.ui-dialog .prx-dialog-footer {
+    border-top: 1px solid #ccc;
+    padding: 5px 0;
+    overflow: hidden;
+    text-align: center;
+    clear: both;
+    background: #fbfbfb;
+    border-radius: 0 0 4px 4px;
+}
+    .ui-dialog .prx-dialog-footer .prx-btn {
+        margin: 5px;
+        cursor: pointer;
+        min-width: 90px;
+    }
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+    border: 0;
+}
+    .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+        float: none;
+    }
+
+/* 2 ul blocks in columns next to each other */
+ul.prx-ul-1,
+    ul.prx-ul-2 {
+        float: left;
+        width: 50%;
+}
+
+/* form elements inside dialog */
+.prx-dialog textarea.prx-textarea {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 5px 10px;
+    margin-bottom: 0;
+}
+.prx-dialog select.prx-select {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 5px;
+}
+
+/* faded background */
+.ui-widget-overlay {
+    background: #000;
+    opacity: .6;
+}
+
+/* sortable styles */
+ul.prx-ul-sortable {
+    margin: 30px 0 0 0;
+}
+    ul.prx-ul-sortable li {
+        
+    }
+    
+ul.prx-ul-sortable-screenshots,
+    ul.prx-ul-sortable-banners {
+        margin-left: -10px;
+}
+        ul.prx-ul-sortable-screenshots li,
+            ul.prx-ul-sortable-banners li {
+                float: left;
+                margin: 0 0 40px 10px;
+                position: relative;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 30px;
+        }
+            ul.prx-ul-sortable-screenshots li.prx-screenshot-li {
+                width: 225px;
+                height: 160px;
+                overflow: hidden;
+                border-radius: 3px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+            ul.prx-ul-sortable-banners li.prx-banner-li {
+                width: 310px;
+                height: 85px;
+                overflow: hidden;
+                border-radius: 3px;
+                -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+            }
+            .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li,
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover,
+                .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li,
+                ul.prx-ul-sortable-banners li.prx-banner-li:hover {
+                    overflow: visible;
+            }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a,
+                    ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                        width: 195px;
+                        height: 134px;
+                        display: block;
+                        overflow: hidden;
+                        padding: 5px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        border-radius: 3px;
+                        float: left;
+                        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                        text-align: center;
+                        vertical-align: middle;
+                }
+                ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                    width: 280px;
+                    height: 61px;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover a.prx-screenshot-a {
+                        border: 1px solid #aaa;
+                        border-radius: 3px 0 3px 3px;
+                }
+                .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover a.prx-banner-a {
+                        border: 1px solid #aaa;
+                        border-radius: 3px 0 0 3px;
+                }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-video-image-overlay {
+                    width: 80px;
+                    height: 80px;
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                    background: transparent url(../img/prx-video-button.png) no-repeat center top;
+                    left: 58px;
+                    top: 27px;
+                }
+                    /* A ghost element, that is as tall as the parent box. This will help vertically center the logo, if the logo is smaller.  */
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li a.prx-screenshot-a:before,
+                        ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a:before {
+                            content: '';
+                            width: 0;
+                            display: inline-block;
+                            height: 100%;
+                            vertical-align: middle;
+                            overflow: none;
+                    }
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li img.prx-screenshot-img,
+                        ul.prx-ul-sortable-banners li.prx-banner-li img.prx-banner-img {
+                            display: inline-block;
+                            max-height: 100%;
+                            max-width: 100%;
+                            height: auto;
+                            width: auto;
+                            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                            vertical-align: middle;
+                    }
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions,
+                    .prx-banner-actions,
+                    .prx-bannersortable-actions {
+                        visibility: hidden;
+                        float: left;
+                        width: 30px;
+                        height: 60px;
+                        border-radius: 0 3px 3px 0;
+                        border-top: 1px solid #aaa;
+                }
+                .prx-banner-actions {
+                    visibility: visible;
+                    margin-top: 20px;
+                    height: 30px;
+                    border-top: 0;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover .prx-screenshot-actions,
+                    .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover .prx-bannersortable-actions {
+                        visibility: visible;
+                }
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action,
+                        .prx-banner-action,
+                        .prx-bannersortable-action {
+                            display: inline-block;
+                            border: 1px solid #aaa;
+                            border-top: 0;
+                            border-left: 0;
+                            background: #fff;
+                            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+                            width: 30px;
+                            height: 30px;
+                    }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-delete,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-delete,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions .prx-banner-action-delete {
+                                border-radius: 0 3px 0 0;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-edit,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-edit,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-bannersortable-actions .prx-banner-action-edit,
+                            .prx-banner-actions .prx-banner-action-edit {
+								border-radius: 0 0 3px 0;
+                        }
+                        .prx-banner-actions .prx-banner-action-delete {
+                                border-radius: 0 3px 0 0;
+                                border-top: 1px solid #aaa;
+                        }
+                        ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete {
+                            visibility: hidden;
+                        }
+                        .prx-is-touch ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete,
+                            ul.prx-ul-sortable-resources li.prx-resource-li:hover .prx-resource-action-delete {
+                                visibility: visible;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-delete .prx-icon,
+                            .prx-banner-actions .prx-banner-action-delete .prx-icon,
+                            .prx-bannersortable-actions .prx-banner-action-delete .prx-icon,
+                            ul.prx-ul-sortable-resources li.prx-resource-li .prx-resource-action-delete .prx-icon {
+                                background-position: 0 -100px;
+                                width: 12px;
+                                height: 12px;
+                                margin: 8px 0 0 9px;
+                        }
+                        ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-actions .prx-screenshot-action-edit .prx-icon,
+                            ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-actions .prx-banner-action-edit .prx-icon,
+                            .prx-bannersortable-actions .prx-banner-action-edit .prx-icon,
+                            .prx-banner-actions .prx-banner-action-edit .prx-icon {
+								background-position: -60px -80px;
+                                width: 14px;
+                                height: 14px;
+                                margin: 7px 0 0 8px;
+                        }
+
+
+                ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-caption,
+                    ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-caption {
+                        clear: both;
+                        padding: 6px 20px 6px 6px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                }
+                .prx-is-touch ul.prx-ul-sortable-screenshots li.prx-screenshot-li .prx-screenshot-caption,
+                    ul.prx-ul-sortable-screenshots li.prx-screenshot-li:hover .prx-screenshot-caption,
+                    .prx-is-touch ul.prx-ul-sortable-banners li.prx-banner-li .prx-banner-caption,
+                    ul.prx-ul-sortable-banners li.prx-banner-li:hover .prx-banner-caption {
+                        color: #333;
+                        white-space: normal;
+                }
+                .prx-video-iframe {
+                    float: left;
+                }
+                
+ul.prx-ul-sortable-resources {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+    ul.prx-ul-sortable-resources li.prx-resource-li {
+    }
+        ul.prx-ul-sortable-resources li.prx-resource-li .resource-text {
+            float: left;
+            padding: 7px 1px;
+        }
+            ul.prx-ul-sortable-resources li.prx-resource-li .resource-text .prx-type {
+                padding-right: 5px;
+            }
+                
+.prx-sortable-placeholder {
+    border: 1px dashed #aaa !important;
+    border-radius: 3px;
+}
+.prx-sortable-placeholder-image {
+    width: 225px;
+    height: 160px;
+}
+.prx-sortable-placeholder-resource {
+    height: 35px;
+}
+.prx-sortable-placeholder-banner {
+    width: 310px;
+    height: 85px;
+}
+
+.prx-dialog-ol li {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SMALL: Portrait and Landscape phone */
+@media (max-width: 767px) {
+    .ui-widget .prx-form-group-field input.prx-text-field,
+        .ui-widget .prx-dialog-700 .prx-form-group-field input.prx-text-field,
+        .ui-widget .prx-dialog-900 .prx-form-group-field input.prx-text-field {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    }
+    .ui-widget input, .ui-widget select, .ui-widget textarea {
+        margin-left: 0;
+    }
+    
+    .prx-banner-actions {
+        margin-top: 0;
+        height: 30px;
+        border-top: 0;
+        float: right;
+    }
+        .prx-banner-actions .prx-banner-action-delete {
+            border-radius: 0 0 3px 3px;
+            border-left: 1px solid #aaa;
+            border-top: 0;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 0;
+        }
+    .ui-dialog {
+        width: 470px !important;
+    }
+}
+
+/* TINY: Phone portrait */  
+@media (max-width: 479px) {
+    ul.prx-ul-1,
+        ul.prx-ul-2 {
+            float: none;
+            width: 100%;
+    }
+            ul.prx-ul-sortable-banners li.prx-banner-li {
+                width: 290px;
+            }
+                ul.prx-ul-sortable-banners li.prx-banner-li a.prx-banner-a {
+                    width: 260px;
+                }
+                
+    .ui-dialog {
+        width: 310px !important;
+    }
+}
+
+
+
+/* MEDIUM: Portrait tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+        ul.prx-ul-sortable-screenshots li {
+            margin-right: 8px;
+        }
+        ul.prx-ul-sortable-banners li {
+            margin-right: 40px;
+        }
+}
+
+/* GIGANTIC: new desktop */  
+@media (min-width: 1240px) {
+        ul.prx-ul-sortable-screenshots li,
+            ul.prx-ul-sortable-banners li {
+                margin-right: 0;
+        }
+}
+

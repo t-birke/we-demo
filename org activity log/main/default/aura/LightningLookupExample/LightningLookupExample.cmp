@@ -1,0 +1,42 @@
+<aura:component controller="LightningLookupExample_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+
+<!-- Attributes -->
+<aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+<aura:attribute name="recordTypeForNewCase" type="String" default=""/>
+<aura:attribute name="predefinedContactId" type="String" default=""/>
+<aura:attribute name="example5" type="Aura.Component[]"/>
+
+<aura:attribute name="example1Result" type="String"/>
+<aura:attribute name="example2Result" type="String"/>
+<aura:attribute name="example3Result" type="String"/>
+<aura:attribute name="example4Result" type="String"/>
+<aura:attribute name="example5Result" type="String"/>
+
+<!-- Handlers -->
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+<!-- Example 1 - With no objectAPIName or objectFieldName, this defaults to an Account Lookup -->
+<c:customLookup aura:id="myBlankLookup" IconName="standard:account" label="Account Name - (Example1)"/>
+{!v.example1Result}
+
+<!-- Example 2 - objectAPIName and objectFieldName provided -->
+<c:customLookup aura:id="myAccountLookup" objectAPIName="Account" objectFieldName="Name" IconName="standard:account" label="Account Name - (Example2)"/>
+{!v.example2Result}
+
+<!-- Example 3 - 'CaseNumber' is used instead of 'Name' for searching. -->
+<c:customLookup aura:id="myCaseLookup" objectAPIName="Case" objectFieldName="CaseNumber" IconName="standard:case" label="Case Number - (Example3)"/>
+{!v.example3Result}
+
+<!-- Example 4 - Same as example 4 but with the RecordType dynamically defined for New Cases -->
+<c:customLookup aura:id="myCaseLookupWithPredefinedRecordType" objectAPIName="Case" objectFieldName="CaseNumber" IconName="standard:case" label="Case Number - (Example4)" createRecordType="{!v.recordTypeForNewCase}"/>
+{!v.example4Result}
+
+<!-- Example 5 - Dynamically setting a predefined Contact -->
+{!v.example5}
+{!v.example5Result}
+
+<div style="width: 100%; height: 50px; background-color: #026ED5; margin-top: 40px; font-size: 20px; padding: 11px; color: white; text-align: center; border-radius: 7px;" onclick="{!c.buttonClicked}">
+    Click Me
+</div>
+
+</aura:component>

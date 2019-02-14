@@ -1,0 +1,92 @@
+/******************************************************
+ * CSS override for CloudCraze.
+ * Override any CSS provided by OOTB CloudCraze below
+*******************************************************/
+
+.cc_store_logo_img {
+	background: url("../images/logo_cirrus.png") no-repeat;
+	background-size: contain;
+	height: 50px;
+	width: 150px;
+}
+
+.header .navbar-inverse{
+	background: url("../images/background.jpg") no-repeat;
+	background-position: top;
+	width: 100%;
+}
+
+div.container-fluid.navbar-inverse{
+	background: url("../images/background.jpg") no-repeat;
+	background-position:center;
+	width: 100%;
+}
+
+.navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-link,.navbar-default,.navbar-default .navbar-nav>li>a{
+	color: #ffffff;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	color:#333333;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-link:hover{
+	text-decoration: underline;
+}
+
+.navbar-default{
+	background: url("../images/background.jpg") no-repeat;
+	background-position:center;
+	width: 100%;
+}
+
+/*************************************************************************************************************/
+
+
+
+/******************************************************
+* PRODUCT DETAIL PAGE
+*******************************************************/
+
+.prodDetailContainer .img-responsive {
+    max-height: 200px;
+}
+
+.cc_product_detail_photo_container .cc_main_prod_image.img-thumbnail {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cc_product_detail_photo_container .cc_main_prod_image.img-thumbnail img {
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.cc_product_detail_photo_container .thumbnail {
+   height: 50px;
+   width: 50px;
+   display: inline-block;
+   margin: 5px;
+   }
+
+.cc_product_detail_photo_container .thumbnail:hover {
+    cursor: pointer;
+}
+
+.cc_product_detail_container img {
+    max-width: 100%;
+}
+
+.cc_tab-content {
+    margin-top: 10px;
+}
+
+.cc_product_detail #CCQtyBlock > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cc_product_detail #CCQtyBlock input.cc_entry {
+    height: 30px;
+}

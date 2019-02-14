@@ -1,0 +1,72 @@
+.form-wrapper
+{
+	width:190px;
+	margin:16px 0 0 0;
+	display:block;
+}
+.form-wrapper label
+{
+	color:#AAAAAA;
+	display:inline;
+	float:left;
+	font-size:14px;
+	margin:0;
+	text-align:left;
+	width:220px;
+}
+.contact-page.form-message h2
+{
+	color:#39A8E5;
+	display:block;
+	font-size:16px;
+	font-weight:400;
+	padding:4px 0;
+	text-align:left;
+	text-decoration:none;
+}
+.form-wrapper input.checkbox
+{
+	width:16px;
+	float:left;
+}
+.form-wrapper ul
+{
+	width:200px;
+}
+.form-wrapper li
+{
+	float:left;
+	margin:0 0 6px;
+	width:250px;
+}
+.form-wrapper input
+{
+	width:200px;
+}
+.form-wrapper input.contact-button
+{
+	background:none repeat scroll 0 0 #CCCCCC;
+	border-radius:4px 4px 4px 4px;
+	color:#FFFFFF;
+	font-size:12px;
+	margin:12px 0 12px 0px;
+	padding:4px 10px;
+	text-align:center;
+	text-decoration:none;
+	width:100px;
+}
+.form-wrapper input.contact-button:hover
+{
+	background-color:#FFA100;
+}
+.contact-page.form-message-bottom
+{
+	display:block;
+	float:none;
+	width:600px;
+	clear:both;
+}
+.contact-page.form-message
+{
+	width:625px;
+}

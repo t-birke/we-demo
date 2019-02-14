@@ -1,0 +1,19 @@
+<aura:component controller="DragDropController"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+    
+    <!-- Id of the Record the page hosting this component is showing -->
+    <aura:attribute name="recordId" type="Id" default="0031t00000AEpK0AAL"/>
+
+    <aura:attribute name="pictureSrc" type="String" 
+            default="https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png"/>
+
+    <aura:attribute name="message" type="String" default="Scan Image"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    
+    <div ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}">
+        <img src="{!v.pictureSrc}"/>
+        <p>{!v.message}</p>
+    </div>
+    
+</aura:component>

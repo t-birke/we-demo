@@ -1,0 +1,10 @@
+<apex:page controller="asb_AppListingController" action="{!init}" showHeader="false" sidebar="false" id="appsListAjax" standardstylesheets="false">
+	<table id="appListRowResults" style="display: none">
+		<c:asb_appListingsTableRows injectedController="{!controller}" />
+	</table>
+	<script>
+		jQuery(document).ready(function() {
+			$('#appListRowResults tbody').children().insertAfter('.prx-data-table tr:last-child');
+		});
+	</script>
+</apex:page>

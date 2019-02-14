@@ -1,0 +1,74 @@
+.triggerRuleSection select, .triggerRuleSection input{
+	display:none;
+}
+select, input{
+	width:115px;
+	margin-left:15px;
+}
+input[type="checkbox"]{
+	width:30px!important;
+}
+.triggerAndOr{
+	width:75px !important;
+}
+
+#builderButton:hover{
+	cursor:pointer;
+}
+.builderPanel {
+	width: 530px;
+	padding: 10px;
+	position: relative;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #E6E6E7;
+	border: 1px solid #CCCCCC;
+	border-top: 3px solid #747E96;
+	font-size: 11px;
+	margin:auto;
+	display:table;
+}
+.builderContainer {
+	background: #F2F2F3;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	width: 510px;
+	padding: 10px;
+	float: left;
+	margin-top: 10px;
+	border: 1px solid #CCCCCC;
+}
+h1{
+	width: 100%;
+	float: left;
+	color: #015BA7;
+	margin-bottom: 10px;
+	font-weight: normal;
+	font-size: 11px;
+}
+h2 {
+	width: 100%;
+	color: #333333;
+	font-size: 14px;
+	line-height: 20px;
+	float: left;
+}
+#builderTitleBar{
+	width:550px;
+	height:26px;
+	margin:10px auto;   
+}
+#builderTitle {
+	float:left;
+	font-size: 24px;
+	color: #000000;
+	line-height: 26px;
+}
+#builderButton{
+	float: right;
+	color: #015BA7;
+	margin-bottom: 10px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height:26px;
+}

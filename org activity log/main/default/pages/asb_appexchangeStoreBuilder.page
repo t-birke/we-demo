@@ -1,0 +1,21 @@
+<apex:page controller="asb_AppxStoreBldrController" tabStyle="Store__tab" showheader="{!isDesktop}" sidebar="false">
+	<apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+		    <div class="prx-content-block">
+				<div class="prx-content-generic">
+					<p class="prx-no-results prx-no-results-alone">
+						<span class="prx-no-results-text">
+							<apex:outputText value="{!$Label[$CurrentPage.parameters.messageKey]}" escape="false"/>
+						</span>
+						<br />
+						<apex:outputPanel layout="none" rendered="{!NOT(ISBLANK($CurrentPage.parameters.buttonKey))}">
+							<button class="prx-btn prx-btn-primary" onclick="window.location = '{!$CurrentPage.parameters.buttonLink}'">
+								<span class="prx-text">{!$Label[$CurrentPage.parameters.buttonKey]}</span>
+	                		</button>
+	                	</apex:outputPanel>
+					</p>
+				</div>
+			</div>
+		</apex:define>
+	</apex:composition>
+</apex:page>

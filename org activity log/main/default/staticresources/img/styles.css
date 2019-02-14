@@ -1,0 +1,111 @@
+html, body{padding:0;margin:0;font-family: arial;}
+img{border:none;}
+a{outline: none;}
+#content{width:960px;text-align:center;margin:0 auto;}
+#wrapper{width:100%;background:url(bodybg.png) #FAFAFA repeat-x;;}
+#header{padding-top:15px;}
+#cirrusLogo{float:left;padding-top:16px;}
+#topMenu{float:right;margin:0;}
+#topMenu li{float:left;list-style: none;}
+#topMenu li a{text-decoration:none;font-size: 20px;display:block;width: 160px;height:55px;
+              padding-top:28px;border-right: 1px solid #DCE0E2;border-left: 1px solid #DCE0E2;
+              margin-left:-1px;color: #39A8E5;}
+#topMenu li a:hover{border-bottom: 10px solid #39A8E5;height:45px;color:#FFA100;}
+
+#searchForm{float:right;padding-top:13px;background:url(searchbox.png) no-repeat 0 7px;height:19px;width:217px;}
+#searchBarMenu{float:left;margin:0;padding:0;}
+#searchBarMenu li{float:left;list-style: none;}
+#searchBarMenu a{display:block;height:28px;margin-top:8px;padding-top:5px;text-decoration:none;padding:5px 15px 0;
+                 color:#60B9EA;border-right:1px solid #E1E5E6;border-left:1px solid #FFF;font-weight: bolder;}
+#searchBarMenu a:hover{color:#EEB333;}
+#searchForm #magnifier{background:url(magnifier.png);float:right;width:24px;height:20px;display:block;margin-left:7px;
+                       margin:0 7px 0 0;}
+#searchForm input{border:none;width:160px;color:#D4D4D4;font-size:15px;font-style:italic;font-weight: bold;}
+      
+#searchBarMenu .first{padding-left:0!important;}
+#searchBarMenu .last{border:none!important;border-left:medium none;}
+
+#bottom{background:#3AA9E5;height:40px;width:100%;}
+#bottom span{width:960px;color:#FFF;margin:0 auto;display:block;font-size:11px;
+             padding-top:13px;text-align: center;}
+
+#joinUsContainer {text-align: center;padding-top:10px;}
+
+#joinUsText {
+    font-size: 24px;
+    margin-left:40px;margin-top:11px;
+    position: absolute;
+    text-align: left;color:#FFFFFF;
+}
+
+#joinUsText h1 {
+    font-size:32px;
+	font-weight:lighter;
+	line-height:44px;
+}
+
+#joinUsText p {
+    font-size: 18px;
+    line-height: 31px;margin-bottom:25px;
+}
+
+#joinUsButtonLink{display:block;background:url(comejoinus_03.png) no-repeat 0 0;width:173px; height:49px;}
+#joinUsButtonLink:hover{background:url(comejoinus_03.png) no-repeat 0 -49px;}
+
+.detail {
+    border-right: solid 1px #DFE3E4;
+    float: left;
+    width: 33%;
+}
+
+.lastDetail {
+    border-right: none;
+}
+
+#rssFeeds{
+	border: solid 1px #e4e4e4;
+	border-radius: 5px;
+	height:35px;
+	margin:10px 1px;
+	padding:10px 0 0 10px;text-align:left;
+	background: transparent url('newsbar.png') repeat-x;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+}
+#rssFeeds img{float:left;padding-top:6px;}
+
+#latestOpenings{color: #69b8e5;	font-size: 16px;font-weight: bold;padding-left: 10px;float:left;margin-right:10px;}
+
+#rssNews{
+	color: #8a8a8a;float:left;
+}
+
+#viewMore{
+	background: transparent url(viewmore.png) no-repeat;width:83px;height:22px;display:inline-block;float:left;
+	margin-left:10px;
+}
+#viewMore:hover{background: transparent url(viewmore.png) no-repeat 0 -22px;}
+#rssFeeds #rssIcon{float:right;padding:0 10px 0 0;}
+
+#detailsContainer{margin:10px 0 0;padding-bottom:30px;text-align: left;}
+#detailsContainer .detail{padding-left:15px;width:304px;}
+#detailsContainer .detail .first{padding-left:0;}
+#detailsContainer a{color:#8A8A8A;display:block;line-height:27px;width:250px;}
+#detailsContainer h2{color:#39A8E5;font-size:20px;}
+
+/* CAREERS */
+#holderOpenings{margin-top:40px;text-align:left;}
+#infoOpenings .title{color:#39A8E5;font-size:32px;font-weight:lighter;display:block;margin-bottom:7px;}
+#infoOpenings .info{color:A8A8A8;display:block;line-height:22px;font-size:15px;font-weight:bold;}
+#infoOpenings{float:left;width:520px;}
+
+#holderDataOpenings{text-align: left;padding-bottom:30px;color:#828282;}
+#holderDataOpenings .title{color:#39A8E5;font-size:26px;font-weight:lighter;display:block;margin-bottom:20px;}
+#holderDataOpenings .button{text-align: right;float:right;}
+#holderDataOpenings .button a{background: transparent url(viewmore.png) no-repeat;width:83px;height:22px;display:inline-block;float:left;
+	                          margin-left:10px;}
+#holderDataOpenings .button a:hover{background: transparent url(viewmore.png) no-repeat 0 -22px;}
+#holderDataOpenings table{border:1px solid #E8E8E8;}
+#holderDataOpenings .bgColor{background:#F3F3F3;}
+
+th, td{padding:5px;}
+th{background:#38A7E5;color:#fff;text-align:left;margin:5px;}
+#teamIcon{float:right;}

@@ -1,0 +1,144 @@
+<aura:component controller="AnyEventCalCtrl" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require styles="{!$Resource.AnyEventCal + '/fullcalendar.min.css'}"/>
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/>
+    <aura:attribute name="zoomLevel" type="Integer" />
+    <aura:attribute name="con"  type="sObject" />
+    <aura:attribute name="currentdiv"  type="Integer" default="1"/>
+    <aura:attribute name="events" type="Map"/>
+    <aura:attribute name="body2" type="String"/>
+    <aura:attribute name="objectLabel" type="String"/>
+    <aura:attribute name="conId" type="String" default="0031t00000AEpK0AAL"/>
+    <aura:attribute name="sObjectName" type="String"/>
+    <aura:attribute name="titleField" type="String"/>
+    <aura:attribute name="startDateTimeField" type="String"/>
+    <aura:attribute name="endDateTimeField" type="String"/>
+    <aura:attribute name="descriptionField" type="String"/>
+    <aura:attribute name="userField" type="String"/>
+    <aura:attribute name="calendarButtons" type="String"/>
+    <aura:attribute name="weekends" type="Boolean"/>
+    <aura:attribute name="eventBackgroundColor" type="String"/>
+    <aura:attribute name="eventBorderColor" type="String"/>
+    <aura:attribute name="eventTextColor" type="String"/>
+    <aura:attribute name="idVal" type="String"/>
+    <aura:attribute name="titleVal" type="String"/>
+    <aura:attribute name="descriptionVal" type="String"/>
+    <aura:attribute name="startDateTimeVal" type="DateTime"/>
+    <aura:attribute name="endDateTimeVal" type="DateTime"/>
+    <aura:attribute name="acc" type="String"/>
+    <aura:attribute name="newOrEdit" type="String" default="New"/>
+    <aura:handler name="change" value="{!v.events}" action="{!c.renderCalendar}"/>
+    <aura:handler name="updateLookupIdEvent" event="c:UpdateLookupId" action="{!c.handleAccountIdUpdate}"/>
+    <aura:handler name="clearLookupIdEvent" event="c:ClearLookupId" action="{!c.handleAccountIdClear}"/>
+    
+    <div class="slds slds-align_absolute-center">
+        <div class="slds-form_compound" style="width: 100% !important">
+            <div class="slds-form">
+                <!--fieldset class="slds-form-element">
+                    <div class="slds-m-around_x-large">
+                        <div class="slds-form-element__group">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size_1-of-3">
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-3">
+                                    <c:InputLookup className="slds-input" type="Account" value='{!v.acc}'/>
+                                </div>
+                                <div class="slds-form-element slds-size_1-of-3">
+                                    <ui:button class="slds-button slds-button_neutral" aura:id="SearchBtn" label="Search" press="{!c.SearchEvents}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset-->
+            </div>
+        </div>
+    </div>
+    <div id="calendar"></div>
+    <div aura:id="modal" class="slds-modal">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.closeModal}">
+                    <lightning:icon iconName="utility:close"/>
+                </button>
+                <h2 id="header43" class="slds-text-heading--large">Test drive Appointment</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div class="slds-form--stacked">
+                    <aura:if isTrue="{!v.currentdiv==1}">
+                        <img src="{!$Resource.calresources  + '/highlight_withouttime.jpg'}" class="highlight_panel" />
+                        <div>
+                            <div class="slds-grid slds-gutters bottom_content">
+                                <div class="slds-col">
+                                    <span>{!v.body}</span>
+                                </div>
+                                <div class="slds-col">
+                                    <c:CustomActivityFeed recordId="{!v.conId}"/>
+                                </div>
+                                <div class="slds-col">
+                                    <img src="{!$Resource.calresources  + '/related_List.jpg'}" width="570"/>
+                                </div>
+                            </div>
+                            <div style="visibility:hidden">
+                            <c:Customer360HighlightCard recordId="{!v.conId}" backgroundImageUrl="https://ohana-cab.my.salesforce.com/resource/1546984716000/we_banner?"/>
+                            </div>
+                            
+                        </div>
+                    </aura:if>
+                    
+                    
+                    <aura:if isTrue="{!v.currentdiv==2}">
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <lightning:input aura:id="fn" label="First Name" value="{!v.con.FirstName}" />
+                                    </div>
+                                    <div class="slds-col">
+                                        <lightning:input aura:id="ln" label="Last Name" value="{!v.con.LastName}" />
+                                    </div>       
+                                </div>
+                                    <lightning:inputAddress
+                                                            aura:id="myaddress"
+                                                            addressLabel="Contact Address"
+                                                            streetLabel="Street"
+                                                            cityLabel="City"
+                                                            countryLabel="Country"
+                                                            provinceLabel="State"
+                                                            postalCodeLabel="PostalCode"
+                                                            street="{!v.con.MailingStreet}"
+                                                            city="{!v.con.MailingCity}"
+                                                            country="{!v.con.MailingCountry}"
+                                                            province="{!v.con.MailingState}"
+                                                            postalCode="{!v.con.MailingPostalCode}"
+                                                            />
+                                
+                                <c:customLookup aura:id="vh" objectFieldName="Name" objectAPIName="Asset" IconName="standard:asset" label="Vehicle"/>
+                           
+                                <aura:if isTrue="{!v.mapMarkers.length > 0}" >
+                                    <lightning:map 
+                                                   mapMarkers="{! v.mapMarkers }" 
+                                                   zoomLevel="{!v.zoomLevel}" />
+                                </aura:if>
+                            <!--ui:inputText aura:id="title" label="Title" value="{!v.titleVal}" required="true"/>
+                        
+                        <ui:inputTextArea aura:id="description" label="Description" value="{!v.descriptionVal}" rows="5"/>
+                        
+                        <ui:inputDateTime aura:id="startTime" label="Start Time" class="field" value="{!v.startDateTimeVal}" displayDatePicker="true" required="true" />
+                        
+                        <ui:inputDateTime aura:id="endTime" label="End Time" class="field" value="{!v.endDateTimeVal}" displayDatePicker="true" required="true" /-->
+                        </aura:if>
+                </div>
+                
+            </div>
+            <div class="slds-modal__footer">
+                <!--lightning:button value="{!v.idVal}" onclick="{!c.deleteRecord}" label="Delete" variant="destructive" class="slds-button slds-float_left "/-->
+                <button class="slds-button slds-button--neutral" onclick="{!c.closeModal}">Close</button>
+                <aura:if isTrue="{!v.currentdiv==1}">
+                    <button  class="slds-button slds-button_brand slds-float_right" onclick="{!c.nextbtn}" label="Plan Test Drive" >Plan Test Drive</button>
+                </aura:if>
+                <aura:if isTrue="{!v.currentdiv==2}">
+                    <button data-id='{!v.idVal}' class="slds-button slds-button--brand" onclick="{!c.createRecord}">Save</button>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop" aura:id="backdrop"></div>
+</aura:component>

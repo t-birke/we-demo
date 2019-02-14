@@ -1,0 +1,274 @@
+<apex:page controller="asb_ListingDetailController" id="listingDetailPage" 
+           action="{!init}" title="{!currentListing.AppDO.Name}" showHeader="{!isDesktop}" sidebar="false" standardStylesheets="{!NOT(isDesktop)}" tabStyle="Store__tab">
+    <apex:composition template="asb_AppxStoreBldrLayout">
+        <apex:define name="content">
+            <style>
+		        ul li, ol li {
+		            margin-left: 0;
+		        }
+		    </style>
+
+			<apex:outputPanel id="message">
+				   <c:asb_pageMessages />  
+			</apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!NOT(error)}">
+            
+            	<apex:form >
+            		<apex:actionfunction name="createListingInstall" action="{!createListingInstall}" oncomplete="goToMobileInstallUrl()"/>
+            	</apex:form>
+            
+                <input type="hidden" id="currentListingId" value="{!currentListing.Id}"/>
+                <div class="prx-content-block prx-content-block-listing">
+                    <div class="prx-content-header">
+                        <div class="prx-content-header-inner">
+							<div class="prx-content-header-bread">
+							    <a href="asb_home"><apex:outputText value="{!currentListing.Store.Name}"/></a>&#160;·&#160;<apex:outputText value="{!currentListing.AppDO.Name}"/>
+							</div>
+							<!-- The container (page-banner-slider) is used to define the width of the slideshow -->
+							<apex:outputPanel layout="block" styleClass="page-banner-outer" rendered="{!currentListing.BannerAttachmentUrl != null}">
+							    <img src="{!$Resource.uilib}/img/p1200x1.gif" data-src="{!currentListing.BannerAttachmentUrl}" class="desktop-img page-banner-full-img" />
+							</apex:outputPanel>
+							<div class="prx-content-header-one">
+								<div class="prx-header-actions">
+									<apex:outputPanel id="actionButtonSection" layout="block" rendered="{!NOT(error)}">
+										<apex:outputPanel id="actionButtonEnabled">
+											<apex:outputPanel id="openAppInstallNow">
+                                                <a href="#" class="prx-btn prx-btn-primary prx-btn-install" id="openAppInstallNow_Link" style="display: none;"><span class="prx-text">{!actionButtonText}</span></a>
+												<button class="prx-btn prx-btn-primary prx-btn-install" onclick="computeActButtonAction();" id="openAppInstallNow_Button">
+										            <span class="prx-text">{!actionButtonText}</span>
+												</button>
+											</apex:outputPanel>
+										</apex:outputPanel>
+									</apex:outputPanel>
+							    </div>
+                  
+                                <div class="prx-dialogs" style="display: none;">
+                                  <!-- overlay for request access -->
+                                  <div class="prx-dialog" id="prx_overlay_installwrongos" title="{!$Label.asb_WrongDevice}">
+                                    <div class="prx-dialog-content">
+                                      <p>
+                                        <apex:outputText value="{!$Label.asb_PleaseGoTo}">
+                                            <apex:param value="{!currentListing.appDO.appTypeForDisplay}" />
+                                        </apex:outputText>
+                                      </p>
+                                    </div>
+                                    <div class="prx-dialog-footer">
+                                      <button class="prx-btn btn-close-overlay prx-btn-primary">{!$Label.asb_BUTTON_OK}</button>
+                                    </div>
+                                  </div>
+                                </div>
+                  
+							    <div class="prx-logo"><img src="{!currentListing.AppDO.LogoUrl}" /></div>
+							    
+							    <h1 class="prx-h1-store"><apex:outputText value="{!currentListing.AppDO.Name}"/></h1>
+							    
+							    <span class="prx-tagline"><apex:outputText value="{!currentListing.Tagline}"/></span>
+							</div>   
+							<apex:outputPanel layout="block" styleClass="prx-tabs" rendered="{!isChatterEnabled}">
+								<ul class="prx-ul-reset prx-tab-set prx-tab-set2" id="prx_listing_details_tabs">
+									<li class="prx-selected">
+									    <a class="prx-tab" href="javascript:void(0);">
+								            <span class="prx-tab-text">{!$Label.asb_Details}</span>
+								        </a>
+									</li>
+									<li>
+									    <apex:outputLink styleClass="prx-tab" value="javascript:void(0);">
+									        <span class="prx-tab-text">{!$Label.asb_Chatter}</span>
+										</apex:outputLink>
+									</li>
+								</ul>
+							</apex:outputPanel>                    
+						</div>
+					</div>
+					<apex:outputPanel layout="block" id="chatterContent" styleClass="prx-content-content" style="display: none" rendered="{!isChatterEnabled}"	>
+                        <div class="prx-content-content-inner">
+                            <div class="prx-content-primary1">
+                                <div class="prx-content-primary1-inner">
+                                    <chatter:feedWithFollowers entityId="{!currentListing.AppDO.Id}"/>
+                                </div>
+                            </div>
+                        </div>
+					</apex:outputPanel>
+					<div id="detailsContent" class="prx-content-content">
+						<div class="prx-content-content-inner">
+							<div class="prx-content-primary1">
+								<div class="prx-content-primary1-inner">
+
+									<apex:outputField value="{!currentListing.Object.Description__c}"/>
+									<br/><br/>
+                
+									<label class="prx-label">{!$ObjectType.asb_App__c.fields.Categories__c.label}:</label>&#160;
+									
+									<apex:variable var="categoriesNum" value="{!1}" />
+									<apex:repeat value="{!currentListing.categoryCrumb}" var="category">
+									    <a href="{!category.url}" class="hidden-phone"><apex:outputText value="{!category.label}"/></a>
+                                        <apex:outputText value="{!IF(categoriesNum == currentListing.AppDO.Categories.size,'',',')}" styleClass="hidden-phone" />
+                                        
+                                        <span class="only-phone"><apex:outputText value="{!category.label}"/></span>
+                                        <apex:outputText value="{!IF(categoriesNum == currentListing.AppDO.Categories.size,'',',')}" styleClass="only-phone" />
+                                        
+									    <apex:variable var="categoriesNum" value="{!categoriesNum + 1}"/>
+									</apex:repeat>
+									<br/><br/>
+									
+									<label class="prx-label">{!$ObjectType.asb_App__c.fields.Languages__c.label}:</label>&#160;
+									
+									<apex:variable var="langNum" value="{!1}" />
+									<apex:repeat value="{!currentListing.languageCrumb}" var="language">
+									    <a href="{!language.url}" id="lang_{!langNum}" class="hidden-phone"><span><apex:outputText value="{!language.label}"/></span></a>
+                                        <apex:outputText value="{!IF(langNum == currentListing.AppDO.DisplayLanguageList.size,'',',')}" styleClass="hidden-phone" />
+
+                                        <span class="only-phone"><span><apex:outputText value="{!language.label}"/></span></span>
+						                <apex:outputText value="{!IF(langNum == currentListing.AppDO.DisplayLanguageList.size,'',',')}" styleClass="only-phone" />
+						                                        
+						                <apex:variable var="langNum" value="{!langNum + 1}"/>
+									</apex:repeat>
+									<br/><br/>
+									
+									<label class="prx-label">{!$ObjectType.asb_Listing__c.fields.ListedDate__c.label}:</label>&#160;
+									<apex:outputField value="{!currentListing.Object.ListedDate__c}"/>
+									<br/><br/>
+									
+									<label class="prx-label">{!$Label.asb_Type}:</label>&#160;<apex:outputText value="{!currentListing.AppDO.TypeLabel}"/>
+									<br/><br/>
+									
+									<label class="prx-label">{!$ObjectType.asb_Listing__c.fields.Requirements__c.label}:</label>&#160;<apex:outputField value="{!currentListing.Object.Requirements__c}"/>
+									<br/><br/>
+									
+									<apex:outputPanel layout="none" rendered="{!AND(documentAssets != null, documentAssets.size > 0)}">
+										<label class="prx-label">{!$Label.asb_Resources}:</label><br/>
+										<ul>
+	                                        <apex:repeat var="asset" value="{!documentAssets}">
+	                                            <li>
+	                                                <apex:outputLink value="{!asset['AssetUrl']}" target="_blank" onclick="PrX.logListingActivity('{!currentListing.Id}', '{!asset.Id}');"> 
+	                                                    <apex:outputText value="{!asset.Name}"/>
+	                                                </apex:outputLink>
+	                                            </li>
+	                                        </apex:repeat>
+										</ul>
+									</apex:outputPanel>
+								</div>
+							</div>
+						    <div class="prx-content-primary2">
+								<div class="prx-content-primary2-inner">
+								    <apex:outputPanel layout="block" styleClass="prx-screenshot-wrapper" id="prx_screenshot_slider" rendered="{!AND(mediaAssets != null, mediaAssets.size > 0)}">
+							            <div class="slider-screen slider-large hidden-phone" id="slider" style="display: none;">
+                                            <apex:repeat var="asset" value="{!mediaAssets}">
+                                                <c:asb_listingAsset id="asset" asset="{!asset}" assetPlacement="slider"/>
+                                            </apex:repeat>
+			 		                    </div>
+							            
+										<div class="slider-screen slider-small hidden-phone" id="carousel" style="display: none;">
+                                            <apex:repeat var="asset" value="{!mediaAssets}">
+                                                <c:asb_listingAsset id="asset" asset="{!asset}" assetPlacement="carousel"/>
+                                            </apex:repeat>
+                                            
+                                            <script type="text/javascript">      
+												//<![CDATA[
+							         			PrX.logListingActivity = function(listingId, assetId) {
+											    	asb_ListingDetailController.logActivity(listingId, assetId,
+												        function(result, event) {},
+												        {escape:false}
+												    );
+												};
+											//]]>
+										</script>
+										</div>
+
+                                        <div class="title-phone-screenshot only-phone">
+                                          <label class="prx-label">Screenshot<span class="multiple-screenshot-phone" style="display: none;">s</span>:</label><br />
+                                          <span class="multiple-screenshot-phone" style="display: none;">Swipe for additional pictures</span>
+                                        </div>
+                                        <div class="slider-screen slider-phone only-phone" id="slider_phone" style="display: none;">
+                                            <apex:repeat var="asset" value="{!mediaAssets}">
+                                                <c:asb_listingAsset id="asset" asset="{!asset}" assetPlacement="phone"/>
+                                            </apex:repeat>
+                                        </div>
+                                        
+					                </apex:outputPanel>
+                          
+                                    <a href="#" class="prx-btn only-phone" id="prx_video_phone" style="display: none !important;">
+                                      View Video
+                                    </a>
+                
+                                    <div id="prx_videos_phone" class="only-phone" style="display: none !important;">
+                                      <div id="prx_videos_phone-inner">
+                                        <label class="prx-label">View Videos:</label>
+                                        <ol class="prx-ul-reset prx-ul-simple" id="prx_videos_phone_ol">
+                                        </ol>
+                                      </div>
+                                    </div>
+                          
+					            </div>
+					        </div>
+					    </div>
+					</div>
+                </div>
+                <apex:outputPanel layout="block" styleClass="prx-content-block prx-content-block-results prx-content-block-similar" rendered="{!AND(similarListings != null, similarListings.size > 0)}">
+                    <div class="prx-content-content">
+                        <div class="prx-content-content-inner">
+									<div class="prx-content-single">
+										<div class="prx-content-single-inner">
+											<div class="prx-results">
+												<div class="prx-results-inner">
+													<div class="prx-tile-header">
+													    <h2>{!$Label.asb_Similar_Apps}</h2>
+													</div>
+													<ul class="prx-ul-reset prx-ul-results prx-ul-results-oneline">
+                                                        <apex:repeat var="listing" value="{!similarListings}">
+                                                            <li class="prx-li-tile">
+			                                                    <c:asb_tile id="tile" listing="{!listing}"/>
+                                                            </li>
+			                                            </apex:repeat>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+						</div>
+					</div>
+				</apex:outputPanel>
+				
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!NOT(error)}">
+            	<script>
+            	//<![CDATA[
+                    var videoArray = [
+                                      ];
+                    $(document).ready(function() {
+              
+                        jQuery('.prx-tile').prxTileActions('init');
+                        
+                        PrX.initScreenShotSliders();
+                                          
+                    });
+			        
+                    jQuery(window).on('debouncedresize', function() {
+                        
+                        PrX.resizeScreenOverlay();
+            
+                    });             
+                    
+			      	function computeActButtonAction(){
+	                	if({!deviceMatchesAppType}){
+	                		createListingInstall();
+	                	}else{
+                            jQuery('#prx_overlay_installwrongos').dialog('open');
+	                	}
+	            	}
+					
+	            	function goToMobileInstallUrl(){
+	            		window.location = '{!actionButtonUrl}';
+	            	}
+	            //]]>
+			    </script>
+                <div class="prx-dialogs" style="display: none;">
+                  <div id="screenshotOverlay" style="display: none">
+                    <div id="screenshotOverlaySlider" class="slider-screen slider-overlay"></div>
+                  </div>
+                </div>
+            </apex:outputPanel>
+        </apex:define>
+    </apex:composition>
+    
+</apex:page>

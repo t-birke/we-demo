@@ -1,0 +1,34 @@
+<!--
+ - Created by brandon.rogers on 5/30/18.
+ -->
+
+<apex:page id="cc_BIB_PDP_incl" sidebar="false" showHeader="false" standardStylesheets="false">
+    <!-- ***********************
+    SINGLE PRODUCT
+    ************************ -->
+    <c:cc_PDP_Details />
+
+    <c:cc_PDP_PricingTiers />
+
+    <script type="text/javascript">
+        $(function () {
+            CCRZ.pubSub.on('view:breadcrumbView:refresh', function () {
+                console.log("breadcrumbView: refresh");
+                $("#categories-left-nav").addClass("visible-md-block visible-lg-block");
+                $(".prodDetailContainer").addClass("container-fluid");
+                if (matchMedia) {
+                    var mq = window.matchMedia("(max-width: 991px)");
+                    mq.addListener(WidthChange);
+                    WidthChange(mq);
+                }
+
+                function WidthChange(mq) {
+                    if (mq.matches) {
+                        $("#collapseMiniCart, #collapseFeatureFilter, #collapseMiniQuickOrder").removeClass("in");
+                        $('.widgetSection').hide();
+                    }
+                }
+            });
+        });
+    </script>
+</apex:page>

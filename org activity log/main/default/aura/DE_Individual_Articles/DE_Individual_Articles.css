@@ -1,0 +1,61 @@
+.THIS .main_article{
+    background:white;
+    border: 1px solid #ccc;
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.THIS .article_header {
+    font-size: 18px;
+}
+
+.THIS .article_descrtiption {
+    margin-top: 19px;
+    font-size:14px;
+}
+
+.THIS .article_link {
+    font-size: 13px;
+    color: grey;
+}
+
+.THIS .buttons_article {
+    position: relative;
+    left: 0px;
+    padding: 8px;
+}
+
+.THIS .article_buttons{
+    width: 60px;
+    text-align: center;
+    padding: 10px;
+    background: #4a4a4a;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    left: -22px;
+    top: 10px;
+    z-index: -999;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.THIS .heart{
+    background-color: #5c5c5c;
+    color: rgb(72, 72, 72);
+}
+
+.THIS .heart svg{
+    fill:#b1adab;
+}
+
+.THIS .article_image {
+    margin-right: 20px;
+}
+
+.THIS .article_volks {
+    margin-top: 10px;
+}

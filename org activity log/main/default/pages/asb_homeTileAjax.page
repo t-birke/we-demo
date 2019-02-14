@@ -1,0 +1,10 @@
+<apex:page controller="asb_HomeController" action="{!init}" showHeader="false" sidebar="false" id="home" standardstylesheets="false">
+    <apex:repeat id="listing" var="listing" value="{!listings}" first="0">
+        <li class="prx-li-tile">
+            <c:asb_tile id="tile" listing="{!listing}"/>
+        </li>
+    </apex:repeat>
+    <apex:outputPanel layout="none" rendered="{!hasNextResults}">
+       <apex:outputLink value="{!$Page.asb_homeTileAjax}?filter={!searchParams.searchFilter}&amp;keywords={!$CurrentPage.parameters.keywords}&amp;pageNo={!searchParams.pageNo+1}" styleClass="jscroll-next"></apex:outputLink>
+    </apex:outputPanel>
+</apex:page>

@@ -1,0 +1,17 @@
+
+.hvemRefreshListButton { 
+	cursor:pointer;
+	border:none;
+	height: 20px;
+	vertical-align: bottom;
+	width: 22px;
+	position: absolute;
+	right: 9px;
+	
+}
+
+.rightArrowIcon {
+	border:1px solid #dedede !important;
+	background-position:-33px -5px !important;
+	background-color:#eeeeee !important;
+}

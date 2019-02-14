@@ -1,0 +1,24 @@
+<aura:component controller="TestDriveController" implements="force:lightningQuickActionWithoutHeader,force:hasRecordId" >
+    <ltng:require scripts="{!$Resource.jQueryNew}" />
+
+    <aura:attribute name="recordId" type="Id" default="0031t00000AEpK0AAL"/>
+    <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
+    <aura:attribute name="contentId" type="String" 
+                    default="https://s3-us-west-1.amazonaws.com/sfdc-demo/image-placeholder.png"/>
+    
+    <lightning:fileUpload label=""
+        name="fileUploader" 
+        multiple="true" 
+        accept=".pdf, .png, .jpg "
+        recordId="{!v.recordId}" 
+        onuploadfinished="{!c.handleUploadFinished}" />
+    <br/><br/>
+    
+    <div class="theContainer">
+        <img src="{!v.contentId}" width="200" height="150"/>
+    </div>
+    
+    <div class="theUploadedImage" style="display:none;">
+    	<img src="{!v.prefixURL + v.contentId}" width="300" height="150"/>
+    </div>
+</aura:component>

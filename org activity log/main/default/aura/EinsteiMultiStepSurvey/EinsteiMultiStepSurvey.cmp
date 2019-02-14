@@ -1,0 +1,162 @@
+<aura:component controller="EinsteinSurveyCtrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <aura:attribute name="surveyResponses" type="SurveyQuestionResponse__c[]"/>
+  
+<!--  <aura:attribute name="surveyIntents" type="Survey_Intent__c[]"/>-->
+    <aura:attribute name="modelId" type="String" />
+    <aura:attribute name="intentModelId" type="String" />
+     <aura:attribute name="surveyName" type="String" />
+     <aura:attribute name="question1" type="String" />
+        <aura:attribute name="question2" type="String" />
+    
+    <!-- Section 1 -->
+    <aura:attribute name="currentProgress" type="Integer" default="0" access="public" />
+    <aura:attribute name="objectDetected" type="Boolean" default="false"/>
+    <aura:attribute name="sectionProgress" type="Map" default="{ 
+                                                               'Welcome': 0, 
+                                                               'TakeAPicture': 25,
+                                                               'OrderExperience': 50,
+                                                               'DeliveryExperience': 75,
+                                                               'Complete': 100
+                                                               }" />
+    
+
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+<aura:handler name="scanCompletedEvent" event="c:ShelfScanCompleted" action="{!c.handleScanEvent}"/>
+    
+    <div class="slds-wizard slds-m-around_x-large" role="navigation">
+        <ol class="slds-wizard__list">
+            
+            <li class="{! lessthanorequal(v.sectionProgress.Welcome, v.currentProgress) ? 'slds-wizard__item slds-is-active' : 'slds-wizard__item'}">
+                <a href="javascript:void(0);" class="slds-wizard__link">
+                    <span class="slds-wizard__marker"></span>
+                    <span class="slds-wizard__label slds-text-heading--label slds-truncate">Welcome</span>
+                </a>
+            </li>
+            <li class="{! lessthanorequal(v.sectionProgress.TakeAPicture, v.currentProgress) ? 'slds-wizard__item slds-is-active' : 'slds-wizard__item'}">
+                <a href="javascript:void(0);" class="slds-wizard__link">
+                    <span class="slds-wizard__marker"></span>
+                    <span class="slds-wizard__label slds-text-heading--label slds-truncate">Take a Picture</span>
+                </a>
+            </li>
+            <li class="{! lessthanorequal(v.sectionProgress.OrderExperience, v.currentProgress) ? 'slds-wizard__item slds-is-active' : 'slds-wizard__item'}">
+                <a href="javascript:void(0);" class="slds-wizard__link">
+                    <span class="slds-wizard__marker"></span>
+                    <span class="slds-wizard__label slds-text-heading--label slds-truncate">Question 1</span>
+                </a>
+            </li>
+            <li class="{! lessthanorequal(v.sectionProgress.DeliveryExperience, v.currentProgress) ? 'slds-wizard__item slds-is-active' : 'slds-wizard__item'}">
+                <a href="javascript:void(0);" class="slds-wizard__link">
+                    <span class="slds-wizard__marker"></span>
+                    <span class="slds-wizard__label slds-text-heading--label slds-truncate">Question 2</span>
+                </a>
+            </li>
+            <li class="{! lessthanorequal(v.sectionProgress.Complete, v.currentProgress) ? 'slds-wizard__item slds-is-active' : 'slds-wizard__item'}">
+                <a href="javascript:void(0);" class="slds-wizard__link">
+                    <span class="slds-wizard__marker"></span>
+                    <span class="slds-wizard__label slds-text-heading--label slds-truncate">Complete</span>
+                </a>
+            </li>
+            
+        </ol>
+        <span class="slds-wizard__progress">
+            <span class="slds-wizard__progress-bar" style="{! 'width:' +  v.currentProgress + '%;'}"></span>
+        </span>
+    </div>
+    
+    
+    <div class="main-container">
+        <div class="{! v.currentProgress == 0 ? 'slds-show' : 'slds-hide'}"> 
+            
+            <div class="survey-background">
+                <h2 class="slds-text-heading_large">{!v.surveyName}</h2>
+                <h4 class="slds-p-top_medium"> Complete this short survey to receive 5% off of your next order!</h4>
+            </div>
+            
+        </div>
+        <div class="{! v.currentProgress == 25 ? 'slds-show' : 'slds-hide'}"> 
+            <div class="image-upload-section">
+                <h2 class="slds-text-heading_medium slds-p-bottom_large">Take a picture of your delivery as displayed in store.</h2>
+                <div class="image-upload">
+                    <div class="imageContainer slds-form-element" aura:id="newPhoto">
+                       <!-- <div class="imageUploadArea slds-form-element__control">
+                            <div class="slds-file-selector slds-file-selector_images">
+                                <div class="slds-file-selector__dropzone" style='padding: 2rem; border-color: black;'>
+                                    <div class="slds-grid" style='flex-direction: column; align-items: center;'>
+                                        <span class="slds-icon_container slds-icon_container_circle slds-icon-action-photo" title="Description of icon when needed">
+                                            <lightning:icon iconName="utility:photo" size="large"/>
+                                        </span>
+                                        <button onclick="{!c.addPhoto}" id="file-upload-button" class="slds-file-selector__button slds-button slds-button_neutral">
+                                            Take a picture</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                         
+					</div>        
+                    </div>  
+                
+                <div class="slds-grid slds-wrap">    
+                    
+                    <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2">  
+                        <c:EinsteinObjectDetection modelId="{!v.modelId}" scanCompletedEvent="{!c.handleScanEvent}"/>
+                    </div>
+                    <div class="slds-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-2 ">  
+                        <div class="{! v.objectDetected == true ? 'slds-show' : 'slds-hide'}"> 
+                            <p class="slds-p-top_medium">Below is a product layout that should lead to higher sales.  We recommend you adjust the SKU arrangement to reflect this design by switching Bran Cereal and Oat Cereal.</p>
+                            
+                            <div class="slds-grid slds-m-top_medium slds-grid_align-center">
+                                
+                                <div class="slds-grid slds-grid_align-center slds-size_1-of-1 recommendation-image">
+                                    
+                                    <img src="{!$Resource.surveyPlanogramImage}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                    </div>                  
+        </div>
+        <div class="{! v.currentProgress == 50 ? 'slds-show' : 'slds-hide'}"> 
+            <div>
+                <h2 class="slds-text-heading_medium slds-p-bottom_large">{!v.question1}</h2>
+                <lightning:textarea aura:id="surveyOrderResponse" name="myTextAreaOrdering" value="" label="Comments" maxlength="500" />
+            </div>
+        </div>
+        
+        <div class="{! v.currentProgress == 75 ? 'slds-show' : 'slds-hide'}">
+            <div>
+                <h2 class="slds-text-heading_medium slds-p-bottom_large">{!v.question2}</h2>
+                <lightning:textarea aura:id="surveyDeliveryResponse"  name="myTextAreaDelivery" value="" label="Comments" maxlength="500" />
+            </div>
+        </div>
+        
+        <div class="{! v.currentProgress == 100 ? 'slds-show' : 'slds-hide'}"> 
+            <h2 class="slds-text-heading_large thank-you">Thank you for completing our survey, we have applied a 5% discount to your next order.</h2>
+            <div class="slds-text-heading_small slds-p-top_x-small">
+                <p class="slds-p-top_small">Your feedback has been received. We will follow up shortly to address any issues.</p>
+               <!-- <p class="slds-p-top_medium">Below is a product layout that should lead to higher sales.  We recommend you adjust the SKU arrangement to reflect this design by switching Bran Cereal and Oat Cereal.</p>
+                <div class="slds-grid slds-m-top_medium slds-grid_align-center">
+                    <div class="slds-grid slds-grid_align-center slds-size_1-of-2 after-image">
+                        <img src="{!$Resource.surveyAfterImage}" />
+                    </div>
+                    <div class="slds-grid slds-grid_align-center slds-size_1-of-2 recommendation-image">
+                        <img src="{!$Resource.surveyPlanogramImage}" />
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="step-navigation">
+        <ui:button press="{!c.previousStep}" label="Previous" class="{! or(v.currentProgress == 0, v.currentProgress == 100) ? 'slds-hide' : 'slds-show--inline-block'}" />  
+        <ui:button press="{!c.nextStep}" label="Next" class="{! or(v.currentProgress == 75, v.currentProgress == 100) ? 'slds-hide' : 'slds-show--inline-block slds-button slds-button_brand'}" /> 
+    	<ui:button press="{!c.finishSurvey}" label="Submit" class="{! v.currentProgress == 75 ? 'slds-show--inline-block slds-button slds-button_brand' : 'slds-hide'}" />
+    </div>
+    
+    
+    
+</aura:component>

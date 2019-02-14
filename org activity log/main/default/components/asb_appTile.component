@@ -1,0 +1,26 @@
+<apex:component >
+	<apex:attribute name="app" description="the app for this tile." type="asb_AppDO" required="true" />
+	<apex:attribute name="is30DaySort" description="flag to determine whether to show default sort" type="Boolean" required="false" default="true"/>
+	<apex:attribute name="showCounters" description="specify if counters should be shown" type="Boolean" required="true" />
+	<apex:attribute name="extraStyle" description="extra style" type="String" required="false" />
+	
+    	<div class="prx-tile">
+        	<div class="prx-tile-content">
+            	<div class="prx-tile-content-inner prx-tile-content-inner-1 {!extraStyle}">
+                	<div class="prx-tile-img"><span class="prx-tile-img-inner"><img src="{!app.LogoUrl}" /></span></div>
+                    <div class="prx-tile-title"><a href="{!$Page.asb_appDetails}?appId={!app.Id}"><apex:outputText value="{!app.name}"/></a></div>
+                </div>
+                <apex:outputPanel layout="none" rendered="{!showCounters}">
+                <a href="{!$Page.asb_appDetails}?appId={!app.Id}" class="prx-tile-content-inner prx-tile-content-inner-4">
+                  	<span class="prx-tile-install-info">
+                  		<apex:variable var="popularity" value="{!IF(is30DaySort, FLOOR(app.Popularity), FLOOR(app.PopularityAllTime))}"/>
+                  		<span class="prx-tile-install-number"><apex:outputText value="{!popularity}"/></span>&#160;<apex:outputText value="{!LOWER(IF(popularity == 1, $Label.asb_RequestInstall, $ObjectType.asb_App__c.fields.PopularityAllTime__c.label))}"/><br class="hidden-phone" />
+                        <apex:variable var="pageViews" value="{!IF(is30DaySort, FLOOR(app.PageViews), FLOOR(app.PageViewsAllTime))}"/>
+                        <span class="prx-tile-install-number"><apex:outputText value="{!pageViews}"/></span>&#160;<apex:outputText value="{!LOWER(IF(pageViews == 1, $Label.asb_Page_View, $ObjectType.asb_App__c.fields.PageViews__c.label))}"/>
+                    </span>
+                </a>
+                </apex:outputPanel>
+        	</div>
+    	</div>
+	
+</apex:component>

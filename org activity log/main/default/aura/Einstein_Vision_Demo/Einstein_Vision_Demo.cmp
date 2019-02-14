@@ -1,0 +1,59 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="EinsteinVisionCtrl" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="positionKnown" type="Boolean" default="false"/>
+    <aura:attribute name="showImage" type="Boolean" default="false"/>
+    <aura:attribute name="thisLead" type="Lead"/>
+    <aura:attribute name="demoRooftype" type="String"/>
+    
+    <aura:registerEvent name="PLSUpdate" type="c:PLSUpdate"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="wrapper">
+        <div class="top-card">
+            <img src="https://www.dropbox.com/s/gizhr8tq5735gij/einsteinlogo.svg?raw=1" id="insightsLogoOppty"/>
+            <h1>Einstein Vision</h1>
+        </div>
+        
+        <div class="bottom-card">
+            <aura:if isTrue="{!v.positionKnown}">
+                <div><!-- to fix rendering bug in Aura -->
+                <aura:if isTrue="{! and(v.showImage, v.demoRooftype == 'Pitched') || v.thisLead.Roof_Type__c == 'Pitched'}" >
+                    <img src="{!$Resource.RooftopPitched}"/>
+                </aura:if>
+                <aura:if isTrue="{! and(v.showImage, v.demoRooftype == 'Flat') || v.thisLead.Roof_Type__c == 'Flat'}" >
+                    <img src="{!$Resource.RooftopFlat}"/>
+                </aura:if> 
+                <br /> 
+                
+                <lightning:button variant="neutral" label="Find House" onclick="{! c.findHouse }" />
+                <lightning:button variant="neutral" label="Analyze Rooftype" onclick="{! c.analyzeRooftype }" />
+                
+                <aura:if isTrue="{! v.thisLead.Roof_Type__c == 'Pitched' }">
+                    <br />
+                    <br />
+                    <span class="slds-icon_container slds-icon_container--circle slds-icon-action-approval" title="Ok">
+                        <lightning:icon iconName="action:approval" size="medium" alternativeText="approval"/>
+                        <span class="slds-assistive-text">Pitched</span>
+                    </span>
+                    Roof Type is Pitched!
+                </aura:if>
+                
+                <aura:if isTrue="{! v.thisLead.Roof_Type__c == 'Flat' }">
+                    <br />
+                    <br />
+                    <span class="slds-icon_container slds-icon_container--circle slds-icon-action-close" title="Not Ok">
+                        <lightning:icon iconName="action:close" size="medium" alternativeText="close"/>
+                        <span class="slds-assistive-text">Flat</span>
+                    </span>
+                    Roof Type is Flat!
+                </aura:if>     
+
+                </div>
+                <aura:set attribute="else">
+                    <br />
+                    The location is not set, please complete the address
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

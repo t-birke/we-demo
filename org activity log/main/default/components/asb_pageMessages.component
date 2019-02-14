@@ -1,0 +1,19 @@
+<apex:component controller="asb_PageMessagesController" layout="none">
+    <apex:attribute name="extraCss" type="String" description="passing an extra CSS class to the outputPanel" />
+	<apex:repeat value="{!messages}" var="severity">
+		<apex:outputPanel layout="block" styleClass="prx-msg {!extraCss} prx-msg-{!LOWER(severityDisplayNames[severity])}">
+			<div class="prx-msg-inner" id="prx_msg">
+				<div class="prx-msg-icon"></div>
+				<apex:outputPanel layout="none" rendered="{!severityDisplayNames[severity] == 'Error'}">	
+					<p><apex:outputText value="{!severityDisplayNames[severity] + ' ' + $Label.asb_Message}"/></p>
+				</apex:outputPanel>		
+				<apex:dataList value="{!messages[severity]}" var="message" rendered="{!severityDisplayNames[severity] == 'Error'}">
+					<apex:outputText value="{!message.summary}"/>
+				</apex:dataList>
+				<apex:repeat value="{!messages[severity]}" var="message" rendered="{!severityDisplayNames[severity] != 'Error'}">	
+					<p><apex:outputText value="{!message.summary}"/></p>
+				</apex:repeat>
+			</div>
+		</apex:outputPanel>
+	</apex:repeat>
+</apex:component>

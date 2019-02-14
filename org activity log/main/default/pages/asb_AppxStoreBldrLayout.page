@@ -1,0 +1,55 @@
+<apex:page id="AppxStoreBldrLayout" name="PrivateExchangeLayout" standardStylesheets="false" sidebar="false">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+        <head>
+            <meta charset="utf-8" />
+		    <title>{!$Label.asb_Private_AppExchange}</title>
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		    <!--  
+		    <meta name="apple-mobile-web-app-capable" content="yes" />
+		    -->
+		    <meta name="description" content="" />
+		    <meta name="keywords" content="" />
+            
+            <apex:stylesheet value="{!$Resource.uilib}/css/external/styleExternal.css" />
+		    <apex:stylesheet value="{!$Resource.uilib}/css/stylePrx.css" />
+		
+		    <link rel="apple-touch-icon" href="{!$Resource.uilib}/ico/mobile-prx-icon.png" />
+
+            <script>
+		        var PrX = {}; // global object container
+		    </script>
+		    
+            <script src="{!$Resource.uilib}/js/external/jquery-min.js" type="text/javascript" ></script>
+            <script src="{!$Resource.uilib}/js/external/jquery.debouncedresize.js" type="text/javascript" ></script>
+                                            
+            
+            <apex:insert name="head" />
+        </head>
+        
+        <body>
+            <div class="prx" id="prx">
+                <div class="prx-wrap">                    
+                    <apex:outputPanel layout="block" styleClass="prx-wrap-inner">
+                        <apex:insert name="content" />
+                    </apex:outputPanel>
+                </div>
+             
+                <span class="phone-test" id="phone-test">&#160;</span>
+                <span class="small-test" id="small-test">&#160;</span>
+                <span class="large-test" id="large-test">&#160;</span>
+            </div>
+             
+            <script src="{!$Resource.uilib}/js/prxBodyCombined.js" type="text/javascript" ></script>
+    
+		    <script>
+		        $('#resultsPanel').jscroll({
+		            nextSelector: '.jscroll-next',
+		            loadingHtml: '<small>{!$Label.asb_Loading}</small>'
+		        });
+		        PrX.thousandsDelimiter = '{!$Label.asb_thousandsDelimiter}';
+				PrX.charsLeftText = '{!$Label.asb_CharactersLeft}';
+				PrX.charsOverText = '{!$Label.asb_CharactersTooMany}';
+		    </script>
+        </body>     
+    </html>
+</apex:page>

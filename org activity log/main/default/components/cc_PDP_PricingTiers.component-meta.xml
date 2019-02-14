@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>42.0</apiVersion>
+    <description>This is a component used on the CloudCraze Product Detail Page to improve the tiered pricing layout.</description>
+    <label>cc_PDP_PricingTiers</label>
+</ApexComponent>
